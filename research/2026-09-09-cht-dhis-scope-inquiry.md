@@ -58,3 +58,13 @@ Accessed September 9, 2026:
 - [Current picker](https://github.com/medic/cht-core/blob/372677567640d1d3e77e6e46f168fe69a8a9e218/admin/src/js/controllers/export-dhis.js)
 - [AI guidelines](https://docs.communityhealthtoolkit.org/community/contributing/ai-guidelines/)
 - [Development workflow](https://docs.communityhealthtoolkit.org/community/contributing/code/workflow/)
+
+## Queue classification correction
+
+The September 9 app check found this approval-dependent posting action stored as
+`research_next_step`. That made the work view call it independent research
+available now and suppress the queue-refill suggestion. The source/runtime
+investigation is already complete, so that field was removed. The prepared inquiry
+and explicit approval-review blocker remain recorded; nothing was sent or
+authorized by this correction. Other candidates can now be investigated while
+this decision remains pending.

@@ -3,7 +3,6 @@
   "project_id": "community-health-toolkit",
   "title": "DHIS2 export reads the wrong Bikram Sambat month when month_start_date is not 1",
   "pipeline_state": "MAINTAINER-CHECK",
-  "research_next_step": "Obtain the approval required by automatic approval review for the exact prepared GitHub scope inquiry in research/2026-09-09-cht-dhis-scope-inquiry.md, then recheck the live discussion and post as humanifest-bot. No inquiry was delivered. Continue independent queue work while this action is pending.",
   "problem": "CHT issue #11342 reports that with Bikram Sambat reporting months enabled and month_start_date not equal to 1, DHIS2 target export can read an adjacent target month or zero because the export key derives from the raw selected date rather than the reporting interval used by target writers.",
   "humanitarian_relevance": "Target exports can feed health program reporting and supervision workflows. Incorrect month aggregation could misstate operational performance for Nepali-language deployments, but Humanifest should not overclaim patient outcome impact from this issue alone.",
   "evidence": [
