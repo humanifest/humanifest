@@ -53,6 +53,7 @@ checkout without installing dependencies.
 ```bash
 python3 -m humanifest.cli validate --root .
 python3 -m humanifest.cli report --root .
+python3 -m humanifest.cli work --root . --as-of 2026-09-08
 python3 -m humanifest.cli score portfolio/opportunities/cht-dhis2-bs-month-export.json
 python3 -m humanifest.cli brief portfolio/opportunities/cht-dhis2-bs-month-export.json
 python3 -m humanifest.cli handoff portfolio/opportunities/cht-dhis2-bs-month-export.json --target codex
@@ -74,7 +75,7 @@ from elsewhere. Installation does not publish a package.
 
 Every command validates its input before producing output. Invalid records return
 exit code `1` with diagnostics on stderr; argument errors return `2`. `score`
-prints JSON for use by other tools. `validate`, `report`, and `sources` require both portfolio
+prints JSON for use by other tools. `validate`, `report`, `work`, and `sources` require both portfolio
 record directories and check unique record IDs, opportunity-to-project links, and
 the implementation and PR capacity limits above. Single-record commands cannot
 check portfolio capacity; validate the full portfolio before starting work.
@@ -109,7 +110,31 @@ output. Shared URLs stay separate when cited by different records, preserving
 their individual source IDs and access dates. Review reminders return exit code
 `0`; invalid records return `1` and invalid review arguments return `2`.
 
+`work` shows recorded independent research alongside active work and review
+reminders, so waiting for a reply need not stall other useful contributions.
+Use optional opportunity fields `research_next_step` for a concrete permitted
+research step and `next_external_status_check` for a planned review date in
+`YYYY-MM-DD` form. Remove a research step when completed. These fields do not
+approve implementation, pass gates, or schedule an automation.
+
+The required `--as-of` date separates reviews due on or before that day from
+later reviews. Missing review dates are shown separately, not treated as a
+reason to poll on every run. Relevant new feedback can be handled sooner.
+Parked and declined records are excluded; explicit post-merge follow-up dates
+remain visible. Items are ordered by ID, not ranked by impact. Early-stage
+candidates without a next step or review date remain visible under
+**Candidates needing a research plan**.
+Assess those existing leads and record a bounded research step or a reason to wait
+or stop. They are not implementation-ready work. The view suggests finding another
+bounded opportunity only when no active work, independent research or such
+unplanned candidate remains. Candidates with a review date stay in the review
+sections until an independent step is recorded. Add `--format json` for structured
+output; `needs_research_plan` contains the unplanned candidates.
+The command validates the whole portfolio and performs no network requests or
+record changes.
+
 ## Repository Map
+
 
 - `humanifest/`: deterministic Python core.
 - `schemas/`: public JSON schema documents.

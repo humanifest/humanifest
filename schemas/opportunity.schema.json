@@ -21,6 +21,17 @@
     "sources"
   ],
   "properties": {
+    "research_next_step": {
+      "type": "string",
+      "pattern": "\\S",
+      "description": "Concrete independent research or verification step; not implementation approval. Remove when completed."
+    },
+    "next_external_status_check": {
+      "type": "string",
+      "format": "date",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$",
+      "description": "Planned manual review date; not a scheduled automation or live status check."
+    },
     "id": {
       "type": "string",
       "pattern": "\\S"

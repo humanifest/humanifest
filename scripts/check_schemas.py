@@ -35,6 +35,17 @@ def main() -> None:
 
 def check_opportunity_rules(validator: Draft202012Validator) -> None:
     validator.validate(opportunity())
+    for field, values in {
+        "next_external_status_check": [None, True, 20260908, "", "20260908", "2026-W37-2", "2026-02-30"],
+        "research_next_step": [None, True, [], "", " \n"],
+    }.items():
+        for value in values:
+            record = opportunity()
+            record[field] = value
+            reject(validator, record, f"{field}={value!r}")
+    record = opportunity()
+    record.update(next_external_status_check="2028-02-29", research_next_step="Verify a source.")
+    validator.validate(record)
     for state in BUILDING_STATES:
         for gate in HARD_GATES:
             record = opportunity()

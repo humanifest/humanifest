@@ -154,6 +154,61 @@ class CliTests(unittest.TestCase):
         record.update(id=record_id, pipeline_state=state, project_id=project_id)
         self.write_record(f"portfolio/opportunities/{record_id}.json", record)
 
+    def test_work_is_read_only_and_validates_whole_portfolio(self):
+        self.seed_portfolio()
+        record = opportunity()
+        record.update(pipeline_state="MAINTAINER-CHECK", research_next_step="Verify setup hooks.",
+                      next_external_status_check="2026-09-15")
+        path = self.write_record("portfolio/opportunities/sample.json", record)
+        before = path.read_bytes()
+        args = ["work", "--root", str(self.root), "--as-of", "2026-09-08"]
+        status, out, err = self.run_cli(*args, "--format", "json")
+        self.assertEqual((status, err), (0, ""))
+        self.assertEqual(json.loads(out)["independent_research"][0]["action"], "Verify setup hooks.")
+        self.assertEqual(path.read_bytes(), before)
+        status, out, err = self.run_cli(*args)
+        self.assertEqual((status, err), (0, ""))
+        self.assertIn("Independent research available now", out)
+        self.add_opportunity("one", "BUILDING")
+        self.add_opportunity("two", "BUILDING")
+        status, out, err = self.run_cli(*args)
+        self.assertEqual((status, out), (1, ""))
+        self.assertIn("2 active implementations", err)
+
+    def test_work_requires_explicit_date_and_rejects_invalid_records(self):
+        for args in [[], ["--as-of", "20260908"], ["--as-of", "2026-02-30"]]:
+            with self.subTest(args=args), self.assertRaises(SystemExit) as raised:
+                self.run_cli("work", *args)
+            self.assertEqual(raised.exception.code, 2)
+        self.seed_portfolio()
+        record = opportunity()
+        record["next_external_status_check"] = "tomorrow"
+        self.write_record("portfolio/opportunities/sample.json", record)
+        status, out, err = self.run_cli("work", "--root", str(self.root), "--as-of", "2026-09-08")
+        self.assertEqual((status, out), (1, ""))
+        self.assertIn("next_external_status_check", err)
+
+    def test_work_keeps_new_candidates_visible_without_optional_work_fields(self):
+        self.seed_portfolio()
+        record = opportunity()
+        record["pipeline_state"] = "QUEUED"
+        record["gates"]["maintainer_interest_confirmed"]["passed"] = False
+        path = self.write_record("portfolio/opportunities/sample.json", record)
+        before = path.read_bytes()
+        args = ["work", "--root", str(self.root), "--as-of", "2026-09-08"]
+        status, out, err = self.run_cli(*args)
+        self.assertEqual((status, err), (0, ""))
+        self.assertIn("Candidates needing a research plan", out)
+        self.assertIn(record["title"], out)
+        self.assertNotIn("find and verify another bounded opportunity", out)
+        status, out, err = self.run_cli(*args, "--format", "json")
+        self.assertEqual((status, err), (0, ""))
+        plan = json.loads(out)
+        self.assertEqual(plan["needs_research_plan"][0]["id"], record["id"])
+        self.assertEqual(plan["active_work"], [])
+        self.assertFalse(plan["refill_suggested"])
+        self.assertEqual(path.read_bytes(), before)
+
     def set_project_repository(self, repository, project_id="sample-project", **extra):
         project = json.loads((self.root / "portfolio/projects/sample.json").read_text())
         project.update(id=project_id, repository=repository, **extra)

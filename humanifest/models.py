@@ -146,6 +146,15 @@ def validate_opportunity(record: dict[str, Any], record_name: str) -> list[Valid
     issues = _require_fields(record, REQUIRED_OPPORTUNITY_FIELDS, record_name)
     issues.extend(_validate_text_fields(record, [field for field in REQUIRED_OPPORTUNITY_FIELDS
                                                if field not in {"evidence", "gates", "score_inputs", "sources"}], record_name))
+    if "research_next_step" in record:
+        issues.extend(_validate_text_fields(record, ["research_next_step"], record_name))
+    if "next_external_status_check" in record:
+        review_date = record["next_external_status_check"]
+        try:
+            if not isinstance(review_date, str) or date.fromisoformat(review_date).isoformat() != review_date:
+                raise ValueError
+        except ValueError:
+            issues.append(ValidationIssue(record_name, "next_external_status_check must be a valid YYYY-MM-DD date"))
     state = record.get("pipeline_state")
     if state not in PIPELINE_STATES:
         issues.append(ValidationIssue(record_name, f"pipeline_state must be one of {', '.join(PIPELINE_STATES)}"))

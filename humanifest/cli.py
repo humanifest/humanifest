@@ -18,6 +18,7 @@ from .models import (
     validate_opportunity,
 )
 from .review import render_source_review, source_review
+from .work import render_work_plan, work_plan
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -40,6 +41,11 @@ def main(argv: list[str] | None = None) -> int:
     report_parser = subparsers.add_parser("report")
     report_parser.add_argument("--root", default=".", help="Repository root")
 
+    work_parser = subparsers.add_parser("work", help="List independent work and scheduled reviews without polling upstream")
+    work_parser.add_argument("--root", default=".", help="Repository root")
+    work_parser.add_argument("--as-of", required=True, type=_date, help="Review date in YYYY-MM-DD form")
+    work_parser.add_argument("--format", choices=["markdown", "json"], default="markdown")
+
     sources_parser = subparsers.add_parser("sources", help="List source access dates and offline review reminders")
     sources_parser.add_argument("--root", default=".", help="Repository root")
     sources_parser.add_argument("--as-of", required=True, type=_date, help="Review date in YYYY-MM-DD form")
@@ -50,11 +56,14 @@ def main(argv: list[str] | None = None) -> int:
     args = parser.parse_args(argv)
 
     try:
-        if args.command in {"validate", "report", "sources"}:
+        if args.command in {"validate", "report", "sources", "work"}:
             projects, opportunities, issues = load_portfolio(Path(args.root))
             if _print_issues(issues):
                 return 1
-            if args.command == "sources":
+            if args.command == "work":
+                plan = work_plan(opportunities, as_of=args.as_of)
+                print(json.dumps(plan, indent=2) if args.format == "json" else render_work_plan(plan))
+            elif args.command == "sources":
                 review = source_review(projects, opportunities, as_of=args.as_of,
                                        max_age_days=args.max_age_days, needs_review_only=args.needs_review)
                 print(json.dumps(review, indent=2) if args.format == "json" else render_source_review(review))
