@@ -2,7 +2,7 @@
   "schemaVersion": "2.0.0",
   "id": "urn:humanifest:portfolio",
   "namespace": "humanifest",
-  "revision": "sha256:7c11f710be33d929700794f3e4bf2b75555d41e06439303149a7aa229ff68f90",
+  "revision": "sha256:940f1066c9ed83cba4853e49c1830c593bda9c572fca9a43e8a00ca9f40249fd",
   "entities": [
     {
       "id": "urn:humanifest:routing:policy:contribution-protocol",
@@ -1225,7 +1225,7 @@
       "attributes": {
         "recordId": "openfoodfacts-python",
         "path": "portfolio/projects/openfoodfacts-python.json",
-        "digest": "sha256:8fbaed379e0f272ca20f92369c1508c4b424ada8fc80ba7dbacae30259d432af",
+        "digest": "sha256:4e2b59a24d8a39c0c6b36ae7155f1af6a54671fbf002b94e58ef2846e6c9c903",
         "projectId": null
       },
       "provenance": {
@@ -1239,7 +1239,7 @@
       "label": "portfolio/projects/openfoodfacts-python.json",
       "attributes": {
         "path": "portfolio/projects/openfoodfacts-python.json",
-        "digest": "sha256:8fbaed379e0f272ca20f92369c1508c4b424ada8fc80ba7dbacae30259d432af"
+        "digest": "sha256:4e2b59a24d8a39c0c6b36ae7155f1af6a54671fbf002b94e58ef2846e6c9c903"
       },
       "provenance": {
         "status": "generated",
@@ -1291,6 +1291,19 @@
       "label": "urn:humanifest:hf:project:openfoodfacts-python:off-search-audit",
       "attributes": {
         "url": "https://github.com/humanifest-bot/humanifest/blob/codex/cht-admin-environment-audit/research/2026-09-09-openfoodfacts-search-contract-audit.md",
+        "accessed": "2026-09-09"
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aproject%3Aopenfoodfacts-python%3Aoff-runtime-2026-09-09",
+      "kind": "hf:source",
+      "label": "urn:humanifest:hf:project:openfoodfacts-python:off-runtime-2026-09-09",
+      "attributes": {
+        "url": "https://github.com/humanifest-bot/humanifest/blob/codex/cht-admin-environment-audit/research/2026-09-09-openfoodfacts-runtime-verification.md",
         "accessed": "2026-09-09"
       },
       "provenance": {
@@ -6020,7 +6033,7 @@
       "attributes": {
         "recordId": "off-496-text-search-contract-verification",
         "path": "portfolio/opportunities/off-496-text-search-contract-verification.json",
-        "digest": "sha256:dc0025f143dc47133dd4e007b10d4f3802c49c6e60f25e7a85bde482473dc516",
+        "digest": "sha256:f6d16cd51dadded0be6222f39171590fcaeb589fe74ed963f947360b6307525f",
         "projectId": "openfoodfacts-python"
       },
       "provenance": {
@@ -6034,7 +6047,7 @@
       "label": "portfolio/opportunities/off-496-text-search-contract-verification.json",
       "attributes": {
         "path": "portfolio/opportunities/off-496-text-search-contract-verification.json",
-        "digest": "sha256:dc0025f143dc47133dd4e007b10d4f3802c49c6e60f25e7a85bde482473dc516"
+        "digest": "sha256:f6d16cd51dadded0be6222f39171590fcaeb589fe74ed963f947360b6307525f"
       },
       "provenance": {
         "status": "generated",
@@ -6146,6 +6159,19 @@
       }
     },
     {
+      "id": "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Aoff-runtime-2026-09-09",
+      "kind": "hf:source",
+      "label": "urn:humanifest:hf:opportunity:off-496-text-search-contract-verification:off-runtime-2026-09-09",
+      "attributes": {
+        "url": "https://github.com/humanifest-bot/humanifest/blob/codex/cht-admin-environment-audit/research/2026-09-09-openfoodfacts-runtime-verification.md",
+        "accessed": "2026-09-09"
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
       "id": "urn:humanifest:hf:evidence:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3A0",
       "kind": "hf:evidence",
       "label": "Issue #496 reports HTTP 503 from the documented text_search example; a maintainer says the CGI endpoint now requires authentication.",
@@ -6173,6 +6199,18 @@
       "id": "urn:humanifest:hf:evidence:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3A2",
       "kind": "hf:evidence",
       "label": "Current official v2 search documentation explicitly states that full-text requests are unsupported. This is documented contract evidence, not a live query result.",
+      "attributes": {
+        "evidenceType": "measured"
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:hf:evidence:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3A3",
+      "kind": "hf:evidence",
+      "label": "38 unchanged SDK API tests pass with blocked Python socket/DNS operations. Four cases executing the pinned original server filter verify that search_terms is removed before query construction, with structured-filter and pagination controls. Source dispatch was traced but full HTTP/server/database execution did not occur.",
       "attributes": {
         "evidenceType": "measured"
       },
@@ -6228,9 +6266,9 @@
       "kind": "hf:gate",
       "label": "contribution_policy_understood",
       "attributes": {
-        "passed": false,
-        "cited": false,
-        "rationale": "Not established in this research intake; inspect supporting evidence before advancement."
+        "passed": true,
+        "cited": true,
+        "rationale": "Read the pinned contribution guide and PR template: fork/develop workflow, maintainer assignment agreement, tests/CI, and disclosure/proof requirements are recorded. They do not establish acceptance of this specific support contribution."
       },
       "provenance": {
         "status": "generated",
@@ -6242,9 +6280,9 @@
       "kind": "hf:gate",
       "label": "ai_policy_understood",
       "attributes": {
-        "passed": false,
-        "cited": false,
-        "rationale": "Not established in this research intake; inspect supporting evidence before advancement."
+        "passed": true,
+        "cited": true,
+        "rationale": "The pinned PR template explicitly requires LLM/version/mode disclosure, successful execution and screenshot/video proof. The record distinguishes this known requirement from unconfirmed bot-identity acceptance and unclaimed human review."
       },
       "provenance": {
         "status": "generated",
@@ -6258,7 +6296,7 @@
       "attributes": {
         "passed": false,
         "cited": false,
-        "rationale": "Not established in this research intake; inspect supporting evidence before advancement."
+        "rationale": "The current pinned server source supports the documented mismatch, and the SDK issue reports a failed search example. Deployment state, actual returned products and downstream consequence remain unverified."
       },
       "provenance": {
         "status": "generated",
@@ -6270,9 +6308,9 @@
       "kind": "hf:gate",
       "label": "behavior_reproducible_or_verifiable",
       "attributes": {
-        "passed": false,
-        "cited": false,
-        "rationale": "A mismatch with the documented endpoint contract is source-backed. No SDK test, server query or end-to-end search reproduction ran."
+        "passed": true,
+        "cited": true,
+        "rationale": "The original server filter demonstrably drops search_terms in four hash-checked cases while the unchanged SDK API file passes 38 mocked tests. This establishes the bounded source/filter mismatch, not live product-search results."
       },
       "provenance": {
         "status": "generated",
@@ -6286,7 +6324,7 @@
       "attributes": {
         "passed": true,
         "cited": true,
-        "rationale": "Read both changed-file diffs for existing PR #504 at 970a7290a8a5869de8f5784324c166212fdd15ca, including URL-only mock-test changes."
+        "rationale": "Both PR diffs were read and all 38 tests in the unchanged API test file pass. Current server route/filter source was traced, and the original filter executed in four bounded cases."
       },
       "provenance": {
         "status": "generated",
@@ -6354,9 +6392,9 @@
       "kind": "hf:gate",
       "label": "environment_feasible",
       "attributes": {
-        "passed": false,
-        "cited": false,
-        "rationale": "Not established in this research intake; inspect supporting evidence before advancement."
+        "passed": true,
+        "cited": true,
+        "rationale": "A frozen wheel-only local environment successfully ran the unchanged 38-test API file. No server/database/ML environment is needed for this focused verification; broader implementation readiness must be reassessed for the agreed scope."
       },
       "provenance": {
         "status": "generated",
@@ -6436,7 +6474,7 @@
       "kind": "hf:contribution",
       "label": "off-496-text-search-contract-verification",
       "attributes": {
-        "recordedState": "OPPORTUNITY-RESEARCH",
+        "recordedState": "MAINTAINER-CHECK",
         "deliveryEvidenceRequired": true
       },
       "provenance": {
@@ -9969,6 +10007,38 @@
       "relation": "hf:current_record",
       "sources": [
         "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aproject%3Aopenfoodfacts-python%3Aoff-search-audit"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fprojects%2Fopenfoodfacts-python.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:8bbe85d2ad9e0fe685b2d792d137214ebc8944a9ad8bb765e7bfeb117b11ff52",
+      "relation": "hf:source",
+      "sources": [
+        "urn:humanifest:hf:project:openfoodfacts-python"
+      ],
+      "targets": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aproject%3Aopenfoodfacts-python%3Aoff-runtime-2026-09-09"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:d940466daabf94b39ebc9198bf742d3a3a270d040d85fe64d4cdd466a6729f70",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aproject%3Aopenfoodfacts-python%3Aoff-runtime-2026-09-09"
       ],
       "targets": [
         "urn:humanifest:hf:record:portfolio%2Fprojects%2Fopenfoodfacts-python.json"
@@ -27581,6 +27651,38 @@
       }
     },
     {
+      "id": "urn:humanifest:mapping:81939441cf1a996939220af9bb7d456e63d28c74f18db32b66583457aeacc8d5",
+      "relation": "hf:source",
+      "sources": [
+        "urn:humanifest:hf:opportunity:off-496-text-search-contract-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Aoff-runtime-2026-09-09"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:6647d492f1304d2b429b1e1057380ad3f174aada89b7931561f8950c9bf5b250",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Aoff-runtime-2026-09-09"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fopportunities%2Foff-496-text-search-contract-verification.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
       "id": "urn:humanifest:mapping:c77529f1078cbf5551a19000e07faad566333d50955c4b9fe0af9d66265e48cc",
       "relation": "hf:evidence",
       "sources": [
@@ -27725,6 +27827,54 @@
       }
     },
     {
+      "id": "urn:humanifest:mapping:6249fadeab7d7ad08791f7d7e46061c6be60440a62cb182071ef52bb10b5fb3a",
+      "relation": "hf:evidence",
+      "sources": [
+        "urn:humanifest:hf:opportunity:off-496-text-search-contract-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:evidence:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3A3"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:42005d84020d6dbd8823201b2833861795804687759f2ef9ade83c975fffc73e",
+      "relation": "hf:source",
+      "sources": [
+        "urn:humanifest:hf:evidence:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3A3"
+      ],
+      "targets": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Aoff-runtime-2026-09-09"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:a24394ba5c8c2a8ebd8ce8c48f4fcbb2869d4c81d32eb73d02b95736883c300d",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:evidence:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3A3"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fopportunities%2Foff-496-text-search-contract-verification.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
       "id": "urn:humanifest:mapping:f10dddda73e9b279d4b560b20a34f698069f1c9b387ecff8ab9e22fc4293fe4d",
       "relation": "hf:project",
       "sources": [
@@ -27741,13 +27891,13 @@
       }
     },
     {
-      "id": "urn:humanifest:mapping:bb9aea27a7463a48ec974ebe24cd6ca010e72ff215f8ac58334357823cf1e796",
+      "id": "urn:humanifest:mapping:996e1b5ec924b6e8fd01a74403ff7f1537a6dafd810c46ebb6b6d79bcd49a950",
       "relation": "hf:guidance",
       "sources": [
         "urn:humanifest:hf:opportunity:off-496-text-search-contract-verification"
       ],
       "targets": [
-        "urn:humanifest:routing:command:OPPORTUNITY-RESEARCH"
+        "urn:humanifest:routing:command:MAINTAINER-CHECK"
       ],
       "cardinality": "one-to-one",
       "lossiness": "lossless",
@@ -28077,6 +28227,22 @@
       }
     },
     {
+      "id": "urn:humanifest:mapping:2a7424f8f597b802be2aa88b8d5ff4434aa527e4e3e9042680052cace2370901",
+      "relation": "hf:source",
+      "sources": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Acontribution_policy_understood"
+      ],
+      "targets": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Aoff-runtime-2026-09-09"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
       "id": "urn:humanifest:mapping:319162179c5892c0b44ca9d7df1381a7a725cebf4cce55e0e6d289523a174a2c",
       "relation": "hf:prerequisite",
       "sources": [
@@ -28116,6 +28282,22 @@
       ],
       "targets": [
         "urn:humanifest:hf:record:portfolio%2Fopportunities%2Foff-496-text-search-contract-verification.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:8717c11a521e30b572c6f8229893a05cf1b21d9183ee0833405184870f8bee9a",
+      "relation": "hf:source",
+      "sources": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Aai_policy_understood"
+      ],
+      "targets": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Aoff-runtime-2026-09-09"
       ],
       "cardinality": "one-to-one",
       "lossiness": "lossless",
@@ -28221,6 +28403,22 @@
       }
     },
     {
+      "id": "urn:humanifest:mapping:7362ff4cf28ea63ba516db3d7c66a922eb06de0f4c537a451947b5764c3d6456",
+      "relation": "hf:source",
+      "sources": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Abehavior_reproducible_or_verifiable"
+      ],
+      "targets": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Aoff-runtime-2026-09-09"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
       "id": "urn:humanifest:mapping:e1b5124d7aeb9e73879750f92a199cfeee1cd5fe92fb5bafcaab6c58715b43b9",
       "relation": "hf:prerequisite",
       "sources": [
@@ -28276,6 +28474,22 @@
       ],
       "targets": [
         "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Aoff-search-audit"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:bc64b67383d0a88a00b1b9b1be7779d5b4c53a5fd6b252d1259d1390702457ee",
+      "relation": "hf:source",
+      "sources": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Acode_and_tests_located"
+      ],
+      "targets": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Aoff-runtime-2026-09-09"
       ],
       "cardinality": "one-to-one",
       "lossiness": "lossless",
@@ -28532,6 +28746,22 @@
       ],
       "targets": [
         "urn:humanifest:hf:record:portfolio%2Fopportunities%2Foff-496-text-search-contract-verification.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:32476596c15efa38631fc24bb7d8f0e2656597eaafc15fa2c04e7e0377f688c7",
+      "relation": "hf:source",
+      "sources": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Aenvironment_feasible"
+      ],
+      "targets": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Aoff-runtime-2026-09-09"
       ],
       "cardinality": "one-to-one",
       "lossiness": "lossless",
@@ -28877,13 +29107,13 @@
       }
     },
     {
-      "id": "urn:humanifest:mapping:23adc66b5a55ed0d2e9d18ea6681187103dd894b456741558c5ef2791bdb1c28",
+      "id": "urn:humanifest:mapping:b4bee4b930612749b31b514357c6ca54f0d5242b7ead2cd4549c7a23a4dbcee9",
       "relation": "hf:guidance",
       "sources": [
         "urn:humanifest:hf:report:off-496-text-search-contract-verification"
       ],
       "targets": [
-        "urn:humanifest:routing:command:OPPORTUNITY-RESEARCH"
+        "urn:humanifest:routing:command:MAINTAINER-CHECK"
       ],
       "cardinality": "one-to-one",
       "lossiness": "lossless",
@@ -28973,13 +29203,13 @@
       }
     },
     {
-      "id": "urn:humanifest:mapping:cacb1983007cb896a233ba8ba04def6819d5d3779aba273c2381e14b50694f56",
+      "id": "urn:humanifest:mapping:8fb82b7e398c73c121ef683c3bc2bab6b4109f87c6bf651b8c9ba99cc04b8b7f",
       "relation": "hf:guidance",
       "sources": [
         "urn:humanifest:hf:handoff:off-496-text-search-contract-verification"
       ],
       "targets": [
-        "urn:humanifest:routing:command:OPPORTUNITY-RESEARCH"
+        "urn:humanifest:routing:command:MAINTAINER-CHECK"
       ],
       "cardinality": "one-to-one",
       "lossiness": "lossless",
