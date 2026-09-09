@@ -26,7 +26,7 @@ Scores do not authorize implementation or external writes. Candidates are listed
 - cht-11342-dhis2-bs-month-export: MAINTAINER-CHECK; score=0.0; failed_gates=3
   Next: Coordinate within standing authorization using the verified Humanifest identity; record current maintainer confirmation.
   - change_bounded: Writer and exporter tags differ, but the admin picker retains a day-dependent timestamp and payload period remains Gregorian. Maintainers have not chosen whether lookup, picker, and label changes belong in one bounded fix. A backend-only change cannot yet be assumed to resolve the full report.
-  - maintainer_interest_confirmed: Rechecked 2026-09-08: the issue has no comments or assignees; no issue-level confirmation was found.
+  - maintainer_interest_confirmed: Rechecked September 9: the issue remains open, unassigned and without comments. The prepared reproduction and scope question do not establish maintainer confirmation.
   - probable_reviewer_identified: No reviewer is assigned on the issue.
 - hot-7227-archived-project-data-access: MAINTAINER-CHECK; score=0.0; failed_gates=12
   Next: Coordinate within standing authorization using the verified Humanifest identity; record current maintainer confirmation.

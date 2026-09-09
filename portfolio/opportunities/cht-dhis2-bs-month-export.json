@@ -3,7 +3,7 @@
   "project_id": "community-health-toolkit",
   "title": "DHIS2 export reads the wrong Bikram Sambat month when month_start_date is not 1",
   "pipeline_state": "MAINTAINER-CHECK",
-  "research_next_step": "Map existing DHIS2 reporting-period tests to the observed writer/exporter mismatch and prepare concrete boundary examples for a maintainer scope question; do not choose reporting semantics on the maintainer's behalf.",
+  "research_next_step": "Recheck the live issue, linked work and contribution requirements, then coordinate the prepared reporting-period scope question using the concrete eight-case reproduction. No backend-only fix or reporting semantics are assumed.",
   "problem": "CHT issue #11342 reports that with Bikram Sambat reporting months enabled and month_start_date not equal to 1, DHIS2 target export can read an adjacent target month or zero because the export key derives from the raw selected date rather than the reporting interval used by target writers.",
   "humanitarian_relevance": "Target exports can feed health program reporting and supervision workflows. Incorrect month aggregation could misstate operational performance for Nepali-language deployments, but Humanifest should not overclaim patient outcome impact from this issue alone.",
   "evidence": [
@@ -31,32 +31,115 @@
       "type": "measured",
       "claim": "At the inspected commit, targetDocsInMonth derives the Bikram Sambat lookup month from moment(timestamp), and the caller passes the selected from date.",
       "source_id": "dhis-pinned-2026-09-08"
+    },
+    {
+      "type": "measured",
+      "claim": "At pinned CHT 35b2bb6d, 37 existing calendar tests and eight original-exporter synthetic-data boundary cases pass. Four cases distinguish adjacent nonzero totals. The original admin controller retains July 14 versus July 15 under the same July label on successive visit dates. No real database, rendered UI or deployment was tested.",
+      "source_id": "dhis-runtime-2026-09-09"
+    },
+    {
+      "type": "measured",
+      "claim": "September 9 read-only GitHub check found #11342 open, unassigned and without comments. The issue author describes the BS work as an unreleased epic; release or deployment status was not independently established by this check.",
+      "source_id": "issue-11342-recheck-2026-09-09"
     }
   ],
   "code_surface": "medic/cht-core: api/src/services/export/dhis.js and API DHIS tests; shared-libs/calendar-interval, rules-engine provider-wireup, webapp UHC settings, and admin export-dhis controller/tests. Inspected committed source at 35b2bb6dac0844bee3228476591d08d56c5dd10d; final implementation scope awaits maintainer agreement.",
   "proposed_change": "After maintainer confirmation, agree the meaning of from, picker labels, and exported period before selecting the smallest coherent fix. Align target-doc lookup with writer interval semantics and existing start-day setting precedence; a backend-only lookup change must not be assumed to resolve the full issue.",
-  "tests": "After scope confirmation, test distinct adjacent-month totals, both sides of a non-default reporting boundary, default-day controls, Gregorian compatibility, setting precedence, and year/month transitions. Vary the admin clock for the same displayed period and assert the agreed from and payload period semantics. API and admin test surfaces are located; no target tests were added or run. See research/2026-09-08-cht-dhis-period-audit.md.",
-  "environment": "Tier 1 for source inspection; Tier 3 Codespaces/devcontainer recommended before implementation because cht-core is large and uses multiple package workspaces, CouchDB-related services, and project-controlled npm scripts.",
+  "tests": "37 existing calendar-interval tests pass. Eight hash-checked original-exporter cases cover Gregorian/BS start-day boundaries, default-day controls and a Gregorian year transition using distinct nonzero totals. Two clock settings reproduce day-dependent timestamps behind the same admin period label. API database tests and additional real Angular DHIS tests were not run. See research/2026-09-09-cht-dhis-period-reproduction.md; passing probes assert current behavior, not accepted fix semantics.",
+  "environment": "Bounded local source execution in the previously inspected CHT baseline, Node 22.16.0 with existing locked dependencies and TZ=UTC. Exporter DB/config/logger and Angular registration are replaced with synthetic harnesses. No new installation, CouchDB, target setup, deployment or source mutation. This local runner is not a VM/container security boundary; full environment readiness must match the confirmed implementation scope.",
   "maintainer": "No current maintainer confirmation or assignee. A future authorized inquiry should settle the reporting-period contract (from, picker, payload label), not assume interval-derived lookup alone closes the issue.",
-  "risks": "Medium: current admin month labels preserve a day-dependent timestamp, so a containing-interval lookup alone may select different reporting periods for the same displayed month on different visit dates. This is a source-derived risk, not an executed reproduction. Picker semantics, output labels, and Gregorian compatibility require an agreed scope.",
+  "risks": "Controller execution confirms that identical month labels retain different days; a containing-interval lookup can therefore change the selected reporting interval across visit dates. The synthetic exporter reads a different nonzero target total in four boundary cases. Maintainers must settle picker/lookup/output-period semantics, and production consequence remains unmeasured.",
   "gates": {
-    "humanitarian_relevance_supported": { "passed": true, "rationale": "CHT is a deployed community-health platform and the issue affects reporting exports." },
-    "repository_active": { "passed": true, "rationale": "cht-core has current 2026 issue and repository activity." },
-    "external_contributions_accepted": { "passed": true, "rationale": "CHT publishes contributor documentation and accepts same-license contributions." },
-    "contribution_policy_understood": { "passed": true, "rationale": "Reviewed 2026-09-08: follow the branch/PR workflow, link the issue, provide testing evidence, self-review, and coordinate with a reviewer. Environment setup remains separately gated.", "source_ids": ["cht-workflow-2026-09-08"] },
-    "ai_policy_understood": { "passed": true, "rationale": "Reviewed 2026-09-08: disclose the AI tool and its role; retain responsibility for review, regression tests, dependency/license checks, and explaining the contribution.", "source_ids": ["cht-ai-guidelines-2026-09-08"] },
-    "problem_current_and_consequential": { "passed": true, "rationale": "Issue remains open as of 2026-09-08 and the inspected source retains the selected-date lookup. Operational consequences still rely on the issue report.", "source_ids": ["issue-11342-recheck-2026-09-08", "dhis-pinned-2026-09-08"] },
-    "behavior_reproducible_or_verifiable": { "passed": true, "rationale": "Issue includes reproduction and source inspection verified the diverging key derivation sites." },
-    "code_and_tests_located": { "passed": true, "rationale": "Source and exact Mocha test file were located at commit 35b2bb6dac0844bee3228476591d08d56c5dd10d; test execution remains unverified.", "source_ids": ["dhis-pinned-2026-09-08", "dhis-tests-pinned-2026-09-08"] },
-    "change_bounded": { "passed": false, "rationale": "Writer and exporter tags differ, but the admin picker retains a day-dependent timestamp and payload period remains Gregorian. Maintainers have not chosen whether lookup, picker, and label changes belong in one bounded fix. A backend-only change cannot yet be assumed to resolve the full report.", "source_ids": ["dhis-pinned-2026-09-08", "dhis-picker-pinned-2026-09-08", "dhis-writer-pinned-2026-09-08"] },
-    "regression_strategy_credible": { "passed": true, "rationale": "A focused export unit test can encode the non-default month_start_date case." },
-    "no_private_data_required": { "passed": true, "rationale": "Reproduction can use synthetic settings and target docs." },
-    "security_and_licensing_risk_acceptable": { "passed": true, "rationale": "No security-sensitive path identified; project license is known." },
-    "environment_feasible": { "passed": true, "rationale": "Feasible in Codespaces/devcontainer or bounded local clone after setup inspection." },
-    "maintainer_interest_confirmed": { "passed": false, "rationale": "Rechecked 2026-09-08: the issue has no comments or assignees; no issue-level confirmation was found.", "source_ids": ["issue-11342-recheck-2026-09-08"] },
-    "probable_reviewer_identified": { "passed": false, "rationale": "No reviewer is assigned on the issue." },
-    "benefit_justifies_review_cost": { "passed": true, "rationale": "If maintainers confirm the approach, a small export correctness fix plausibly justifies review." },
-    "user_can_explain_line_by_line": { "passed": true, "rationale": "The likely change is small enough for line-by-line explanation after implementation." }
+    "humanitarian_relevance_supported": {
+      "passed": true,
+      "rationale": "CHT is a deployed community-health platform and the issue affects reporting exports."
+    },
+    "repository_active": {
+      "passed": true,
+      "rationale": "cht-core has current 2026 issue and repository activity."
+    },
+    "external_contributions_accepted": {
+      "passed": true,
+      "rationale": "CHT publishes contributor documentation and accepts same-license contributions."
+    },
+    "contribution_policy_understood": {
+      "passed": true,
+      "rationale": "Reviewed 2026-09-08: follow the branch/PR workflow, link the issue, provide testing evidence, self-review, and coordinate with a reviewer. Environment setup remains separately gated.",
+      "source_ids": [
+        "cht-workflow-2026-09-08"
+      ]
+    },
+    "ai_policy_understood": {
+      "passed": true,
+      "rationale": "Reviewed 2026-09-08: disclose the AI tool and its role; retain responsibility for review, regression tests, dependency/license checks, and explaining the contribution.",
+      "source_ids": [
+        "cht-ai-guidelines-2026-09-08"
+      ]
+    },
+    "problem_current_and_consequential": {
+      "passed": true,
+      "rationale": "Issue remains open as of 2026-09-08 and the inspected source retains the selected-date lookup. Operational consequences still rely on the issue report.",
+      "source_ids": [
+        "issue-11342-recheck-2026-09-08",
+        "dhis-pinned-2026-09-08"
+      ]
+    },
+    "behavior_reproducible_or_verifiable": {
+      "passed": true,
+      "rationale": "Issue includes reproduction and source inspection verified the diverging key derivation sites."
+    },
+    "code_and_tests_located": {
+      "passed": true,
+      "rationale": "Source and exact Mocha test file were located at commit 35b2bb6dac0844bee3228476591d08d56c5dd10d; test execution remains unverified.",
+      "source_ids": [
+        "dhis-pinned-2026-09-08",
+        "dhis-tests-pinned-2026-09-08"
+      ]
+    },
+    "change_bounded": {
+      "passed": false,
+      "rationale": "Writer and exporter tags differ, but the admin picker retains a day-dependent timestamp and payload period remains Gregorian. Maintainers have not chosen whether lookup, picker, and label changes belong in one bounded fix. A backend-only change cannot yet be assumed to resolve the full report.",
+      "source_ids": [
+        "dhis-pinned-2026-09-08",
+        "dhis-picker-pinned-2026-09-08",
+        "dhis-writer-pinned-2026-09-08"
+      ]
+    },
+    "regression_strategy_credible": {
+      "passed": true,
+      "rationale": "A focused export unit test can encode the non-default month_start_date case."
+    },
+    "no_private_data_required": {
+      "passed": true,
+      "rationale": "Reproduction can use synthetic settings and target docs."
+    },
+    "security_and_licensing_risk_acceptable": {
+      "passed": true,
+      "rationale": "No security-sensitive path identified; project license is known."
+    },
+    "environment_feasible": {
+      "passed": true,
+      "rationale": "Feasible in Codespaces/devcontainer or bounded local clone after setup inspection."
+    },
+    "maintainer_interest_confirmed": {
+      "passed": false,
+      "rationale": "Rechecked September 9: the issue remains open, unassigned and without comments. The prepared reproduction and scope question do not establish maintainer confirmation.",
+      "source_ids": [
+        "issue-11342-recheck-2026-09-09"
+      ]
+    },
+    "probable_reviewer_identified": {
+      "passed": false,
+      "rationale": "No reviewer is assigned on the issue."
+    },
+    "benefit_justifies_review_cost": {
+      "passed": true,
+      "rationale": "If maintainers confirm the approach, a small export correctness fix plausibly justifies review."
+    },
+    "user_can_explain_line_by_line": {
+      "passed": true,
+      "rationale": "The likely change is small enough for line-by-line explanation after implementation."
+    }
   },
   "score_inputs": {
     "humanitarian_benefit": 3.5,
@@ -120,6 +203,16 @@
       "id": "dhis-settings-pinned-2026-09-08",
       "url": "https://github.com/medic/cht-core/blob/35b2bb6dac0844bee3228476591d08d56c5dd10d/webapp/src/ts/services/uhc-settings.service.ts#L15-L26",
       "accessed": "2026-09-08"
+    },
+    {
+      "id": "dhis-runtime-2026-09-09",
+      "url": "https://github.com/humanifest-bot/humanifest/blob/codex/cht-admin-environment-audit/research/2026-09-09-cht-dhis-period-reproduction.md",
+      "accessed": "2026-09-09"
+    },
+    {
+      "id": "issue-11342-recheck-2026-09-09",
+      "url": "https://github.com/medic/cht-core/issues/11342",
+      "accessed": "2026-09-09"
     }
   ]
 }

@@ -65,3 +65,10 @@ checks, not tests added or passed.
 The opportunity remains in `MAINTAINER-CHECK`. Its bounded-change gate is now
 unconfirmed because the existing proposal does not settle these coupled product
 decisions. The source-backed mismatch remains evidence worth discussing.
+
+## Subsequent execution
+
+The [September 9 reproduction](2026-09-09-cht-dhis-period-reproduction.md) now
+executes the original export/controller logic with synthetic inputs and the existing
+calendar tests. It supersedes the earlier no-execution status for those bounded
+surfaces, while leaving the reporting contract and implementation scope unresolved.
