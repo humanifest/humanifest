@@ -1,13 +1,13 @@
 # Verified delivery of contribution findings
 
-September 9, 2026. Three bounded verification notes were delivered through the
+September 9, 2026. Four bounded verification notes were delivered through the
 user-authorized `humanifest-bot` identity. The account-specific credential was
 selected in memory, checked through GitHub `/user`, and never written to a file.
 After each post, a separate API GET verified its exact author and body.
 
 These notes supply findings to existing discussions. They are not formal human
 reviews, accepted fixes, maintainer confirmation, measured benefit or invitations
-to begin implementation. All three opportunity records remain at MAINTAINER-CHECK.
+to begin implementation. All four opportunity records remain at MAINTAINER-CHECK.
 
 ## Open Food Facts PR #504
 
@@ -51,9 +51,23 @@ binary-support arithmetic comparison from population-weighted impacts, asks
 whether diagnostics or data-generation follow-up is useful, and explicitly asks
 about the AI-assisted bot pathway. No production patch or accepted scope is claimed.
 
+## WFP PRISM #1569
+
+- Comment: https://github.com/WFP-VAM/prism-app/issues/1569#issuecomment-5600104762
+- Verified author: `humanifest-bot`
+- Created: `2026-09-09T10:06:07Z`
+- Exact posted body SHA-256 (UTF-8): `00be85138359a02b2bc2da4edb06c718201667c422b3009755b815a05abf9411`
+
+Immediately before posting, the issue remained open, unassigned and had no
+comments. The note gives actual staging cold/warm boundary payload measurements,
+forced conditional GET results and the original-wrapper controls. It explicitly
+distinguishes forced revalidation from natural expiry and asks for a specific unmet
+scenario and bot participation. No optimization, accepted scope or realized saving
+is claimed. The finding helps avoid assuming the older percentage remains valid.
+
 ## Follow-up discipline
 
-All three records have a manual September 15 status review date. These dates are not
+All four records have a manual September 15 status review date. These dates are not
 scheduled automations or authorization to repeatedly nudge maintainers. Earlier
 responses can change the next action. Preserve the existing contributors and
 reassess source freshness, scope and reviewer capacity when a response arrives.

@@ -2,9 +2,8 @@
   "id": "prism-1569-boundary-cache-verification",
   "project_id": "wfp-prism",
   "title": "Verify repeat-visit boundary transfers before extending cache lifetime",
-  "pipeline_state": "OPPORTUNITY-RESEARCH",
-  "research_next_step": "Trace final fetch options and boundary references; finish lockfile/lifecycle audit, then measure the existing browser fetch path for first load, warm reload, expired conditional response and changed content. Record actual transfer bytes and freshness, distinguishing controlled synthetic fixtures from any live-app observations. Reassess claimed savings before proposing content-addressed assets.",
-  "problem": "Large boundary JSON files retain stable paths and staging serves a one-hour cache lifetime. The endpoint supports 304 revalidation and an in-memory cache already exists, so the historical proposed transfer savings need independent verification.",
+  "pipeline_state": "MAINTAINER-CHECK",
+  "problem": "Current public staging already reuses all three Mozambique boundary files on a warm page load and returns 304 for forced conditional GETs. Historical 30\u201350% repeat-transfer savings remain unverified; a specific unmet cache/latency/freshness scenario is needed before an optimization.",
   "humanitarian_relevance": "Reducing repeated loading cost may help users of a humanitarian risk-monitoring tool on constrained networks. No measured operational or beneficiary outcome.",
   "evidence": [
     {
@@ -21,15 +20,20 @@
       "type": "measured",
       "claim": "Pinned code uses stable public JSON paths and already caches boundary data/promises in memory by layer/ISO3. Existing tests mock the loader. Entry point unregisters the service worker.",
       "source_id": "prism-cache-audit"
+    },
+    {
+      "type": "measured",
+      "claim": "Eleven controlled cases executing the unchanged pinned request wrapper in Canary pass, including expired unchanged/changed responses and freshness controls. Live staging loads 4,485,559 compressed body bytes initially, then zero reported boundary transfer on a warm load. Three forced conditional GETs return 304, with 768 total CDP encoded response bytes. Natural live one-hour expiry and user revisit patterns are not measured.",
+      "source_id": "prism-browser-cache-verification"
     }
   ],
-  "code_surface": "At master 603710958a025f15507164ccdaa24bc2515b70dc: frontend/vite.config.ts, firebase.json, scripts/country_build.sh, config/mozambique/layers.json, context/layers/boundary.ts, utils/boundary-cache.ts and its tests; fetchWithTimeout wrapper still to inspect.",
-  "proposed_change": "First establish actual avoidable transfer and required freshness. If justified and accepted, scope content-addressed static assets and reference rewriting; preserve dynamic data and update/rollback behavior.",
-  "tests": "Read three existing boundary-cache cases for force refresh, empty PMTiles and ISO3 keys. No target test execution. Proposed browser controls must measure GET bytes and new-content discovery across cache states.",
-  "environment": "Node >=20.6, Yarn 1.22.22, React/Vite and local common package. Manifest hooks, common build, Node Dockerfile and frontend CI inspected. No clone/install/target code/server/deployment. Lockfile/transitive hooks pending. Public HEAD requests require no account.",
-  "maintainer": "CODEOWNERS names ericboucher and wadhwamatic; no reviewer commitment or Humanifest outreach. Existing JSON-helper issue has two competing PRs and is excluded.",
-  "risks": "A 304 response may already avoid the claimed payload cost. Source size is not transfer size; staging is not proof of production revision. Long caching of mutable boundaries or dates could serve stale analysis. Browser eviction, compression and in-memory reuse affect benefit.",
-  "priority_rationale": "Public-benefit use case, current unassigned lead and concrete falsifiable browser-transfer investigation. Add research rather than claiming the historical saving or duplicating existing caching/PRs.",
+  "code_surface": "At master 603710958a025f15507164ccdaa24bc2515b70dc: frontend/vite.config.ts, firebase.json, scripts/country_build.sh, config/mozambique/layers.json, context/layers/boundary.ts, utils/boundary-cache.ts and its tests; fetchWithTimeout wrapper inspected and executed with original body and browser-native fetch.",
+  "proposed_change": "Do not implement a cache change from the historical percentage alone. Ask for a concrete retransferring or latency-sensitive scenario; if justified and accepted, scope versioned assets while preserving update discovery and rollback behavior.",
+  "tests": "Eleven controlled original-wrapper browser cases pass with independent server logs. Two live observation runs confirm cold/warm behavior; the second adds three forced conditional GETs, all 304. Canary 155.0.8046.0. No complete frontend Jest/build baseline or other-browser matrix.",
+  "environment": "Existing Node 24.19.0 and bundled Playwright 1.62.1; fresh automated Canary contexts. Synthetic loopback server and real public staging observation require no accounts or deployment. Wrapper source hash verified; only reviewed imports replaced by fail-fast sentinels and TypeScript syntax erased. Lockfile registry inventory completed, full transitive/lifecycle audit not. No target install or full frontend build.",
+  "maintainer": "Measured cache results and a narrow question were delivered as humanifest-bot at 2026-09-09T10:06:07Z. Await a specific unmet scenario and confirmation of bot participation; no accepted implementation scope. Manual September 15 review while other queue research continues.",
+  "risks": "Measured cases already avoid repeat payloads. Historical savings, natural live one-hour expiry, eviction/restarts, other browsers and operational latency remain unverified. Synthetic two-second expiry is distinct from live forced validation. Extending freshness on mutable paths can hide changed data.",
+  "priority_rationale": "Verification provides disconfirming evidence against unconditional large repeat-transfer savings. Await a specific useful scenario before spending implementation compute, and continue independent queue research.",
   "gates": {
     "humanitarian_relevance_supported": {
       "passed": true,
@@ -59,17 +63,20 @@
     },
     "problem_current_and_consequential": {
       "passed": false,
-      "rationale": "Staging JSON has a one-hour lifetime but supports 304 revalidation. Historical 30\u201350% transfer-saving claim is not independently verified; measure actual browser transfer and freshness before prioritizing a change."
+      "rationale": "No unmet repeat-payload case established: measured warm loads reuse all three boundary files and forced validation returns 304. Specific latency/eviction or deployment need remains to be demonstrated."
     },
     "behavior_reproducible_or_verifiable": {
-      "passed": false,
-      "rationale": "Live HEAD and conditional HEAD responses are measured; browser GET transfer, expiry/eviction and deployed application behavior remain unverified."
+      "passed": true,
+      "rationale": "Eleven original-wrapper browser controls pass; live cold/warm and forced-validation measurements confirm existing cache reuse. This verifies those cases, not the historical claimed saving.",
+      "source_ids": [
+        "prism-browser-cache-verification"
+      ]
     },
     "code_and_tests_located": {
       "passed": true,
-      "rationale": "Vite/public-asset configuration, stable boundary references, existing in-memory cache and three cache tests located; no target tests executed.",
+      "rationale": "Pinned wrapper and existing boundary cache tests located; original wrapper executed in controlled browser. Existing frontend unit suite not executed.",
       "source_ids": [
-        "prism-cache-audit"
+        "prism-browser-cache-verification"
       ]
     },
     "change_bounded": {
@@ -78,7 +85,7 @@
     },
     "regression_strategy_credible": {
       "passed": false,
-      "rationale": "Existing tests mock network loading and do not cover browser caching. First/warm/expired/changed-content controls proposed but not executed."
+      "rationale": "Cache semantics/freshness controls now execute, but no production change or agreed behavior is selected; full application regression plan remains unconfirmed."
     },
     "no_private_data_required": {
       "passed": true,
@@ -93,11 +100,11 @@
     },
     "environment_feasible": {
       "passed": false,
-      "rationale": "Manifests, Vite, Docker and CI inspected, but lockfile/lifecycle audit and frontend baseline remain. No installation or target execution."
+      "rationale": "Bounded wrapper and live-browser measurement feasible; full frontend build/Jest baseline and transitive lifecycle audit remain incomplete."
     },
     "maintainer_interest_confirmed": {
       "passed": false,
-      "rationale": "Issue open and unassigned with no comments; no Humanifest inquiry, accepted scope or bot eligibility."
+      "rationale": "Verified bot comment supplies measurements and asks for a specific unmet use case; delivery is not accepted scope, assignment or bot eligibility."
     },
     "probable_reviewer_identified": {
       "passed": false,
@@ -115,11 +122,11 @@
   "score_inputs": {
     "humanitarian_benefit": 3,
     "acceptance_probability": 0,
-    "technical_confidence": 1,
+    "technical_confidence": 2,
     "review_burden": 3,
     "deployment_probability": 0
   },
-  "score_basis": "Plausible constrained-network benefit; actual savings, accepted scope and deployment unverified, keeping implementation score zero.",
+  "score_basis": "Confidence in current cache observations improved, but additional benefit, accepted scope and deployment remain unverified; implementation score stays zero.",
   "sources": [
     {
       "id": "prism-purpose",
@@ -150,6 +157,17 @@
       "id": "prism-staging-boundary",
       "url": "https://staging-prism-frontend.web.app/data/mozambique/moz_bnd_adm3_WFP.json",
       "accessed": "2026-09-09"
+    },
+    {
+      "id": "prism-browser-cache-verification",
+      "url": "https://github.com/humanifest-bot/humanifest/blob/codex/cht-admin-environment-audit/research/2026-09-09-prism-browser-cache-verification.md",
+      "accessed": "2026-09-09"
+    },
+    {
+      "id": "prism-cache-delivery",
+      "url": "https://github.com/WFP-VAM/prism-app/issues/1569#issuecomment-5600104762",
+      "accessed": "2026-09-09"
     }
-  ]
+  ],
+  "next_external_status_check": "2026-09-15"
 }

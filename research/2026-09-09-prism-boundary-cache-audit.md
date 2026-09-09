@@ -1,7 +1,9 @@
 # PRISM boundary caching: verify savings before changing freshness
 
-Accessed September 9, 2026. Source/configuration inspection and three read-only
-HTTP HEAD requests; no clone, target installation/execution, deployment or outreach.
+Initial intake, September 9, 2026: source/configuration inspection and three
+read-only HEAD requests. Subsequent [browser verification](2026-09-09-prism-browser-cache-verification.md)
+now measures original-wrapper controls, actual staging loads and conditional GETs;
+this initial note records the earlier evidence boundary.
 
 ## Why this lead merits research
 
@@ -73,7 +75,7 @@ file. HEAD has no response body and does not measure browser GET traffic, cache
 retention, compression, rendering latency, eviction or actual user revisit patterns.
 Do not count a 17 MB Content-Length as 17 MB transferred in these checks.
 
-## Next independent work
+## Initial research plan (now executed in bounded browser verification)
 
 Trace the final fetch options and all references relevant to these three boundary
 files; complete the lockfile/lifecycle audit before executing target code. Then
