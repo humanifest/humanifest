@@ -3,7 +3,6 @@
   "project_id": "odk-central",
   "title": "Verify memory-unit mismatch in Central backend worker selection",
   "pipeline_state": "OPPORTUNITY-RESEARCH",
-  "research_next_step": "Inspect linked contribution/AI guidance and next-branch shell-test setup, then prepare a scope question separating byte-threshold normalization from #2170 CPU/heap sizing. Recheck linked work before outreach.",
   "problem": "Startup obtains memory limits in bytes but determines worker count using a 1100000 threshold. The original function returns four workers even for 512 MiB or 1 GiB inputs.",
   "humanitarian_relevance": "Resource-appropriate server operation could support constrained humanitarian field-data deployments. Specific adoption, resource savings and avoided outages are unmeasured.",
   "evidence": [
@@ -16,13 +15,18 @@
       "type": "self_reported",
       "claim": "A contributor reports production logs showing four workers at 2023899136 bytes; this high-memory example does not alone distinguish the threshold interpretations.",
       "source_id": "odk-prod-log"
+    },
+    {
+      "type": "measured",
+      "claim": "GitHub returned the exact prepared scope inquiry by humanifest-bot at 2026-09-09T03:51:43Z. The issue remained open/unassigned and next matched the audited SHA immediately before posting. No maintainer approval is established.",
+      "source_id": "odk-coordination"
     }
   ],
   "code_surface": "files/service/scripts/start-odk.sh: get_memory_limit and determine_worker_count; test/check-scripts.sh and test/service/service.spec.js.",
   "proposed_change": "Confirm the intended threshold units and strict boundary, then normalize units and add focused tests on a bot fork targeting next. Keep #2170 broader sizing policy separate; no implementation prepared.",
   "tests": "Eight hash-checked pure-function Bash cases pass. No cgroup discovery, Docker startup, target suite or resource benchmark executed.",
   "environment": "Read-only source downloads plus isolated function execution with only synthetic positional arguments. No target clone or install. Full startup reads secrets, writes configuration, migrates a database and starts services; do not source it for tests.",
-  "maintainer": "Issue open and unassigned at review. Timeline links #2170, and a PR search for 2169 returned zero matches; duplicate search is bounded. No outreach sent.",
+  "maintainer": "Scoped inquiry delivered as humanifest-bot at 2026-09-09T03:51:43Z; asks whether byte normalization and boundary tests are wanted separately from #2170, and requests intended threshold and AI contribution requirements. Delivery is not scope confirmation; no target implementation prepared.",
   "risks": "Startup behavior is operationally consequential. Preserve unknown-memory fallback and obtain agreement on threshold/worker policy. Do not claim measured compute savings from worker-count arithmetic.",
   "gates": {
     "humanitarian_relevance_supported": {
@@ -182,6 +186,12 @@
       "id": "odk-service-tests",
       "url": "https://github.com/getodk/central/blob/47e2f807a8cf10e8c09a528876ebb5a20d9adf34/test/service/service.spec.js",
       "accessed": "2026-09-08"
+    },
+    {
+      "id": "odk-coordination",
+      "url": "https://github.com/getodk/central/issues/2169#issuecomment-5595510841",
+      "accessed": "2026-09-08"
     }
-  ]
+  ],
+  "next_external_status_check": "2026-09-15"
 }

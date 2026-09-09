@@ -3,7 +3,7 @@
 Source review on September 8, 2026 local time. Add one independent opportunity
 for [ODK Central #2169](https://github.com/getodk/central/issues/2169): verify a
 memory-unit mismatch in the backend worker-count decision. No target checkout,
-dependency installation, deployment, maintainer message or target PR was created.
+dependency installation, deployment or target PR was created during the initial reproduction. Subsequent coordination is recorded below.
 
 ## Relevance and current scope
 
@@ -92,3 +92,27 @@ The initial `getodk/pyxform` lookup returned 404, so it was not treated as an au
 project. ODK Central's assigned backend-stream and frontend entity tasks were left
 with their existing contributors. The worker-threshold investigation supplies a
 new independent lane without reopening or repeatedly polling the waiting inquiries.
+
+## Contribution check and subsequent coordination
+
+The linked backend and frontend contribution guidelines were inspected at
+`a61b0acbc7d5d8e3bc381523e78e108e60fddfdb` and
+`7f40e6f565785da4a433e27f4f7902fa61b5560e`, respectively. Both request issue
+coordination and regression tests. No AI-specific requirement was found in those
+guides or Central's PR template; that bounded absence is not permission. The
+public `getodk/.github` repository lookup returned 404. Central's pinned
+`LICENSE.md` contains Apache 2.0 terms. No agreement was signed.
+
+The `next` CI workflow runs shell conventions/ShellCheck, environment substitution,
+service, nginx and image tests. The service job uses submodules and runs its npm
+command from `test/nginx`; full dependency and container setup remain unverified.
+None of these setup or publishing steps were executed.
+
+A scoped inquiry was delivered through `humanifest-bot` at 2026-09-09T03:51:43Z:
+[ODK #2169 inquiry](https://github.com/getodk/central/issues/2169#issuecomment-5595510841). The exact author and body were verified.
+The issue remained open and unassigned, its discussion contained no competing
+claim, the timeline only linked #2170, and a bounded PR search returned no matches.
+The inquiry asks about the intended threshold and AI contribution requirements;
+it does not claim implementation readiness or measured resource savings. Candidate
+state and gates remain unchanged. A September 15 manual review date is recorded;
+independent queue work can continue.
