@@ -3,7 +3,6 @@
   "project_id": "kobotoolbox-kpi",
   "title": "Support Kobo's existing incremental-sync PR with a same-second cursor regression",
   "pipeline_state": "MAINTAINER-CHECK",
-  "research_next_step": "Inspect the remaining contribution and AI policies, dependency hooks, services, and CI setup for the existing incremental-sync API tests before deciding whether an isolated baseline run is feasible.",
   "problem": "Issue #7259 reports that API consumers must re-download and compare entire submission collections to detect edits. Existing PR #7260 implements a modified-time field; Humanifest should investigate verification gaps and support its author, not open a replacement.",
   "humanitarian_relevance": "Correct incremental updates could reduce repeated data transfer and keep humanitarian analysis current. The reported workload is one user's account, not an independently measured platform-wide compute saving.",
   "evidence": [
@@ -36,12 +35,17 @@
       "type": "measured",
       "claim": "GitHub returned the exact prepared coordination body authored by humanifest-bot at 2026-09-09T00:02:57Z. This establishes delivery, not acceptance of the proposed work.",
       "source_id": "kobo-coordination"
+    },
+    {
+      "type": "measured",
+      "claim": "September 9 API read confirms PR #7260 remains open at the same pinned head. Contribution and setup review locates PostgreSQL-specific autouse fixtures, mock Mongo and eager Celery; production entrypoint/migrations are unnecessary for a focused test run. Approved local Docker query could not reach the engine. This is setup evidence, not a passing API baseline.",
+      "source_id": "kobo-environment-audit-2026-09-09"
     }
   ],
   "code_surface": "Pinned PR head 7968471a4d86ab701f61537499ee080144b2bf3e: all seven changed files and the new 100-line date-modified test file read. Traced OpenRosa backend -> MongoHelper query before response fallback; inspected AbstractTimeStampedModel and shared second-precision MONGO_STRFTIME.",
   "proposed_change": "Coordinate a focused frozen-time API regression case and explicit cursor/overlap semantics with the existing PR author. The original formatter maps distinct subsecond updates to equal strings; strict newer-than cursors can therefore miss updates at the boundary. Do not create a replacement PR or change the shared timestamp format without agreement. Full findings: research/2026-09-08-kobo-incremental-sync-audit.md.",
   "tests": "Ran a hash-checked standalone probe of the original formatter expression and fallback method: same-second timestamps collide, a later second advances, existing modified values survive, legacy values fall back, and missing timestamps remain missing. No target suite or database/API test ran. Proposed integration cases cover real edit/validation/attachment paths, equal-time cursors, delayed visibility and legacy filtering.",
-  "environment": "Public pinned-source inspection and Python standard-library probe only; no Kobo imports, clone, setup, dependencies, databases or production calls. Full stack/hook/CI inspection remains incomplete.",
+  "environment": "Completed pinned contribution/test-setup audit on September 9. The five existing tests need real Django/PostgreSQL fixtures despite mocked Mongo and eager Celery. CI uses Python 3.12, PostGIS 14/3.4, Redis 6.2 and native GDAL dependencies. The exact local Docker socket was queried with approved access but no engine was reachable; inspected host paths lack PostGIS/GDAL and Redis. No Kobo clone, dependency installation or target test ran. See research/2026-09-09-kobo-test-environment-audit.md for the isolated-runner prerequisites.",
   "maintainer": "A focused coordination question was posted as humanifest-bot at 2026-09-09T00:02:57Z on #7259, asking whether a frozen-time API test and cursor documentation are welcome within existing PR #7260. The PR head and issue openness were verified immediately before posting. Await current author/maintainer scope confirmation; no formal review or target code changes submitted.",
   "risks": "Strict timestamp cursors require an explicit sync contract; increasing precision alone does not handle delayed writes. Legacy query limitations and missing schema documentation are already disclosed by the PR author. The returned check list contained an automated review, not proof of the target test suite passing. Avoid duplicate work or overstating production data loss.",
   "priority_rationale": "Independent source verification identified an actionable same-second cursor boundary that the new tests do not exercise. A focused integration test and documented semantics could help the existing author; target scope and maintainer interest still require coordination.",
@@ -60,12 +64,15 @@
       "rationale": "CONTRIBUTING welcomes fork-based PRs, tests, and API documentation updates."
     },
     "contribution_policy_understood": {
-      "passed": false,
-      "rationale": "Not established in this initial research intake; inspect relevant evidence before advancing."
+      "passed": true,
+      "rationale": "Read pinned contribution guide, backend style, README, PR template and license notices. Fork/main workflow, tests, API docs, self-review and the template-specific documentation communication requirement are recorded. AI acceptance remains separately unresolved.",
+      "source_ids": [
+        "kobo-environment-audit-2026-09-09"
+      ]
     },
     "ai_policy_understood": {
       "passed": false,
-      "rationale": "Not established in this initial research intake; inspect relevant evidence before advancing."
+      "rationale": "No explicit AI policy found in the inspected contribution/README/template text or policy/agent filenames of the complete pinned tree. This bounded absence is not approval; the existing scope inquiry remains pending."
     },
     "problem_current_and_consequential": {
       "passed": false,
@@ -102,7 +109,7 @@
     },
     "environment_feasible": {
       "passed": false,
-      "rationale": "Standard-library probe runs without target dependencies, but this does not establish Kobo stack or target integration-test feasibility."
+      "rationale": "The existing test path was traced through real Django/PostgreSQL fixtures and mocked Mongo. The local Docker engine is unavailable and inspected host dependencies lack PostGIS/GDAL/Redis. No installation or target test ran; an isolated runner matching the CI dependencies is still needed."
     },
     "maintainer_interest_confirmed": {
       "passed": false,
@@ -212,6 +219,11 @@
       "id": "kobo-coordination",
       "url": "https://github.com/kobotoolbox/kpi/issues/7259#issuecomment-5593643546",
       "accessed": "2026-09-08"
+    },
+    {
+      "id": "kobo-environment-audit-2026-09-09",
+      "url": "https://github.com/humanifest-bot/humanifest/blob/codex/cht-admin-environment-audit/research/2026-09-09-kobo-test-environment-audit.md",
+      "accessed": "2026-09-09"
     }
   ],
   "work_kind": "support-existing-contribution"

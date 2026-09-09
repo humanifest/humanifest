@@ -152,3 +152,13 @@ All Tasking Manager paths below refer to the pinned commit above:
 - [Locked sandbox-iD manifest](https://github.com/osm-sandbox/sandbox-iD/blob/9e51118ca32676c17ed5fc5d20faccc078ebc2eb/package.json)
 - [Editor data builder](https://github.com/osm-sandbox/sandbox-iD/blob/9e51118ca32676c17ed5fc5d20faccc078ebc2eb/scripts/build_data.js)
 - [Locked placeholder manifest](https://github.com/hotosm/react-placeholder/blob/ef6301c4a017b91513c2c4b091d291d82d8b5916/package.json)
+
+## Subsequent identity-policy correction
+
+The [shared HOT contribution guide](https://docs.hotosm.org/become-a-contributor/#how-contributions-are-handled),
+read September 9 while screening Field-TM, explicitly excludes automated bot/AI
+accounts. The earlier audit missed this restriction. Human-led AI assistance and
+bot-account acceptance are different requirements. The opportunity is now PARKED
+under the user's bot-only identity constraint; the proposed install retry above is
+superseded. Preserve the findings, do not switch to the personal account, and do
+not resume setup or submit a PR without an explicitly accepted compatible pathway.

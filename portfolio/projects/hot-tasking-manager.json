@@ -18,8 +18,8 @@
     "current_public_activity": "Unarchived; GitHub pushed_at 2026-09-08T17:01:32Z. Recursive tree was not truncated. Activity does not prove issue freshness or available review capacity."
   },
   "contribution": {
-    "pathway": "Fork-based PRs against develop; issue linkage, tests, frontend formatting and extracted source strings are documented. Inspect submit/review instructions and environment before execution.",
-    "ai_policy": "Explicitly permits disclosed AI assistance, requires understanding and tests, and reserves good first issues for human learning. AGENTS requires honest assistance-level disclosure and a draft for unreviewed level-5 output; sensitive state, permission, geometry, scheduled-job and deployment changes must not be autonomous. The linked full responsible-AI guide remains to be read.",
+    "pathway": "Fork-based PRs against develop with tests, formatting and review. The required setup/contribution documents have been audited, but the shared HOT contribution guide excludes automated bot/AI accounts; Humanifest's current bot contribution pathway is incompatible. No agreement signed or exception established.",
+    "ai_policy": "Human-led disclosed AI assistance is permitted under agent and full responsible-AI guidance, with human review and protected-change limits. However, the shared HOT contribution guide explicitly does not accept contributions from automated bot/AI accounts. Humanifest's bot-only contribution pathway is not accepted by that published rule; do not treat AI assistance permission as bot-account approval.",
     "maintainer_check_required": true
   },
   "sources": [
@@ -47,6 +47,11 @@
       "id": "hot-agent-guide",
       "url": "https://github.com/hotosm/tasking-manager/blob/2b917a14ea7b0b76935c4e2d6985ab25764cd1c9/AGENTS.md",
       "accessed": "2026-09-08"
+    },
+    {
+      "id": "hot-bot-account-policy-2026-09-09",
+      "url": "https://docs.hotosm.org/become-a-contributor/#how-contributions-are-handled",
+      "accessed": "2026-09-09"
     }
   ]
 }

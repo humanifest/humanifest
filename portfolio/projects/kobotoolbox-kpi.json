@@ -18,8 +18,8 @@
     "current_public_activity": "Unarchived; GitHub pushed_at 2026-09-08T19:19:32Z. Recursive tree was not truncated."
   },
   "contribution": {
-    "pathway": "CONTRIBUTING welcomes fork-based PRs from main, tests, API documentation updates, lint, and same-license contributions. Its container execution instructions have been read but not executed or setup-audited.",
-    "ai_policy": "No explicit external AI policy was established from the retrieved CONTRIBUTING file. Inspect remaining policy/template sources and confirm disclosure expectations before submission.",
+    "pathway": "CONTRIBUTING welcomes fork-based PRs from main, tests, API documentation updates, lint, and same-license contributions. September 9 pinned-PR audit also read backend style, PR template and test/CI/Docker setup; no target setup executed. The template asks for a Support Docs Updates Zulip thread for user-facing docs; any such communication remains a separate scope consideration.",
+    "ai_policy": "No explicit AI policy found in the inspected contribution/README/template text or policy/agent filenames in the complete pinned PR tree. Absence is not acceptance; disclosure expectations remain unresolved.",
     "maintainer_check_required": true
   },
   "sources": [
@@ -37,6 +37,11 @@
       "id": "kobo-contributing",
       "url": "https://github.com/kobotoolbox/kpi/blob/74e520c0bc2ce33afe911f041cdb7071947cdae9/CONTRIBUTING.md",
       "accessed": "2026-09-08"
+    },
+    {
+      "id": "kobo-environment-audit-2026-09-09",
+      "url": "https://github.com/humanifest-bot/humanifest/blob/codex/cht-admin-environment-audit/research/2026-09-09-kobo-test-environment-audit.md",
+      "accessed": "2026-09-09"
     }
   ]
 }

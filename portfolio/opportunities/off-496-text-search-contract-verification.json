@@ -1,0 +1,170 @@
+{
+  "id": "off-496-text-search-contract-verification",
+  "project_id": "openfoodfacts-python",
+  "title": "Verify text-search semantics in the existing Open Food Facts SDK fix",
+  "pipeline_state": "OPPORTUNITY-RESEARCH",
+  "work_kind": "support-existing-contribution",
+  "research_next_step": "Inspect pinned PR #504 setup/dependencies, CI, remaining AI/license rules and test network behavior; run the unchanged relevant SDK tests in an isolated environment, then trace the server-side query contract. Preserve the existing author and do not infer full-text support from mocked HTTP success.",
+  "problem": "The README text_search example is reported to fail after CGI authentication changes. Existing PR #504 substitutes /api/v2/search while retaining search_terms, but official v2 docs say full-text search is unsupported. Its changed tests mock fixed results and cannot establish server search semantics.",
+  "humanitarian_relevance": "Correct product retrieval supports open food-information tools and research. This is a public-benefit pathway, not a demonstrated health or humanitarian-outcome improvement.",
+  "evidence": [
+    {
+      "type": "self_reported",
+      "claim": "Issue #496 reports HTTP 503 from the documented text_search example; a maintainer says the CGI endpoint now requires authentication.",
+      "source_id": "off-maintainer-auth"
+    },
+    {
+      "type": "measured",
+      "claim": "Read both changed-file diffs at PR head 970a7290a8a5869de8f5784324c166212fdd15ca: the method changes to /api/v2/search and retains search_terms; the tests change URL mocks and return predetermined products. No target test was run.",
+      "source_id": "off-search-audit"
+    },
+    {
+      "type": "measured",
+      "claim": "Current official v2 search documentation explicitly states that full-text requests are unsupported. This is documented contract evidence, not a live query result.",
+      "source_id": "off-v2-search"
+    }
+  ],
+  "code_surface": "src/openfoodfacts/api.py ProductResource.text_search and tests/unit/test_api.py in existing PR #504 at 970a7290a8a5869de8f5784324c166212fdd15ca.",
+  "proposed_change": "First verify the documented mismatch and support the existing author with a semantic regression strategy. Agree the supported search/authentication and compatibility contract before changing the SDK. No replacement PR or credential-in-URL workaround.",
+  "tests": "Both changed diffs inspected; mocked return values do not prove query-dependent server behavior. Proposed verification uses matching/nonmatching terms and pagination controls after setup/policy review. No SDK or live API test executed.",
+  "environment": "Read-only public source and documentation retrieval only. No clone, installation, target imports, live product query, credentials or production writes.",
+  "maintainer": "Existing PR author arybhatt4533. No Humanifest coordination sent, no human PR reviews returned in the inspected endpoint, and no confirmed scope or reviewer commitment for this contribution.",
+  "risks": "Returning HTTP success from an endpoint is insufficient if full-text semantics differ. Authentication and response compatibility need an explicit contract. Runtime, policy, license, deployment and realized benefit remain unverified. Avoid duplicating #507 or PR #504.",
+  "priority_rationale": "An existing patch has a specific documented search-contract mismatch that narrow mocked tests do not validate. A focused verification contribution may prevent a misleading fix while reducing review burden; acceptance and realized impact remain unknown.",
+  "gates": {
+    "humanitarian_relevance_supported": {
+      "passed": true,
+      "rationale": "Official project statement supports a public-benefit food-information and research pathway; no patch-level outcomes are claimed.",
+      "source_ids": [
+        "off-purpose"
+      ]
+    },
+    "repository_active": {
+      "passed": true,
+      "rationale": "Current repository is unarchived with September 2026 activity and an open search-fix PR.",
+      "source_ids": [
+        "off-repo",
+        "off-pr-504"
+      ]
+    },
+    "external_contributions_accepted": {
+      "passed": true,
+      "rationale": "Contribution guide explicitly welcomes fork-based PRs against develop; specific bot/AI and proposed-work acceptance remain unresolved.",
+      "source_ids": [
+        "off-contributing"
+      ]
+    },
+    "contribution_policy_understood": {
+      "passed": false,
+      "rationale": "Not established in this research intake; inspect supporting evidence before advancement."
+    },
+    "ai_policy_understood": {
+      "passed": false,
+      "rationale": "Not established in this research intake; inspect supporting evidence before advancement."
+    },
+    "problem_current_and_consequential": {
+      "passed": false,
+      "rationale": "Not established in this research intake; inspect supporting evidence before advancement."
+    },
+    "behavior_reproducible_or_verifiable": {
+      "passed": false,
+      "rationale": "A mismatch with the documented endpoint contract is source-backed. No SDK test, server query or end-to-end search reproduction ran."
+    },
+    "code_and_tests_located": {
+      "passed": true,
+      "rationale": "Read both changed-file diffs for existing PR #504 at 970a7290a8a5869de8f5784324c166212fdd15ca, including URL-only mock-test changes.",
+      "source_ids": [
+        "off-search-audit"
+      ]
+    },
+    "change_bounded": {
+      "passed": false,
+      "rationale": "Not established in this research intake; inspect supporting evidence before advancement."
+    },
+    "regression_strategy_credible": {
+      "passed": false,
+      "rationale": "Not established in this research intake; inspect supporting evidence before advancement."
+    },
+    "no_private_data_required": {
+      "passed": true,
+      "rationale": "Source review and synthetic search fixtures need no account credentials or private operational records.",
+      "source_ids": [
+        "off-search-audit"
+      ]
+    },
+    "security_and_licensing_risk_acceptable": {
+      "passed": false,
+      "rationale": "Not established in this research intake; inspect supporting evidence before advancement."
+    },
+    "environment_feasible": {
+      "passed": false,
+      "rationale": "Not established in this research intake; inspect supporting evidence before advancement."
+    },
+    "maintainer_interest_confirmed": {
+      "passed": false,
+      "rationale": "Maintainer explained the CGI authentication requirement, but has not confirmed this proposed verification contribution or replacement search contract. No Humanifest inquiry sent."
+    },
+    "probable_reviewer_identified": {
+      "passed": false,
+      "rationale": "Not established in this research intake; inspect supporting evidence before advancement."
+    },
+    "benefit_justifies_review_cost": {
+      "passed": false,
+      "rationale": "Not established in this research intake; inspect supporting evidence before advancement."
+    },
+    "user_can_explain_line_by_line": {
+      "passed": false,
+      "rationale": "Not established in this research intake; inspect supporting evidence before advancement."
+    }
+  },
+  "score_inputs": {
+    "humanitarian_benefit": 2.5,
+    "acceptance_probability": 0,
+    "technical_confidence": 0,
+    "review_burden": 2,
+    "deployment_probability": 0
+  },
+  "score_basis": "Provisional research relevance only; unknown acceptance, technical confidence and deployment keep implementation score zero.",
+  "sources": [
+    {
+      "id": "off-purpose",
+      "url": "https://blog.openfoodfacts.org/en/news/why-open-food-facts-is-independent-and-open-and-why-that-matters",
+      "accessed": "2026-09-09"
+    },
+    {
+      "id": "off-repo",
+      "url": "https://api.github.com/repos/openfoodfacts/openfoodfacts-python",
+      "accessed": "2026-09-09"
+    },
+    {
+      "id": "off-contributing",
+      "url": "https://github.com/openfoodfacts/openfoodfacts-python/blob/34d0629c970b3887a63c615ace7497a9a28b294b/CONTRIBUTING.md",
+      "accessed": "2026-09-09"
+    },
+    {
+      "id": "off-issue-496",
+      "url": "https://github.com/openfoodfacts/openfoodfacts-python/issues/496",
+      "accessed": "2026-09-09"
+    },
+    {
+      "id": "off-maintainer-auth",
+      "url": "https://github.com/openfoodfacts/openfoodfacts-python/issues/496#issuecomment-4865954261",
+      "accessed": "2026-09-09"
+    },
+    {
+      "id": "off-pr-504",
+      "url": "https://github.com/openfoodfacts/openfoodfacts-python/pull/504",
+      "accessed": "2026-09-09"
+    },
+    {
+      "id": "off-v2-search",
+      "url": "https://openfoodfacts.github.io/documentation/docs/Product-Opener/v2/search/get-search/",
+      "accessed": "2026-09-09"
+    },
+    {
+      "id": "off-search-audit",
+      "url": "https://github.com/humanifest-bot/humanifest/blob/codex/cht-admin-environment-audit/research/2026-09-09-openfoodfacts-search-contract-audit.md",
+      "accessed": "2026-09-09"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "id": "openfoodfacts-python",
+  "name": "Open Food Facts Python SDK",
+  "repository": "https://github.com/openfoodfacts/openfoodfacts-python",
+  "homepage": "https://world.openfoodfacts.org/",
+  "license": "Not yet audited; repository contains LICENSE and MIT/CC0 license files. Read applicability before implementation.",
+  "humanitarian_domain": "Public-benefit food information, transparent data access, health and sustainability research",
+  "impact_evidence": [
+    {
+      "type": "self_reported",
+      "claim": "Open Food Facts describes itself as a nonprofit publishing reusable food information for consumers, research and sustainability work. This supports a public-benefit pathway, not measured impact from an SDK patch.",
+      "source_id": "off-purpose"
+    }
+  ],
+  "maintenance": {
+    "default_branch": "develop",
+    "inspected_revision": "34d0629c970b3887a63c615ace7497a9a28b294b",
+    "current_public_activity": "Unarchived; GitHub pushed_at 2026-09-01T12:46:38Z. Current issue and PR discussions inspected September 9."
+  },
+  "contribution": {
+    "pathway": "CONTRIBUTING welcomes fork-based PRs against develop with tests and passing CI. Existing PR #504 belongs to another author; support it rather than submit a replacement.",
+    "ai_policy": "Not established from the initial contribution-guide read. Complete policy, template and license inspection before considering submission.",
+    "maintainer_check_required": true
+  },
+  "sources": [
+    {
+      "id": "off-purpose",
+      "url": "https://blog.openfoodfacts.org/en/news/why-open-food-facts-is-independent-and-open-and-why-that-matters",
+      "accessed": "2026-09-09"
+    },
+    {
+      "id": "off-repo",
+      "url": "https://api.github.com/repos/openfoodfacts/openfoodfacts-python",
+      "accessed": "2026-09-09"
+    },
+    {
+      "id": "off-contributing",
+      "url": "https://github.com/openfoodfacts/openfoodfacts-python/blob/34d0629c970b3887a63c615ace7497a9a28b294b/CONTRIBUTING.md",
+      "accessed": "2026-09-09"
+    },
+    {
+      "id": "off-search-audit",
+      "url": "https://github.com/humanifest-bot/humanifest/blob/codex/cht-admin-environment-audit/research/2026-09-09-openfoodfacts-search-contract-audit.md",
+      "accessed": "2026-09-09"
+    }
+  ]
+}

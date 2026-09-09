@@ -2,8 +2,7 @@
   "id": "hot-7227-archived-project-data-access",
   "project_id": "hot-tasking-manager",
   "title": "Investigate unavailable OSM data downloads for completed, archived projects",
-  "pipeline_state": "MAINTAINER-CHECK",
-  "research_next_step": "Use one bounded diagnostic retry of the frozen, scripts-disabled frontend install with the retained cache and informative fetch logging. If successful, run the existing AOI test with synthetic configuration and a socket/DNS guard, then reproduce the original download component. If fetching fails again, capture the endpoint/error and move to independent queue work.",
+  "pipeline_state": "PARKED",
   "problem": "Issue #7227 reports that a completed project cannot supply its building GeoJSON to data requestors. A HOT member identifies archived status as the reason downloads are not updated and suggests considering on-demand refresh for authorized project users.",
   "humanitarian_relevance": "Enabling access to validated mapping outputs has a direct operational pathway to requestors using maps. The affected user describes an immediate sharing problem; reach and realized benefit remain unmeasured.",
   "evidence": [
@@ -41,6 +40,11 @@
       "type": "measured",
       "claim": "Completed required contribution-policy and frontend setup review, including CI/Docker, CRACO/MSW and exact locked Git manifests. A local network guard rejected four socket/DNS/listen attempts. The single frozen scripts-disabled install timed out after 1,200 seconds during fetching; no target tests ran and environment readiness remains unconfirmed.",
       "source_id": "hot-environment-audit-2026-09-09"
+    },
+    {
+      "type": "measured",
+      "claim": "HOT's shared contribution guide states it does not accept contributions from automated bot/AI accounts. This is distinct from its permission for human-led AI assistance and makes the required Humanifest bot contribution workflow incompatible absent an explicit accepted pathway. The earlier setup audit omitted this restriction.",
+      "source_id": "hot-bot-account-policy-2026-09-09"
     }
   ],
   "code_surface": "Inspected pinned DownloadOsmData handler, messages, AOI-only downloadButtons tests, ProjectService.get_active_projects and TM-Extractor v1.0.1. A hash-checked standalone probe exercises the original handler with mocked browser/network objects; no React component coverage located for this handler.",
@@ -48,9 +52,8 @@
   "tests": "Ran research/fixtures/hot-download-reproduction.mjs against the hash-checked pinned handler on Node v22.16.0: 200 success control, 404 opening before status check, null browser handle misreported as extraction unavailable, and rejected HEAD control all verified; loading cleared in each. No React, browser, target suite or production reproduction. Component plan includes these cases and unsuccessful metadata HEAD requests.",
   "environment": "Pinned disposable sparse frontend checkout at 2b917a14ea7b0b76935c4e2d6985ab25764cd1c9. Required contribution docs, manifests, locked Git dependencies, CI/Docker and test setup were inspected. A minimal-environment Node 22.16.0/Yarn 1.22.22 frozen install with lifecycle scripts disabled timed out after 1,200 seconds during fetching following a network retry. No node_modules or target-test result; cache retained. No backend, editor build, Sentry upload, deployment or live account used.",
   "maintainer": "First scoped inquiry sent as humanifest-bot at 2026-09-09T01:38:11Z: asks whether frontend download failure handling is useful separately from archived-data refresh. It discloses mocked-handler scope and AI involvement, preserves scheduling/permissions, and does not claim to resolve #7227. Await maintainer scope confirmation and respect published human-review requirements.",
-  "risks": "Frontend error handling cannot restore missing archived artifacts. Actual deployed configuration, CORS and browser popup behavior remain unverified. HOT full AI guide requires human involvement in shared code updates and PR descriptions; no such review is claimed. Refresh crosses protected scheduling/permission boundaries.",
-  "priority_rationale": "Source investigation produced a verified handler failure and a distinct archive-selection path. Retain these findings for a bounded scope discussion; continue Kobo existing-PR verification independently while HOT readiness and human-review requirements remain unresolved.",
-  "next_external_status_check": "2026-09-15",
+  "risks": "Frontend error handling cannot restore missing archived artifacts. Actual deployed configuration, CORS and browser popup behavior remain unverified. HOT full AI guide requires human involvement in shared code updates and PR descriptions; no such review is claimed. Refresh crosses protected scheduling/permission boundaries. The shared HOT contribution guide explicitly excludes automated bot/AI accounts. The earlier audit missed that separate identity restriction; permission for AI assistance does not authorize bot-authored contributions.",
+  "priority_rationale": "Parked after September 9 review of HOT's organization-wide contribution guide: it does not accept contributions from automated bot/AI accounts. This conflicts with Humanifest's required bot identity. Preserve completed evidence; do not spend further setup/implementation compute or post a PR unless an authorized compatible pathway is explicitly established. Do not fall back to the personal account.",
   "gates": {
     "humanitarian_relevance_supported": {
       "passed": true,
@@ -61,8 +64,11 @@
       "rationale": "Unarchived repository pushed on 2026-09-08; inspected tree pinned."
     },
     "external_contributions_accepted": {
-      "passed": true,
-      "rationale": "Retrieved contribution guides explicitly welcome volunteer code contributions and fork-based PRs."
+      "passed": false,
+      "rationale": "External human contributions are welcomed, but the September 9 shared HOT guide explicitly rejects automated bot/AI accounts. Humanifest's required posting identity is humanifest-bot; no compatible exception or pathway is established.",
+      "source_ids": [
+        "hot-bot-account-policy-2026-09-09"
+      ]
     },
     "contribution_policy_understood": {
       "passed": true,
@@ -239,6 +245,11 @@
     {
       "id": "hot-environment-audit-2026-09-09",
       "url": "https://github.com/humanifest-bot/humanifest/blob/codex/cht-admin-environment-audit/research/2026-09-09-hot-frontend-environment-audit.md",
+      "accessed": "2026-09-09"
+    },
+    {
+      "id": "hot-bot-account-policy-2026-09-09",
+      "url": "https://docs.hotosm.org/become-a-contributor/#how-contributions-are-handled",
       "accessed": "2026-09-09"
     }
   ]
