@@ -1,0 +1,69 @@
+{
+  "id": "xlsform-pyxform",
+  "name": "XLSForm pyxform",
+  "repository": "https://github.com/XLSForm/pyxform",
+  "homepage": "https://xlsform.org/",
+  "review_organization": "github.com/getodk",
+  "license": "BSD-2-Clause; pinned LICENSE inspected September 9, 2026.",
+  "humanitarian_domain": "Spreadsheet form conversion for offline field-data collection and crisis-response workflows",
+  "impact_evidence": [
+    {
+      "type": "self_reported",
+      "claim": "The README identifies ODK maintenance and conversion for Collect, Web Forms and Enketo. This supports the field-data tooling pathway, not a measured contribution outcome.",
+      "source_id": "pyxform-readme"
+    },
+    {
+      "type": "self_reported",
+      "claim": "ODK publishes an American Red Cross crisis-response account. It does not measure benefit from the nested-repeat issue.",
+      "source_id": "odk-crisis-response"
+    }
+  ],
+  "maintenance": {
+    "default_branch": "master",
+    "inspected_revision": "26006d0830570ffa3caead24b0c9a470278af2cf",
+    "archived": false,
+    "pushed_at": "2026-08-27T05:01:23Z"
+  },
+  "contribution": {
+    "pathway": "Focused contributions normally discussed first in the ODK forum or an issue. PR template requires regression tests, unittest, Ruff and attribution. The README identifies ODK maintenance, so review capacity is grouped with getodk despite the XLSForm repository owner.",
+    "ai_policy": "No explicit AI/bot policy established in inspected README, PR template or tree filename search. Bot identity eligibility remains unconfirmed.",
+    "maintainer_check_required": true
+  },
+  "sources": [
+    {
+      "id": "pyxform-repo",
+      "url": "https://api.github.com/repos/XLSForm/pyxform",
+      "accessed": "2026-09-09"
+    },
+    {
+      "id": "pyxform-readme",
+      "url": "https://github.com/XLSForm/pyxform/blob/26006d0830570ffa3caead24b0c9a470278af2cf/README.md",
+      "accessed": "2026-09-09"
+    },
+    {
+      "id": "pyxform-821",
+      "url": "https://github.com/XLSForm/pyxform/issues/821",
+      "accessed": "2026-09-09"
+    },
+    {
+      "id": "pyxform-explore",
+      "url": "https://github.com/XLSForm/pyxform/issues/821#issuecomment-5208346343",
+      "accessed": "2026-09-09"
+    },
+    {
+      "id": "pyxform-client-priority",
+      "url": "https://github.com/getodk/web-forms/issues/380#issuecomment-3993922608",
+      "accessed": "2026-09-09"
+    },
+    {
+      "id": "pyxform-audit",
+      "url": "https://github.com/humanifest-bot/humanifest/blob/codex/cht-admin-environment-audit/research/2026-09-09-pyxform-nested-repeat-audit.md",
+      "accessed": "2026-09-09"
+    },
+    {
+      "id": "odk-crisis-response",
+      "url": "https://getodk.org/success-stories/crisis-response/",
+      "accessed": "2026-09-09"
+    }
+  ]
+}

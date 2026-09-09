@@ -1,0 +1,160 @@
+{
+  "id": "pyxform-821-nested-repeat-instances",
+  "project_id": "xlsform-pyxform",
+  "title": "Investigate initial nested-repeat instances in XLSForm conversion",
+  "pipeline_state": "OPPORTUNITY-RESEARCH",
+  "research_next_step": "Finish converter/validator import audit, prepare an isolated pinned environment and run unchanged tests/test_repeat.py. Then convert synthetic one-to-three-level repeats, direct/group-separated nesting and defaults, with repeat_count controls; count concrete children separately under template and concrete ancestors. Report scope/effort before proposing a patch.",
+  "problem": "Issue #821 reports inconsistent concrete initial instances for nested repeats. Existing tests check template/concrete presence without constraining ancestor template status, so they do not by themselves establish the intended structure for adding new outer repeats.",
+  "humanitarian_relevance": "Reliable repeat structure supports field-data forms in ODK. No verified data loss or high-impact outcome is established; the related client discussion describes the form as usable.",
+  "evidence": [
+    {
+      "type": "self_reported",
+      "claim": "lognaturel reports repeated encounters and requests investigating effort for consistent initial instances at all nesting depths. This is not approval of a Humanifest implementation.",
+      "source_id": "pyxform-explore"
+    },
+    {
+      "type": "measured",
+      "claim": "Pinned source and two existing test assertions inspected; generator has distinct direct-repeat and ordinary-section recursion paths, and nested XPath assertions leave ancestor template status unconstrained. No runtime reproduction yet.",
+      "source_id": "pyxform-audit"
+    }
+  ],
+  "code_surface": "pyxform/section.py Section.xml_instance and RepeatingSection.xml_instance_template; tests/test_repeat.py test_repeat_adding_template_and_instance and grouped variant at pinned master 26006d0830570ffa3caead24b0c9a470278af2cf.",
+  "proposed_change": "Establish a synthetic XML structure matrix and effort estimate for #821, then agree the intended contract and regression scope. Keep #462 repeat-count policy separate unless maintainers confirm overlap.",
+  "tests": "Static inspection identifies 68 test methods in tests/test_repeat.py, including existing nested-template tests. None executed. Proposed assertions distinguish each ancestor template/concrete branch and preserve default values. Client rendering and saved submissions require separate verification.",
+  "environment": "Read-only pinned files and setup audit only; no clone or execution. Three pinned core dependencies, four dev dependencies and Flit backend; no lockfile. Remaining validator/import inspection precedes isolated wheel setup. CI matrix includes Java validation separately.",
+  "maintainer": "lognaturel and lindsay-stevens participated in the public issue. No Humanifest message, accepted scope, assignment, reviewer commitment or bot-eligibility confirmation.",
+  "risks": "Arbitrary nesting, groups, default values and repeat_count can affect compatibility across Collect, Web Forms and Enketo. Do not infer submission behavior from XML alone or promise impact from an explicitly noncritical client issue.",
+  "priority_rationale": "A maintainer-requested effort investigation has identifiable generator/tests and can run independently of waiting PRs. Keep priority provisional until reproducibility, practical consequence and accepted scope are verified.",
+  "gates": {
+    "humanitarian_relevance_supported": {
+      "passed": true,
+      "rationale": "The converter supports ODK field-data tools and ODK documents crisis-response use. No issue-specific outcome is measured.",
+      "source_ids": [
+        "pyxform-readme",
+        "odk-crisis-response"
+      ]
+    },
+    "repository_active": {
+      "passed": true,
+      "rationale": "Repository is unarchived, pushed August 27, and the August discussion requests a focused effort investigation.",
+      "source_ids": [
+        "pyxform-repo",
+        "pyxform-explore"
+      ]
+    },
+    "external_contributions_accepted": {
+      "passed": false,
+      "rationale": "README welcomes focused contributions; eligibility of the required humanifest-bot identity is not established."
+    },
+    "contribution_policy_understood": {
+      "passed": true,
+      "rationale": "Read README discussion-first guidance and PR test/lint/attribution requirements. Bot eligibility remains separate and unresolved.",
+      "source_ids": [
+        "pyxform-audit"
+      ]
+    },
+    "ai_policy_understood": {
+      "passed": false,
+      "rationale": "Not yet established for this research candidate; inspect evidence before advancing."
+    },
+    "problem_current_and_consequential": {
+      "passed": false,
+      "rationale": "Open issue and August request support investigating current behavior, but the related client discussion calls it usable and noncritical. Consequential operational impact is not demonstrated."
+    },
+    "behavior_reproducible_or_verifiable": {
+      "passed": false,
+      "rationale": "Not yet established for this research candidate; inspect evidence before advancing."
+    },
+    "code_and_tests_located": {
+      "passed": true,
+      "rationale": "Pinned section generator and two existing template/instance tests inspected. Nested XPath assertions do not constrain ancestor template status. None executed.",
+      "source_ids": [
+        "pyxform-audit"
+      ]
+    },
+    "change_bounded": {
+      "passed": false,
+      "rationale": "The research matrix is bounded, but arbitrary nesting, groups, defaults and repeat_count make implementation scope and compatibility uncertain."
+    },
+    "regression_strategy_credible": {
+      "passed": false,
+      "rationale": "Not yet established for this research candidate; inspect evidence before advancing."
+    },
+    "no_private_data_required": {
+      "passed": true,
+      "rationale": "A synthetic nesting/default/repeat-count matrix can examine generated XML without collecting operational form responses.",
+      "source_ids": [
+        "pyxform-audit"
+      ]
+    },
+    "security_and_licensing_risk_acceptable": {
+      "passed": false,
+      "rationale": "Not yet established for this research candidate; inspect evidence before advancing."
+    },
+    "environment_feasible": {
+      "passed": false,
+      "rationale": "Not yet established for this research candidate; inspect evidence before advancing."
+    },
+    "maintainer_interest_confirmed": {
+      "passed": false,
+      "rationale": "The public request to explore effort supports research, but no maintainer has accepted Humanifest support, implementation scope or bot identity."
+    },
+    "probable_reviewer_identified": {
+      "passed": false,
+      "rationale": "Not yet established for this research candidate; inspect evidence before advancing."
+    },
+    "benefit_justifies_review_cost": {
+      "passed": false,
+      "rationale": "Not yet established for this research candidate; inspect evidence before advancing."
+    },
+    "user_can_explain_line_by_line": {
+      "passed": false,
+      "rationale": "Not yet established for this research candidate; inspect evidence before advancing."
+    }
+  },
+  "score_inputs": {
+    "humanitarian_benefit": 2,
+    "acceptance_probability": 0,
+    "technical_confidence": 0,
+    "review_burden": 3,
+    "deployment_probability": 0
+  },
+  "score_basis": "Research relevance only. Unknown acceptance, runtime confidence and deployment keep implementation score zero.",
+  "sources": [
+    {
+      "id": "pyxform-repo",
+      "url": "https://api.github.com/repos/XLSForm/pyxform",
+      "accessed": "2026-09-09"
+    },
+    {
+      "id": "pyxform-readme",
+      "url": "https://github.com/XLSForm/pyxform/blob/26006d0830570ffa3caead24b0c9a470278af2cf/README.md",
+      "accessed": "2026-09-09"
+    },
+    {
+      "id": "pyxform-821",
+      "url": "https://github.com/XLSForm/pyxform/issues/821",
+      "accessed": "2026-09-09"
+    },
+    {
+      "id": "pyxform-explore",
+      "url": "https://github.com/XLSForm/pyxform/issues/821#issuecomment-5208346343",
+      "accessed": "2026-09-09"
+    },
+    {
+      "id": "pyxform-client-priority",
+      "url": "https://github.com/getodk/web-forms/issues/380#issuecomment-3993922608",
+      "accessed": "2026-09-09"
+    },
+    {
+      "id": "pyxform-audit",
+      "url": "https://github.com/humanifest-bot/humanifest/blob/codex/cht-admin-environment-audit/research/2026-09-09-pyxform-nested-repeat-audit.md",
+      "accessed": "2026-09-09"
+    },
+    {
+      "id": "odk-crisis-response",
+      "url": "https://getodk.org/success-stories/crisis-response/",
+      "accessed": "2026-09-09"
+    }
+  ]
+}
