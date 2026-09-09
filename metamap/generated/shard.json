@@ -2,7 +2,7 @@
   "schemaVersion": "2.0.0",
   "id": "urn:humanifest:portfolio",
   "namespace": "humanifest",
-  "revision": "sha256:d94b5ee30c38c3c8c400380fb39be39a24bdbd6eda9acbeedc99b3d85fc50a0a",
+  "revision": "sha256:27b6a0ca7c517eba7b06c8ddc08b1fe558dab7aa6062d6ad6bd0f967721af64a",
   "entities": [
     {
       "id": "urn:humanifest:routing:policy:contribution-protocol",
@@ -1866,7 +1866,7 @@
       "attributes": {
         "recordId": "cht-11342-dhis2-bs-month-export",
         "path": "portfolio/opportunities/cht-dhis2-bs-month-export.json",
-        "digest": "sha256:3eb81269d4af4008d2ac13489a18ee668262688d7707631412e6aa9c8c15c9de",
+        "digest": "sha256:0c6f1e527a12a58c76df81f96fe89b2f8bc64171606e3bd58671143d0caf4179",
         "projectId": "community-health-toolkit"
       },
       "provenance": {
@@ -1880,7 +1880,7 @@
       "label": "portfolio/opportunities/cht-dhis2-bs-month-export.json",
       "attributes": {
         "path": "portfolio/opportunities/cht-dhis2-bs-month-export.json",
-        "digest": "sha256:3eb81269d4af4008d2ac13489a18ee668262688d7707631412e6aa9c8c15c9de"
+        "digest": "sha256:0c6f1e527a12a58c76df81f96fe89b2f8bc64171606e3bd58671143d0caf4179"
       },
       "provenance": {
         "status": "generated",
@@ -2031,6 +2031,32 @@
       }
     },
     {
+      "id": "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Acht-11342-dhis2-bs-month-export%3Adhis-runtime-2026-09-09",
+      "kind": "hf:source",
+      "label": "urn:humanifest:hf:opportunity:cht-11342-dhis2-bs-month-export:dhis-runtime-2026-09-09",
+      "attributes": {
+        "url": "https://github.com/humanifest-bot/humanifest/blob/codex/cht-admin-environment-audit/research/2026-09-09-cht-dhis-period-reproduction.md",
+        "accessed": "2026-09-09"
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Acht-11342-dhis2-bs-month-export%3Aissue-11342-recheck-2026-09-09",
+      "kind": "hf:source",
+      "label": "urn:humanifest:hf:opportunity:cht-11342-dhis2-bs-month-export:issue-11342-recheck-2026-09-09",
+      "attributes": {
+        "url": "https://github.com/medic/cht-core/issues/11342",
+        "accessed": "2026-09-09"
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
       "id": "urn:humanifest:hf:evidence:urn%3Ahumanifest%3Ahf%3Aopportunity%3Acht-11342-dhis2-bs-month-export%3A0",
       "kind": "hf:evidence",
       "label": "Issue author reports a local 5.2.0 reproduction where an August 2026 export returned the BS 2083-04 total rather than the stored 2083-05 total.",
@@ -2082,6 +2108,30 @@
       "id": "urn:humanifest:hf:evidence:urn%3Ahumanifest%3Ahf%3Aopportunity%3Acht-11342-dhis2-bs-month-export%3A4",
       "kind": "hf:evidence",
       "label": "At the inspected commit, targetDocsInMonth derives the Bikram Sambat lookup month from moment(timestamp), and the caller passes the selected from date.",
+      "attributes": {
+        "evidenceType": "measured"
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:hf:evidence:urn%3Ahumanifest%3Ahf%3Aopportunity%3Acht-11342-dhis2-bs-month-export%3A5",
+      "kind": "hf:evidence",
+      "label": "At pinned CHT 35b2bb6d, 37 existing calendar tests and eight original-exporter synthetic-data boundary cases pass. Four cases distinguish adjacent nonzero totals. The original admin controller retains July 14 versus July 15 under the same July label on successive visit dates. No real database, rendered UI or deployment was tested.",
+      "attributes": {
+        "evidenceType": "measured"
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:hf:evidence:urn%3Ahumanifest%3Ahf%3Aopportunity%3Acht-11342-dhis2-bs-month-export%3A6",
+      "kind": "hf:evidence",
+      "label": "September 9 read-only GitHub check found #11342 open, unassigned and without comments. The issue author describes the BS work as an unreleased epic; release or deployment status was not independently established by this check.",
       "attributes": {
         "evidenceType": "measured"
       },
@@ -2279,7 +2329,7 @@
       "attributes": {
         "passed": false,
         "cited": true,
-        "rationale": "Rechecked 2026-09-08: the issue has no comments or assignees; no issue-level confirmation was found."
+        "rationale": "Rechecked September 9: the issue remains open, unassigned and without comments. The prepared reproduction and scope question do not establish maintainer confirmation."
       },
       "provenance": {
         "status": "generated",
@@ -11818,6 +11868,70 @@
       }
     },
     {
+      "id": "urn:humanifest:mapping:f8ca5bad48c58b2ae13ab5cebc88fd730834743649c3ab3e409041f10edea4a0",
+      "relation": "hf:source",
+      "sources": [
+        "urn:humanifest:hf:opportunity:cht-11342-dhis2-bs-month-export"
+      ],
+      "targets": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Acht-11342-dhis2-bs-month-export%3Adhis-runtime-2026-09-09"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:3559b28b90a003f08af81dc6550c3d6f457733b4b8a7a8b4408114912b55514f",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Acht-11342-dhis2-bs-month-export%3Adhis-runtime-2026-09-09"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fopportunities%2Fcht-dhis2-bs-month-export.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:60715f051fdee2d0018efdc18f7c789f960da06d698cc20d2f41ca0335b47d3e",
+      "relation": "hf:source",
+      "sources": [
+        "urn:humanifest:hf:opportunity:cht-11342-dhis2-bs-month-export"
+      ],
+      "targets": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Acht-11342-dhis2-bs-month-export%3Aissue-11342-recheck-2026-09-09"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:ab65f98ea32f83fbc562d5de78b6f5c22f30621df38d2645c4a1a6b47bcd5e0b",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Acht-11342-dhis2-bs-month-export%3Aissue-11342-recheck-2026-09-09"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fopportunities%2Fcht-dhis2-bs-month-export.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
       "id": "urn:humanifest:mapping:bc90ac2263a16c6ac98c1f222502926016cd42c34ece3a8963c19390af874c6f",
       "relation": "hf:evidence",
       "sources": [
@@ -12046,6 +12160,102 @@
       "relation": "hf:current_record",
       "sources": [
         "urn:humanifest:hf:evidence:urn%3Ahumanifest%3Ahf%3Aopportunity%3Acht-11342-dhis2-bs-month-export%3A4"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fopportunities%2Fcht-dhis2-bs-month-export.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:89abbe029be51753087d2fcc93cb724b0cc2b4fc3a610b65229f7f2e71d96a82",
+      "relation": "hf:evidence",
+      "sources": [
+        "urn:humanifest:hf:opportunity:cht-11342-dhis2-bs-month-export"
+      ],
+      "targets": [
+        "urn:humanifest:hf:evidence:urn%3Ahumanifest%3Ahf%3Aopportunity%3Acht-11342-dhis2-bs-month-export%3A5"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:b222c74fb8fa3ad191d66185c038c0b9f0708bf10399affea820018874a84b8b",
+      "relation": "hf:source",
+      "sources": [
+        "urn:humanifest:hf:evidence:urn%3Ahumanifest%3Ahf%3Aopportunity%3Acht-11342-dhis2-bs-month-export%3A5"
+      ],
+      "targets": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Acht-11342-dhis2-bs-month-export%3Adhis-runtime-2026-09-09"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:e7f810124f5b1d1f52f1edf7eb67e6ad72d6a391378d44230836b7fc3ad4d364",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:evidence:urn%3Ahumanifest%3Ahf%3Aopportunity%3Acht-11342-dhis2-bs-month-export%3A5"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fopportunities%2Fcht-dhis2-bs-month-export.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:36fa5afa61041021bca7fd5173de2a1739e3fba3d964a99cae95c6a2365843c7",
+      "relation": "hf:evidence",
+      "sources": [
+        "urn:humanifest:hf:opportunity:cht-11342-dhis2-bs-month-export"
+      ],
+      "targets": [
+        "urn:humanifest:hf:evidence:urn%3Ahumanifest%3Ahf%3Aopportunity%3Acht-11342-dhis2-bs-month-export%3A6"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:a73e04963c379813ad0c1041c8a19989f496b7e519737ed102b4b62f76ba59e4",
+      "relation": "hf:source",
+      "sources": [
+        "urn:humanifest:hf:evidence:urn%3Ahumanifest%3Ahf%3Aopportunity%3Acht-11342-dhis2-bs-month-export%3A6"
+      ],
+      "targets": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Acht-11342-dhis2-bs-month-export%3Aissue-11342-recheck-2026-09-09"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:62c47b7271e65444c3f143abc359d79056cd516f6fadabae2054c96299bdcc81",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:evidence:urn%3Ahumanifest%3Ahf%3Aopportunity%3Acht-11342-dhis2-bs-month-export%3A6"
       ],
       "targets": [
         "urn:humanifest:hf:record:portfolio%2Fopportunities%2Fcht-dhis2-bs-month-export.json"
@@ -12970,13 +13180,13 @@
       }
     },
     {
-      "id": "urn:humanifest:mapping:02983e56129556bce60dc6e9dfabe14b60d1d3662f80b5b36d530778d5ca5780",
+      "id": "urn:humanifest:mapping:1a413826e9e83d406f4ddaeae51bc17503dc604f43135ad7586ee040f0eae23e",
       "relation": "hf:source",
       "sources": [
         "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Acht-11342-dhis2-bs-month-export%3Amaintainer_interest_confirmed"
       ],
       "targets": [
-        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Acht-11342-dhis2-bs-month-export%3Aissue-11342-recheck-2026-09-08"
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Acht-11342-dhis2-bs-month-export%3Aissue-11342-recheck-2026-09-09"
       ],
       "cardinality": "one-to-one",
       "lossiness": "lossless",
@@ -13034,13 +13244,13 @@
       }
     },
     {
-      "id": "urn:humanifest:mapping:846951ce6ea2e463381791596515a64dcc660e1cd1573dff8a9983e6c9ffc36e",
+      "id": "urn:humanifest:mapping:debe460f0755506a5198ea744ab4aea488afbd1bcfa458c0f63099a909b9596a",
       "relation": "hf:source",
       "sources": [
         "urn:humanifest:hf:confirmation:cht-11342-dhis2-bs-month-export"
       ],
       "targets": [
-        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Acht-11342-dhis2-bs-month-export%3Aissue-11342-recheck-2026-09-08"
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Acht-11342-dhis2-bs-month-export%3Aissue-11342-recheck-2026-09-09"
       ],
       "cardinality": "one-to-one",
       "lossiness": "lossless",
