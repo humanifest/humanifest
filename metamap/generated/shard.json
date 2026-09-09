@@ -2,7 +2,7 @@
   "schemaVersion": "2.0.0",
   "id": "urn:humanifest:portfolio",
   "namespace": "humanifest",
-  "revision": "sha256:e7aa7d5f222266ce3c38ac4124b67f3a60ec886cd100c6badd7eea79e007128a",
+  "revision": "sha256:0faf572f112e0e5fc9a0470fedbab3e3e5e240d5f2c7a1eedb6c23f084a4d774",
   "entities": [
     {
       "id": "urn:humanifest:routing:policy:contribution-protocol",
@@ -1448,7 +1448,7 @@
       "attributes": {
         "recordId": "owa-epanet",
         "path": "portfolio/projects/owa-epanet.json",
-        "digest": "sha256:c7fc464da757541771d5dc074a12151085a0a89bcd237305e9d0d72fc38d8faf",
+        "digest": "sha256:e113218ac1abe3089f43e5a0dab6db1b60cb7abfa1ba91e3c352fb3b9e567ee9",
         "projectId": null
       },
       "provenance": {
@@ -1462,7 +1462,7 @@
       "label": "portfolio/projects/owa-epanet.json",
       "attributes": {
         "path": "portfolio/projects/owa-epanet.json",
-        "digest": "sha256:c7fc464da757541771d5dc074a12151085a0a89bcd237305e9d0d72fc38d8faf"
+        "digest": "sha256:e113218ac1abe3089f43e5a0dab6db1b60cb7abfa1ba91e3c352fb3b9e567ee9"
       },
       "provenance": {
         "status": "generated",
@@ -1527,6 +1527,19 @@
       "label": "urn:humanifest:hf:project:owa-epanet:epanet-tank-audit",
       "attributes": {
         "url": "https://github.com/humanifest-bot/humanifest/blob/codex/cht-admin-environment-audit/research/2026-09-09-epanet-tank-curve-audit.md",
+        "accessed": "2026-09-09"
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aproject%3Aowa-epanet%3Aepanet-native-reproduction",
+      "kind": "hf:source",
+      "label": "urn:humanifest:hf:project:owa-epanet:epanet-native-reproduction",
+      "attributes": {
+        "url": "https://github.com/humanifest-bot/humanifest/blob/codex/cht-admin-environment-audit/research/2026-09-09-epanet-native-reproduction.md",
         "accessed": "2026-09-09"
       },
       "provenance": {
@@ -4488,7 +4501,7 @@
       "attributes": {
         "recordId": "epanet-883-tank-volume-curve-validation",
         "path": "portfolio/opportunities/epanet-883-tank-volume-curve-validation.json",
-        "digest": "sha256:199f57c495b6ce995c81a0f32b926de62f0f41309d78d4463f2b7d558f2c0023",
+        "digest": "sha256:88f2f38d92f7d72143b0160513757ec0c358dbc2ff22454fd66a60dc1d5fcf4e",
         "projectId": "owa-epanet"
       },
       "provenance": {
@@ -4502,7 +4515,7 @@
       "label": "portfolio/opportunities/epanet-883-tank-volume-curve-validation.json",
       "attributes": {
         "path": "portfolio/opportunities/epanet-883-tank-volume-curve-validation.json",
-        "digest": "sha256:199f57c495b6ce995c81a0f32b926de62f0f41309d78d4463f2b7d558f2c0023"
+        "digest": "sha256:88f2f38d92f7d72143b0160513757ec0c358dbc2ff22454fd66a60dc1d5fcf4e"
       },
       "provenance": {
         "status": "generated",
@@ -4575,6 +4588,19 @@
       }
     },
     {
+      "id": "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aepanet-883-tank-volume-curve-validation%3Aepanet-native-reproduction",
+      "kind": "hf:source",
+      "label": "urn:humanifest:hf:opportunity:epanet-883-tank-volume-curve-validation:epanet-native-reproduction",
+      "attributes": {
+        "url": "https://github.com/humanifest-bot/humanifest/blob/codex/cht-admin-environment-audit/research/2026-09-09-epanet-native-reproduction.md",
+        "accessed": "2026-09-09"
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
       "id": "urn:humanifest:hf:evidence:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aepanet-883-tank-volume-curve-validation%3A0",
       "kind": "hf:evidence",
       "label": "Reporter says invalid tank-volume curves can produce decreasing volume while filling and a floating-point exception when negative area is converted to diameter. These runtime claims have not been independently reproduced.",
@@ -4590,6 +4616,18 @@
       "id": "urn:humanifest:hf:evidence:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aepanet-883-tank-volume-curve-validation%3A1",
       "kind": "hf:evidence",
       "label": "Pinned file initialization and two API assignment routes derive area from endpoint slope. Curve point/bulk setters check increasing X but not Y; generic decreasing pump curves must remain valid. Existing curve/node tests inspected, not run.",
+      "attributes": {
+        "evidenceType": "measured"
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:hf:evidence:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aepanet-883-tank-volume-curve-validation%3A2",
+      "kind": "hf:evidence",
+      "label": "Thirty-four native-library cases pass as current-behavior assertions across GPM/LPS units, three curve shapes and five entry paths, plus cylindrical and decreasing-pump controls. All open/assignment/hydraulic-initialization calls succeed. Direct decreasing assignment yields NaN diameter; interior dips and subsequent edits retain finite diameter while volume decreases with greater requested depth. Metric EN_VOLCURVE assignment also yields 0.3048 times the diameter from file/EN_settankdata routes for the same valid curve. All 144 tracked source files remain byte-identical before build and after probes.",
       "attributes": {
         "evidenceType": "measured"
       },
@@ -4675,7 +4713,7 @@
       "attributes": {
         "passed": false,
         "cited": false,
-        "rationale": "Open report and current source support investigating invalid tank curves; full input acceptance, runtime effects and operational consequences remain unverified."
+        "rationale": "Current pinned runtime accepts invalid volume ordering and returns NaN diameter without errors. Operational consequences and practical priority remain unconfirmed."
       },
       "provenance": {
         "status": "generated",
@@ -4687,9 +4725,9 @@
       "kind": "hf:gate",
       "label": "behavior_reproducible_or_verifiable",
       "attributes": {
-        "passed": false,
-        "cited": false,
-        "rationale": "Not established in this bounded source intake; verify before implementation."
+        "passed": true,
+        "cited": true,
+        "rationale": "34 assertions exercise the compiled original library, including malformed water-storage curves, genuine parser/API routes, valid pump/cylindrical controls and US/metric cases. Source remains unchanged. This verifies the stated input-handling behavior only."
       },
       "provenance": {
         "status": "generated",
@@ -4731,7 +4769,7 @@
       "attributes": {
         "passed": false,
         "cited": false,
-        "rationale": "Valid/inverted/interior-dip curves, cylindrical/pump controls and unit comparisons are planned; no target test has run."
+        "rationale": "Real-library controls now cover five entry paths and both unit systems. Existing Boost baseline, accepted failure/rollback semantics and production regression integration remain."
       },
       "provenance": {
         "status": "generated",
@@ -4773,7 +4811,7 @@
       "attributes": {
         "passed": false,
         "cited": false,
-        "rationale": "CMake/Clang/Boost route inspected. Clang present, CMake absent from PATH and Boost absent at checked Homebrew paths; isolated setup and test baseline remain."
+        "rationale": "Original native library builds and 34 public-API cases pass in isolation. Boost test dependencies and unchanged-suite baseline remain before full environment readiness."
       },
       "provenance": {
         "status": "generated",
@@ -12860,6 +12898,38 @@
       "relation": "hf:current_record",
       "sources": [
         "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aproject%3Aowa-epanet%3Aepanet-tank-audit"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fprojects%2Fowa-epanet.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:e531cb9568bf1f43e5a2fbb553b169917dfda5495090a49b36bb0310f200bf75",
+      "relation": "hf:source",
+      "sources": [
+        "urn:humanifest:hf:project:owa-epanet"
+      ],
+      "targets": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aproject%3Aowa-epanet%3Aepanet-native-reproduction"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:15153cd005955ff0eabb491806acd06bb69ccda2bb748c7c222b781a507e8155",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aproject%3Aowa-epanet%3Aepanet-native-reproduction"
       ],
       "targets": [
         "urn:humanifest:hf:record:portfolio%2Fprojects%2Fowa-epanet.json"
@@ -23592,6 +23662,38 @@
       }
     },
     {
+      "id": "urn:humanifest:mapping:7caa3e0ba3c5a1256f104e7ea0418fd7ed3c89d1e3c4252d2d3df99f849b579f",
+      "relation": "hf:source",
+      "sources": [
+        "urn:humanifest:hf:opportunity:epanet-883-tank-volume-curve-validation"
+      ],
+      "targets": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aepanet-883-tank-volume-curve-validation%3Aepanet-native-reproduction"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:cb3afb814c65bfc57680c2a8bbd3e499fb6461bf26e23cce24c03957247ef4bd",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aepanet-883-tank-volume-curve-validation%3Aepanet-native-reproduction"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fopportunities%2Fepanet-883-tank-volume-curve-validation.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
       "id": "urn:humanifest:mapping:b2ea665ce37b806c504ba1efa482539d268a2b4814c6e95b6e9ba11fc619d28c",
       "relation": "hf:evidence",
       "sources": [
@@ -23676,6 +23778,54 @@
       "relation": "hf:current_record",
       "sources": [
         "urn:humanifest:hf:evidence:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aepanet-883-tank-volume-curve-validation%3A1"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fopportunities%2Fepanet-883-tank-volume-curve-validation.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:fd76bf8fb8624baca355eb5ac74423fa14806401d75a177f9692a4e4038cc674",
+      "relation": "hf:evidence",
+      "sources": [
+        "urn:humanifest:hf:opportunity:epanet-883-tank-volume-curve-validation"
+      ],
+      "targets": [
+        "urn:humanifest:hf:evidence:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aepanet-883-tank-volume-curve-validation%3A2"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:3f8e7d7a064d503be7ad1e882abafc0bcb0bea1f3815b3f726d21a076e3ebbb5",
+      "relation": "hf:source",
+      "sources": [
+        "urn:humanifest:hf:evidence:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aepanet-883-tank-volume-curve-validation%3A2"
+      ],
+      "targets": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aepanet-883-tank-volume-curve-validation%3Aepanet-native-reproduction"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:fc684feb489c1f5e81e60fcc88dddf93a4c77a0bccd8d707644af7226e6f13a7",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:evidence:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aepanet-883-tank-volume-curve-validation%3A2"
       ],
       "targets": [
         "urn:humanifest:hf:record:portfolio%2Fopportunities%2Fepanet-883-tank-volume-curve-validation.json"
@@ -24143,6 +24293,22 @@
       ],
       "targets": [
         "urn:humanifest:hf:record:portfolio%2Fopportunities%2Fepanet-883-tank-volume-curve-validation.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:8b4973f0ccb6cff3064b51d97109dea7e11cedf918498d5383548adf357c909d",
+      "relation": "hf:source",
+      "sources": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aepanet-883-tank-volume-curve-validation%3Abehavior_reproducible_or_verifiable"
+      ],
+      "targets": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aepanet-883-tank-volume-curve-validation%3Aepanet-native-reproduction"
       ],
       "cardinality": "one-to-one",
       "lossiness": "lossless",
