@@ -1,0 +1,99 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://humanifest.org/schemas/funding-ledger.schema.json",
+  "title": "Humanifest Funding Ledger",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["version", "currency", "fiscal_steward", "privacy", "transactions", "conflicts", "reports"],
+  "properties": {
+    "version": { "type": "integer", "const": 1 },
+    "currency": { "type": "string", "const": "USD" },
+    "fiscal_steward": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "relationship", "started", "status", "notes"],
+      "properties": {
+        "name": { "type": "string", "minLength": 1 },
+        "relationship": { "type": "string", "minLength": 1 },
+        "started": { "type": "string", "format": "date" },
+        "status": { "type": "string", "enum": ["temporary", "active", "retired"] },
+        "notes": { "type": "string", "minLength": 1 }
+      }
+    },
+    "privacy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["public_ledger_excludes_private_donor_data", "notes"],
+      "properties": {
+        "public_ledger_excludes_private_donor_data": { "type": "boolean", "const": true },
+        "notes": { "type": "string", "minLength": 1 }
+      }
+    },
+    "transactions": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/transaction" }
+    },
+    "conflicts": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/conflict" }
+    },
+    "reports": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/report" }
+    }
+  },
+  "$defs": {
+    "transaction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "date", "category", "amount", "description", "conflict_status"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$" },
+        "date": { "type": "string", "format": "date" },
+        "category": {
+          "type": "string",
+          "enum": [
+            "sponsorship-income",
+            "fiscal-admin",
+            "engineering",
+            "evidence-review",
+            "maintainer-coordination",
+            "environment",
+            "adversarial-review",
+            "documentation",
+            "governance",
+            "reimbursement",
+            "reserve"
+          ]
+        },
+        "amount": { "type": "number" },
+        "description": { "type": "string", "minLength": 1 },
+        "conflict_status": { "type": "string", "enum": ["none-known", "disclosed", "requires-review"] },
+        "source": { "type": "string", "format": "uri" }
+      }
+    },
+    "conflict": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "date", "status", "description", "resolution"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$" },
+        "date": { "type": "string", "format": "date" },
+        "status": { "type": "string", "enum": ["disclosed", "requires-review", "resolved"] },
+        "description": { "type": "string", "minLength": 1 },
+        "resolution": { "type": "string", "minLength": 1 }
+      }
+    },
+    "report": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["period", "published", "summary"],
+      "properties": {
+        "period": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}$" },
+        "published": { "type": "string", "format": "date" },
+        "summary": { "type": "string", "minLength": 1 },
+        "url": { "type": "string", "format": "uri" }
+      }
+    }
+  }
+}

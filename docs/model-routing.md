@@ -9,6 +9,9 @@ must identify the controlling files before work begins, keep external-write
 authorization separate from ordinary documentation edits, and leave a durable
 handoff when the next step is not immediately executed.
 
+Finance and sponsorship changes must also route through Orca unless they only add
+ledger entries that already satisfy `docs/finance-governance.md`.
+
 Use faster Codex or Spark for bounded, independently verifiable work:
 
 - test or lint fixes with known failures;

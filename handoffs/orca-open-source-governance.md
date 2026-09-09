@@ -19,13 +19,18 @@ Authority files to read first:
 - `docs/licensing.md`
 - `docs/impact-methodology.md`
 - `docs/model-routing.md`
+- `docs/finance-governance.md`
+- `portfolio/funding-ledger.json`
 - `.github/FUNDING.yml`, when present
 
 Complexity to preserve:
 
-- No outside contributions should be accepted until the owner selects a license.
+- Humanifest is MIT licensed; inbound contributions still need DCO signoff unless
+  a later CLA process is adopted.
 - Donations support coordination capacity, not project ranking, outreach priority,
   guaranteed pull requests, merge outcomes, or favorable scoring.
+- Humanifest is currently fiscally administered by Avaelus LLC/Inc.; funding
+  records must keep Humanifest funds separate from Avaelus operating funds.
 - External maintainer contact, issue comments, upstream pull requests, and other
   external writes require explicit authorization and the verified Humanifest
   identity.
@@ -58,6 +63,8 @@ Acceptance criteria:
 - Public docs distinguish Humanifest repository contributions from upstream
   humanitarian project contributions.
 - Sponsorship language cannot reasonably be read as paid prioritization.
+- Fiscal-steward, ledger, and conflict language remain consistent with
+  `docs/finance-governance.md`.
 - Contributor guidance invites useful negative findings and evidence-preserving
   review.
 - External-write constraints remain visible.
@@ -69,6 +76,7 @@ Verification:
 ```bash
 python3 -m unittest
 python3 -m humanifest.cli validate --root .
+python3 -m humanifest.cli finance --root .
 python3 -m humanifest.cli report --root .
 ```
 

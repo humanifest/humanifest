@@ -44,6 +44,15 @@ outreach, pull requests, merge outcomes, or favorable scoring. Conflicts of
 interest should be disclosed in any contribution that affects project selection,
 opportunity scoring, or public claims of impact.
 
+Humanifest is currently fiscally administered by Avaelus LLC/Inc. Finance-related
+changes must keep separate ledger categories, avoid private donor data, and
+follow [finance governance](docs/finance-governance.md). Validate funding records
+with:
+
+```bash
+python3 -m humanifest.cli finance --root .
+```
+
 ## Development checks
 
 The core suite and record checks run without third-party dependencies:

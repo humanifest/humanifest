@@ -143,6 +143,11 @@ maintainer-approved contributions to humanitarian and public-interest open
 source. Sponsorship is not a purchase of influence, priority, outreach, ranking,
 or a guaranteed upstream contribution.
 
+Humanifest is currently fiscally administered by Avaelus LLC/Inc. Humanifest
+funds should be tracked separately from Avaelus operating funds, with conflicts
+and aggregate public finance records handled under
+[finance governance](docs/finance-governance.md).
+
 Use [GitHub Sponsors](https://github.com/sponsors/humanifest) or this
 repository's Sponsor button. Funding configuration lives in
 [.github/FUNDING.yml](.github/FUNDING.yml).

@@ -33,6 +33,8 @@ jobs:
         run: python -m unittest
       - name: Validate portfolio
         run: python -m humanifest.cli validate --root .
+      - name: Validate finance ledger
+        run: python -m humanifest.cli finance --root .
       - name: Validate public schemas
         run: python -m scripts.check_schemas
       - name: Check generated status

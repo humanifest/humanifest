@@ -8,6 +8,7 @@ import json
 from pathlib import Path
 import sys
 
+from .finance import finance_report, load_funding_ledger, validate_funding_ledger
 from .models import (
     generate_candidate_brief,
     generate_handoff,
@@ -40,6 +41,9 @@ def main(argv: list[str] | None = None) -> int:
     report_parser = subparsers.add_parser("report")
     report_parser.add_argument("--root", default=".", help="Repository root")
 
+    finance_parser = subparsers.add_parser("finance", help="Validate and summarize the public funding ledger")
+    finance_parser.add_argument("--root", default=".", help="Repository root")
+
     sources_parser = subparsers.add_parser("sources", help="List source access dates and offline review reminders")
     sources_parser.add_argument("--root", default=".", help="Repository root")
     sources_parser.add_argument("--as-of", required=True, type=_date, help="Review date in YYYY-MM-DD form")
@@ -50,7 +54,12 @@ def main(argv: list[str] | None = None) -> int:
     args = parser.parse_args(argv)
 
     try:
-        if args.command in {"validate", "report", "sources"}:
+        if args.command == "finance":
+            ledger = load_funding_ledger(Path(args.root))
+            if _print_issues(validate_funding_ledger(ledger)):
+                return 1
+            print(finance_report(ledger))
+        elif args.command in {"validate", "report", "sources"}:
             projects, opportunities, issues = load_portfolio(Path(args.root))
             if _print_issues(issues):
                 return 1

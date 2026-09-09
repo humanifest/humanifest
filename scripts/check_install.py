@@ -53,6 +53,7 @@ def main() -> None:
         candidate.write_text(json.dumps(record), encoding="utf-8")
         commands = [
             ["--help"], ["validate", "--root", str(root)], ["report", "--root", str(root)],
+            ["finance", "--root", str(root)],
             ["score", str(candidate)], ["brief", str(candidate)],
             ["handoff", str(candidate), "--target", "codex"],
             ["sources", "--root", str(root), "--as-of", "2026-09-08", "--max-age-days", "30", "--format", "json"],

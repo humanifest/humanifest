@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "currency": "USD",
+  "fiscal_steward": {
+    "name": "Avaelus LLC/Inc.",
+    "relationship": "Humanifest is currently fiscally administered by Avaelus LLC/Inc.",
+    "started": "2026-09-09",
+    "status": "temporary",
+    "notes": "Avaelus may provide business banking, Stripe Connect, bookkeeping, and administrative handling while Humanifest lacks a dedicated entity, bank account, or fiscal host."
+  },
+  "privacy": {
+    "public_ledger_excludes_private_donor_data": true,
+    "notes": "Track public aggregate categories and policy context only; do not commit private donor names, payment identifiers, addresses, bank data, or tax forms."
+  },
+  "transactions": [],
+  "conflicts": [],
+  "reports": []
+}
