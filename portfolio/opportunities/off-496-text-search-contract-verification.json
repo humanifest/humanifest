@@ -26,13 +26,18 @@
       "type": "measured",
       "claim": "38 unchanged SDK API tests pass with blocked Python socket/DNS operations. Four cases executing the pinned original server filter verify that search_terms is removed before query construction, with structured-filter and pagination controls. Source dispatch was traced but full HTTP/server/database execution did not occur.",
       "source_id": "off-runtime-2026-09-09"
+    },
+    {
+      "type": "measured",
+      "claim": "Verification note delivered as humanifest-bot at 2026-09-09T07:30:38Z. A separate GitHub API read verified exact author and body. Delivery is not maintainer confirmation or acceptance.",
+      "source_id": "off-verification-delivered"
     }
   ],
   "code_surface": "src/openfoodfacts/api.py ProductResource.text_search and tests/unit/test_api.py in existing PR #504 at 970a7290a8a5869de8f5784324c166212fdd15ca. Server at 3a97b98032d27b7a5e33de0c2edcde0c21ddf4c3: Routing.pm, cgi/display.pl and Display.pm search parameter filter.",
   "proposed_change": "First verify the documented mismatch and support the existing author with a semantic regression strategy. Agree the supported search/authentication and compatibility contract before changing the SDK. No replacement PR or credential-in-URL workaround.",
   "tests": "38 unchanged SDK API tests pass on the pinned PR in a frozen wheel-only Python 3.11.10 environment with Python socket/DNS blocking. Four hash-checked cases execute the original server parameter filter: ordinary text, a nonce and no text forward identical empty filters; a structured-brand control survives, pagination/sorting are retained and owner filtering is invoked. No full server, live API, database or deployed-result test ran. Reusable fixtures and exact limits are in research/2026-09-09-openfoodfacts-runtime-verification.md.",
   "environment": "Disposable pinned PR checkout outside Humanifest. Existing Python 3.11.10/uv 0.8.22 installed 43 frozen core/development wheel dependencies with source builds, project install and automatic Python downloads disabled. No ML/Pillow/Redis extras or services needed for the focused API file. CI uses a different uv version and Linux/all-extras; this is not exact full CI replication. Original server filter runs with system Perl 5.34.1 and request/downstream-query spies. No credentials or live service calls.",
-  "maintainer": "Existing PR author arybhatt4533. The bounded verification note is prepared in research/2026-09-09-openfoodfacts-runtime-verification.md but has not been sent. The target PR template requires maintainer assignment agreement and LLM disclosure/proof. No accepted support scope, bot-identity pathway or reviewer commitment has been established. Obtain required posting authorization and recheck discussion before sharing; do not create a replacement PR.",
+  "maintainer": "Existing PR author arybhatt4533. Verified findings were posted on PR #504 as humanifest-bot at 2026-09-09T07:30:38Z. The PR remains at the tested head, with no human review in the pre-post read. Await the existing author/maintainers on the intended full-text/authentication contract and support scope; no replacement patch. Manual status review September 15 unless new input arrives.",
   "risks": "Current server source discards search_terms, while SDK mocks accept fixed response bodies. The filter execution is not a full server or deployed API test. Authentication and response compatibility require an agreed contract. Preserve the existing author; no screenshot/video proof, independent human review, bot-identity acceptance or deployment benefit is claimed.",
   "priority_rationale": "An existing patch has a specific documented search-contract mismatch that narrow mocked tests do not validate. A focused verification contribution may prevent a misleading fix while reducing review burden; acceptance and realized impact remain unknown.",
   "gates": {
@@ -119,7 +124,10 @@
     },
     "maintainer_interest_confirmed": {
       "passed": false,
-      "rationale": "Maintainer explained the CGI authentication requirement, but has not confirmed this proposed verification contribution or replacement search contract. No Humanifest inquiry sent."
+      "rationale": "The maintainer previously explained CGI authentication. Humanifest has now delivered the bounded verification on PR #504, but no accepted search contract or Humanifest scope is established.",
+      "source_ids": [
+        "off-verification-delivered"
+      ]
     },
     "probable_reviewer_identified": {
       "passed": false,
@@ -187,6 +195,12 @@
       "id": "off-runtime-2026-09-09",
       "url": "https://github.com/humanifest-bot/humanifest/blob/codex/cht-admin-environment-audit/research/2026-09-09-openfoodfacts-runtime-verification.md",
       "accessed": "2026-09-09"
+    },
+    {
+      "id": "off-verification-delivered",
+      "url": "https://github.com/openfoodfacts/openfoodfacts-python/pull/504#issuecomment-5597968719",
+      "accessed": "2026-09-09"
     }
-  ]
+  ],
+  "next_external_status_check": "2026-09-15"
 }

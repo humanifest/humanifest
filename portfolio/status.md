@@ -56,7 +56,7 @@ Scores do not authorize implementation or external writes. Candidates are listed
   - change_bounded: Not established in this research intake; inspect supporting evidence before advancement.
   - regression_strategy_credible: Not established in this research intake; inspect supporting evidence before advancement.
   - security_and_licensing_risk_acceptable: Not established in this research intake; inspect supporting evidence before advancement.
-  - maintainer_interest_confirmed: Maintainer explained the CGI authentication requirement, but has not confirmed this proposed verification contribution or replacement search contract. No Humanifest inquiry sent.
+  - maintainer_interest_confirmed: The maintainer previously explained CGI authentication. Humanifest has now delivered the bounded verification on PR #504, but no accepted search contract or Humanifest scope is established.
   - probable_reviewer_identified: Not established in this research intake; inspect supporting evidence before advancement.
   - benefit_justifies_review_cost: Not established in this research intake; inspect supporting evidence before advancement.
   - user_can_explain_line_by_line: Not established in this research intake; inspect supporting evidence before advancement.
@@ -68,7 +68,7 @@ Scores do not authorize implementation or external writes. Candidates are listed
   - change_bounded: The research matrix is bounded, but arbitrary nesting, groups, defaults and repeat_count make implementation scope and compatibility uncertain.
   - regression_strategy_credible: Not yet established for this research candidate; inspect evidence before advancing.
   - security_and_licensing_risk_acceptable: Not yet established for this research candidate; inspect evidence before advancing.
-  - maintainer_interest_confirmed: The public request to explore effort supports research, but no maintainer has accepted Humanifest support, implementation scope or bot identity.
+  - maintainer_interest_confirmed: The public request to explore effort supports research. Humanifest delivered its reproduction but has no confirmation of accepted implementation scope or bot contribution pathway.
   - probable_reviewer_identified: Not yet established for this research candidate; inspect evidence before advancing.
   - benefit_justifies_review_cost: Not yet established for this research candidate; inspect evidence before advancing.
   - user_can_explain_line_by_line: Not yet established for this research candidate; inspect evidence before advancing.

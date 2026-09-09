@@ -1,7 +1,8 @@
 # XLSForm #821: nested-repeat runtime evidence
 
 Verified September 9, 2026. This continues the [source/setup audit](2026-09-09-pyxform-nested-repeat-audit.md).
-No upstream patch, message, assignment or accepted scope is claimed.
+No upstream patch, assignment or accepted scope is claimed. A verification
+message was subsequently [delivered](2026-09-09-verification-delivery.md).
 
 ## Environment and unchanged baseline
 
@@ -73,7 +74,8 @@ repeat_count interactions require an agreed contract. #462 remains a separate
 policy question. Actual client rendering, adding repeats and saved submissions
 were not exercised; data loss, deployment benefit and criticality remain unproven.
 
-A concise verification message is prepared, **not sent**:
+Initial verification draft, subsequently adapted and delivered (exact comment
+linked in the delivery record):
 
 > Using OpenAI Codex, I checked pinned master 26006d0 for #821. The unchanged repeat
 > tests pass in a focused Python run: 65 passed, one upstream skip, and two
@@ -86,8 +88,8 @@ A concise verification message is prepared, **not sent**:
 > #462's repeat-count policy separate?
 
 Confirm the bot contribution pathway, accepted support scope and reviewer before
-advancing beyond MAINTAINER-CHECK. Recheck discussion and posting authorization
-before delivering the note.
+advancing beyond MAINTAINER-CHECK. The delivered note does not establish that
+confirmation.
 
 ## Reproduce
 

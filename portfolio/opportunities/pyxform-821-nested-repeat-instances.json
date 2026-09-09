@@ -20,13 +20,18 @@
       "type": "measured",
       "claim": "65 unchanged repeat tests pass, one upstream performance test remains skipped, and two Java-only tests are deferred. Fifteen actual converter cases show a concrete inner instance absent under directly nested outer templates but present with an intervening group. Defaults and sibling controls survive. No client behavior was tested.",
       "source_id": "pyxform-runtime"
+    },
+    {
+      "type": "measured",
+      "claim": "Verification note delivered as humanifest-bot at 2026-09-09T07:34:50Z. A separate GitHub API read verified exact author and body. Delivery is not maintainer confirmation or acceptance.",
+      "source_id": "pyxform-verification-delivered"
     }
   ],
   "code_surface": "pyxform/section.py Section.xml_instance and RepeatingSection.xml_instance_template; tests/test_repeat.py test_repeat_adding_template_and_instance and grouped variant at pinned master 26006d0830570ffa3caead24b0c9a470278af2cf.",
   "proposed_change": "Share the verified ancestor-specific XML matrix and effort boundary if the contribution pathway is accepted; agree template uniqueness, initial children, defaults and client compatibility before implementing. Keep #462 repeat-count policy separate unless maintainers confirm overlap.",
   "tests": "Focused unchanged baseline: 65 passed, one upstream skip and two explicitly deferred Java-only empty-repeat tests. Fifteen actual convert() cases cover one-to-three levels, direct/group-separated nesting, repeat_count absent/zero/two, defaults and a sibling. Ancestor-specific assertions verify the structural difference; full suite, Java validation, client rendering and submissions remain untested. See research/2026-09-09-pyxform-repeat-runtime.md.",
   "environment": "Python 3.13.7 isolated venv with seven manifest-pinned wheel dependencies plus resolved et-xmlfile 2.0.0; no project install or source build. Minimal child environment and checked Python network/process guard. All 249 tracked files verified against pinned Git blobs before/after. No Java runtime available; no services or credentials. This is not a full CI or frozen-lock reproduction.",
-  "maintainer": "Public investigation request supports research. A verification note is prepared in research/2026-09-09-pyxform-repeat-runtime.md but unsent. Accepted Humanifest support scope, bot identity pathway and reviewer commitment remain unconfirmed. Check authorization and fresh discussion before posting.",
+  "maintainer": "Public investigation request supports research. The verified XML matrix was posted on #821 as humanifest-bot at 2026-09-09T07:34:50Z. Await accepted support scope, bot contribution pathway and reviewer commitment. Manual status review September 15 unless new input arrives.",
   "risks": "Arbitrary nesting, groups, default values and repeat_count can affect compatibility across Collect, Web Forms and Enketo. Do not infer submission behavior from XML alone or promise impact from an explicitly noncritical client issue.",
   "priority_rationale": "A maintainer-requested effort investigation has identifiable generator/tests and can run independently of waiting PRs. Keep priority provisional until reproducibility, practical consequence and accepted scope are verified.",
   "gates": {
@@ -108,7 +113,10 @@
     },
     "maintainer_interest_confirmed": {
       "passed": false,
-      "rationale": "The public request to explore effort supports research, but no maintainer has accepted Humanifest support, implementation scope or bot identity."
+      "rationale": "The public request to explore effort supports research. Humanifest delivered its reproduction but has no confirmation of accepted implementation scope or bot contribution pathway.",
+      "source_ids": [
+        "pyxform-verification-delivered"
+      ]
     },
     "probable_reviewer_identified": {
       "passed": false,
@@ -171,6 +179,12 @@
       "id": "pyxform-runtime",
       "url": "https://github.com/humanifest-bot/humanifest/blob/codex/cht-admin-environment-audit/research/2026-09-09-pyxform-repeat-runtime.md",
       "accessed": "2026-09-09"
+    },
+    {
+      "id": "pyxform-verification-delivered",
+      "url": "https://github.com/XLSForm/pyxform/issues/821#issuecomment-5598015763",
+      "accessed": "2026-09-09"
     }
-  ]
+  ],
+  "next_external_status_check": "2026-09-15"
 }

@@ -3,7 +3,8 @@
 Verified September 9, 2026. This extends the
 [initial contract audit](2026-09-09-openfoodfacts-search-contract-audit.md).
 The existing PR remains another contributor's work; no target patch, formal
-review, comment, authentication attempt or product-service query was submitted.
+review, authentication attempt or product-service query was submitted during the runtime checks.
+A verification comment was subsequently delivered; see the delivery section below.
 
 ## Unchanged SDK baseline
 
@@ -78,10 +79,10 @@ v2 contract. They do not establish the deployed server revision or actual produc
 results for these queries. The SDK mock success and server-filter behavior must
 not be presented as a complete end-to-end reproduction.
 
-## Prepared verification note for the existing author
+## Verification note for the existing author
 
-Not sent. A useful bounded message, after the required authorization and fresh
-discussion check, would be:
+Initial draft, subsequently adapted and [delivered](2026-09-09-verification-delivery.md)
+on PR #504. The exact delivered body is linked in that record:
 
 > I checked PR #504's pinned head with OpenAI Codex. All 38 existing API tests pass
 > locally, but I found a contract concern: the official v2 search documentation

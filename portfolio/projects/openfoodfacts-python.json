@@ -18,7 +18,7 @@
     "current_public_activity": "Unarchived; GitHub pushed_at 2026-09-01T12:46:38Z. Current issue and PR discussions inspected September 9."
   },
   "contribution": {
-    "pathway": "Fork-based PRs against develop with tests/CI. Pinned PR template requires maintainer agreement to assignment before acceptance. Humanifest is preparing verification support for existing PR #504; no replacement patch or accepted scope.",
+    "pathway": "Fork-based PRs against develop with tests/CI. Pinned PR template requires maintainer agreement to assignment before acceptance. Humanifest delivered verification support on existing PR #504; no replacement patch or accepted scope.",
     "ai_policy": "Pinned PR template requires disclosure of LLM/version/mode, successful execution and screenshot/video proof. Bot-identity eligibility and specific support scope remain unconfirmed; no independent human review is claimed.",
     "maintainer_check_required": true
   },
@@ -46,6 +46,11 @@
     {
       "id": "off-runtime-2026-09-09",
       "url": "https://github.com/humanifest-bot/humanifest/blob/codex/cht-admin-environment-audit/research/2026-09-09-openfoodfacts-runtime-verification.md",
+      "accessed": "2026-09-09"
+    },
+    {
+      "id": "off-verification-delivered",
+      "url": "https://github.com/openfoodfacts/openfoodfacts-python/pull/504#issuecomment-5597968719",
       "accessed": "2026-09-09"
     }
   ]

@@ -25,7 +25,7 @@
     "pushed_at": "2026-08-27T05:01:23Z"
   },
   "contribution": {
-    "pathway": "Focused contributions normally discussed first in the ODK forum or an issue. PR template requires regression tests, unittest, Ruff and attribution. The README identifies ODK maintenance, so review capacity is grouped with getodk despite the XLSForm repository owner. The initial effort investigation now has a focused Python baseline and fifteen converter cases, but no accepted Humanifest scope or target patch.",
+    "pathway": "Focused contributions normally discussed first in the ODK forum or an issue. PR template requires regression tests, unittest, Ruff and attribution. The README identifies ODK maintenance, so review capacity is grouped with getodk despite the XLSForm repository owner. The initial effort investigation now has a focused Python baseline and fifteen converter cases, and the verification note is now delivered on #821; no accepted Humanifest scope or target patch.",
     "ai_policy": "No explicit AI/bot policy established in inspected README, PR template or tree filename search. Bot identity eligibility remains unconfirmed.",
     "maintainer_check_required": true
   },
@@ -68,6 +68,11 @@
     {
       "id": "pyxform-runtime",
       "url": "https://github.com/humanifest-bot/humanifest/blob/codex/cht-admin-environment-audit/research/2026-09-09-pyxform-repeat-runtime.md",
+      "accessed": "2026-09-09"
+    },
+    {
+      "id": "pyxform-verification-delivered",
+      "url": "https://github.com/XLSForm/pyxform/issues/821#issuecomment-5598015763",
       "accessed": "2026-09-09"
     }
   ]
