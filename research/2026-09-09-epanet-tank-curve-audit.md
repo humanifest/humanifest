@@ -1,7 +1,8 @@
 # EPANET tank-volume curve verification intake
 
-Accessed September 9, 2026. Public issue discussion and pinned source/setup
-inspection only. No target clone, build, library execution or upstream message.
+Initial intake accessed September 9, 2026. This historical snapshot predates
+target execution. See [the subsequent native reproduction](2026-09-09-epanet-native-reproduction.md)
+for the completed build and measured behavior; current portfolio records include it.
 
 ## Public-benefit pathway and current need
 

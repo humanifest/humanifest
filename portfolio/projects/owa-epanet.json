@@ -20,7 +20,7 @@
   },
   "contribution": {
     "pathway": "README asks for issue discussion, a clear path, then a fork/branch based on dev and a PR. Build/test guidance inspected; no accepted Humanifest scope.",
-    "ai_policy": "No explicit AI/bot rule established in inspected files; organization policy and bot pathway need verification.",
+    "ai_policy": "No explicit AI/bot rule established in inspected repository files; organization .github repository query returned 404. This does not prove bot eligibility, which remains to confirm.",
     "maintainer_check_required": true
   },
   "sources": [
@@ -47,6 +47,11 @@
     {
       "id": "epanet-tank-audit",
       "url": "https://github.com/humanifest-bot/humanifest/blob/codex/cht-admin-environment-audit/research/2026-09-09-epanet-tank-curve-audit.md",
+      "accessed": "2026-09-09"
+    },
+    {
+      "id": "epanet-native-reproduction",
+      "url": "https://github.com/humanifest-bot/humanifest/blob/codex/cht-admin-environment-audit/research/2026-09-09-epanet-native-reproduction.md",
       "accessed": "2026-09-09"
     }
   ]

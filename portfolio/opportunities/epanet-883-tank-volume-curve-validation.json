@@ -3,8 +3,8 @@
   "project_id": "owa-epanet",
   "title": "Verify invalid tank-volume curves across file loading and API updates",
   "pipeline_state": "OPPORTUNITY-RESEARCH",
-  "research_next_step": "Finish parser/validation and build audit, create an isolated pinned native build, and run synthetic networks through the real library. Compare file loading, EN_VOLCURVE/EN_settankdata assignment and subsequent curve edits using increasing, decreasing and interior-dip volume curves; include valid decreasing pump, cylindrical tank and unit controls. Measure errors and finite volume/area behavior before choosing a fix.",
-  "problem": "Issue #883 reports acceptance of decreasing tank-volume curves. Current assignment/initialization paths compute volumes and endpoint-derived area without local Y-monotonicity checks; complete parser acceptance and runtime failure mode are unverified.",
+  "research_next_step": "Set up audited isolated Boost dependencies and run the unchanged native test suite. Check whether the separately observed metric EN_VOLCURVE diameter discrepancy is already tracked. Then prepare a concise #883 evidence/scope inquiry covering file loading, assignment and later edits, with pump compatibility and explicit bot/AI disclosure; await maintainer confirmation before a fix.",
+  "problem": "The real pinned library accepts decreasing and interior-dip water-storage volume curves through file loading, API assignment and later curve edits. Direct decreasing assignment returns a NaN diameter without an API error; increasing requested depth yields decreasing initial volume. No process crash or operational consequence is established.",
   "humanitarian_relevance": "Clear validation may improve reliability of water-network analysis tools. No measured effect on drinking-water safety, utility decisions or resource use.",
   "evidence": [
     {
@@ -16,14 +16,19 @@
       "type": "measured",
       "claim": "Pinned file initialization and two API assignment routes derive area from endpoint slope. Curve point/bulk setters check increasing X but not Y; generic decreasing pump curves must remain valid. Existing curve/node tests inspected, not run.",
       "source_id": "epanet-tank-audit"
+    },
+    {
+      "type": "measured",
+      "claim": "Thirty-four native-library cases pass as current-behavior assertions across GPM/LPS units, three curve shapes and five entry paths, plus cylindrical and decreasing-pump controls. All open/assignment/hydraulic-initialization calls succeed. Direct decreasing assignment yields NaN diameter; interior dips and subsequent edits retain finite diameter while volume decreases with greater requested depth. Metric EN_VOLCURVE assignment also yields 0.3048 times the diameter from file/EN_settankdata routes for the same valid curve. All 144 tracked source files remain byte-identical before build and after probes.",
+      "source_id": "epanet-native-reproduction"
     }
   ],
-  "code_surface": "At dev 83e25bbe2b0b460803e71df03bc989afe9557ea3: src/input1.c inittanks; src/epanet.c EN_setnodevalue EN_VOLCURVE, EN_settankdata, EN_setcurve, EN_setcurvevalue and EN_setcurvetype. tests/test_curve.cpp and tests/test_node.cpp. Complete parser validation still to trace.",
+  "code_surface": "At dev 83e25bbe2b0b460803e71df03bc989afe9557ea3: src/input1.c inittanks; src/input2.c parser; src/validate.c validatetanks/validatecurves; src/epanet.c public tank assignment, curve mutation and getters. Existing tests/test_curve.cpp and tests/test_node.cpp located. Real C library exercised through public API; no copied-function simulation.",
   "proposed_change": "First reproduce invalid-data handling through the real library and agree scope. Consider consistent tank-specific validation across relevant entry points only after maintainer confirmation; preserve generic/pump curve semantics and document errors/rollback.",
-  "tests": "Existing curve/node tests located. Plan full native baseline where feasible and synthetic file/API cases with monotonic, decreasing, interior-dip, cylindrical, pump and unit controls. No target execution yet.",
-  "environment": "Native CMake C/C++ build; optional Boost-based CTest suite. Root/run/output/test CMake files and macOS/Linux CI inspected. BUILD_TESTS defaults off in inspected CI commands. Generated output header is copied into source tree. Clang present; CMake/Boost not located in checked paths. No clone/install/build or operational data.",
+  "tests": "34 native-library current-behavior cases pass: GPM/LPS \u00d7 increasing/decreasing/interior-dip curves \u00d7 file/EN_VOLCURVE/EN_settankdata/bulk-edit/point-edit, plus two cylindrical and two decreasing-pump controls. Level 3/6 volume queries and hydraulic initialization succeed even for invalid volume shapes. Existing Boost suite not yet run; no EN_runH or extended-period simulation.",
+  "environment": "Pinned unmodified library, output library and CLI built in /private/tmp with CMake 3.31.6, Apple Clang 21.0.0 and BUILD_TESTS=OFF. CMake wheel SHA256 verified against PyPI metadata, unpacked without global installation. Python 3.13.7 ctypes calls original native API. No target services, credentials or utility data; 144 tracked files unchanged, expected ignored generated export header accounted for. Isolated Boost setup remains for unchanged test suite.",
   "maintainer": "Issue reported by LRossman; no assignment or Humanifest scope confirmation. General README invites discussion before fork-based changes. No outreach yet.",
-  "risks": "Negative square root need not crash; measure actual errors/nonfinite values. Positive endpoint slope can hide interior dips. Generic decreasing curves may be valid for pumps. Changes after assignment and metric/US units may require broader consistency than a single check.",
+  "risks": "NaN diameter reproduced without a process crash. Positive endpoint slope hides interior dips; later edits preserve old nominal diameter while volume queries change. A separate metric assignment discrepancy needs duplicate/scope verification. Valid decreasing pump curves must remain supported. No physical network simulation, field effect, accepted error/rollback policy or bot eligibility is established.",
   "priority_rationale": "A bounded invalid-input correctness report has current inspectable paths and clear controls in a public-benefit modeling engine. Already-fixed leakage and existing feature PRs are excluded; operational impact and acceptance remain unverified.",
   "gates": {
     "humanitarian_relevance_supported": {
@@ -54,11 +59,14 @@
     },
     "problem_current_and_consequential": {
       "passed": false,
-      "rationale": "Open report and current source support investigating invalid tank curves; full input acceptance, runtime effects and operational consequences remain unverified."
+      "rationale": "Current pinned runtime accepts invalid volume ordering and returns NaN diameter without errors. Operational consequences and practical priority remain unconfirmed."
     },
     "behavior_reproducible_or_verifiable": {
-      "passed": false,
-      "rationale": "Not established in this bounded source intake; verify before implementation."
+      "passed": true,
+      "rationale": "34 assertions exercise the compiled original library, including malformed water-storage curves, genuine parser/API routes, valid pump/cylindrical controls and US/metric cases. Source remains unchanged. This verifies the stated input-handling behavior only.",
+      "source_ids": [
+        "epanet-native-reproduction"
+      ]
     },
     "code_and_tests_located": {
       "passed": true,
@@ -73,7 +81,7 @@
     },
     "regression_strategy_credible": {
       "passed": false,
-      "rationale": "Valid/inverted/interior-dip curves, cylindrical/pump controls and unit comparisons are planned; no target test has run."
+      "rationale": "Real-library controls now cover five entry paths and both unit systems. Existing Boost baseline, accepted failure/rollback semantics and production regression integration remain."
     },
     "no_private_data_required": {
       "passed": true,
@@ -88,7 +96,7 @@
     },
     "environment_feasible": {
       "passed": false,
-      "rationale": "CMake/Clang/Boost route inspected. Clang present, CMake absent from PATH and Boost absent at checked Homebrew paths; isolated setup and test baseline remain."
+      "rationale": "Original native library builds and 34 public-API cases pass in isolation. Boost test dependencies and unchanged-suite baseline remain before full environment readiness."
     },
     "maintainer_interest_confirmed": {
       "passed": false,
@@ -110,11 +118,11 @@
   "score_inputs": {
     "humanitarian_benefit": 3,
     "acceptance_probability": 0,
-    "technical_confidence": 1,
+    "technical_confidence": 2,
     "review_burden": 3,
     "deployment_probability": 0
   },
-  "score_basis": "Provisional public-benefit relevance and source confidence only. Reproduction, accepted scope and deployment remain unknown; implementation score zero.",
+  "score_basis": "Native invalid-input behavior is now independently reproduced, while operational consequence, accepted scope and deployment remain unknown; implementation score remains zero.",
   "sources": [
     {
       "id": "epanet-purpose",
@@ -139,6 +147,11 @@
     {
       "id": "epanet-tank-audit",
       "url": "https://github.com/humanifest-bot/humanifest/blob/codex/cht-admin-environment-audit/research/2026-09-09-epanet-tank-curve-audit.md",
+      "accessed": "2026-09-09"
+    },
+    {
+      "id": "epanet-native-reproduction",
+      "url": "https://github.com/humanifest-bot/humanifest/blob/codex/cht-admin-environment-audit/research/2026-09-09-epanet-native-reproduction.md",
       "accessed": "2026-09-09"
     }
   ]
