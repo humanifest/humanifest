@@ -29,6 +29,13 @@ jobs:
           python-version: ${{ matrix.python-version }}
       - name: Install check dependencies
         run: python -m pip install -r requirements-checks.txt
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: 22
+      - name: Install pinned Metamap compiler without lifecycle scripts
+        run: npm ci --ignore-scripts --no-audit --no-fund --prefix tools/metamap
+      - name: Check current correspondence projection
+        run: python -m scripts.compile_correspondence --check
       - name: Unit tests
         run: python -m unittest
       - name: Validate portfolio

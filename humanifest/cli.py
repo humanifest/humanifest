@@ -19,6 +19,8 @@ from .models import (
     validate_opportunity,
 )
 from .review import render_source_review, source_review
+from .correspondence import load_projection
+from .workflow import HANDOFF_ROUTES
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -36,7 +38,8 @@ def main(argv: list[str] | None = None) -> int:
 
     handoff_parser = subparsers.add_parser("handoff")
     handoff_parser.add_argument("path", help="Opportunity JSON path")
-    handoff_parser.add_argument("--target", choices=["codex", "spark", "cursor-red-team"], required=True)
+    handoff_parser.add_argument("--root", help="Authoritative portfolio root; inferred from portfolio/opportunities otherwise")
+    handoff_parser.add_argument("--target", choices=list(HANDOFF_ROUTES), required=True)
 
     report_parser = subparsers.add_parser("report")
     report_parser.add_argument("--root", default=".", help="Repository root")
@@ -67,8 +70,11 @@ def main(argv: list[str] | None = None) -> int:
                 review = source_review(projects, opportunities, as_of=args.as_of,
                                        max_age_days=args.max_age_days, needs_review_only=args.needs_review)
                 print(json.dumps(review, indent=2) if args.format == "json" else render_source_review(review))
+            elif args.command == "validate":
+                print("validation ok")
             else:
-                print("validation ok" if args.command == "validate" else portfolio_report(projects, opportunities))
+                projection = load_projection(Path(args.root))
+                print(portfolio_report(projects, opportunities, guidance=projection.guidance))
         else:
             record = load_json(Path(args.path))
             if _print_issues(validate_opportunity(record, args.path)):
@@ -78,7 +84,16 @@ def main(argv: list[str] | None = None) -> int:
             elif args.command == "brief":
                 print(generate_candidate_brief(record))
             else:
-                print(generate_handoff(record, args.target))
+                path = Path(args.path).resolve()
+                root = Path(args.root).resolve() if args.root else path.parent.parent.parent
+                _, _, issues = load_portfolio(root)
+                if _print_issues(issues):
+                    return 1
+                if path.parent != root / "portfolio/opportunities":
+                    raise ValueError("handoff must use its exact current portfolio record")
+                projection = load_projection(root)
+                print(generate_handoff(record, args.target, guidance=projection.guidance[record["id"]],
+                                       route=projection.handoff_routes[args.target]))
     except (OSError, ValueError) as error:
         print(f"humanifest: {error}", file=sys.stderr)
         return 1

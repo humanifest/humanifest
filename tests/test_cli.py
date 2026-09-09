@@ -3,6 +3,7 @@ from io import StringIO
 import json
 from pathlib import Path
 import tempfile
+import shutil
 import unittest
 
 from humanifest.cli import main
@@ -37,6 +38,17 @@ class CliTests(unittest.TestCase):
         self.write_record("portfolio/projects/sample.json", project)
         self.write_record("portfolio/opportunities/sample.json", opportunity())
 
+    def compile_report(self):
+        from humanifest.correspondence import CONTROL_FILES
+        from scripts.compile_correspondence import compile_portfolio
+        source = Path(__file__).resolve().parents[1]
+        for name in CONTROL_FILES:
+            target = self.root / name
+            target.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copyfile(source / name, target)
+        (self.root / "metamap/exclusions.json").write_text('{"exclusions": []}')
+        compile_portfolio(self.root)
+
     def test_missing_root_fails_instead_of_reporting_success(self):
         for command in ["validate", "report"]:
             status, out, err = self.run_cli(command, "--root", str(self.root / "missing"))
@@ -46,6 +58,7 @@ class CliTests(unittest.TestCase):
 
     def test_valid_portfolio_and_json_score(self):
         self.seed_portfolio()
+        self.compile_report()
         for command in ["validate", "report"]:
             status, out, err = self.run_cli(command, "--root", str(self.root))
             self.assertEqual((status, err), (0, ""))
@@ -180,6 +193,7 @@ class CliTests(unittest.TestCase):
         self.add_opportunity("second-pr", "PR-OPEN", "second-project")
         for state in ["PARKED", "DECLINED", "MERGED", "RELEASED"]:
             self.add_opportunity(state.lower(), state)
+        self.compile_report()
         status, out, err = self.run_cli("report", "--root", str(self.root))
         self.assertEqual((status, err), (0, ""))
         self.assertIn("Active implementations: 1/1", out)

@@ -1,0 +1,338 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "urn:humanifest:viability",
+  "graph": {
+    "id": "urn:humanifest:portfolio",
+    "revision": "sha256:d94b5ee30c38c3c8c400380fb39be39a24bdbd6eda9acbeedc99b3d85fc50a0a"
+  },
+  "mappings": [
+    {
+      "select": {
+        "relations": [
+          "hf:actor",
+          "hf:confirmation",
+          "hf:current_record",
+          "hf:evidence",
+          "hf:gate",
+          "hf:guidance",
+          "hf:handoff_route",
+          "hf:output",
+          "hf:policy",
+          "hf:prerequisite",
+          "hf:project",
+          "hf:source",
+          "routing:accepts",
+          "routing:authorized_by",
+          "routing:handled_by"
+        ]
+      },
+      "coverage": "total",
+      "determinism": "deterministic",
+      "reversibility": "irreversible"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "urn:humanifest:constraint:0",
+      "kind": "topology:relation-totality",
+      "subjects": [
+        "urn:humanifest:portfolio"
+      ],
+      "parameters": {
+        "subjectKinds": [
+          "routing:command"
+        ],
+        "relation": "routing:handled_by",
+        "direction": "source",
+        "cardinality": "exactly-one"
+      }
+    },
+    {
+      "id": "urn:humanifest:constraint:1",
+      "kind": "topology:relation-totality",
+      "subjects": [
+        "urn:humanifest:portfolio"
+      ],
+      "parameters": {
+        "subjectKinds": [
+          "routing:command"
+        ],
+        "relation": "routing:accepts",
+        "direction": "source",
+        "cardinality": "exactly-one"
+      }
+    },
+    {
+      "id": "urn:humanifest:constraint:2",
+      "kind": "topology:relation-totality",
+      "subjects": [
+        "urn:humanifest:portfolio"
+      ],
+      "parameters": {
+        "subjectKinds": [
+          "routing:command"
+        ],
+        "relation": "routing:authorized_by",
+        "direction": "source",
+        "cardinality": "exactly-one"
+      }
+    },
+    {
+      "id": "urn:humanifest:constraint:3",
+      "kind": "topology:relation-totality",
+      "subjects": [
+        "urn:humanifest:portfolio"
+      ],
+      "parameters": {
+        "subjectKinds": [
+          "routing:command"
+        ],
+        "relation": "hf:actor",
+        "direction": "source",
+        "cardinality": "exactly-one"
+      }
+    },
+    {
+      "id": "urn:humanifest:constraint:4",
+      "kind": "topology:relation-totality",
+      "subjects": [
+        "urn:humanifest:portfolio"
+      ],
+      "parameters": {
+        "subjectKinds": [
+          "hf:project",
+          "hf:opportunity",
+          "hf:evidence",
+          "hf:source",
+          "hf:gate",
+          "hf:confirmation",
+          "hf:contribution",
+          "hf:report",
+          "hf:handoff"
+        ],
+        "relation": "hf:current_record",
+        "direction": "source",
+        "cardinality": "exactly-one"
+      }
+    },
+    {
+      "id": "urn:humanifest:constraint:5",
+      "kind": "topology:relation-totality",
+      "subjects": [
+        "urn:humanifest:portfolio"
+      ],
+      "parameters": {
+        "subjectKinds": [
+          "hf:opportunity",
+          "hf:report",
+          "hf:handoff"
+        ],
+        "relation": "hf:project",
+        "direction": "source",
+        "cardinality": "exactly-one",
+        "counterpartKinds": [
+          "hf:project"
+        ]
+      }
+    },
+    {
+      "id": "urn:humanifest:constraint:6",
+      "kind": "topology:relation-totality",
+      "subjects": [
+        "urn:humanifest:portfolio"
+      ],
+      "parameters": {
+        "subjectKinds": [
+          "hf:opportunity",
+          "hf:report",
+          "hf:handoff"
+        ],
+        "relation": "hf:guidance",
+        "direction": "source",
+        "cardinality": "exactly-one"
+      }
+    },
+    {
+      "id": "urn:humanifest:constraint:7",
+      "kind": "topology:relation-totality",
+      "subjects": [
+        "urn:humanifest:portfolio"
+      ],
+      "parameters": {
+        "subjectKinds": [
+          "hf:opportunity",
+          "hf:report",
+          "hf:handoff"
+        ],
+        "relation": "hf:policy",
+        "direction": "source",
+        "cardinality": "exactly-one"
+      }
+    },
+    {
+      "id": "urn:humanifest:constraint:8",
+      "kind": "topology:relation-totality",
+      "subjects": [
+        "urn:humanifest:portfolio"
+      ],
+      "parameters": {
+        "subjectKinds": [
+          "hf:opportunity",
+          "hf:report",
+          "hf:handoff"
+        ],
+        "relation": "hf:actor",
+        "direction": "source",
+        "cardinality": "exactly-one"
+      }
+    },
+    {
+      "id": "urn:humanifest:constraint:9",
+      "kind": "topology:relation-totality",
+      "subjects": [
+        "urn:humanifest:portfolio"
+      ],
+      "parameters": {
+        "subjectKinds": [
+          "hf:project",
+          "hf:opportunity",
+          "hf:evidence"
+        ],
+        "relation": "hf:source",
+        "direction": "source",
+        "cardinality": "one-or-more"
+      }
+    },
+    {
+      "id": "urn:humanifest:constraint:10",
+      "kind": "topology:relation-totality",
+      "subjects": [
+        "urn:humanifest:portfolio"
+      ],
+      "parameters": {
+        "subjectKinds": [
+          "hf:opportunity"
+        ],
+        "relation": "hf:gate",
+        "direction": "source",
+        "cardinality": "one-or-more"
+      }
+    },
+    {
+      "id": "urn:humanifest:constraint:11",
+      "kind": "topology:relation-totality",
+      "subjects": [
+        "urn:humanifest:portfolio"
+      ],
+      "parameters": {
+        "subjectKinds": [
+          "hf:opportunity"
+        ],
+        "relation": "hf:prerequisite",
+        "direction": "source",
+        "cardinality": "one-or-more"
+      }
+    },
+    {
+      "id": "urn:humanifest:constraint:12",
+      "kind": "topology:relation-totality",
+      "subjects": [
+        "urn:humanifest:portfolio"
+      ],
+      "parameters": {
+        "subjectKinds": [
+          "hf:opportunity"
+        ],
+        "relation": "hf:output",
+        "direction": "source",
+        "cardinality": "one-or-more"
+      }
+    },
+    {
+      "id": "urn:humanifest:constraint:13",
+      "kind": "topology:relation-totality",
+      "subjects": [
+        "urn:humanifest:portfolio"
+      ],
+      "parameters": {
+        "subjectKinds": [
+          "hf:opportunity"
+        ],
+        "relation": "hf:handoff_route",
+        "direction": "source",
+        "cardinality": "one-or-more",
+        "counterpartKinds": [
+          "routing:command"
+        ]
+      }
+    },
+    {
+      "id": "urn:humanifest:constraint:14",
+      "kind": "topology:relation-totality",
+      "subjects": [
+        "urn:humanifest:portfolio"
+      ],
+      "parameters": {
+        "subjectKinds": [
+          "hf:gate"
+        ],
+        "relation": "hf:source",
+        "direction": "source",
+        "cardinality": "one-or-more",
+        "subjectAttributes": {
+          "cited": true
+        }
+      }
+    },
+    {
+      "id": "urn:humanifest:constraint:15",
+      "kind": "topology:relation-totality",
+      "subjects": [
+        "urn:humanifest:portfolio"
+      ],
+      "parameters": {
+        "subjectKinds": [
+          "hf:authored-handoff"
+        ],
+        "relation": "hf:current_record",
+        "direction": "source",
+        "cardinality": "exactly-one",
+        "allowExcluded": true
+      }
+    },
+    {
+      "id": "urn:humanifest:constraint:exact-authority",
+      "kind": "hf:exact-authority",
+      "subjects": [
+        "urn:humanifest:portfolio"
+      ],
+      "parameters": {
+        "gates": [
+          "humanitarian_relevance_supported",
+          "repository_active",
+          "external_contributions_accepted",
+          "contribution_policy_understood",
+          "ai_policy_understood",
+          "problem_current_and_consequential",
+          "behavior_reproducible_or_verifiable",
+          "code_and_tests_located",
+          "change_bounded",
+          "regression_strategy_credible",
+          "no_private_data_required",
+          "security_and_licensing_risk_acceptable",
+          "environment_feasible",
+          "maintainer_interest_confirmed",
+          "probable_reviewer_identified",
+          "benefit_justifies_review_cost",
+          "user_can_explain_line_by_line"
+        ],
+        "handoffTargets": [
+          "codex",
+          "spark",
+          "cursor-red-team"
+        ]
+      }
+    }
+  ],
+  "evidence": []
+}

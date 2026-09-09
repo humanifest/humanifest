@@ -55,9 +55,13 @@ python3 -m humanifest.cli finance --root .
 
 ## Development checks
 
-The core suite and record checks run without third-party dependencies:
+Record validation and generated reports use the Python standard library. The
+correspondence mutation tests additionally need Node 22.12+ and the pinned
+Metamap development compiler:
 
 ```bash
+npm ci --ignore-scripts --no-audit --no-fund --prefix tools/metamap
+python3 -m scripts.compile_correspondence --check
 python3 -m unittest
 python3 -m humanifest.cli validate --root .
 python3 -m humanifest.cli report --root .
@@ -79,7 +83,10 @@ It uses no package index during build or installation and removes its temporary
 environment afterward. Build artifacts in the checkout are ignored by Git.
 
 CI runs these checks on Python 3.11 and 3.14 for pushes to `main` and pull requests.
-It also compares `portfolio/status.md` with current report output. Refresh that
+It also recompiles the Metamap projection without accepting drift and compares
+`portfolio/status.md` with current report output. After changing records or bound
+controls, regenerate with `python3 -m scripts.compile_correspondence`; see
+[correspondence boundaries](docs/portfolio-correspondence.md). Refresh that
 generated file using the README command whenever records or report formatting
 change. CI has read-only repository permissions and does not contact maintainers,
 publish packages, or change records.

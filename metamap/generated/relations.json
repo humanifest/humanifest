@@ -1,0 +1,211 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "urn:humanifest:relations",
+  "version": "1.0.0",
+  "relations": [
+    {
+      "id": "hf:actor",
+      "description": "actor",
+      "cardinalities": [
+        "one-to-one"
+      ],
+      "cyclePolicy": "allow",
+      "impactDirection": "target-to-source",
+      "sourceKinds": [
+        "routing:command",
+        "hf:opportunity",
+        "hf:report",
+        "hf:handoff"
+      ],
+      "targetKinds": [
+        "hf:actor"
+      ]
+    },
+    {
+      "id": "hf:current_record",
+      "description": "current_record",
+      "cardinalities": [
+        "one-to-one"
+      ],
+      "cyclePolicy": "allow",
+      "impactDirection": "target-to-source",
+      "sourceKinds": [
+        "hf:project",
+        "hf:opportunity",
+        "hf:source",
+        "hf:evidence",
+        "hf:gate",
+        "hf:confirmation",
+        "hf:contribution",
+        "hf:report",
+        "hf:handoff",
+        "hf:authored-handoff"
+      ],
+      "targetKinds": [
+        "hf:record"
+      ]
+    },
+    {
+      "id": "hf:source",
+      "description": "source",
+      "cardinalities": [
+        "one-to-one"
+      ],
+      "cyclePolicy": "allow",
+      "impactDirection": "target-to-source",
+      "sourceKinds": [
+        "hf:project",
+        "hf:opportunity",
+        "hf:evidence",
+        "hf:gate",
+        "hf:confirmation"
+      ],
+      "targetKinds": [
+        "hf:source"
+      ]
+    },
+    {
+      "id": "hf:evidence",
+      "description": "evidence",
+      "cardinalities": [
+        "one-to-one"
+      ],
+      "cyclePolicy": "allow",
+      "impactDirection": "target-to-source",
+      "sourceKinds": [
+        "hf:project",
+        "hf:opportunity"
+      ],
+      "targetKinds": [
+        "hf:evidence"
+      ]
+    },
+    {
+      "id": "hf:project",
+      "description": "project",
+      "cardinalities": [
+        "one-to-one"
+      ],
+      "cyclePolicy": "allow",
+      "impactDirection": "target-to-source",
+      "sourceKinds": [
+        "hf:opportunity",
+        "hf:report",
+        "hf:handoff"
+      ],
+      "targetKinds": [
+        "hf:project"
+      ]
+    },
+    {
+      "id": "hf:guidance",
+      "description": "guidance",
+      "cardinalities": [
+        "one-to-one"
+      ],
+      "cyclePolicy": "allow",
+      "impactDirection": "target-to-source",
+      "sourceKinds": [
+        "hf:opportunity",
+        "hf:report",
+        "hf:handoff"
+      ],
+      "targetKinds": [
+        "routing:command"
+      ]
+    },
+    {
+      "id": "hf:policy",
+      "description": "policy",
+      "cardinalities": [
+        "one-to-one"
+      ],
+      "cyclePolicy": "allow",
+      "impactDirection": "target-to-source",
+      "sourceKinds": [
+        "hf:opportunity",
+        "hf:report",
+        "hf:handoff"
+      ],
+      "targetKinds": [
+        "routing:policy"
+      ]
+    },
+    {
+      "id": "hf:handoff_route",
+      "description": "handoff_route",
+      "cardinalities": [
+        "one-to-one"
+      ],
+      "cyclePolicy": "allow",
+      "impactDirection": "target-to-source",
+      "sourceKinds": [
+        "hf:opportunity"
+      ],
+      "targetKinds": [
+        "routing:command"
+      ]
+    },
+    {
+      "id": "hf:gate",
+      "description": "gate",
+      "cardinalities": [
+        "one-to-one"
+      ],
+      "cyclePolicy": "allow",
+      "impactDirection": "target-to-source",
+      "sourceKinds": [
+        "hf:opportunity"
+      ],
+      "targetKinds": [
+        "hf:gate"
+      ]
+    },
+    {
+      "id": "hf:prerequisite",
+      "description": "prerequisite",
+      "cardinalities": [
+        "one-to-one"
+      ],
+      "cyclePolicy": "allow",
+      "impactDirection": "target-to-source",
+      "sourceKinds": [
+        "hf:opportunity"
+      ],
+      "targetKinds": [
+        "hf:gate"
+      ]
+    },
+    {
+      "id": "hf:confirmation",
+      "description": "confirmation",
+      "cardinalities": [
+        "one-to-one"
+      ],
+      "cyclePolicy": "allow",
+      "impactDirection": "target-to-source",
+      "sourceKinds": [
+        "hf:gate"
+      ],
+      "targetKinds": [
+        "hf:confirmation"
+      ]
+    },
+    {
+      "id": "hf:output",
+      "description": "output",
+      "cardinalities": [
+        "one-to-one"
+      ],
+      "cyclePolicy": "allow",
+      "impactDirection": "target-to-source",
+      "sourceKinds": [
+        "hf:opportunity"
+      ],
+      "targetKinds": [
+        "hf:report",
+        "hf:handoff"
+      ]
+    }
+  ]
+}

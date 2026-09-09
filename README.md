@@ -76,10 +76,24 @@ Every command validates its input before producing output. Invalid records retur
 exit code `1` with diagnostics on stderr; argument errors return `2`. `score`
 prints JSON for use by other tools. `validate`, `report`, and `sources` require both portfolio
 record directories and check unique record IDs, opportunity-to-project links, and
-the implementation and PR capacity limits above. Single-record commands cannot
-check portfolio capacity; validate the full portfolio before starting work.
+the implementation and PR capacity limits above. Single-record score and brief commands cannot
+check portfolio capacity; validate the full portfolio before starting work. CLI
+handoffs additionally require the exact record in a valid current portfolio.
 
 Reports show capacity, blockers, and state-specific next actions in state/ID order.
+Reports and CLI handoffs consume a checked-in, immutable Metamap v0.5 projection.
+It is derived from current records and policy; it cannot authorize outreach,
+implementation, state transitions, or impact claims. Stale or missing projections
+fail closed. After changing records or bound controls, regenerate before reporting:
+
+```bash
+npm ci --ignore-scripts --prefix tools/metamap
+python3 -m scripts.compile_correspondence
+```
+
+Node 22.12+ is needed for this development-time compilation and mutation tests;
+normal reports use Python and the generated artifact without Node or network.
+See [correspondence boundaries and exclusions](docs/portfolio-correspondence.md).
 To refresh the saved status after validating records:
 
 ```bash

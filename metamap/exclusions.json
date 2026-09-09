@@ -1,0 +1,58 @@
+{
+  "exclusions": [
+    {
+      "path": "handoffs/codex-implementation-cht-11342.md",
+      "digest": "sha256:e7dadb4c05a2ab8e7f448008d2c8128dde0656662764ac0ed16b0e51aa2d1864",
+      "relations": [
+        "hf:current_record"
+      ],
+      "reason": "Authored reusable prompt, not a generated current-portfolio handoff. Use the guarded CLI handoff for current record guidance.",
+      "owner": "Humanifest repository maintainers"
+    },
+    {
+      "path": "handoffs/cursor-red-team-cht-11342.md",
+      "digest": "sha256:d0bf56a9598ab8cd9d91bd64d4ab3c0008617742b4b169ade63b242a6b8d2664",
+      "relations": [
+        "hf:current_record"
+      ],
+      "reason": "Authored reusable prompt, not a generated current-portfolio handoff. Use the guarded CLI handoff for current record guidance.",
+      "owner": "Humanifest repository maintainers"
+    },
+    {
+      "path": "handoffs/maintainer-inquiry-cht-10155.md",
+      "digest": "sha256:b4bc1c2143e3639719930e630db437c955fd8206910322d41d37c4ceb2bb2f5e",
+      "relations": [
+        "hf:current_record"
+      ],
+      "reason": "Authored reusable prompt, not a generated current-portfolio handoff. Use the guarded CLI handoff for current record guidance.",
+      "owner": "Humanifest repository maintainers"
+    },
+    {
+      "path": "handoffs/maintainer-inquiry-cht-11342.md",
+      "digest": "sha256:9c0ae6a4573bafdc10cc34dee08f4954270f791e27e5614df7da8a0936c1172b",
+      "relations": [
+        "hf:current_record"
+      ],
+      "reason": "Authored reusable prompt, not a generated current-portfolio handoff. Use the guarded CLI handoff for current record guidance.",
+      "owner": "Humanifest repository maintainers"
+    },
+    {
+      "path": "handoffs/orca-open-source-governance.md",
+      "digest": "sha256:f94c3a4d8e465e0f34af9e093017dcc1ceb25b2c7374f4b0c6c3b69a697204af",
+      "relations": [
+        "hf:current_record"
+      ],
+      "reason": "Authored reusable prompt, not a generated current-portfolio handoff. Use the guarded CLI handoff for current record guidance.",
+      "owner": "Humanifest repository maintainers"
+    },
+    {
+      "path": "handoffs/spark-record-review.md",
+      "digest": "sha256:0478acd56543b354b3c7c7b6c913a8b3468b3e9b8ed041f9fd9ed6554632986a",
+      "relations": [
+        "hf:current_record"
+      ],
+      "reason": "Authored reusable prompt, not a generated current-portfolio handoff. Use the guarded CLI handoff for current record guidance.",
+      "owner": "Humanifest repository maintainers"
+    }
+  ]
+}

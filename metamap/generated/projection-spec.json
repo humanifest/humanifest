@@ -1,0 +1,53 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "urn:humanifest:report-projection",
+  "select": {
+    "kinds": [
+      "hf:opportunity"
+    ]
+  },
+  "slots": [
+    {
+      "name": "project",
+      "relation": "hf:project",
+      "direction": "outgoing",
+      "cardinality": "exactly-one"
+    },
+    {
+      "name": "guidance",
+      "relation": "hf:guidance",
+      "direction": "outgoing",
+      "cardinality": "exactly-one"
+    },
+    {
+      "name": "authority",
+      "relation": "hf:current_record",
+      "direction": "outgoing",
+      "cardinality": "exactly-one"
+    },
+    {
+      "name": "outputs",
+      "relation": "hf:output",
+      "direction": "outgoing",
+      "cardinality": "one-or-more"
+    },
+    {
+      "name": "policy",
+      "relation": "hf:policy",
+      "direction": "outgoing",
+      "cardinality": "exactly-one"
+    },
+    {
+      "name": "actor",
+      "relation": "hf:actor",
+      "direction": "outgoing",
+      "cardinality": "exactly-one"
+    },
+    {
+      "name": "handoff_routes",
+      "relation": "hf:handoff_route",
+      "direction": "outgoing",
+      "cardinality": "one-or-more"
+    }
+  ]
+}

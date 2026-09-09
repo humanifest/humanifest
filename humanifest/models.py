@@ -263,9 +263,11 @@ def generate_candidate_brief(record: dict[str, Any]) -> str:
     )
 
 
-def generate_handoff(record: dict[str, Any], target: str) -> str:
-    if target not in {"codex", "spark", "cursor-red-team"}:
-        raise ValueError("target must be codex, spark, or cursor-red-team")
+def generate_handoff(record: dict[str, Any], target: str, *, guidance=None, route=None) -> str:
+    from .workflow import HANDOFF_ROUTES
+    if target not in HANDOFF_ROUTES:
+        raise ValueError("target must be " + ", ".join(HANDOFF_ROUTES))
+    route = HANDOFF_ROUTES[target] if route is None else route
     base = [
         f"Objective: evaluate and prepare the opportunity `{record['id']}` for {record['project_id']}.",
         f"Title: {record['title']}",
@@ -276,7 +278,7 @@ def generate_handoff(record: dict[str, Any], target: str) -> str:
         f"Environment: {record['environment']}",
         f"Maintainer context: {record['maintainer']}",
         f"Risks: {record['risks']}",
-        f"Next action: {next_action(record)}",
+        f"Next action: {guidance if guidance is not None else next_action(record)}",
         "Before implementation: validate the full Humanifest portfolio and check its capacity limits; inspect target setup code before executing it.",
         "Constraints: no external writes or maintainer contact outside explicit user authorization. Consult docs/contribution-protocol.md for standing authorization and verify the Humanifest posting identity; never use the user's personal account. No private data; stop if evidence contradicts the gate rationale.",
         "Return format: findings, changed files if any, commands run, remaining blockers, and confidence.",
@@ -290,17 +292,13 @@ def generate_handoff(record: dict[str, Any], target: str) -> str:
     base.extend(f"Blocker: {item['gate']}: {item['rationale']}" for item in failures)
     base.extend(_gate_evidence_lines(record))
     base.extend(["Sources (supplied evidence; not independently refreshed):", *_source_lines(record)])
-    if target == "spark":
-        base.insert(0, "Use a fast Codex model only for bounded inspection or mechanical verification.")
-    elif target == "cursor-red-team":
-        base.insert(0, "Act as an independent adversarial reviewer. Do not implement the fix.")
-        base.append("Focus on hidden scope, security, environment risk, test gaps, and maintainer burden.")
-    else:
-        base.insert(0, "Use full-reasoning Codex for synthesis, integration, and final go/no-go.")
+    base.insert(0, route["prefix"])
+    if route["suffix"]:
+        base.append(route["suffix"])
     return "\n".join(base)
 
 
-def portfolio_report(projects: list[dict[str, Any]], opportunities: list[dict[str, Any]]) -> str:
+def portfolio_report(projects: list[dict[str, Any]], opportunities: list[dict[str, Any]], *, guidance=None) -> str:
     rows = ["# Portfolio Status", ""]
     rows.append(f"Projects: {len(projects)}")
     rows.append(f"Opportunities: {len(opportunities)}")
@@ -313,7 +311,7 @@ def portfolio_report(projects: list[dict[str, Any]], opportunities: list[dict[st
     for opportunity in sorted(opportunities, key=lambda item: (PIPELINE_STATES.index(item["pipeline_state"]), item["id"])):
         score = score_opportunity(opportunity)
         rows.append(f"- {opportunity['id']}: {opportunity['pipeline_state']}; score={score['score']}; failed_gates={len(score['failed_gates'])}")
-        rows.append(f"  Next: {next_action(opportunity)}")
+        rows.append(f"  Next: {guidance[opportunity['id']] if guidance is not None else next_action(opportunity)}")
         for failure in score["failed_gates"]:
             rows.append(f"  - {failure['gate']}: {failure['rationale']}")
     return "\n".join(rows)
@@ -322,24 +320,8 @@ def portfolio_report(projects: list[dict[str, Any]], opportunities: list[dict[st
 def next_action(record: dict[str, Any]) -> str:
     """Suggest a bounded action without advancing records or granting permission."""
     state = record["pipeline_state"]
-    actions = {
-        "QUEUED": "Audit humanitarian relevance and contribution policies using read-only sources.",
-        "PROJECT-AUDIT": "Complete the project audit and record evidence before shortlisting an issue.",
-        "OPPORTUNITY-RESEARCH": "Verify the issue is current and bound its code surface and regression strategy.",
-        "SHORTLISTED": "Prepare a maintainer inquiry; check standing authorization and verify the Humanifest posting identity before sending.",
-        "MAINTAINER-CHECK": "Coordinate within standing authorization using the verified Humanifest identity; record current maintainer confirmation.",
-        "ENVIRONMENT-READY": "Reproduce with synthetic data in the inspected environment; record results.",
-        "REPRODUCED": "Check all hard gates and portfolio capacity before starting the approved bounded implementation.",
-        "BUILDING": "Complete the bounded change and regression tests, then prepare adversarial review.",
-        "ADVERSARIAL-REVIEW": "Review correctness, scope, security, tests, and maintainer burden before human review.",
-        "HUMAN-REVIEW": "Review the change line by line and check PR capacity, standing authorization, and the Humanifest posting identity before opening a PR.",
-        "PR-OPEN": "Review upstream feedback; respond and update within standing authorization using the verified Humanifest identity.",
-        "MERGED": "Verify release and deployment evidence without assuming that merge proves humanitarian impact.",
-        "RELEASED": "Record observed retention and outcomes with sources; do not infer impact from release alone.",
-        "PARKED": "Keep parked until the stopping reason is resolved and evidence supports reconsideration.",
-        "DECLINED": "Keep declined; do not resume work without a new decision supported by evidence.",
-    }
-    return actions[state]
+    from .workflow import WORKFLOW_ACTIONS
+    return WORKFLOW_ACTIONS[state]
 
 
 def _source_lines(record: dict[str, Any]) -> list[str]:

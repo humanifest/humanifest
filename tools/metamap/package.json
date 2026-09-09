@@ -1,0 +1,8 @@
+{
+  "name": "humanifest-metamap-tools",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@roryscot/metamap": "https://github.com/roryscot/metamap/archive/refs/tags/v0.5.0.tar.gz"
+  }
+}

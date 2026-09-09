@@ -6,6 +6,7 @@ Uses the already-installed setuptools; build/install never access an index.
 
 import json
 import os
+import shutil
 from pathlib import Path
 import subprocess
 import sys
@@ -51,11 +52,28 @@ def main() -> None:
         record["gates"]["maintainer_interest_confirmed"]["passed"] = False
         candidate = temporary / "candidate.json"
         candidate.write_text(json.dumps(record), encoding="utf-8")
+        from humanifest.correspondence import CONTROL_FILES
+        from scripts.compile_correspondence import compile_portfolio
+        fixture = temporary / "portfolio-fixture"
+        for name in CONTROL_FILES:
+            target = fixture / name
+            target.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copyfile(root / name, target)
+        (fixture / "metamap/exclusions.json").write_text('{"exclusions": []}')
+        records = fixture / "portfolio"
+        (records / "opportunities").mkdir(parents=True)
+        (records / "projects").mkdir()
+        (records / "opportunities/sample.json").write_text(json.dumps(record))
+        project = {"id": "sample-project", "name": "Sample", "repository": "https://example.test/repo",
+                   "homepage": "https://example.test", "license": "MIT", "humanitarian_domain": "Health",
+                   "maintenance": {}, "contribution": {}, "impact_evidence": [], "sources": record["sources"]}
+        (records / "projects/sample.json").write_text(json.dumps(project))
+        compile_portfolio(fixture)
         commands = [
             ["--help"], ["validate", "--root", str(root)], ["report", "--root", str(root)],
             ["finance", "--root", str(root)],
             ["score", str(candidate)], ["brief", str(candidate)],
-            ["handoff", str(candidate), "--target", "codex"],
+            ["handoff", str(records / "opportunities/sample.json"), "--target", "codex"],
             ["sources", "--root", str(root), "--as-of", "2026-09-08", "--max-age-days", "30", "--format", "json"],
         ]
         for args in commands:
