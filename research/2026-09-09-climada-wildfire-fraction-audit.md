@@ -1,17 +1,17 @@
 # CLIMADA wildfire fraction: research intake
 
-Accessed September 9, 2026. Public issue and pinned-source inspection only.
-No clone, dependency installation, target import, hazard-data download or upstream
-message occurred. The reported numerical results below are not independently
-reproduced.
+Initial source intake, September 9, 2026. The original inspection below preceded
+runtime/data work. The subsequent [runtime verification](2026-09-09-climada-fraction-runtime.md)
+now confirms the COD storage counts and method behavior; a verification note was
+delivered on #1312. National/population-weighted comparisons remain unverified.
 
 ## Current need and public-benefit pathway
 
 [CLIMADA #1312](https://github.com/CLIMADA-project/climada_python/issues/1312)
 reports duplicate sparse entries in wildfire fraction data, including the v1.1
 release intended to address an earlier intensity-data issue. The reporter says
-fractions greater than one propagate into impact estimates. The issue is open,
-unassigned and has no comments in the current API response. No matching PR was
+fractions greater than one propagate into impact estimates. At initial intake the issue was open,
+unassigned and had no comments in the API response. No matching PR was
 identified in the complete returned list of 17 open PRs. This is not confirmation
 of an accepted Humanifest scope or proof of no private work.
 
@@ -54,20 +54,12 @@ Some fixtures deliberately contain values above one or below zero (e.g. fraction
 prove such fractions are physically valid, but an unconditional range restriction
 would affect existing assumptions and needs explicit review.
 
-Next, finish the CI/configuration and dependency audit and execute hash-checked
-original canonicalization/fraction/impact methods with tiny synthetic sparse
-inputs, without importing the full package. Include duplicate ones, unique bounded
-fractions, fractional duplicates, negative/out-of-range values, empty-fraction
-identity and shape mismatch controls. Compare the apparent matrix *before* and
-*after* canonicalization using independent copies so an observation does not
-silently mutate the test subject. Separately check propagation into impact with
-known exposure values and a clearly disclosed damage-ratio test double.
-
-This can establish a small method-level reproduction and an appropriate scope
-question. It cannot verify the live wildfire data version, national percentages,
-full hazard loading, geospatial assignment or policy consequences. Obtain
-maintainer agreement before choosing data regeneration, validation, warnings or
-an implementation contract. No full-framework feasibility gate passes yet.
+The planned method-level experiment and bounded setup audit are now completed;
+see the [runtime/data note](2026-09-09-climada-fraction-runtime.md) for controls,
+results, dataset provenance and limits. The live COD v1.1 artifact was also
+verified directly. Obtain maintainer agreement before choosing data regeneration,
+validation, warnings or an implementation contract. No full-framework feasibility
+gate passes yet.
 
 ## Setup and contribution constraints
 
@@ -76,8 +68,8 @@ source/test files. Metadata and source headers declare GPLv3; the LICENSE file w
 retrieved, but a full dependency/license audit has not been completed.
 
 Contributions may use a fork and must target develop, with tests, Pylint,
-documentation/changelog and attribution updates. The guide references additional
-developer/reviewer guidance still to inspect. No explicit bot/AI policy was
+documentation/changelog and attribution updates. The linked Git, testing and coding guides were subsequently inspected;
+the runtime note records relevant requirements. No explicit bot/AI policy was
 established in the inspected files; absence is not acceptance. CODEOWNERS names
 emanuel-schmid, chahank and peanutfun globally; this identifies potential reviewers,
 not a commitment or an invitation to tag all three.
@@ -88,7 +80,8 @@ calls `setup_climada_data()` on import, creating configured system/demo director
 and copying bundled files (home-directory defaults). No full package import should
 precede explicit data-path and configuration review. The tree also contains
 Conda requirements, CI/release workflows, pre-commit configuration and a docs
-Dockerfile; their setup paths have not yet been audited. No release or data-upload
+Dockerfile; these were subsequently inspected for the bounded probes. The full native
+environment and downstream CI were not executed. No release or data-upload
 operation is part of this research.
 
 ## Other leads not promoted

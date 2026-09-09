@@ -2,29 +2,33 @@
   "id": "climada-1312-wildfire-fraction-verification",
   "project_id": "climada-python",
   "title": "Verify wildfire fraction bounds and impact propagation",
-  "pipeline_state": "OPPORTUNITY-RESEARCH",
-  "research_next_step": "Finish CI/configuration and dependency audit, then execute hash-checked original sparse canonicalization, fraction and impact methods on tiny synthetic matrices with duplicate, bounded, empty and invalid controls. Compare apparent values before/after without mutating observations. Keep full package import and live hazard downloads out until their paths are audited; agree a data-validation versus data-generation scope before any patch.",
-  "problem": "Issue #1312 reports duplicated wildfire fraction entries that can represent values above one and propagate into modeled impact. Source confirms summation and subsequent multiplication, but live data and reported country-level differences have not been independently reproduced.",
+  "pipeline_state": "MAINTAINER-CHECK",
+  "problem": "The active public COD wildfire v1.1 file independently contains 99,939 duplicated fraction cells representing values up to four, while intensity has no duplicates. Original checked impact methods propagate out-of-range fractions. Population-weighted country comparisons and downstream consequences remain unverified.",
   "humanitarian_relevance": "Reliable climate-risk estimates may support adaptation appraisal. The cause is relevant; no decision improvement, avoided loss or population benefit from this contribution is established.",
   "evidence": [
     {
       "type": "self_reported",
-      "claim": "The issue reporter says v1.1 deduplicates intensity but retains duplicate fraction entries, with higher modeled totals in country comparisons. Those numerical results and the live dataset remain unverified.",
+      "claim": "The reporter describes country-level population-weighted differences and a 72-country sweep. Those impact estimates remain unverified; a separate public-file check now confirms the COD storage counts.",
       "source_id": "climada-1312"
     },
     {
       "type": "measured",
-      "claim": "Pinned source normalizes sparse matrices by addition and multiplies returned fraction into damage ratios/exposure. Existing fixtures include out-of-range fraction values, so a new range check needs compatibility review. No runtime check occurred.",
-      "source_id": "climada-fraction-audit"
+      "claim": "Pinned original sparse-storage unit test passes; eight synthetic original-method impact cases and shape rejection pass. Canonicalization preserves apparent values, out-of-range fractions propagate, and empty/all-zero fraction acts as identity. Damage ratios are a disclosed test double.",
+      "source_id": "climada-fraction-runtime"
+    },
+    {
+      "type": "measured",
+      "claim": "Checksum-verified active COD v1.1 file has 1,296,686 raw fraction ones, 1,191,978 canonical entries, 99,939 cells above one and maximum four. Intensity has no duplicates. Fraction sum/binary support is 1.087843903, a diagnostic arithmetic comparison rather than verified population-weighted impact.",
+      "source_id": "climada-fraction-runtime"
     }
   ],
   "code_surface": "At develop dea46facc7856ed1c26adc1ee03e954c77d30c1b: climada/util/checker.py prune_csr_matrix; climada/hazard/base.py check_matrices and _get_fraction; climada/engine/impact_calc.py constructor and impact_matrix. Existing checker, hazard-base and impact-calculation test files inspected.",
-  "proposed_change": "First verify the mechanism and scope a regression strategy. Preserve sparse addition semantics; do not choose max/clipping or regenerate hazard data without provenance and maintainer agreement. Separate data repair from framework validation.",
-  "tests": "Read existing canonicalization, shape/empty-fraction and impact tests. Proposed method-level synthetic cases cover duplicate ones, bounded/fractional duplicates, negative/out-of-range data, empty identity and shape mismatch with known exposure/damage-ratio controls. No target tests or full-model run yet.",
-  "environment": "Public source retrieval only. Manifest has broad native/geospatial dependencies; importing climada creates configured data directories and copies bundled files with home defaults. CI, Conda, hooks and Docker setup paths still need review. No clone, install, import or data download.",
-  "maintainer": "Global CODEOWNERS lists emanuel-schmid, chahank and peanutfun, but no specific reviewer commitment. No Humanifest outreach or accepted scope.",
-  "risks": "Canonicalization preserves apparent sparse values; changing generic summation could be mathematically wrong. Dataset-specific deduplication semantics, empty-fraction identity, existing arbitrary-valued fixtures and full client/model behavior require separate checks. Reported numerical impact is not verified.",
-  "priority_rationale": "A recent, unresolved data-correctness report has an inspectable path into climate-impact calculation and a small independent synthetic verification step. This merits research, not a claim of high realized impact. Already-owned or merged neighboring fixes were not duplicated.",
+  "proposed_change": "Mechanism and COD data counts are verified; agree a bounded diagnostics versus data-generation regression scope before patching. Preserve sparse addition semantics and obtain maintainer agreement before max/clipping or hazard regeneration.",
+  "tests": "One unchanged original sparse-storage unit test, eight numeric original-method cases and shape-mismatch rejection pass. Public HDF5 sparse fields independently checked by row, then normalized using pinned original code on copies. No full framework suite, real damage-function/centroid assignment or population-weighted calculation.",
+  "environment": "Audited CI/Conda/hooks/docs Dockerfile/config/API/HDF5 source and linked contribution guides. Original methods run with existing Python 3.13.7, NumPy 2.3.4, SciPy 1.16.2. A temporary system-site-packages venv adds only checksum-verified h5py 3.14.0 binary wheel with no dependencies/network during install; HDF5 1.14.6. Public CC BY 4.0 COD artifact downloaded and read-only checked. No CLIMADA install/import, service or full native environment.",
+  "maintainer": "Verified Humanifest bot inquiry and independent results posted September 9 at #1312 comment 5599217450. No accepted scope, bot eligibility or reviewer commitment yet. Manual September 15 review; continue independent portfolio work meanwhile.",
+  "risks": "Canonicalization preserves apparent sparse values; generic max/clipping may be mathematically wrong. Dataset-specific repair semantics, empty-fraction identity and existing arbitrary-valued fixtures need review. Full model behavior, population-weighted estimates and benefit remain unverified.",
+  "priority_rationale": "Current public data independently reproduces a reported correctness defect and method probes verify its propagation path. Findings were delivered to the existing issue; await a bounded accepted scope while researching other candidates. No realized impact claim.",
   "gates": {
     "humanitarian_relevance_supported": {
       "passed": true,
@@ -43,29 +47,32 @@
     },
     "external_contributions_accepted": {
       "passed": false,
-      "rationale": "Not established in this initial source audit; verify evidence before advancing."
+      "rationale": "General guide welcomes external fork contributions. Eligibility of this AI-assisted bot contribution is now explicitly asked in the delivered inquiry and remains unconfirmed."
     },
     "contribution_policy_understood": {
       "passed": false,
-      "rationale": "Not established in this initial source audit; verify evidence before advancing."
+      "rationale": "Fork/develop, tests, Pylint, formatting and attribution requirements inspected. Final scope-specific checklist and bot pathway need agreement before implementation."
     },
     "ai_policy_understood": {
       "passed": false,
-      "rationale": "Not established in this initial source audit; verify evidence before advancing."
+      "rationale": "No explicit AI/bot rule found in bounded repository and linked guide inspection. Delivered inquiry asks whether this bot pathway is welcome; absence of a rule is not acceptance."
     },
     "problem_current_and_consequential": {
       "passed": false,
-      "rationale": "Open issue and source path support investigation. Live wildfire version, reported percentages and operational consequences remain independently unverified."
+      "rationale": "Current active COD artifact confirms duplicate fractions; original methods propagate out-of-range values. Operational consequences, population-weighted impact and review benefit remain unverified."
     },
     "behavior_reproducible_or_verifiable": {
-      "passed": false,
-      "rationale": "Not established in this initial source audit; verify evidence before advancing."
+      "passed": true,
+      "rationale": "Hash-verified original methods and public COD v1.1 sparse fields independently reproduce out-of-range fractions and their checked multiplication path. Scope is method/data-level, not population-weighted impact.",
+      "source_ids": [
+        "climada-fraction-runtime"
+      ]
     },
     "code_and_tests_located": {
       "passed": true,
-      "rationale": "Pinned canonicalization, hazard checks and impact multiplication plus three existing test files inspected. No target execution.",
+      "rationale": "Pinned checker/hazard/impact paths and tests inspected; unchanged checker test and extracted original methods executed. Full framework not run.",
       "source_ids": [
-        "climada-fraction-audit"
+        "climada-fraction-runtime"
       ]
     },
     "change_bounded": {
@@ -74,48 +81,49 @@
     },
     "regression_strategy_credible": {
       "passed": false,
-      "rationale": "Not established in this initial source audit; verify evidence before advancing."
+      "rationale": "Controlled method and public-file probes pass, but the intended fraction-validation/data-generation behavior has not been agreed for a production regression."
     },
     "no_private_data_required": {
       "passed": true,
-      "rationale": "A tiny synthetic sparse-matrix probe can examine the reported mechanism without operational exposure or patient data.",
+      "rationale": "Completed probes use synthetic inputs and public CC BY 4.0 hazard data only.",
       "source_ids": [
-        "climada-fraction-audit"
+        "climada-fraction-runtime",
+        "climada-data-metadata"
       ]
     },
     "security_and_licensing_risk_acceptable": {
       "passed": false,
-      "rationale": "Not established in this initial source audit; verify evidence before advancing."
+      "rationale": "Bounded source/data path inspected, public artifact licensed CC BY 4.0 and pinned binary reader verified. Full native dependency/license and production change review remains incomplete."
     },
     "environment_feasible": {
       "passed": false,
-      "rationale": "Not established in this initial source audit; verify evidence before advancing."
+      "rationale": "Bounded method/data probes are feasible and pass; full native/geospatial framework baseline remains unestablished."
     },
     "maintainer_interest_confirmed": {
       "passed": false,
-      "rationale": "Issue is open and unassigned with no comments. No accepted Humanifest scope, reviewer commitment or bot pathway established."
+      "rationale": "Verification and scope question delivered as humanifest-bot; posting does not establish maintainer acceptance or bot eligibility."
     },
     "probable_reviewer_identified": {
       "passed": false,
-      "rationale": "Not established in this initial source audit; verify evidence before advancing."
+      "rationale": "Global CODEOWNERS identifies possible reviewers, but no reviewer has accepted this scope."
     },
     "benefit_justifies_review_cost": {
       "passed": false,
-      "rationale": "Not established in this initial source audit; verify evidence before advancing."
+      "rationale": "Independent data confirmation was delivered; deployment need, reviewer interest and useful bounded change remain unconfirmed."
     },
     "user_can_explain_line_by_line": {
       "passed": false,
-      "rationale": "Not established in this initial source audit; verify evidence before advancing."
+      "rationale": "Harnesses and exact results are documented; no independent human explanation or review is claimed."
     }
   },
   "score_inputs": {
     "humanitarian_benefit": 3,
     "acceptance_probability": 0,
-    "technical_confidence": 0,
+    "technical_confidence": 2,
     "review_burden": 3,
     "deployment_probability": 0
   },
-  "score_basis": "Provisional research relevance only. Unverified reproduction, acceptance and deployment keep implementation score zero.",
+  "score_basis": "Independent method/data reproduction improves technical confidence. Acceptance, agreed production scope and deployment remain unknown and keep implementation score zero.",
   "sources": [
     {
       "id": "climada-purpose",
@@ -141,6 +149,22 @@
       "id": "climada-fraction-audit",
       "url": "https://github.com/humanifest-bot/humanifest/blob/codex/cht-admin-environment-audit/research/2026-09-09-climada-wildfire-fraction-audit.md",
       "accessed": "2026-09-09"
+    },
+    {
+      "id": "climada-fraction-runtime",
+      "url": "https://github.com/humanifest-bot/humanifest/blob/codex/cht-admin-environment-audit/research/2026-09-09-climada-fraction-runtime.md",
+      "accessed": "2026-09-09"
+    },
+    {
+      "id": "climada-data-metadata",
+      "url": "https://climada.ethz.ch/data-api/v2/dataset/?data_type=wildfire&country_iso3alpha=COD&status=&limit=100",
+      "accessed": "2026-09-09"
+    },
+    {
+      "id": "climada-verification-delivery",
+      "url": "https://github.com/CLIMADA-project/climada_python/issues/1312#issuecomment-5599217450",
+      "accessed": "2026-09-09"
     }
-  ]
+  ],
+  "next_external_status_check": "2026-09-15"
 }

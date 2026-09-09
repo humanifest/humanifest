@@ -8,21 +8,6 @@ Open external PRs: 0/2 (at most 1 per organization)
 Status reflects supplied records; source access dates are not a live upstream check.
 Scores do not authorize implementation or external writes. Candidates are listed by state and ID, not ranked by raw score.
 
-- climada-1312-wildfire-fraction-verification: OPPORTUNITY-RESEARCH; score=0.0; failed_gates=13
-  Next: Verify the issue is current and bound its code surface and regression strategy.
-  - external_contributions_accepted: Not established in this initial source audit; verify evidence before advancing.
-  - contribution_policy_understood: Not established in this initial source audit; verify evidence before advancing.
-  - ai_policy_understood: Not established in this initial source audit; verify evidence before advancing.
-  - problem_current_and_consequential: Open issue and source path support investigation. Live wildfire version, reported percentages and operational consequences remain independently unverified.
-  - behavior_reproducible_or_verifiable: Not established in this initial source audit; verify evidence before advancing.
-  - change_bounded: Synthetic method-level research is bounded. A production fix could belong in data generation, validation or warnings; generic max/clipping may corrupt valid matrix semantics.
-  - regression_strategy_credible: Not established in this initial source audit; verify evidence before advancing.
-  - security_and_licensing_risk_acceptable: Not established in this initial source audit; verify evidence before advancing.
-  - environment_feasible: Not established in this initial source audit; verify evidence before advancing.
-  - maintainer_interest_confirmed: Issue is open and unassigned with no comments. No accepted Humanifest scope, reviewer commitment or bot pathway established.
-  - probable_reviewer_identified: Not established in this initial source audit; verify evidence before advancing.
-  - benefit_justifies_review_cost: Not established in this initial source audit; verify evidence before advancing.
-  - user_can_explain_line_by_line: Not established in this initial source audit; verify evidence before advancing.
 - odk-2169-worker-memory-threshold: OPPORTUNITY-RESEARCH; score=0.0; failed_gates=10
   Next: Verify the issue is current and bound its code surface and regression strategy.
   - contribution_policy_understood: Not established in the bounded source review; verify before implementation.
@@ -43,6 +28,20 @@ Scores do not authorize implementation or external writes. Candidates are listed
   - change_bounded: Writer and exporter tags differ, but the admin picker retains a day-dependent timestamp and payload period remains Gregorian. Maintainers have not chosen whether lookup, picker, and label changes belong in one bounded fix. A backend-only change cannot yet be assumed to resolve the full report.
   - maintainer_interest_confirmed: September 9 fresh issue/timeline check found no assignment or comments. The prepared scope inquiry was not posted after automatic approval review rejected it. Neither the reproduction nor completed related epic establishes confirmation for this export contribution.
   - probable_reviewer_identified: No reviewer is assigned on the issue.
+- climada-1312-wildfire-fraction-verification: MAINTAINER-CHECK; score=0.0; failed_gates=12
+  Next: Coordinate within standing authorization using the verified Humanifest identity; record current maintainer confirmation.
+  - external_contributions_accepted: General guide welcomes external fork contributions. Eligibility of this AI-assisted bot contribution is now explicitly asked in the delivered inquiry and remains unconfirmed.
+  - contribution_policy_understood: Fork/develop, tests, Pylint, formatting and attribution requirements inspected. Final scope-specific checklist and bot pathway need agreement before implementation.
+  - ai_policy_understood: No explicit AI/bot rule found in bounded repository and linked guide inspection. Delivered inquiry asks whether this bot pathway is welcome; absence of a rule is not acceptance.
+  - problem_current_and_consequential: Current active COD artifact confirms duplicate fractions; original methods propagate out-of-range values. Operational consequences, population-weighted impact and review benefit remain unverified.
+  - change_bounded: Synthetic method-level research is bounded. A production fix could belong in data generation, validation or warnings; generic max/clipping may corrupt valid matrix semantics.
+  - regression_strategy_credible: Controlled method and public-file probes pass, but the intended fraction-validation/data-generation behavior has not been agreed for a production regression.
+  - security_and_licensing_risk_acceptable: Bounded source/data path inspected, public artifact licensed CC BY 4.0 and pinned binary reader verified. Full native dependency/license and production change review remains incomplete.
+  - environment_feasible: Bounded method/data probes are feasible and pass; full native/geospatial framework baseline remains unestablished.
+  - maintainer_interest_confirmed: Verification and scope question delivered as humanifest-bot; posting does not establish maintainer acceptance or bot eligibility.
+  - probable_reviewer_identified: Global CODEOWNERS identifies possible reviewers, but no reviewer has accepted this scope.
+  - benefit_justifies_review_cost: Independent data confirmation was delivered; deployment need, reviewer interest and useful bounded change remain unconfirmed.
+  - user_can_explain_line_by_line: Harnesses and exact results are documented; no independent human explanation or review is claimed.
 - ifrc-usgs-economic-rounding: MAINTAINER-CHECK; score=0.0; failed_gates=7
   Next: Coordinate within standing authorization using the verified Humanifest identity; record current maintainer confirmation.
   - ai_policy_understood: No explicit AI/bot rule located in the bounded repository/default-policy review. The existing inquiry asks for acceptance; await its answer rather than infer approval from missing documentation.

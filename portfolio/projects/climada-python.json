@@ -20,7 +20,7 @@
     "pushed_at": "2026-09-07T09:31:58Z"
   },
   "contribution": {
-    "pathway": "Fork contributions target develop with tests, Pylint, documentation/changelog and attribution requirements. Linked developer/reviewer guidance remains to inspect.",
+    "pathway": "Fork contributions target develop with tests, Pylint, formatting, documentation/changelog and attribution requirements. Linked Git, testing and coding conventions inspected; full setup remains unaudited beyond the bounded method/data path.",
     "ai_policy": "No explicit AI/bot rule established in inspected files; eligibility of humanifest-bot remains unconfirmed.",
     "maintainer_check_required": true
   },
