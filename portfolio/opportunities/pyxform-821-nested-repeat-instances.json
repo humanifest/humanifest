@@ -2,8 +2,7 @@
   "id": "pyxform-821-nested-repeat-instances",
   "project_id": "xlsform-pyxform",
   "title": "Investigate initial nested-repeat instances in XLSForm conversion",
-  "pipeline_state": "OPPORTUNITY-RESEARCH",
-  "research_next_step": "Finish converter/validator import audit, prepare an isolated pinned environment and run unchanged tests/test_repeat.py. Then convert synthetic one-to-three-level repeats, direct/group-separated nesting and defaults, with repeat_count controls; count concrete children separately under template and concrete ancestors. Report scope/effort before proposing a patch.",
+  "pipeline_state": "MAINTAINER-CHECK",
   "problem": "Issue #821 reports inconsistent concrete initial instances for nested repeats. Existing tests check template/concrete presence without constraining ancestor template status, so they do not by themselves establish the intended structure for adding new outer repeats.",
   "humanitarian_relevance": "Reliable repeat structure supports field-data forms in ODK. No verified data loss or high-impact outcome is established; the related client discussion describes the form as usable.",
   "evidence": [
@@ -14,15 +13,20 @@
     },
     {
       "type": "measured",
-      "claim": "Pinned source and two existing test assertions inspected; generator has distinct direct-repeat and ordinary-section recursion paths, and nested XPath assertions leave ancestor template status unconstrained. No runtime reproduction yet.",
+      "claim": "Initial source audit located distinct direct-repeat and ordinary-section recursion paths and two existing test assertions that leave ancestor template status unconstrained. The subsequent runtime source below verifies the hypothesis.",
       "source_id": "pyxform-audit"
+    },
+    {
+      "type": "measured",
+      "claim": "65 unchanged repeat tests pass, one upstream performance test remains skipped, and two Java-only tests are deferred. Fifteen actual converter cases show a concrete inner instance absent under directly nested outer templates but present with an intervening group. Defaults and sibling controls survive. No client behavior was tested.",
+      "source_id": "pyxform-runtime"
     }
   ],
   "code_surface": "pyxform/section.py Section.xml_instance and RepeatingSection.xml_instance_template; tests/test_repeat.py test_repeat_adding_template_and_instance and grouped variant at pinned master 26006d0830570ffa3caead24b0c9a470278af2cf.",
-  "proposed_change": "Establish a synthetic XML structure matrix and effort estimate for #821, then agree the intended contract and regression scope. Keep #462 repeat-count policy separate unless maintainers confirm overlap.",
-  "tests": "Static inspection identifies 68 test methods in tests/test_repeat.py, including existing nested-template tests. None executed. Proposed assertions distinguish each ancestor template/concrete branch and preserve default values. Client rendering and saved submissions require separate verification.",
-  "environment": "Read-only pinned files and setup audit only; no clone or execution. Three pinned core dependencies, four dev dependencies and Flit backend; no lockfile. Remaining validator/import inspection precedes isolated wheel setup. CI matrix includes Java validation separately.",
-  "maintainer": "lognaturel and lindsay-stevens participated in the public issue. No Humanifest message, accepted scope, assignment, reviewer commitment or bot-eligibility confirmation.",
+  "proposed_change": "Share the verified ancestor-specific XML matrix and effort boundary if the contribution pathway is accepted; agree template uniqueness, initial children, defaults and client compatibility before implementing. Keep #462 repeat-count policy separate unless maintainers confirm overlap.",
+  "tests": "Focused unchanged baseline: 65 passed, one upstream skip and two explicitly deferred Java-only empty-repeat tests. Fifteen actual convert() cases cover one-to-three levels, direct/group-separated nesting, repeat_count absent/zero/two, defaults and a sibling. Ancestor-specific assertions verify the structural difference; full suite, Java validation, client rendering and submissions remain untested. See research/2026-09-09-pyxform-repeat-runtime.md.",
+  "environment": "Python 3.13.7 isolated venv with seven manifest-pinned wheel dependencies plus resolved et-xmlfile 2.0.0; no project install or source build. Minimal child environment and checked Python network/process guard. All 249 tracked files verified against pinned Git blobs before/after. No Java runtime available; no services or credentials. This is not a full CI or frozen-lock reproduction.",
+  "maintainer": "Public investigation request supports research. A verification note is prepared in research/2026-09-09-pyxform-repeat-runtime.md but unsent. Accepted Humanifest support scope, bot identity pathway and reviewer commitment remain unconfirmed. Check authorization and fresh discussion before posting.",
   "risks": "Arbitrary nesting, groups, default values and repeat_count can affect compatibility across Collect, Web Forms and Enketo. Do not infer submission behavior from XML alone or promise impact from an explicitly noncritical client issue.",
   "priority_rationale": "A maintainer-requested effort investigation has identifiable generator/tests and can run independently of waiting PRs. Keep priority provisional until reproducibility, practical consequence and accepted scope are verified.",
   "gates": {
@@ -62,14 +66,18 @@
       "rationale": "Open issue and August request support investigating current behavior, but the related client discussion calls it usable and noncritical. Consequential operational impact is not demonstrated."
     },
     "behavior_reproducible_or_verifiable": {
-      "passed": false,
-      "rationale": "Not yet established for this research candidate; inspect evidence before advancing."
+      "passed": true,
+      "rationale": "Fifteen original-converter cases verify the ancestor-specific structural difference with group, default, sibling and count controls. Client runtime behavior is not reproduced.",
+      "source_ids": [
+        "pyxform-runtime"
+      ]
     },
     "code_and_tests_located": {
       "passed": true,
-      "rationale": "Pinned section generator and two existing template/instance tests inspected. Nested XPath assertions do not constrain ancestor template status. None executed.",
+      "rationale": "Pinned generator and existing repeat tests inspected; 65 unchanged Python tests and fifteen converter matrix cases now pass, with exact exclusions documented.",
       "source_ids": [
-        "pyxform-audit"
+        "pyxform-audit",
+        "pyxform-runtime"
       ]
     },
     "change_bounded": {
@@ -92,8 +100,11 @@
       "rationale": "Not yet established for this research candidate; inspect evidence before advancing."
     },
     "environment_feasible": {
-      "passed": false,
-      "rationale": "Not yet established for this research candidate; inspect evidence before advancing."
+      "passed": true,
+      "rationale": "The isolated wheel environment runs the focused Python repeat suite and matrix. Two Java-only tests are explicitly deferred; broader compatibility validation requires reassessment.",
+      "source_ids": [
+        "pyxform-runtime"
+      ]
     },
     "maintainer_interest_confirmed": {
       "passed": false,
@@ -115,11 +126,11 @@
   "score_inputs": {
     "humanitarian_benefit": 2,
     "acceptance_probability": 0,
-    "technical_confidence": 0,
+    "technical_confidence": 3,
     "review_burden": 3,
     "deployment_probability": 0
   },
-  "score_basis": "Research relevance only. Unknown acceptance, runtime confidence and deployment keep implementation score zero.",
+  "score_basis": "Actual converter reproduction supports technical confidence for the bounded XML difference. Acceptance, consequential impact and deployment remain unverified; implementation score stays zero.",
   "sources": [
     {
       "id": "pyxform-repo",
@@ -154,6 +165,11 @@
     {
       "id": "odk-crisis-response",
       "url": "https://getodk.org/success-stories/crisis-response/",
+      "accessed": "2026-09-09"
+    },
+    {
+      "id": "pyxform-runtime",
+      "url": "https://github.com/humanifest-bot/humanifest/blob/codex/cht-admin-environment-audit/research/2026-09-09-pyxform-repeat-runtime.md",
       "accessed": "2026-09-09"
     }
   ]

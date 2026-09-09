@@ -89,3 +89,10 @@ All accessed September 9, 2026:
 - [Pinned PR template](https://github.com/XLSForm/pyxform/blob/26006d0830570ffa3caead24b0c9a470278af2cf/.github/PULL_REQUEST_TEMPLATE.md)
 - [Pinned manifest](https://github.com/XLSForm/pyxform/blob/26006d0830570ffa3caead24b0c9a470278af2cf/pyproject.toml)
 - [ODK crisis-response account](https://getodk.org/success-stories/crisis-response/)
+
+## Subsequent execution
+
+The [runtime investigation](2026-09-09-pyxform-repeat-runtime.md) now records the
+completed focused baseline and fifteen actual converter cases. It supersedes the
+not-yet-run status above while preserving the original source-audit provenance.
+The opportunity is at MAINTAINER-CHECK; no implementation or client outcome is claimed.

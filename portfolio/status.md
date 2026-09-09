@@ -20,20 +20,6 @@ Scores do not authorize implementation or external writes. Candidates are listed
   - probable_reviewer_identified: Not established in the bounded source review; verify before implementation.
   - benefit_justifies_review_cost: Not established in the bounded source review; verify before implementation.
   - user_can_explain_line_by_line: Not established in the bounded source review; verify before implementation.
-- pyxform-821-nested-repeat-instances: OPPORTUNITY-RESEARCH; score=0.0; failed_gates=12
-  Next: Verify the issue is current and bound its code surface and regression strategy.
-  - external_contributions_accepted: README welcomes focused contributions; eligibility of the required humanifest-bot identity is not established.
-  - ai_policy_understood: Not yet established for this research candidate; inspect evidence before advancing.
-  - problem_current_and_consequential: Open issue and August request support investigating current behavior, but the related client discussion calls it usable and noncritical. Consequential operational impact is not demonstrated.
-  - behavior_reproducible_or_verifiable: Not yet established for this research candidate; inspect evidence before advancing.
-  - change_bounded: The research matrix is bounded, but arbitrary nesting, groups, defaults and repeat_count make implementation scope and compatibility uncertain.
-  - regression_strategy_credible: Not yet established for this research candidate; inspect evidence before advancing.
-  - security_and_licensing_risk_acceptable: Not yet established for this research candidate; inspect evidence before advancing.
-  - environment_feasible: Not yet established for this research candidate; inspect evidence before advancing.
-  - maintainer_interest_confirmed: The public request to explore effort supports research, but no maintainer has accepted Humanifest support, implementation scope or bot identity.
-  - probable_reviewer_identified: Not yet established for this research candidate; inspect evidence before advancing.
-  - benefit_justifies_review_cost: Not yet established for this research candidate; inspect evidence before advancing.
-  - user_can_explain_line_by_line: Not yet established for this research candidate; inspect evidence before advancing.
 - cht-10155-edit-user-load-failure: MAINTAINER-CHECK; score=0.0; failed_gates=1
   Next: Coordinate within standing authorization using the verified Humanifest identity; record current maintainer confirmation.
   - maintainer_interest_confirmed: Replacement inquiry sent as humanifest-bot at 2026-09-08T19:02:19Z. Await maintainer response; the outbound inquiry is not confirmation.
@@ -74,6 +60,18 @@ Scores do not authorize implementation or external writes. Candidates are listed
   - probable_reviewer_identified: Not established in this research intake; inspect supporting evidence before advancement.
   - benefit_justifies_review_cost: Not established in this research intake; inspect supporting evidence before advancement.
   - user_can_explain_line_by_line: Not established in this research intake; inspect supporting evidence before advancement.
+- pyxform-821-nested-repeat-instances: MAINTAINER-CHECK; score=0.0; failed_gates=10
+  Next: Coordinate within standing authorization using the verified Humanifest identity; record current maintainer confirmation.
+  - external_contributions_accepted: README welcomes focused contributions; eligibility of the required humanifest-bot identity is not established.
+  - ai_policy_understood: Not yet established for this research candidate; inspect evidence before advancing.
+  - problem_current_and_consequential: Open issue and August request support investigating current behavior, but the related client discussion calls it usable and noncritical. Consequential operational impact is not demonstrated.
+  - change_bounded: The research matrix is bounded, but arbitrary nesting, groups, defaults and repeat_count make implementation scope and compatibility uncertain.
+  - regression_strategy_credible: Not yet established for this research candidate; inspect evidence before advancing.
+  - security_and_licensing_risk_acceptable: Not yet established for this research candidate; inspect evidence before advancing.
+  - maintainer_interest_confirmed: The public request to explore effort supports research, but no maintainer has accepted Humanifest support, implementation scope or bot identity.
+  - probable_reviewer_identified: Not yet established for this research candidate; inspect evidence before advancing.
+  - benefit_justifies_review_cost: Not yet established for this research candidate; inspect evidence before advancing.
+  - user_can_explain_line_by_line: Not yet established for this research candidate; inspect evidence before advancing.
 - cht-10241-unique-race: PARKED; score=0.0; failed_gates=8
   Next: Keep parked until the stopping reason is resolved and evidence supports reconsideration.
   - behavior_reproducible_or_verifiable: Reproduction depends on timing/resource constraints and was not independently reproduced in this run.
