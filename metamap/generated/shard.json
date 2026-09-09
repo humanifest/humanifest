@@ -2,7 +2,7 @@
   "schemaVersion": "2.0.0",
   "id": "urn:humanifest:portfolio",
   "namespace": "humanifest",
-  "revision": "sha256:80acb490887af07dae72353844116047a290b9a5e08a5417b6e6f0a39110df13",
+  "revision": "sha256:f5d5e59874d05aa081a985beeaa81dff9a24eeb34d9bd0d4c92ca424ec811815",
   "entities": [
     {
       "id": "urn:humanifest:routing:policy:contribution-protocol",
@@ -1433,6 +1433,124 @@
       "id": "urn:humanifest:hf:evidence:urn%3Ahumanifest%3Ahf%3Aproject%3Aopenfoodfacts-python%3A0",
       "kind": "hf:evidence",
       "label": "Open Food Facts describes itself as a nonprofit publishing reusable food information for consumers, research and sustainability work. This supports a public-benefit pathway, not measured impact from an SDK patch.",
+      "attributes": {
+        "evidenceType": "self_reported"
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:hf:project:wfp-prism",
+      "kind": "hf:project",
+      "label": "WFP PRISM risk-monitoring dashboard",
+      "attributes": {
+        "recordId": "wfp-prism",
+        "path": "portfolio/projects/wfp-prism.json",
+        "digest": "sha256:a29923084f6f03f0c01f50df35a8ded8fbdcbbf0850d67da0376c797aa09a78c",
+        "projectId": null
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:hf:record:portfolio%2Fprojects%2Fwfp-prism.json",
+      "kind": "hf:record",
+      "label": "portfolio/projects/wfp-prism.json",
+      "attributes": {
+        "path": "portfolio/projects/wfp-prism.json",
+        "digest": "sha256:a29923084f6f03f0c01f50df35a8ded8fbdcbbf0850d67da0376c797aa09a78c"
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aproject%3Awfp-prism%3Aprism-purpose",
+      "kind": "hf:source",
+      "label": "urn:humanifest:hf:project:wfp-prism:prism-purpose",
+      "attributes": {
+        "url": "https://innovation.wfp.org/project/prism",
+        "accessed": "2026-09-09"
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aproject%3Awfp-prism%3Aprism-repo",
+      "kind": "hf:source",
+      "label": "urn:humanifest:hf:project:wfp-prism:prism-repo",
+      "attributes": {
+        "url": "https://api.github.com/repos/WFP-VAM/prism-app",
+        "accessed": "2026-09-09"
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aproject%3Awfp-prism%3Aprism-1569",
+      "kind": "hf:source",
+      "label": "urn:humanifest:hf:project:wfp-prism:prism-1569",
+      "attributes": {
+        "url": "https://github.com/WFP-VAM/prism-app/issues/1569",
+        "accessed": "2026-09-09"
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aproject%3Awfp-prism%3Aprism-cache-audit",
+      "kind": "hf:source",
+      "label": "urn:humanifest:hf:project:wfp-prism:prism-cache-audit",
+      "attributes": {
+        "url": "https://github.com/humanifest-bot/humanifest/blob/codex/cht-admin-environment-audit/research/2026-09-09-prism-boundary-cache-audit.md",
+        "accessed": "2026-09-09"
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aproject%3Awfp-prism%3Aprism-pr-template",
+      "kind": "hf:source",
+      "label": "urn:humanifest:hf:project:wfp-prism:prism-pr-template",
+      "attributes": {
+        "url": "https://github.com/WFP-VAM/prism-app/blob/603710958a025f15507164ccdaa24bc2515b70dc/.github/pull_request_template.md",
+        "accessed": "2026-09-09"
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aproject%3Awfp-prism%3Aprism-staging-boundary",
+      "kind": "hf:source",
+      "label": "urn:humanifest:hf:project:wfp-prism:prism-staging-boundary",
+      "attributes": {
+        "url": "https://staging-prism-frontend.web.app/data/mozambique/moz_bnd_adm3_WFP.json",
+        "accessed": "2026-09-09"
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:hf:evidence:urn%3Ahumanifest%3Ahf%3Aproject%3Awfp-prism%3A0",
+      "kind": "hf:evidence",
+      "label": "WFP describes use of PRISM by government and humanitarian partners to combine hazard, vulnerability and exposure information. This supplies a plausible benefit pathway; no contribution-specific assistance or resource saving is measured.",
       "attributes": {
         "evidenceType": "self_reported"
       },
@@ -7274,6 +7392,435 @@
       }
     },
     {
+      "id": "urn:humanifest:hf:opportunity:prism-1569-boundary-cache-verification",
+      "kind": "hf:opportunity",
+      "label": "Verify repeat-visit boundary transfers before extending cache lifetime",
+      "attributes": {
+        "recordId": "prism-1569-boundary-cache-verification",
+        "path": "portfolio/opportunities/prism-1569-boundary-cache-verification.json",
+        "digest": "sha256:94bf46cfcfd6d65ab3b9e80eb5d8f9bbe67e381a0fb9fca0f59ca1d0d65e9da8",
+        "projectId": "wfp-prism"
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:hf:record:portfolio%2Fopportunities%2Fprism-1569-boundary-cache-verification.json",
+      "kind": "hf:record",
+      "label": "portfolio/opportunities/prism-1569-boundary-cache-verification.json",
+      "attributes": {
+        "path": "portfolio/opportunities/prism-1569-boundary-cache-verification.json",
+        "digest": "sha256:94bf46cfcfd6d65ab3b9e80eb5d8f9bbe67e381a0fb9fca0f59ca1d0d65e9da8"
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3Aprism-purpose",
+      "kind": "hf:source",
+      "label": "urn:humanifest:hf:opportunity:prism-1569-boundary-cache-verification:prism-purpose",
+      "attributes": {
+        "url": "https://innovation.wfp.org/project/prism",
+        "accessed": "2026-09-09"
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3Aprism-repo",
+      "kind": "hf:source",
+      "label": "urn:humanifest:hf:opportunity:prism-1569-boundary-cache-verification:prism-repo",
+      "attributes": {
+        "url": "https://api.github.com/repos/WFP-VAM/prism-app",
+        "accessed": "2026-09-09"
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3Aprism-1569",
+      "kind": "hf:source",
+      "label": "urn:humanifest:hf:opportunity:prism-1569-boundary-cache-verification:prism-1569",
+      "attributes": {
+        "url": "https://github.com/WFP-VAM/prism-app/issues/1569",
+        "accessed": "2026-09-09"
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3Aprism-cache-audit",
+      "kind": "hf:source",
+      "label": "urn:humanifest:hf:opportunity:prism-1569-boundary-cache-verification:prism-cache-audit",
+      "attributes": {
+        "url": "https://github.com/humanifest-bot/humanifest/blob/codex/cht-admin-environment-audit/research/2026-09-09-prism-boundary-cache-audit.md",
+        "accessed": "2026-09-09"
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3Aprism-pr-template",
+      "kind": "hf:source",
+      "label": "urn:humanifest:hf:opportunity:prism-1569-boundary-cache-verification:prism-pr-template",
+      "attributes": {
+        "url": "https://github.com/WFP-VAM/prism-app/blob/603710958a025f15507164ccdaa24bc2515b70dc/.github/pull_request_template.md",
+        "accessed": "2026-09-09"
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3Aprism-staging-boundary",
+      "kind": "hf:source",
+      "label": "urn:humanifest:hf:opportunity:prism-1569-boundary-cache-verification:prism-staging-boundary",
+      "attributes": {
+        "url": "https://staging-prism-frontend.web.app/data/mozambique/moz_bnd_adm3_WFP.json",
+        "accessed": "2026-09-09"
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:hf:evidence:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3A0",
+      "kind": "hf:evidence",
+      "label": "Issue author estimated 30–50% savings on an older preview by versioning heavy JSON assets. Not independently reproduced or assumed current.",
+      "attributes": {
+        "evidenceType": "self_reported"
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:hf:evidence:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3A1",
+      "kind": "hf:evidence",
+      "label": "September 9 staging boundary HEAD returns JSON, Content-Length 17,207,428 and max-age=3600; conditional HEAD returns 304. The production-named host returns 642-byte HTML at that path. These checks download no boundary body and measure neither GET transfer nor browser cache behavior.",
+      "attributes": {
+        "evidenceType": "measured"
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:hf:evidence:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3A2",
+      "kind": "hf:evidence",
+      "label": "Pinned code uses stable public JSON paths and already caches boundary data/promises in memory by layer/ISO3. Existing tests mock the loader. Entry point unregisters the service worker.",
+      "attributes": {
+        "evidenceType": "measured"
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3Ahumanitarian_relevance_supported",
+      "kind": "hf:gate",
+      "label": "humanitarian_relevance_supported",
+      "attributes": {
+        "passed": true,
+        "cited": true,
+        "rationale": "WFP describes a direct climate-risk and humanitarian-analysis use case; contribution-specific benefit remains unmeasured."
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3Arepository_active",
+      "kind": "hf:gate",
+      "label": "repository_active",
+      "attributes": {
+        "passed": true,
+        "cited": true,
+        "rationale": "Unarchived, master pinned and repository pushed September 9; open issue and current PR list inspected."
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3Aexternal_contributions_accepted",
+      "kind": "hf:gate",
+      "label": "external_contributions_accepted",
+      "attributes": {
+        "passed": false,
+        "cited": false,
+        "rationale": "Not yet established by the bounded intake; verify before implementation."
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3Acontribution_policy_understood",
+      "kind": "hf:gate",
+      "label": "contribution_policy_understood",
+      "attributes": {
+        "passed": false,
+        "cited": false,
+        "rationale": "Not yet established by the bounded intake; verify before implementation."
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3Aai_policy_understood",
+      "kind": "hf:gate",
+      "label": "ai_policy_understood",
+      "attributes": {
+        "passed": false,
+        "cited": false,
+        "rationale": "Not yet established by the bounded intake; verify before implementation."
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3Aproblem_current_and_consequential",
+      "kind": "hf:gate",
+      "label": "problem_current_and_consequential",
+      "attributes": {
+        "passed": false,
+        "cited": false,
+        "rationale": "Staging JSON has a one-hour lifetime but supports 304 revalidation. Historical 30–50% transfer-saving claim is not independently verified; measure actual browser transfer and freshness before prioritizing a change."
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3Abehavior_reproducible_or_verifiable",
+      "kind": "hf:gate",
+      "label": "behavior_reproducible_or_verifiable",
+      "attributes": {
+        "passed": false,
+        "cited": false,
+        "rationale": "Live HEAD and conditional HEAD responses are measured; browser GET transfer, expiry/eviction and deployed application behavior remain unverified."
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3Acode_and_tests_located",
+      "kind": "hf:gate",
+      "label": "code_and_tests_located",
+      "attributes": {
+        "passed": true,
+        "cited": true,
+        "rationale": "Vite/public-asset configuration, stable boundary references, existing in-memory cache and three cache tests located; no target tests executed."
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3Achange_bounded",
+      "kind": "hf:gate",
+      "label": "change_bounded",
+      "attributes": {
+        "passed": false,
+        "cited": false,
+        "rationale": "Research is limited to repeat-visit boundary transfers. Any implementation requires agreement on asset versioning, references and freshness; do not apply immutable caching to mutable data."
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3Aregression_strategy_credible",
+      "kind": "hf:gate",
+      "label": "regression_strategy_credible",
+      "attributes": {
+        "passed": false,
+        "cited": false,
+        "rationale": "Existing tests mock network loading and do not cover browser caching. First/warm/expired/changed-content controls proposed but not executed."
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3Ano_private_data_required",
+      "kind": "hf:gate",
+      "label": "no_private_data_required",
+      "attributes": {
+        "passed": true,
+        "cited": true,
+        "rationale": "Read-only public HTTP headers and synthetic browser fixtures can examine cache semantics without operational accounts or private data."
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3Asecurity_and_licensing_risk_acceptable",
+      "kind": "hf:gate",
+      "label": "security_and_licensing_risk_acceptable",
+      "attributes": {
+        "passed": false,
+        "cited": false,
+        "rationale": "Not yet established by the bounded intake; verify before implementation."
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3Aenvironment_feasible",
+      "kind": "hf:gate",
+      "label": "environment_feasible",
+      "attributes": {
+        "passed": false,
+        "cited": false,
+        "rationale": "Manifests, Vite, Docker and CI inspected, but lockfile/lifecycle audit and frontend baseline remain. No installation or target execution."
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3Amaintainer_interest_confirmed",
+      "kind": "hf:gate",
+      "label": "maintainer_interest_confirmed",
+      "attributes": {
+        "passed": false,
+        "cited": false,
+        "rationale": "Issue open and unassigned with no comments; no Humanifest inquiry, accepted scope or bot eligibility."
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:hf:confirmation:prism-1569-boundary-cache-verification",
+      "kind": "hf:confirmation",
+      "label": "prism-1569-boundary-cache-verification",
+      "attributes": {
+        "confirmed": false
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3Aprobable_reviewer_identified",
+      "kind": "hf:gate",
+      "label": "probable_reviewer_identified",
+      "attributes": {
+        "passed": false,
+        "cited": false,
+        "rationale": "Not yet established by the bounded intake; verify before implementation."
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3Abenefit_justifies_review_cost",
+      "kind": "hf:gate",
+      "label": "benefit_justifies_review_cost",
+      "attributes": {
+        "passed": false,
+        "cited": false,
+        "rationale": "Not yet established by the bounded intake; verify before implementation."
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3Auser_can_explain_line_by_line",
+      "kind": "hf:gate",
+      "label": "user_can_explain_line_by_line",
+      "attributes": {
+        "passed": false,
+        "cited": false,
+        "rationale": "Not yet established by the bounded intake; verify before implementation."
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:hf:contribution:prism-1569-boundary-cache-verification",
+      "kind": "hf:contribution",
+      "label": "prism-1569-boundary-cache-verification",
+      "attributes": {
+        "recordedState": "OPPORTUNITY-RESEARCH",
+        "deliveryEvidenceRequired": true
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:hf:report:prism-1569-boundary-cache-verification",
+      "kind": "hf:report",
+      "label": "prism-1569-boundary-cache-verification",
+      "attributes": {
+        "generated": true
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:hf:handoff:prism-1569-boundary-cache-verification",
+      "kind": "hf:handoff",
+      "label": "prism-1569-boundary-cache-verification",
+      "attributes": {
+        "generated": true
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
       "id": "urn:humanifest:hf:opportunity:pyxform-821-nested-repeat-instances",
       "kind": "hf:opportunity",
       "label": "Investigate initial nested-repeat instances in XLSForm conversion",
@@ -11593,6 +12140,262 @@
       ],
       "targets": [
         "urn:humanifest:hf:record:portfolio%2Fprojects%2Fopenfoodfacts-python.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:554b5fde0423ec389a699f65b05e70577ee33d4dd5a6088202ec17d49fc56188",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:project:wfp-prism"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fprojects%2Fwfp-prism.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:e21ac94d7022ff777c9b1ff98584661f5f07c4544fccbe409cc1541eea4580ce",
+      "relation": "hf:source",
+      "sources": [
+        "urn:humanifest:hf:project:wfp-prism"
+      ],
+      "targets": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aproject%3Awfp-prism%3Aprism-purpose"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:66663f1cb45d7417e6fbfca323150e51bf702b7bab5d640a2a778fcacca1ca00",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aproject%3Awfp-prism%3Aprism-purpose"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fprojects%2Fwfp-prism.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:910975b62c2af1171514b76ece4156835628d9babc828a4368e08c90ea17a760",
+      "relation": "hf:source",
+      "sources": [
+        "urn:humanifest:hf:project:wfp-prism"
+      ],
+      "targets": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aproject%3Awfp-prism%3Aprism-repo"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:48df7aef8efe5437b5b1596c40b2e6f9a3870acbfb5c90c2c07ec15f4024a4ee",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aproject%3Awfp-prism%3Aprism-repo"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fprojects%2Fwfp-prism.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:e55248487bd50fdc520b0143f5e6da10abb3685818db2260151c4222810f58d6",
+      "relation": "hf:source",
+      "sources": [
+        "urn:humanifest:hf:project:wfp-prism"
+      ],
+      "targets": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aproject%3Awfp-prism%3Aprism-1569"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:60d7dac5486f0fbdd389aca4c6b92e3fbcca62e9451f4c3a0d2f7d1c22c1bfcf",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aproject%3Awfp-prism%3Aprism-1569"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fprojects%2Fwfp-prism.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:6991651d27ee4036ee2027c093eb77e9aed01b4146a62d6283973e348f6b509f",
+      "relation": "hf:source",
+      "sources": [
+        "urn:humanifest:hf:project:wfp-prism"
+      ],
+      "targets": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aproject%3Awfp-prism%3Aprism-cache-audit"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:6bf210591dce6ad150f840bc01031c85779d3e51473daf78a0b483192319fd0b",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aproject%3Awfp-prism%3Aprism-cache-audit"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fprojects%2Fwfp-prism.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:de5856778b39e24b967dfae6733b36ebeec4948cfbfbe437841382ec10112ed2",
+      "relation": "hf:source",
+      "sources": [
+        "urn:humanifest:hf:project:wfp-prism"
+      ],
+      "targets": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aproject%3Awfp-prism%3Aprism-pr-template"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:d53ba4c0bfc2c06df1db105d7d4d9079a9f00008493bf2f7f5b027ce39deea44",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aproject%3Awfp-prism%3Aprism-pr-template"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fprojects%2Fwfp-prism.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:e97df4cabcd07de4c74a113b2137cb280d926b10d3f93549d153d5d81db05cf8",
+      "relation": "hf:source",
+      "sources": [
+        "urn:humanifest:hf:project:wfp-prism"
+      ],
+      "targets": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aproject%3Awfp-prism%3Aprism-staging-boundary"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:2ab53b934e095d616bcb1542f61c95a16bfc607fd3365e19d5ad7066c3492749",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aproject%3Awfp-prism%3Aprism-staging-boundary"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fprojects%2Fwfp-prism.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:203e5fbf1c1ef5d1df12413b4b3d1bd660267c3b57c67ac9ee6a18436fc9ec29",
+      "relation": "hf:evidence",
+      "sources": [
+        "urn:humanifest:hf:project:wfp-prism"
+      ],
+      "targets": [
+        "urn:humanifest:hf:evidence:urn%3Ahumanifest%3Ahf%3Aproject%3Awfp-prism%3A0"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:984bf8bfdd7babedfd395e5d4b1493cb0b880d9b3d277e023c82ac18a83ff547",
+      "relation": "hf:source",
+      "sources": [
+        "urn:humanifest:hf:evidence:urn%3Ahumanifest%3Ahf%3Aproject%3Awfp-prism%3A0"
+      ],
+      "targets": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aproject%3Awfp-prism%3Aprism-purpose"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:cae875bd1034501472297ee5897bdb87992172cd0980c8c4e7e5bc132cd580d6",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:evidence:urn%3Ahumanifest%3Ahf%3Aproject%3Awfp-prism%3A0"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fprojects%2Fwfp-prism.json"
       ],
       "cardinality": "one-to-one",
       "lossiness": "lossless",
@@ -32930,6 +33733,1590 @@
       }
     },
     {
+      "id": "urn:humanifest:mapping:d02aaaaa250b75c2968674c323f3fe293e960fa876345834feb3b269fe167d1e",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:opportunity:prism-1569-boundary-cache-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fopportunities%2Fprism-1569-boundary-cache-verification.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:c7ba13bf6ef241fb8f30ef74a60b1aac1f2955db3a73780203ae55caa3d64e62",
+      "relation": "hf:source",
+      "sources": [
+        "urn:humanifest:hf:opportunity:prism-1569-boundary-cache-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3Aprism-purpose"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:671bde54cef9a6afa312e0f50eefd5fa6ffde874e6470f1644e3fc37f7cc9f3a",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3Aprism-purpose"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fopportunities%2Fprism-1569-boundary-cache-verification.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:a4575920390841f4322f67a606dfdba412add851b12a71970bc923b22d404324",
+      "relation": "hf:source",
+      "sources": [
+        "urn:humanifest:hf:opportunity:prism-1569-boundary-cache-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3Aprism-repo"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:ba631d2b115753fbf445fc0a0d94ae36082cb0bfc2fea0a6788d9e27310bd8d3",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3Aprism-repo"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fopportunities%2Fprism-1569-boundary-cache-verification.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:4e0e1e2b45d363dff26c4dcd0fe0e44e47e6753903ac4f9d59be36a779da0218",
+      "relation": "hf:source",
+      "sources": [
+        "urn:humanifest:hf:opportunity:prism-1569-boundary-cache-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3Aprism-1569"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:d32da05312c8cdf2e23da224940add23df9fd912339e392389b997343b9ac13c",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3Aprism-1569"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fopportunities%2Fprism-1569-boundary-cache-verification.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:632c8860d7f21771f4321e031e7c9d038335197f1acc11ce8c840ba97f999791",
+      "relation": "hf:source",
+      "sources": [
+        "urn:humanifest:hf:opportunity:prism-1569-boundary-cache-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3Aprism-cache-audit"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:0e8b2cde9359affb45fac9e8dd1523a0d2ebed767a1b1bef3f4ad8b964ac0884",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3Aprism-cache-audit"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fopportunities%2Fprism-1569-boundary-cache-verification.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:003bc6ff7fa4e87dae8f9f66267cbf7a193007af254a8ff2dfbb8ee3f833466d",
+      "relation": "hf:source",
+      "sources": [
+        "urn:humanifest:hf:opportunity:prism-1569-boundary-cache-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3Aprism-pr-template"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:39c0dd73d447c0b1a082e75d513c26d9a657713c17f5d9597c05ca383de110de",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3Aprism-pr-template"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fopportunities%2Fprism-1569-boundary-cache-verification.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:889139c75182bba0698231ee09781985e33159aa98d797290f12da0f988270e5",
+      "relation": "hf:source",
+      "sources": [
+        "urn:humanifest:hf:opportunity:prism-1569-boundary-cache-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3Aprism-staging-boundary"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:9600d545f3b833c522c08277fa1b98128e7bdc20a531dbb29b09de5826e72865",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3Aprism-staging-boundary"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fopportunities%2Fprism-1569-boundary-cache-verification.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:3d8e9cdf1b64c6090a89fd9577c7efaaed05f40d62c3d0c73a72d808c29b72dc",
+      "relation": "hf:evidence",
+      "sources": [
+        "urn:humanifest:hf:opportunity:prism-1569-boundary-cache-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:evidence:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3A0"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:0b29803d3359b4893c0b5c5cfa609bd35cc5a52faff3454cd3221a32f1a7abb3",
+      "relation": "hf:source",
+      "sources": [
+        "urn:humanifest:hf:evidence:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3A0"
+      ],
+      "targets": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3Aprism-1569"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:e9082195e1266ac96ce53c93be4ea1cdb6d7caccbebc712c1eb148640462fea7",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:evidence:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3A0"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fopportunities%2Fprism-1569-boundary-cache-verification.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:8f76f2f58fdc8c46e78496650fe4f32eeaf4c0b6bfdf95e0b54ad0333dd28c78",
+      "relation": "hf:evidence",
+      "sources": [
+        "urn:humanifest:hf:opportunity:prism-1569-boundary-cache-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:evidence:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3A1"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:ea39fa11606a617de8acb5dc5c597057cba93bf737a3a3f76a924ab22c8aa0dc",
+      "relation": "hf:source",
+      "sources": [
+        "urn:humanifest:hf:evidence:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3A1"
+      ],
+      "targets": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3Aprism-cache-audit"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:76fec4dd0ee20fd62fcfb2be9cf02d4cae02ccbbdeb7a73dd1f3b39de2754e62",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:evidence:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3A1"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fopportunities%2Fprism-1569-boundary-cache-verification.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:d3793888ef24f9e4af3f2fa5daf7504b43bafae7dfabc313dd9138b23910a874",
+      "relation": "hf:evidence",
+      "sources": [
+        "urn:humanifest:hf:opportunity:prism-1569-boundary-cache-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:evidence:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3A2"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:2f82156095a9aa18dead9c19a7574b96bd005c2daddb6bed9ff67d6325a3e3a8",
+      "relation": "hf:source",
+      "sources": [
+        "urn:humanifest:hf:evidence:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3A2"
+      ],
+      "targets": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3Aprism-cache-audit"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:819b44c96798e9dbd4c53d0fa3f1fac0640a6b9eaa616f8c115ffd5226d8093b",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:evidence:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3A2"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fopportunities%2Fprism-1569-boundary-cache-verification.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:c8c3d5468ae81b2800d01f1fce30b7d64ab32ef7832119c17b11787a9b6a607f",
+      "relation": "hf:project",
+      "sources": [
+        "urn:humanifest:hf:opportunity:prism-1569-boundary-cache-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:project:wfp-prism"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:a8f5b1f7754d7cfbdeec7a1e2cca1f29299801f12d5ccd68e1edca80126e3aff",
+      "relation": "hf:guidance",
+      "sources": [
+        "urn:humanifest:hf:opportunity:prism-1569-boundary-cache-verification"
+      ],
+      "targets": [
+        "urn:humanifest:routing:command:OPPORTUNITY-RESEARCH"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:053e47fddb9c041a25b441fd4a506da31e1ccea1ee7593750d8947fa0cf21995",
+      "relation": "hf:policy",
+      "sources": [
+        "urn:humanifest:hf:opportunity:prism-1569-boundary-cache-verification"
+      ],
+      "targets": [
+        "urn:humanifest:routing:policy:contribution-protocol"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:1d590ba4dcfd91bb1e67287f6dcfa9810fbb1f119cbde481584d48b4fd59d872",
+      "relation": "hf:actor",
+      "sources": [
+        "urn:humanifest:hf:opportunity:prism-1569-boundary-cache-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:actor:humanifest-bot"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:f94e3970953f1d4efd2ed3338051a5c7eaebece90980f8bbbafda20096c34465",
+      "relation": "hf:handoff_route",
+      "sources": [
+        "urn:humanifest:hf:opportunity:prism-1569-boundary-cache-verification"
+      ],
+      "targets": [
+        "urn:humanifest:routing:command:handoff-codex"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:a439ea793d46aee791a66c2a39914c4bd3058f0202faa9de74e412683386f715",
+      "relation": "hf:handoff_route",
+      "sources": [
+        "urn:humanifest:hf:opportunity:prism-1569-boundary-cache-verification"
+      ],
+      "targets": [
+        "urn:humanifest:routing:command:handoff-spark"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:201d24447e6159a5252dd430a37b725abd56eefac0e74f995a93053f3c33e8a3",
+      "relation": "hf:handoff_route",
+      "sources": [
+        "urn:humanifest:hf:opportunity:prism-1569-boundary-cache-verification"
+      ],
+      "targets": [
+        "urn:humanifest:routing:command:handoff-cursor-red-team"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:7cb84096e7745f3f2ad914c0a8fc3244e66daf45669b324a948c4ed7da7bed11",
+      "relation": "hf:gate",
+      "sources": [
+        "urn:humanifest:hf:opportunity:prism-1569-boundary-cache-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3Ahumanitarian_relevance_supported"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:70dd80193784b722f7d69703e9a72c5827048bf92b7d3294f03e8da550464bc4",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3Ahumanitarian_relevance_supported"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fopportunities%2Fprism-1569-boundary-cache-verification.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:b5b02c04617ddb08e5508f68014be636d1cd40397174bedd597bf7b09d53b928",
+      "relation": "hf:source",
+      "sources": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3Ahumanitarian_relevance_supported"
+      ],
+      "targets": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3Aprism-purpose"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:abc91c3922455a60ba98804882093a6d77d18d0d52d0650f94d997388c01e266",
+      "relation": "hf:prerequisite",
+      "sources": [
+        "urn:humanifest:hf:opportunity:prism-1569-boundary-cache-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3Ahumanitarian_relevance_supported"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:16688f31be70dd8dde19ac040f26ba041558cfdbee918c16fd3f7d2a8377d0df",
+      "relation": "hf:gate",
+      "sources": [
+        "urn:humanifest:hf:opportunity:prism-1569-boundary-cache-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3Arepository_active"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:425282ea9121b926cd9f4c3667fc8468198b7711ae49a50a5d0722232e353a58",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3Arepository_active"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fopportunities%2Fprism-1569-boundary-cache-verification.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:2013256792ec9a756d0a9a527d848642c4666e40e02e0b42810865cf775efbf3",
+      "relation": "hf:source",
+      "sources": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3Arepository_active"
+      ],
+      "targets": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3Aprism-repo"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:276c3f3c96b9fee5d794e80470873fd740484e5d5500840ea360e6f0aa4f1017",
+      "relation": "hf:prerequisite",
+      "sources": [
+        "urn:humanifest:hf:opportunity:prism-1569-boundary-cache-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3Arepository_active"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:988e8a83f7913a6a8c7072be6d65004bfef2bc3bcc637ce7673559eea507fd8f",
+      "relation": "hf:gate",
+      "sources": [
+        "urn:humanifest:hf:opportunity:prism-1569-boundary-cache-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3Aexternal_contributions_accepted"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:9cd3fd11948193d5c55369b93a3d447462199629aa74b099459de9ae55ea71b9",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3Aexternal_contributions_accepted"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fopportunities%2Fprism-1569-boundary-cache-verification.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:bc5a8f18799959c7be1c66abe21a1f9ba3cec9ada6f738ba226b3f9fd5a16d7c",
+      "relation": "hf:prerequisite",
+      "sources": [
+        "urn:humanifest:hf:opportunity:prism-1569-boundary-cache-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3Aexternal_contributions_accepted"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:4356a45ee2b960ee4ce39c48189b6d890ce11b87b5e58c84ee6ffe82c01afccf",
+      "relation": "hf:gate",
+      "sources": [
+        "urn:humanifest:hf:opportunity:prism-1569-boundary-cache-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3Acontribution_policy_understood"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:237c37d406fce95463c7f42bc499e223e2ccaec56430aab9214f6723a3d2bc6a",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3Acontribution_policy_understood"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fopportunities%2Fprism-1569-boundary-cache-verification.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:0e12307640c122ce7b4a9b090b282ca1d884c20657824532dc376f94a154bfaa",
+      "relation": "hf:prerequisite",
+      "sources": [
+        "urn:humanifest:hf:opportunity:prism-1569-boundary-cache-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3Acontribution_policy_understood"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:e77f11efcb29a57cc6c7ee20fd853e872de7aba7dc81ae41762228720268cbed",
+      "relation": "hf:gate",
+      "sources": [
+        "urn:humanifest:hf:opportunity:prism-1569-boundary-cache-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3Aai_policy_understood"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:cc3a42db6df8ae0bb47d0fb8c9355e46283cb390a31b9e118f573c8920b99cbc",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3Aai_policy_understood"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fopportunities%2Fprism-1569-boundary-cache-verification.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:e2eb740e65ba60898d26e94765da1c5e93fa186c6bedac68b3f6a2fd2c2df65e",
+      "relation": "hf:prerequisite",
+      "sources": [
+        "urn:humanifest:hf:opportunity:prism-1569-boundary-cache-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3Aai_policy_understood"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:dfb68ab1311f940ae2b9a8cf142e26d27c7bc4040b7d7b52ec5abf70f0040575",
+      "relation": "hf:gate",
+      "sources": [
+        "urn:humanifest:hf:opportunity:prism-1569-boundary-cache-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3Aproblem_current_and_consequential"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:219b4665dbb8bbad7f8529971ea187e344067a691390cd5812e14471e99b26aa",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3Aproblem_current_and_consequential"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fopportunities%2Fprism-1569-boundary-cache-verification.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:f6b2f4126be25bd94e6ea68838d8853dd0ce2c29ef6c1539dab0c3a544e646e3",
+      "relation": "hf:prerequisite",
+      "sources": [
+        "urn:humanifest:hf:opportunity:prism-1569-boundary-cache-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3Aproblem_current_and_consequential"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:a47d53bd08d04cdb742450d84e6ec4ce9770552004252711a0a83c2686898064",
+      "relation": "hf:gate",
+      "sources": [
+        "urn:humanifest:hf:opportunity:prism-1569-boundary-cache-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3Abehavior_reproducible_or_verifiable"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:46a6a7f986e34427db9f1d0e2695c38dbe99e3aba2bd5e2f163cf5065003a4eb",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3Abehavior_reproducible_or_verifiable"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fopportunities%2Fprism-1569-boundary-cache-verification.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:a6afa37fe8a021082c1ecc47e593b16ae69bf37ca0e07d806ac93f6bc17f9b50",
+      "relation": "hf:prerequisite",
+      "sources": [
+        "urn:humanifest:hf:opportunity:prism-1569-boundary-cache-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3Abehavior_reproducible_or_verifiable"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:7df0cafb7d9c76de80b69c87a35c2e9d477a4992a0e42cd803adf3d5f7739335",
+      "relation": "hf:gate",
+      "sources": [
+        "urn:humanifest:hf:opportunity:prism-1569-boundary-cache-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3Acode_and_tests_located"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:d91eb8762b0f3d889cc3969d0f6a5bc733313712a19a8cf7e031b3a5ab9ebb9c",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3Acode_and_tests_located"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fopportunities%2Fprism-1569-boundary-cache-verification.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:2333fc4ba73743da30dbc9e0720db871b79a0c3e7948343923dbb41c5191c33b",
+      "relation": "hf:source",
+      "sources": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3Acode_and_tests_located"
+      ],
+      "targets": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3Aprism-cache-audit"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:5a2f7178fdc515850e79e24f6bd2cf5c62c2427c798e0165a17b0daa90777b89",
+      "relation": "hf:prerequisite",
+      "sources": [
+        "urn:humanifest:hf:opportunity:prism-1569-boundary-cache-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3Acode_and_tests_located"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:257bd426e6681e4ab8993a624cdb2730006047682c0c65d3b218cb6e1e84db4d",
+      "relation": "hf:gate",
+      "sources": [
+        "urn:humanifest:hf:opportunity:prism-1569-boundary-cache-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3Achange_bounded"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:e759593b52e54255068b9ca35326ef6542c0e72560abc5d871a5376e6f644845",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3Achange_bounded"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fopportunities%2Fprism-1569-boundary-cache-verification.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:3519049cdddac1043a891b965383e56f6e537db0d96d3f112d54ce2190b610ae",
+      "relation": "hf:prerequisite",
+      "sources": [
+        "urn:humanifest:hf:opportunity:prism-1569-boundary-cache-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3Achange_bounded"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:a4aad80cf68370c312f55e8768a9b93e9c823f4cedef026b5dbbb7b8b071e343",
+      "relation": "hf:gate",
+      "sources": [
+        "urn:humanifest:hf:opportunity:prism-1569-boundary-cache-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3Aregression_strategy_credible"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:20e6d8688651cc23281194e3217be0827eb97b8b147e3b9697c6b8f25a84c956",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3Aregression_strategy_credible"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fopportunities%2Fprism-1569-boundary-cache-verification.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:23628dee9afebdc709b4e084141f33c42181f6bc14cfa4e69669beb07539884a",
+      "relation": "hf:prerequisite",
+      "sources": [
+        "urn:humanifest:hf:opportunity:prism-1569-boundary-cache-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3Aregression_strategy_credible"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:3f7f654f47f2a5100b3e9d25db6aaa5e06c9948d6d7cd118f55269df058512eb",
+      "relation": "hf:gate",
+      "sources": [
+        "urn:humanifest:hf:opportunity:prism-1569-boundary-cache-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3Ano_private_data_required"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:0465bcf99c5030856b337a8afea8b4cbc018a88bdfb6fb4da4893f581c3e2b86",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3Ano_private_data_required"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fopportunities%2Fprism-1569-boundary-cache-verification.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:30274b4e5b735a4bcfda6f4f5f57565c6f78fcffaee73b22100b7755e7338742",
+      "relation": "hf:source",
+      "sources": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3Ano_private_data_required"
+      ],
+      "targets": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3Aprism-cache-audit"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:5eb64a60a82ae31dd4b7cdd80e252de939a1437c3344bcc4c369f293af8b7fd8",
+      "relation": "hf:prerequisite",
+      "sources": [
+        "urn:humanifest:hf:opportunity:prism-1569-boundary-cache-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3Ano_private_data_required"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:0c8e05fa06fc1f27ee2c8ac7f98d60a543697cb209c215bd23702ec07df23f94",
+      "relation": "hf:gate",
+      "sources": [
+        "urn:humanifest:hf:opportunity:prism-1569-boundary-cache-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3Asecurity_and_licensing_risk_acceptable"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:bb5db28658b124e228ba10c74c69c5cf13375c136650c4f9b820335f83f2c3bc",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3Asecurity_and_licensing_risk_acceptable"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fopportunities%2Fprism-1569-boundary-cache-verification.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:4e55d884c38dddfe02c5e6e753e36e3c67941c97b1fda87c7d25ef023a4f9d2b",
+      "relation": "hf:prerequisite",
+      "sources": [
+        "urn:humanifest:hf:opportunity:prism-1569-boundary-cache-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3Asecurity_and_licensing_risk_acceptable"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:b90c365db5edea6c2475baf1e48729f7ddeeaf6cb7836b725aaacf4ab2dd0066",
+      "relation": "hf:gate",
+      "sources": [
+        "urn:humanifest:hf:opportunity:prism-1569-boundary-cache-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3Aenvironment_feasible"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:305b9c3d7533d796c77438d6fbdba491a54e9056b50fc328733a6283f2585744",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3Aenvironment_feasible"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fopportunities%2Fprism-1569-boundary-cache-verification.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:7b1029c3198318eca600c72401e7d2bbf1b3f6dc8a4d81d919f3503a7cae0352",
+      "relation": "hf:prerequisite",
+      "sources": [
+        "urn:humanifest:hf:opportunity:prism-1569-boundary-cache-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3Aenvironment_feasible"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:afb4a021f43b2128e637409f923a2ecf9c643d8ea131b8fb686470bf050d3bf2",
+      "relation": "hf:gate",
+      "sources": [
+        "urn:humanifest:hf:opportunity:prism-1569-boundary-cache-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3Amaintainer_interest_confirmed"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:97795572d97c2ed0781039f846050fbfe50302c3795ed4cdf501f7d1a99ffb6f",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3Amaintainer_interest_confirmed"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fopportunities%2Fprism-1569-boundary-cache-verification.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:d440d070ba85a2810afb45f850f44ab1a44de0c49cbc7ba46cc81a9d0a3b50ac",
+      "relation": "hf:prerequisite",
+      "sources": [
+        "urn:humanifest:hf:opportunity:prism-1569-boundary-cache-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3Amaintainer_interest_confirmed"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:81f516b0ed88d94e5888fade9f54aa4a576b36032fa2c40d8af5a758208036dd",
+      "relation": "hf:confirmation",
+      "sources": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3Amaintainer_interest_confirmed"
+      ],
+      "targets": [
+        "urn:humanifest:hf:confirmation:prism-1569-boundary-cache-verification"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:cc7e31b8e3348c57f3dfdbdda31dd306913d565f4d5fed5d72ddfeada6e6b250",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:confirmation:prism-1569-boundary-cache-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fopportunities%2Fprism-1569-boundary-cache-verification.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:cc490cb8a0f8b82624165116a2092419acd26592a6aaea4b12cfd2f5be9ae8dc",
+      "relation": "hf:gate",
+      "sources": [
+        "urn:humanifest:hf:opportunity:prism-1569-boundary-cache-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3Aprobable_reviewer_identified"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:d87611d96d1b6b1a8568a06acfcc902bb5ea52d75c12000e9df8387e04b39f3d",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3Aprobable_reviewer_identified"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fopportunities%2Fprism-1569-boundary-cache-verification.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:94aef53c4205ff9d01f026a7601932351ba63f45932fde03c3aeaf1115368ffe",
+      "relation": "hf:prerequisite",
+      "sources": [
+        "urn:humanifest:hf:opportunity:prism-1569-boundary-cache-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3Aprobable_reviewer_identified"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:7b31c7b060cfeef1f5196c1fbad738ba2ef454691c82391384f539d2a4959ee5",
+      "relation": "hf:gate",
+      "sources": [
+        "urn:humanifest:hf:opportunity:prism-1569-boundary-cache-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3Abenefit_justifies_review_cost"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:5ee4fd505c1a9af2db89877d6037dd7351652274d52ad29d1c34520065756279",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3Abenefit_justifies_review_cost"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fopportunities%2Fprism-1569-boundary-cache-verification.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:79bc0ccbb528c41e4d06a5b0856a4bd4db86169d92d31dcb2a472b444ab14567",
+      "relation": "hf:prerequisite",
+      "sources": [
+        "urn:humanifest:hf:opportunity:prism-1569-boundary-cache-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3Abenefit_justifies_review_cost"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:c666611a4d69df90dfa1be03e4154a48e8f3f00c9cf204f0b4ccd28500b5f220",
+      "relation": "hf:gate",
+      "sources": [
+        "urn:humanifest:hf:opportunity:prism-1569-boundary-cache-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3Auser_can_explain_line_by_line"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:b715c94bdc0992dc2d3ab37937fc364727da5639ed689dd0b47723adb23b2490",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3Auser_can_explain_line_by_line"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fopportunities%2Fprism-1569-boundary-cache-verification.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:22d75ea1329e5a5067485bf3f18459bf21d8a469f075fef8b8948755541bff63",
+      "relation": "hf:prerequisite",
+      "sources": [
+        "urn:humanifest:hf:opportunity:prism-1569-boundary-cache-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification%3Auser_can_explain_line_by_line"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:562965682c333494bb0c7f3db91f34c781dccf63ce7c913613c27c3ae6f930ce",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:contribution:prism-1569-boundary-cache-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fopportunities%2Fprism-1569-boundary-cache-verification.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:516a777fb618f1b187e2cccb22e602cd44e4f3631c13809492f0fc3be724ea46",
+      "relation": "hf:output",
+      "sources": [
+        "urn:humanifest:hf:opportunity:prism-1569-boundary-cache-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:report:prism-1569-boundary-cache-verification"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:9dc912e7b5b7481b141d4ae06c649bf52024767e3d311b6c00a67a2e27036ce8",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:report:prism-1569-boundary-cache-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fopportunities%2Fprism-1569-boundary-cache-verification.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:2cc4462ea23c47c1b3557563b4a746dbcb9ce478944aaa3e6a2839af1a576265",
+      "relation": "hf:project",
+      "sources": [
+        "urn:humanifest:hf:report:prism-1569-boundary-cache-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:project:wfp-prism"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:c69f09291d2b248ea1673685b43921aa0c81c8a24ced5c6cd22872a5a77ff863",
+      "relation": "hf:policy",
+      "sources": [
+        "urn:humanifest:hf:report:prism-1569-boundary-cache-verification"
+      ],
+      "targets": [
+        "urn:humanifest:routing:policy:contribution-protocol"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:d03cdd3e59cacb00b1b5721bd2292fcd9ea37df91e21747a1304e8c72259e00f",
+      "relation": "hf:actor",
+      "sources": [
+        "urn:humanifest:hf:report:prism-1569-boundary-cache-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:actor:humanifest-bot"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:c3074099bb57316ac73441e118716e0fe242c2bbd40191b142720124235f0e77",
+      "relation": "hf:guidance",
+      "sources": [
+        "urn:humanifest:hf:report:prism-1569-boundary-cache-verification"
+      ],
+      "targets": [
+        "urn:humanifest:routing:command:OPPORTUNITY-RESEARCH"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:a03f046aa3bafafc544e0cd2c080a9813bfca0e84a6b4392476456ab29ba9b1f",
+      "relation": "hf:output",
+      "sources": [
+        "urn:humanifest:hf:opportunity:prism-1569-boundary-cache-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:handoff:prism-1569-boundary-cache-verification"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:576ed385a52ee1dc56825fd8c3dda8e07cde9bfafcf037863924be6fe0928d14",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:handoff:prism-1569-boundary-cache-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fopportunities%2Fprism-1569-boundary-cache-verification.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:83fe6b1a877afdb398517bcc10ea1fe6f00d65c826f029c0eec4e526c034ba39",
+      "relation": "hf:project",
+      "sources": [
+        "urn:humanifest:hf:handoff:prism-1569-boundary-cache-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:project:wfp-prism"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:33e2a1d4e63850f718bbbb509a69e294da67208e3183a605c514a85dcd4fc5e5",
+      "relation": "hf:policy",
+      "sources": [
+        "urn:humanifest:hf:handoff:prism-1569-boundary-cache-verification"
+      ],
+      "targets": [
+        "urn:humanifest:routing:policy:contribution-protocol"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:1be0c6ad2d50f099a0c56e7374a94db2a7bbe456c6849032181c8bd630128fcd",
+      "relation": "hf:actor",
+      "sources": [
+        "urn:humanifest:hf:handoff:prism-1569-boundary-cache-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:actor:humanifest-bot"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:4ad92550e94aa5d4b89f70ab1aa4308c0a5c6fae7c1257339415e86cdba53a2d",
+      "relation": "hf:guidance",
+      "sources": [
+        "urn:humanifest:hf:handoff:prism-1569-boundary-cache-verification"
+      ],
+      "targets": [
+        "urn:humanifest:routing:command:OPPORTUNITY-RESEARCH"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
       "id": "urn:humanifest:mapping:d012f558fba3a95af082bb31bac45f862dfb9f3cb0cb366a7e3020a806619c3c",
       "relation": "hf:current_record",
       "sources": [
@@ -34892,6 +37279,19 @@
       }
     },
     {
+      "id": "urn:humanifest:authority:urn%3Ahumanifest%3Ahf%3Aproject%3Awfp-prism",
+      "concept": "urn:humanifest:hf:project:wfp-prism",
+      "source": "urn:humanifest:hf:record:portfolio%2Fprojects%2Fwfp-prism.json",
+      "facts": [
+        "current-record"
+      ],
+      "mode": "canonical",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
       "id": "urn:humanifest:authority:urn%3Ahumanifest%3Ahf%3Aproject%3Axlsform-pyxform",
       "concept": "urn:humanifest:hf:project:xlsform-pyxform",
       "source": "urn:humanifest:hf:record:portfolio%2Fprojects%2Fxlsform-pyxform.json",
@@ -35025,6 +37425,19 @@
       "id": "urn:humanifest:authority:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification",
       "concept": "urn:humanifest:hf:opportunity:off-496-text-search-contract-verification",
       "source": "urn:humanifest:hf:record:portfolio%2Fopportunities%2Foff-496-text-search-contract-verification.json",
+      "facts": [
+        "current-record"
+      ],
+      "mode": "canonical",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:authority:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aprism-1569-boundary-cache-verification",
+      "concept": "urn:humanifest:hf:opportunity:prism-1569-boundary-cache-verification",
+      "source": "urn:humanifest:hf:record:portfolio%2Fopportunities%2Fprism-1569-boundary-cache-verification.json",
       "facts": [
         "current-record"
       ],
