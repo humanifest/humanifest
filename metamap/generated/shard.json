@@ -2,7 +2,7 @@
   "schemaVersion": "2.0.0",
   "id": "urn:humanifest:portfolio",
   "namespace": "humanifest",
-  "revision": "sha256:4606aba35701b0f82c4b2ce619cbe9ac5efd6acfa4d8a346232bff56e8d9e763",
+  "revision": "sha256:80acb490887af07dae72353844116047a290b9a5e08a5417b6e6f0a39110df13",
   "entities": [
     {
       "id": "urn:humanifest:routing:policy:contribution-protocol",
@@ -313,7 +313,7 @@
       "attributes": {
         "recordId": "climada-python",
         "path": "portfolio/projects/climada-python.json",
-        "digest": "sha256:f194a495cb92efe9a8b786ee362a3117983035a660f030fd266b939a496545a4",
+        "digest": "sha256:22e6c163b39b1a0a6058af2660d00b15ee1ddf90e44a7b5ebb3cc4fc97094d42",
         "projectId": null
       },
       "provenance": {
@@ -327,7 +327,7 @@
       "label": "portfolio/projects/climada-python.json",
       "attributes": {
         "path": "portfolio/projects/climada-python.json",
-        "digest": "sha256:f194a495cb92efe9a8b786ee362a3117983035a660f030fd266b939a496545a4"
+        "digest": "sha256:22e6c163b39b1a0a6058af2660d00b15ee1ddf90e44a7b5ebb3cc4fc97094d42"
       },
       "provenance": {
         "status": "generated",
@@ -3293,7 +3293,7 @@
       "attributes": {
         "recordId": "climada-1312-wildfire-fraction-verification",
         "path": "portfolio/opportunities/climada-1312-wildfire-fraction-verification.json",
-        "digest": "sha256:df094fa13e1526f65ef6d3c741b73b2b87fa2fb2a4a7b3c44f08eda9410a1660",
+        "digest": "sha256:0a2919bc958310c875ddb8fc2f85d3e382071558b27c2c667cedfdca65494b32",
         "projectId": "climada-python"
       },
       "provenance": {
@@ -3307,7 +3307,7 @@
       "label": "portfolio/opportunities/climada-1312-wildfire-fraction-verification.json",
       "attributes": {
         "path": "portfolio/opportunities/climada-1312-wildfire-fraction-verification.json",
-        "digest": "sha256:df094fa13e1526f65ef6d3c741b73b2b87fa2fb2a4a7b3c44f08eda9410a1660"
+        "digest": "sha256:0a2919bc958310c875ddb8fc2f85d3e382071558b27c2c667cedfdca65494b32"
       },
       "provenance": {
         "status": "generated",
@@ -3380,9 +3380,48 @@
       }
     },
     {
+      "id": "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aclimada-1312-wildfire-fraction-verification%3Aclimada-fraction-runtime",
+      "kind": "hf:source",
+      "label": "urn:humanifest:hf:opportunity:climada-1312-wildfire-fraction-verification:climada-fraction-runtime",
+      "attributes": {
+        "url": "https://github.com/humanifest-bot/humanifest/blob/codex/cht-admin-environment-audit/research/2026-09-09-climada-fraction-runtime.md",
+        "accessed": "2026-09-09"
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aclimada-1312-wildfire-fraction-verification%3Aclimada-data-metadata",
+      "kind": "hf:source",
+      "label": "urn:humanifest:hf:opportunity:climada-1312-wildfire-fraction-verification:climada-data-metadata",
+      "attributes": {
+        "url": "https://climada.ethz.ch/data-api/v2/dataset/?data_type=wildfire&country_iso3alpha=COD&status=&limit=100",
+        "accessed": "2026-09-09"
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aclimada-1312-wildfire-fraction-verification%3Aclimada-verification-delivery",
+      "kind": "hf:source",
+      "label": "urn:humanifest:hf:opportunity:climada-1312-wildfire-fraction-verification:climada-verification-delivery",
+      "attributes": {
+        "url": "https://github.com/CLIMADA-project/climada_python/issues/1312#issuecomment-5599217450",
+        "accessed": "2026-09-09"
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
       "id": "urn:humanifest:hf:evidence:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aclimada-1312-wildfire-fraction-verification%3A0",
       "kind": "hf:evidence",
-      "label": "The issue reporter says v1.1 deduplicates intensity but retains duplicate fraction entries, with higher modeled totals in country comparisons. Those numerical results and the live dataset remain unverified.",
+      "label": "The reporter describes country-level population-weighted differences and a 72-country sweep. Those impact estimates remain unverified; a separate public-file check now confirms the COD storage counts.",
       "attributes": {
         "evidenceType": "self_reported"
       },
@@ -3394,7 +3433,19 @@
     {
       "id": "urn:humanifest:hf:evidence:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aclimada-1312-wildfire-fraction-verification%3A1",
       "kind": "hf:evidence",
-      "label": "Pinned source normalizes sparse matrices by addition and multiplies returned fraction into damage ratios/exposure. Existing fixtures include out-of-range fraction values, so a new range check needs compatibility review. No runtime check occurred.",
+      "label": "Pinned original sparse-storage unit test passes; eight synthetic original-method impact cases and shape rejection pass. Canonicalization preserves apparent values, out-of-range fractions propagate, and empty/all-zero fraction acts as identity. Damage ratios are a disclosed test double.",
+      "attributes": {
+        "evidenceType": "measured"
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:hf:evidence:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aclimada-1312-wildfire-fraction-verification%3A2",
+      "kind": "hf:evidence",
+      "label": "Checksum-verified active COD v1.1 file has 1,296,686 raw fraction ones, 1,191,978 canonical entries, 99,939 cells above one and maximum four. Intensity has no duplicates. Fraction sum/binary support is 1.087843903, a diagnostic arithmetic comparison rather than verified population-weighted impact.",
       "attributes": {
         "evidenceType": "measured"
       },
@@ -3438,7 +3489,7 @@
       "attributes": {
         "passed": false,
         "cited": false,
-        "rationale": "Not established in this initial source audit; verify evidence before advancing."
+        "rationale": "General guide welcomes external fork contributions. Eligibility of this AI-assisted bot contribution is now explicitly asked in the delivered inquiry and remains unconfirmed."
       },
       "provenance": {
         "status": "generated",
@@ -3452,7 +3503,7 @@
       "attributes": {
         "passed": false,
         "cited": false,
-        "rationale": "Not established in this initial source audit; verify evidence before advancing."
+        "rationale": "Fork/develop, tests, Pylint, formatting and attribution requirements inspected. Final scope-specific checklist and bot pathway need agreement before implementation."
       },
       "provenance": {
         "status": "generated",
@@ -3466,7 +3517,7 @@
       "attributes": {
         "passed": false,
         "cited": false,
-        "rationale": "Not established in this initial source audit; verify evidence before advancing."
+        "rationale": "No explicit AI/bot rule found in bounded repository and linked guide inspection. Delivered inquiry asks whether this bot pathway is welcome; absence of a rule is not acceptance."
       },
       "provenance": {
         "status": "generated",
@@ -3480,7 +3531,7 @@
       "attributes": {
         "passed": false,
         "cited": false,
-        "rationale": "Open issue and source path support investigation. Live wildfire version, reported percentages and operational consequences remain independently unverified."
+        "rationale": "Current active COD artifact confirms duplicate fractions; original methods propagate out-of-range values. Operational consequences, population-weighted impact and review benefit remain unverified."
       },
       "provenance": {
         "status": "generated",
@@ -3492,9 +3543,9 @@
       "kind": "hf:gate",
       "label": "behavior_reproducible_or_verifiable",
       "attributes": {
-        "passed": false,
-        "cited": false,
-        "rationale": "Not established in this initial source audit; verify evidence before advancing."
+        "passed": true,
+        "cited": true,
+        "rationale": "Hash-verified original methods and public COD v1.1 sparse fields independently reproduce out-of-range fractions and their checked multiplication path. Scope is method/data-level, not population-weighted impact."
       },
       "provenance": {
         "status": "generated",
@@ -3508,7 +3559,7 @@
       "attributes": {
         "passed": true,
         "cited": true,
-        "rationale": "Pinned canonicalization, hazard checks and impact multiplication plus three existing test files inspected. No target execution."
+        "rationale": "Pinned checker/hazard/impact paths and tests inspected; unchanged checker test and extracted original methods executed. Full framework not run."
       },
       "provenance": {
         "status": "generated",
@@ -3536,7 +3587,7 @@
       "attributes": {
         "passed": false,
         "cited": false,
-        "rationale": "Not established in this initial source audit; verify evidence before advancing."
+        "rationale": "Controlled method and public-file probes pass, but the intended fraction-validation/data-generation behavior has not been agreed for a production regression."
       },
       "provenance": {
         "status": "generated",
@@ -3550,7 +3601,7 @@
       "attributes": {
         "passed": true,
         "cited": true,
-        "rationale": "A tiny synthetic sparse-matrix probe can examine the reported mechanism without operational exposure or patient data."
+        "rationale": "Completed probes use synthetic inputs and public CC BY 4.0 hazard data only."
       },
       "provenance": {
         "status": "generated",
@@ -3564,7 +3615,7 @@
       "attributes": {
         "passed": false,
         "cited": false,
-        "rationale": "Not established in this initial source audit; verify evidence before advancing."
+        "rationale": "Bounded source/data path inspected, public artifact licensed CC BY 4.0 and pinned binary reader verified. Full native dependency/license and production change review remains incomplete."
       },
       "provenance": {
         "status": "generated",
@@ -3578,7 +3629,7 @@
       "attributes": {
         "passed": false,
         "cited": false,
-        "rationale": "Not established in this initial source audit; verify evidence before advancing."
+        "rationale": "Bounded method/data probes are feasible and pass; full native/geospatial framework baseline remains unestablished."
       },
       "provenance": {
         "status": "generated",
@@ -3592,7 +3643,7 @@
       "attributes": {
         "passed": false,
         "cited": false,
-        "rationale": "Issue is open and unassigned with no comments. No accepted Humanifest scope, reviewer commitment or bot pathway established."
+        "rationale": "Verification and scope question delivered as humanifest-bot; posting does not establish maintainer acceptance or bot eligibility."
       },
       "provenance": {
         "status": "generated",
@@ -3618,7 +3669,7 @@
       "attributes": {
         "passed": false,
         "cited": false,
-        "rationale": "Not established in this initial source audit; verify evidence before advancing."
+        "rationale": "Global CODEOWNERS identifies possible reviewers, but no reviewer has accepted this scope."
       },
       "provenance": {
         "status": "generated",
@@ -3632,7 +3683,7 @@
       "attributes": {
         "passed": false,
         "cited": false,
-        "rationale": "Not established in this initial source audit; verify evidence before advancing."
+        "rationale": "Independent data confirmation was delivered; deployment need, reviewer interest and useful bounded change remain unconfirmed."
       },
       "provenance": {
         "status": "generated",
@@ -3646,7 +3697,7 @@
       "attributes": {
         "passed": false,
         "cited": false,
-        "rationale": "Not established in this initial source audit; verify evidence before advancing."
+        "rationale": "Harnesses and exact results are documented; no independent human explanation or review is claimed."
       },
       "provenance": {
         "status": "generated",
@@ -3658,7 +3709,7 @@
       "kind": "hf:contribution",
       "label": "climada-1312-wildfire-fraction-verification",
       "attributes": {
-        "recordedState": "OPPORTUNITY-RESEARCH",
+        "recordedState": "MAINTAINER-CHECK",
         "deliveryEvidenceRequired": true
       },
       "provenance": {
@@ -18303,6 +18354,102 @@
       }
     },
     {
+      "id": "urn:humanifest:mapping:837a40ba512b8143c96e6f13b5df533755b55d911368fe6cda454005857f9f64",
+      "relation": "hf:source",
+      "sources": [
+        "urn:humanifest:hf:opportunity:climada-1312-wildfire-fraction-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aclimada-1312-wildfire-fraction-verification%3Aclimada-fraction-runtime"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:e7679cc4dbaaab0e8e78218344a340fa7ef9b1a445215bbfe1f2a1acd2cf1ab6",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aclimada-1312-wildfire-fraction-verification%3Aclimada-fraction-runtime"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fopportunities%2Fclimada-1312-wildfire-fraction-verification.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:04db69153cc9641b831414efef7ae29aadd93750a16fdbdef77dd8a455c01a68",
+      "relation": "hf:source",
+      "sources": [
+        "urn:humanifest:hf:opportunity:climada-1312-wildfire-fraction-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aclimada-1312-wildfire-fraction-verification%3Aclimada-data-metadata"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:2169aa248b589e3797bf4a32ab4e92d312da842467a6fd16963d7a7fb6a3e2f9",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aclimada-1312-wildfire-fraction-verification%3Aclimada-data-metadata"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fopportunities%2Fclimada-1312-wildfire-fraction-verification.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:7656ecf7329855cb61719ead3bc698519a9408012530b688d6154b752e1e7552",
+      "relation": "hf:source",
+      "sources": [
+        "urn:humanifest:hf:opportunity:climada-1312-wildfire-fraction-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aclimada-1312-wildfire-fraction-verification%3Aclimada-verification-delivery"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:3ebb01c8cd8bc2ed5f8e2f029e954e749244b98661816a3d8b071ed139776a1a",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aclimada-1312-wildfire-fraction-verification%3Aclimada-verification-delivery"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fopportunities%2Fclimada-1312-wildfire-fraction-verification.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
       "id": "urn:humanifest:mapping:0a1a2d7b6b861b3a0a51322b447b7245bf409247f0abb8b8539de691dbdbce09",
       "relation": "hf:evidence",
       "sources": [
@@ -18367,13 +18514,13 @@
       }
     },
     {
-      "id": "urn:humanifest:mapping:c5e8b0c91d6b9f5b8e4a710dda584ef53c34e25c8eb09ea3e673ccdeedd8cee0",
+      "id": "urn:humanifest:mapping:da0e053b79953e293b58b3469b659f90989b9e31b53cdb31f3932dd10bf30d26",
       "relation": "hf:source",
       "sources": [
         "urn:humanifest:hf:evidence:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aclimada-1312-wildfire-fraction-verification%3A1"
       ],
       "targets": [
-        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aclimada-1312-wildfire-fraction-verification%3Aclimada-fraction-audit"
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aclimada-1312-wildfire-fraction-verification%3Aclimada-fraction-runtime"
       ],
       "cardinality": "one-to-one",
       "lossiness": "lossless",
@@ -18387,6 +18534,54 @@
       "relation": "hf:current_record",
       "sources": [
         "urn:humanifest:hf:evidence:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aclimada-1312-wildfire-fraction-verification%3A1"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fopportunities%2Fclimada-1312-wildfire-fraction-verification.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:4d9681584ef7070339c173909e0a734f5e932002c5f2b3f17d9d17b5d54a5b76",
+      "relation": "hf:evidence",
+      "sources": [
+        "urn:humanifest:hf:opportunity:climada-1312-wildfire-fraction-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:evidence:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aclimada-1312-wildfire-fraction-verification%3A2"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:43bfc52cb9d46234b9cf39f760fbdec061e697782324396fca9ebb4893c349ba",
+      "relation": "hf:source",
+      "sources": [
+        "urn:humanifest:hf:evidence:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aclimada-1312-wildfire-fraction-verification%3A2"
+      ],
+      "targets": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aclimada-1312-wildfire-fraction-verification%3Aclimada-fraction-runtime"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:c732952baf40a5edcda687be9081127057bdcd72a692b882e8343823d38e41cf",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:evidence:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aclimada-1312-wildfire-fraction-verification%3A2"
       ],
       "targets": [
         "urn:humanifest:hf:record:portfolio%2Fopportunities%2Fclimada-1312-wildfire-fraction-verification.json"
@@ -18415,13 +18610,13 @@
       }
     },
     {
-      "id": "urn:humanifest:mapping:71b9dcefc9a731b371afe29aa0d5a7e63a1e3e7fcd2fd02f09b4b13d62645f2c",
+      "id": "urn:humanifest:mapping:61bff5bcb43ca0e0de46d18d873d7804c9c0f4969772288156a47ad202f45ddc",
       "relation": "hf:guidance",
       "sources": [
         "urn:humanifest:hf:opportunity:climada-1312-wildfire-fraction-verification"
       ],
       "targets": [
-        "urn:humanifest:routing:command:OPPORTUNITY-RESEARCH"
+        "urn:humanifest:routing:command:MAINTAINER-CHECK"
       ],
       "cardinality": "one-to-one",
       "lossiness": "lossless",
@@ -18879,6 +19074,22 @@
       }
     },
     {
+      "id": "urn:humanifest:mapping:ee3afee718816f49f2be5f428661fbd323e54af2b73ce0af3ee87c7adfa5f715",
+      "relation": "hf:source",
+      "sources": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aclimada-1312-wildfire-fraction-verification%3Abehavior_reproducible_or_verifiable"
+      ],
+      "targets": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aclimada-1312-wildfire-fraction-verification%3Aclimada-fraction-runtime"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
       "id": "urn:humanifest:mapping:26712b49e9bbe8fb658d6ecb4edd2e1debae2121166c298b3107f56941ccebbc",
       "relation": "hf:prerequisite",
       "sources": [
@@ -18927,13 +19138,13 @@
       }
     },
     {
-      "id": "urn:humanifest:mapping:547fe927f226c11949c45259283e74af71efc27325e92024293c8166bd0f3f18",
+      "id": "urn:humanifest:mapping:b4c222824c381abd8469b78147ebf0d59edf3d62e191982d749138ca0cdc3c53",
       "relation": "hf:source",
       "sources": [
         "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aclimada-1312-wildfire-fraction-verification%3Acode_and_tests_located"
       ],
       "targets": [
-        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aclimada-1312-wildfire-fraction-verification%3Aclimada-fraction-audit"
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aclimada-1312-wildfire-fraction-verification%3Aclimada-fraction-runtime"
       ],
       "cardinality": "one-to-one",
       "lossiness": "lossless",
@@ -19087,13 +19298,29 @@
       }
     },
     {
-      "id": "urn:humanifest:mapping:272f7b620f4308f5524c1e73de401ebde0902f7e8640461d581ad529a5d6fc5a",
+      "id": "urn:humanifest:mapping:e33665a7c256e90e3238e7b5e27940449465e0449eb895099e3e4083286a4f94",
       "relation": "hf:source",
       "sources": [
         "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aclimada-1312-wildfire-fraction-verification%3Ano_private_data_required"
       ],
       "targets": [
-        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aclimada-1312-wildfire-fraction-verification%3Aclimada-fraction-audit"
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aclimada-1312-wildfire-fraction-verification%3Aclimada-fraction-runtime"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:d9b0519d05325ddfb61faa3ff15f1ef11e180c0d313466183056d88d7808be63",
+      "relation": "hf:source",
+      "sources": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aclimada-1312-wildfire-fraction-verification%3Ano_private_data_required"
+      ],
+      "targets": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aclimada-1312-wildfire-fraction-verification%3Aclimada-data-metadata"
       ],
       "cardinality": "one-to-one",
       "lossiness": "lossless",
@@ -19535,13 +19762,13 @@
       }
     },
     {
-      "id": "urn:humanifest:mapping:53eabc60d7198745cf17e29cedb86c7b0b9467b041d729d9339e93e05314469c",
+      "id": "urn:humanifest:mapping:94c0eb8916cca0762f5b89fc9cc98aa9310f21a615c3fdd476771335379442ce",
       "relation": "hf:guidance",
       "sources": [
         "urn:humanifest:hf:report:climada-1312-wildfire-fraction-verification"
       ],
       "targets": [
-        "urn:humanifest:routing:command:OPPORTUNITY-RESEARCH"
+        "urn:humanifest:routing:command:MAINTAINER-CHECK"
       ],
       "cardinality": "one-to-one",
       "lossiness": "lossless",
@@ -19631,13 +19858,13 @@
       }
     },
     {
-      "id": "urn:humanifest:mapping:42f535c020f5971dbef43a5635b16b7966414f322893b01d20b67ae679ffc1e1",
+      "id": "urn:humanifest:mapping:3d579174bb90dfa2a0c12aef83f31112f1ab71056c146e2c94a24d925915f1f1",
       "relation": "hf:guidance",
       "sources": [
         "urn:humanifest:hf:handoff:climada-1312-wildfire-fraction-verification"
       ],
       "targets": [
-        "urn:humanifest:routing:command:OPPORTUNITY-RESEARCH"
+        "urn:humanifest:routing:command:MAINTAINER-CHECK"
       ],
       "cardinality": "one-to-one",
       "lossiness": "lossless",
