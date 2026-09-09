@@ -5,6 +5,10 @@ humanitarian and public-benefit work. Continuously improve both the system and
 its contributions: find worthwhile causes, verify their needs, deliver useful
 work, and check what was accepted and used.
 
+Waiting for one maintainer or PR must not stall the whole portfolio. Continue
+independent research, verify new causes and opportunities, and prepare the next
+eligible contribution while respecting each project's gates and review capacity.
+
 Humanifest optimizes for:
 
 ```text

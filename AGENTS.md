@@ -16,6 +16,7 @@ If these conflict, prefer current project records for a specific candidate, then
 
 - No issue comments, maintainer messages, pull requests, repository creation, package publication, or other external writes without explicit user authorization.
 - Honor standing authorization in `docs/contribution-protocol.md`; do not ask again for covered routine actions. Verify the authenticated GitHub actor before writing: outreach must use a Humanifest user or bot identity, never the user's personal account.
+- Publish authorized changes from a dedicated branch in the Humanifest bot's fork, then open a PR against the intended upstream base. Do not request upstream Write access or push directly to upstream as a prerequisite; verify fork ownership, PR author, head, and base.
 - Do not clone external target repositories into this repository.
 - Use read-only source browsing before cloning.
 - Do not execute third-party setup code until manifests, lifecycle hooks, Dockerfiles, CI, requested privileges, ports, services, and secrets have been inspected.

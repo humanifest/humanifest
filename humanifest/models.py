@@ -278,6 +278,7 @@ def generate_handoff(record: dict[str, Any], target: str) -> str:
         f"Risks: {record['risks']}",
         f"Next action: {next_action(record)}",
         "Before implementation: validate the full Humanifest portfolio and check its capacity limits; inspect target setup code before executing it.",
+        "Publication: follow the target's contribution policy; push an authorized, tested change on a dedicated branch in the verified Humanifest bot's fork and open a PR against the intended upstream base. Verify PR author, head, and base; do not request upstream Write access as a prerequisite or merge without separate authorization.",
         "Constraints: no external writes or maintainer contact outside explicit user authorization. Consult docs/contribution-protocol.md for standing authorization and verify the Humanifest posting identity; never use the user's personal account. No private data; stop if evidence contradicts the gate rationale.",
         "Return format: findings, changed files if any, commands run, remaining blockers, and confidence.",
     ]

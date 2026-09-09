@@ -15,6 +15,9 @@
 - Reproduce the issue with synthetic data.
 - Implement the smallest safe fix.
 - Run adversarial review before any PR.
+- While the pilot waits, resolve independent research questions and add a small
+  number of verified opportunities from other organizations. Maintain useful
+  next actions; a pending response does not stall the portfolio.
 
 ## Phase 2: Selective Automation
 
@@ -28,4 +31,5 @@
 - Autonomous GitHub App.
 - Database server.
 - LLM agent framework.
-- Bulk project discovery.
+- Indiscriminate bulk discovery. Bounded, evidence-backed queue replenishment is
+  active work whenever the current implementation path is waiting.

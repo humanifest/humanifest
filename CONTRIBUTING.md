@@ -33,6 +33,12 @@ Do not advance an opportunity record beyond the evidence it actually supports.
 A useful negative finding, parked opportunity, or failed gate is a valid
 contribution when it prevents low-quality work from reaching a maintainer.
 
+Use a fork and a dedicated branch to submit a pull request against the intended
+upstream base. Humanifest agents publish through `humanifest-bot`'s fork and
+verify the PR identity and destination; upstream Write access is unnecessary.
+Follow the [fork and PR workflow](docs/contribution-protocol.md#fork-and-pull-request-workflow)
+for authorization, checks, attribution, and review expectations.
+
 Humanifest is licensed under the MIT License. Contributors should use DCO signoff
 unless the project later adopts a CLA; see [Licensing](docs/licensing.md).
 

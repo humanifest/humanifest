@@ -34,6 +34,11 @@ Current records contain no opportunity ready for implementation. Run `report` fo
 each candidate's blockers and next permitted action; upstream status must be
 rechecked before outreach or implementation.
 
+Pending reviews do not stop the queue. Continue source verification and bounded
+discovery across other projects while an individual contribution waits. Follow
+the [work-selection protocol](docs/contribution-protocol.md#keep-work-moving-while-reviews-are-pending)
+to choose an actionable task without bypassing implementation gates.
+
 ## Principles
 
 - One active implementation at a time.
