@@ -2,7 +2,7 @@
   "schemaVersion": "2.0.0",
   "id": "urn:humanifest:portfolio",
   "namespace": "humanifest",
-  "revision": "sha256:ce050843619b36c4922230910f0586c683dc2e7352f09d44db7c1fb00955e5e1",
+  "revision": "sha256:7c11f710be33d929700794f3e4bf2b75555d41e06439303149a7aa229ff68f90",
   "entities": [
     {
       "id": "urn:humanifest:routing:policy:contribution-protocol",
@@ -649,7 +649,7 @@
       "attributes": {
         "recordId": "hot-tasking-manager",
         "path": "portfolio/projects/hot-tasking-manager.json",
-        "digest": "sha256:bfeeafce4ae1765865f73865f46aeec1c707693acb260339171e889441c92b4f",
+        "digest": "sha256:e551a94d15cf76334c0f6f8ac05be5c53a38351b8cb813a65dd0240d231991b5",
         "projectId": null
       },
       "provenance": {
@@ -663,7 +663,7 @@
       "label": "portfolio/projects/hot-tasking-manager.json",
       "attributes": {
         "path": "portfolio/projects/hot-tasking-manager.json",
-        "digest": "sha256:bfeeafce4ae1765865f73865f46aeec1c707693acb260339171e889441c92b4f"
+        "digest": "sha256:e551a94d15cf76334c0f6f8ac05be5c53a38351b8cb813a65dd0240d231991b5"
       },
       "provenance": {
         "status": "generated",
@@ -729,6 +729,19 @@
       "attributes": {
         "url": "https://github.com/hotosm/tasking-manager/blob/2b917a14ea7b0b76935c4e2d6985ab25764cd1c9/AGENTS.md",
         "accessed": "2026-09-08"
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aproject%3Ahot-tasking-manager%3Ahot-bot-account-policy-2026-09-09",
+      "kind": "hf:source",
+      "label": "urn:humanifest:hf:project:hot-tasking-manager:hot-bot-account-policy-2026-09-09",
+      "attributes": {
+        "url": "https://docs.hotosm.org/become-a-contributor/#how-contributions-are-handled",
+        "accessed": "2026-09-09"
       },
       "provenance": {
         "status": "generated",
@@ -937,7 +950,7 @@
       "attributes": {
         "recordId": "kobotoolbox-kpi",
         "path": "portfolio/projects/kobotoolbox-kpi.json",
-        "digest": "sha256:d9a4b7afd63b236fe00539066ad1d0549000f4f99698d27b3c79321062b64863",
+        "digest": "sha256:b4f6cb61a45cd25e3464d1858da97d97bf94b769911e30f99f0f8b68b501c179",
         "projectId": null
       },
       "provenance": {
@@ -951,7 +964,7 @@
       "label": "portfolio/projects/kobotoolbox-kpi.json",
       "attributes": {
         "path": "portfolio/projects/kobotoolbox-kpi.json",
-        "digest": "sha256:d9a4b7afd63b236fe00539066ad1d0549000f4f99698d27b3c79321062b64863"
+        "digest": "sha256:b4f6cb61a45cd25e3464d1858da97d97bf94b769911e30f99f0f8b68b501c179"
       },
       "provenance": {
         "status": "generated",
@@ -991,6 +1004,19 @@
       "attributes": {
         "url": "https://github.com/kobotoolbox/kpi/blob/74e520c0bc2ce33afe911f041cdb7071947cdae9/CONTRIBUTING.md",
         "accessed": "2026-09-08"
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aproject%3Akobotoolbox-kpi%3Akobo-environment-audit-2026-09-09",
+      "kind": "hf:source",
+      "label": "urn:humanifest:hf:project:kobotoolbox-kpi:kobo-environment-audit-2026-09-09",
+      "attributes": {
+        "url": "https://github.com/humanifest-bot/humanifest/blob/codex/cht-admin-environment-audit/research/2026-09-09-kobo-test-environment-audit.md",
+        "accessed": "2026-09-09"
       },
       "provenance": {
         "status": "generated",
@@ -1184,6 +1210,98 @@
       "id": "urn:humanifest:hf:evidence:urn%3Ahumanifest%3Ahf%3Aproject%3Aodk-central%3A0",
       "kind": "hf:evidence",
       "label": "ODK publishes an American Red Cross account of using ODK for disaster/crisis data collection. This supports the ecosystem use case, not measured benefit of this worker-count proposal.",
+      "attributes": {
+        "evidenceType": "self_reported"
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:hf:project:openfoodfacts-python",
+      "kind": "hf:project",
+      "label": "Open Food Facts Python SDK",
+      "attributes": {
+        "recordId": "openfoodfacts-python",
+        "path": "portfolio/projects/openfoodfacts-python.json",
+        "digest": "sha256:8fbaed379e0f272ca20f92369c1508c4b424ada8fc80ba7dbacae30259d432af",
+        "projectId": null
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:hf:record:portfolio%2Fprojects%2Fopenfoodfacts-python.json",
+      "kind": "hf:record",
+      "label": "portfolio/projects/openfoodfacts-python.json",
+      "attributes": {
+        "path": "portfolio/projects/openfoodfacts-python.json",
+        "digest": "sha256:8fbaed379e0f272ca20f92369c1508c4b424ada8fc80ba7dbacae30259d432af"
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aproject%3Aopenfoodfacts-python%3Aoff-purpose",
+      "kind": "hf:source",
+      "label": "urn:humanifest:hf:project:openfoodfacts-python:off-purpose",
+      "attributes": {
+        "url": "https://blog.openfoodfacts.org/en/news/why-open-food-facts-is-independent-and-open-and-why-that-matters",
+        "accessed": "2026-09-09"
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aproject%3Aopenfoodfacts-python%3Aoff-repo",
+      "kind": "hf:source",
+      "label": "urn:humanifest:hf:project:openfoodfacts-python:off-repo",
+      "attributes": {
+        "url": "https://api.github.com/repos/openfoodfacts/openfoodfacts-python",
+        "accessed": "2026-09-09"
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aproject%3Aopenfoodfacts-python%3Aoff-contributing",
+      "kind": "hf:source",
+      "label": "urn:humanifest:hf:project:openfoodfacts-python:off-contributing",
+      "attributes": {
+        "url": "https://github.com/openfoodfacts/openfoodfacts-python/blob/34d0629c970b3887a63c615ace7497a9a28b294b/CONTRIBUTING.md",
+        "accessed": "2026-09-09"
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aproject%3Aopenfoodfacts-python%3Aoff-search-audit",
+      "kind": "hf:source",
+      "label": "urn:humanifest:hf:project:openfoodfacts-python:off-search-audit",
+      "attributes": {
+        "url": "https://github.com/humanifest-bot/humanifest/blob/codex/cht-admin-environment-audit/research/2026-09-09-openfoodfacts-search-contract-audit.md",
+        "accessed": "2026-09-09"
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:hf:evidence:urn%3Ahumanifest%3Ahf%3Aproject%3Aopenfoodfacts-python%3A0",
+      "kind": "hf:evidence",
+      "label": "Open Food Facts describes itself as a nonprofit publishing reusable food information for consumers, research and sustainability work. This supports a public-benefit pathway, not measured impact from an SDK patch.",
       "attributes": {
         "evidenceType": "self_reported"
       },
@@ -3392,7 +3510,7 @@
       "attributes": {
         "recordId": "hot-7227-archived-project-data-access",
         "path": "portfolio/opportunities/hot-7227-archived-project-data-access.json",
-        "digest": "sha256:a0f096b1a3267dc03e7712c8dbab2336ced1451d061ac34f559f6b4a04a3d8ee",
+        "digest": "sha256:cb2ff475f4f4b2d912e328f7ecb10fee614d8b1726fea6a714317b8436d3843c",
         "projectId": "hot-tasking-manager"
       },
       "provenance": {
@@ -3406,7 +3524,7 @@
       "label": "portfolio/opportunities/hot-7227-archived-project-data-access.json",
       "attributes": {
         "path": "portfolio/opportunities/hot-7227-archived-project-data-access.json",
-        "digest": "sha256:a0f096b1a3267dc03e7712c8dbab2336ced1451d061ac34f559f6b4a04a3d8ee"
+        "digest": "sha256:cb2ff475f4f4b2d912e328f7ecb10fee614d8b1726fea6a714317b8436d3843c"
       },
       "provenance": {
         "status": "generated",
@@ -3661,6 +3779,19 @@
       }
     },
     {
+      "id": "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Ahot-7227-archived-project-data-access%3Ahot-bot-account-policy-2026-09-09",
+      "kind": "hf:source",
+      "label": "urn:humanifest:hf:opportunity:hot-7227-archived-project-data-access:hot-bot-account-policy-2026-09-09",
+      "attributes": {
+        "url": "https://docs.hotosm.org/become-a-contributor/#how-contributions-are-handled",
+        "accessed": "2026-09-09"
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
       "id": "urn:humanifest:hf:evidence:urn%3Ahumanifest%3Ahf%3Aopportunity%3Ahot-7227-archived-project-data-access%3A0",
       "kind": "hf:evidence",
       "label": "The reporter could not share completed project map data through the download feature; a later comment explains why post-completion access matters.",
@@ -3745,6 +3876,18 @@
       }
     },
     {
+      "id": "urn:humanifest:hf:evidence:urn%3Ahumanifest%3Ahf%3Aopportunity%3Ahot-7227-archived-project-data-access%3A7",
+      "kind": "hf:evidence",
+      "label": "HOT's shared contribution guide states it does not accept contributions from automated bot/AI accounts. This is distinct from its permission for human-led AI assistance and makes the required Humanifest bot contribution workflow incompatible absent an explicit accepted pathway. The earlier setup audit omitted this restriction.",
+      "attributes": {
+        "evidenceType": "measured"
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
       "id": "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Ahot-7227-archived-project-data-access%3Ahumanitarian_relevance_supported",
       "kind": "hf:gate",
       "label": "humanitarian_relevance_supported",
@@ -3777,9 +3920,9 @@
       "kind": "hf:gate",
       "label": "external_contributions_accepted",
       "attributes": {
-        "passed": true,
-        "cited": false,
-        "rationale": "Retrieved contribution guides explicitly welcome volunteer code contributions and fork-based PRs."
+        "passed": false,
+        "cited": true,
+        "rationale": "External human contributions are welcomed, but the September 9 shared HOT guide explicitly rejects automated bot/AI accounts. Humanifest's required posting identity is humanifest-bot; no compatible exception or pathway is established."
       },
       "provenance": {
         "status": "generated",
@@ -3999,7 +4142,7 @@
       "kind": "hf:contribution",
       "label": "hot-7227-archived-project-data-access",
       "attributes": {
-        "recordedState": "MAINTAINER-CHECK",
+        "recordedState": "PARKED",
         "deliveryEvidenceRequired": true
       },
       "provenance": {
@@ -4750,7 +4893,7 @@
       "attributes": {
         "recordId": "kobo-7259-incremental-sync-verification",
         "path": "portfolio/opportunities/kobo-7259-incremental-sync-verification.json",
-        "digest": "sha256:4ada4443fc7b04b8f95e2a7ecaee6b177892a783b7be3e625e07ea98849660b7",
+        "digest": "sha256:17b75e58b90a32cec1349444bb7cc7d637d8817f7d8c9834984af13399c67dcb",
         "projectId": "kobotoolbox-kpi"
       },
       "provenance": {
@@ -4764,7 +4907,7 @@
       "label": "portfolio/opportunities/kobo-7259-incremental-sync-verification.json",
       "attributes": {
         "path": "portfolio/opportunities/kobo-7259-incremental-sync-verification.json",
-        "digest": "sha256:4ada4443fc7b04b8f95e2a7ecaee6b177892a783b7be3e625e07ea98849660b7"
+        "digest": "sha256:17b75e58b90a32cec1349444bb7cc7d637d8817f7d8c9834984af13399c67dcb"
       },
       "provenance": {
         "status": "generated",
@@ -4980,6 +5123,19 @@
       }
     },
     {
+      "id": "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Akobo-7259-incremental-sync-verification%3Akobo-environment-audit-2026-09-09",
+      "kind": "hf:source",
+      "label": "urn:humanifest:hf:opportunity:kobo-7259-incremental-sync-verification:kobo-environment-audit-2026-09-09",
+      "attributes": {
+        "url": "https://github.com/humanifest-bot/humanifest/blob/codex/cht-admin-environment-audit/research/2026-09-09-kobo-test-environment-audit.md",
+        "accessed": "2026-09-09"
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
       "id": "urn:humanifest:hf:evidence:urn%3Ahumanifest%3Ahf%3Aopportunity%3Akobo-7259-incremental-sync-verification%3A0",
       "kind": "hf:evidence",
       "label": "The issue author reports nightly replication of about 35 forms and 230,000 submissions to detect roughly 0.1% changed records. No Humanifest benchmark verifies those figures or achievable savings.",
@@ -5052,6 +5208,18 @@
       }
     },
     {
+      "id": "urn:humanifest:hf:evidence:urn%3Ahumanifest%3Ahf%3Aopportunity%3Akobo-7259-incremental-sync-verification%3A6",
+      "kind": "hf:evidence",
+      "label": "September 9 API read confirms PR #7260 remains open at the same pinned head. Contribution and setup review locates PostgreSQL-specific autouse fixtures, mock Mongo and eager Celery; production entrypoint/migrations are unnecessary for a focused test run. Approved local Docker query could not reach the engine. This is setup evidence, not a passing API baseline.",
+      "attributes": {
+        "evidenceType": "measured"
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
       "id": "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Akobo-7259-incremental-sync-verification%3Ahumanitarian_relevance_supported",
       "kind": "hf:gate",
       "label": "humanitarian_relevance_supported",
@@ -5098,9 +5266,9 @@
       "kind": "hf:gate",
       "label": "contribution_policy_understood",
       "attributes": {
-        "passed": false,
-        "cited": false,
-        "rationale": "Not established in this initial research intake; inspect relevant evidence before advancing."
+        "passed": true,
+        "cited": true,
+        "rationale": "Read pinned contribution guide, backend style, README, PR template and license notices. Fork/main workflow, tests, API docs, self-review and the template-specific documentation communication requirement are recorded. AI acceptance remains separately unresolved."
       },
       "provenance": {
         "status": "generated",
@@ -5114,7 +5282,7 @@
       "attributes": {
         "passed": false,
         "cited": false,
-        "rationale": "Not established in this initial research intake; inspect relevant evidence before advancing."
+        "rationale": "No explicit AI policy found in the inspected contribution/README/template text or policy/agent filenames of the complete pinned tree. This bounded absence is not approval; the existing scope inquiry remains pending."
       },
       "provenance": {
         "status": "generated",
@@ -5226,7 +5394,7 @@
       "attributes": {
         "passed": false,
         "cited": false,
-        "rationale": "Standard-library probe runs without target dependencies, but this does not establish Kobo stack or target integration-test feasibility."
+        "rationale": "The existing test path was traced through real Django/PostgreSQL fixtures and mocked Mongo. The local Docker engine is unavailable and inspected host dependencies lack PostGIS/GDAL/Redis. No installation or target test ran; an isolated runner matching the CI dependencies is still needed."
       },
       "provenance": {
         "status": "generated",
@@ -5837,6 +6005,461 @@
       "id": "urn:humanifest:hf:handoff:odk-2169-worker-memory-threshold",
       "kind": "hf:handoff",
       "label": "odk-2169-worker-memory-threshold",
+      "attributes": {
+        "generated": true
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:hf:opportunity:off-496-text-search-contract-verification",
+      "kind": "hf:opportunity",
+      "label": "Verify text-search semantics in the existing Open Food Facts SDK fix",
+      "attributes": {
+        "recordId": "off-496-text-search-contract-verification",
+        "path": "portfolio/opportunities/off-496-text-search-contract-verification.json",
+        "digest": "sha256:dc0025f143dc47133dd4e007b10d4f3802c49c6e60f25e7a85bde482473dc516",
+        "projectId": "openfoodfacts-python"
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:hf:record:portfolio%2Fopportunities%2Foff-496-text-search-contract-verification.json",
+      "kind": "hf:record",
+      "label": "portfolio/opportunities/off-496-text-search-contract-verification.json",
+      "attributes": {
+        "path": "portfolio/opportunities/off-496-text-search-contract-verification.json",
+        "digest": "sha256:dc0025f143dc47133dd4e007b10d4f3802c49c6e60f25e7a85bde482473dc516"
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Aoff-purpose",
+      "kind": "hf:source",
+      "label": "urn:humanifest:hf:opportunity:off-496-text-search-contract-verification:off-purpose",
+      "attributes": {
+        "url": "https://blog.openfoodfacts.org/en/news/why-open-food-facts-is-independent-and-open-and-why-that-matters",
+        "accessed": "2026-09-09"
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Aoff-repo",
+      "kind": "hf:source",
+      "label": "urn:humanifest:hf:opportunity:off-496-text-search-contract-verification:off-repo",
+      "attributes": {
+        "url": "https://api.github.com/repos/openfoodfacts/openfoodfacts-python",
+        "accessed": "2026-09-09"
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Aoff-contributing",
+      "kind": "hf:source",
+      "label": "urn:humanifest:hf:opportunity:off-496-text-search-contract-verification:off-contributing",
+      "attributes": {
+        "url": "https://github.com/openfoodfacts/openfoodfacts-python/blob/34d0629c970b3887a63c615ace7497a9a28b294b/CONTRIBUTING.md",
+        "accessed": "2026-09-09"
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Aoff-issue-496",
+      "kind": "hf:source",
+      "label": "urn:humanifest:hf:opportunity:off-496-text-search-contract-verification:off-issue-496",
+      "attributes": {
+        "url": "https://github.com/openfoodfacts/openfoodfacts-python/issues/496",
+        "accessed": "2026-09-09"
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Aoff-maintainer-auth",
+      "kind": "hf:source",
+      "label": "urn:humanifest:hf:opportunity:off-496-text-search-contract-verification:off-maintainer-auth",
+      "attributes": {
+        "url": "https://github.com/openfoodfacts/openfoodfacts-python/issues/496#issuecomment-4865954261",
+        "accessed": "2026-09-09"
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Aoff-pr-504",
+      "kind": "hf:source",
+      "label": "urn:humanifest:hf:opportunity:off-496-text-search-contract-verification:off-pr-504",
+      "attributes": {
+        "url": "https://github.com/openfoodfacts/openfoodfacts-python/pull/504",
+        "accessed": "2026-09-09"
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Aoff-v2-search",
+      "kind": "hf:source",
+      "label": "urn:humanifest:hf:opportunity:off-496-text-search-contract-verification:off-v2-search",
+      "attributes": {
+        "url": "https://openfoodfacts.github.io/documentation/docs/Product-Opener/v2/search/get-search/",
+        "accessed": "2026-09-09"
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Aoff-search-audit",
+      "kind": "hf:source",
+      "label": "urn:humanifest:hf:opportunity:off-496-text-search-contract-verification:off-search-audit",
+      "attributes": {
+        "url": "https://github.com/humanifest-bot/humanifest/blob/codex/cht-admin-environment-audit/research/2026-09-09-openfoodfacts-search-contract-audit.md",
+        "accessed": "2026-09-09"
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:hf:evidence:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3A0",
+      "kind": "hf:evidence",
+      "label": "Issue #496 reports HTTP 503 from the documented text_search example; a maintainer says the CGI endpoint now requires authentication.",
+      "attributes": {
+        "evidenceType": "self_reported"
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:hf:evidence:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3A1",
+      "kind": "hf:evidence",
+      "label": "Read both changed-file diffs at PR head 970a7290a8a5869de8f5784324c166212fdd15ca: the method changes to /api/v2/search and retains search_terms; the tests change URL mocks and return predetermined products. No target test was run.",
+      "attributes": {
+        "evidenceType": "measured"
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:hf:evidence:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3A2",
+      "kind": "hf:evidence",
+      "label": "Current official v2 search documentation explicitly states that full-text requests are unsupported. This is documented contract evidence, not a live query result.",
+      "attributes": {
+        "evidenceType": "measured"
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Ahumanitarian_relevance_supported",
+      "kind": "hf:gate",
+      "label": "humanitarian_relevance_supported",
+      "attributes": {
+        "passed": true,
+        "cited": true,
+        "rationale": "Official project statement supports a public-benefit food-information and research pathway; no patch-level outcomes are claimed."
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Arepository_active",
+      "kind": "hf:gate",
+      "label": "repository_active",
+      "attributes": {
+        "passed": true,
+        "cited": true,
+        "rationale": "Current repository is unarchived with September 2026 activity and an open search-fix PR."
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Aexternal_contributions_accepted",
+      "kind": "hf:gate",
+      "label": "external_contributions_accepted",
+      "attributes": {
+        "passed": true,
+        "cited": true,
+        "rationale": "Contribution guide explicitly welcomes fork-based PRs against develop; specific bot/AI and proposed-work acceptance remain unresolved."
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Acontribution_policy_understood",
+      "kind": "hf:gate",
+      "label": "contribution_policy_understood",
+      "attributes": {
+        "passed": false,
+        "cited": false,
+        "rationale": "Not established in this research intake; inspect supporting evidence before advancement."
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Aai_policy_understood",
+      "kind": "hf:gate",
+      "label": "ai_policy_understood",
+      "attributes": {
+        "passed": false,
+        "cited": false,
+        "rationale": "Not established in this research intake; inspect supporting evidence before advancement."
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Aproblem_current_and_consequential",
+      "kind": "hf:gate",
+      "label": "problem_current_and_consequential",
+      "attributes": {
+        "passed": false,
+        "cited": false,
+        "rationale": "Not established in this research intake; inspect supporting evidence before advancement."
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Abehavior_reproducible_or_verifiable",
+      "kind": "hf:gate",
+      "label": "behavior_reproducible_or_verifiable",
+      "attributes": {
+        "passed": false,
+        "cited": false,
+        "rationale": "A mismatch with the documented endpoint contract is source-backed. No SDK test, server query or end-to-end search reproduction ran."
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Acode_and_tests_located",
+      "kind": "hf:gate",
+      "label": "code_and_tests_located",
+      "attributes": {
+        "passed": true,
+        "cited": true,
+        "rationale": "Read both changed-file diffs for existing PR #504 at 970a7290a8a5869de8f5784324c166212fdd15ca, including URL-only mock-test changes."
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Achange_bounded",
+      "kind": "hf:gate",
+      "label": "change_bounded",
+      "attributes": {
+        "passed": false,
+        "cited": false,
+        "rationale": "Not established in this research intake; inspect supporting evidence before advancement."
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Aregression_strategy_credible",
+      "kind": "hf:gate",
+      "label": "regression_strategy_credible",
+      "attributes": {
+        "passed": false,
+        "cited": false,
+        "rationale": "Not established in this research intake; inspect supporting evidence before advancement."
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Ano_private_data_required",
+      "kind": "hf:gate",
+      "label": "no_private_data_required",
+      "attributes": {
+        "passed": true,
+        "cited": true,
+        "rationale": "Source review and synthetic search fixtures need no account credentials or private operational records."
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Asecurity_and_licensing_risk_acceptable",
+      "kind": "hf:gate",
+      "label": "security_and_licensing_risk_acceptable",
+      "attributes": {
+        "passed": false,
+        "cited": false,
+        "rationale": "Not established in this research intake; inspect supporting evidence before advancement."
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Aenvironment_feasible",
+      "kind": "hf:gate",
+      "label": "environment_feasible",
+      "attributes": {
+        "passed": false,
+        "cited": false,
+        "rationale": "Not established in this research intake; inspect supporting evidence before advancement."
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Amaintainer_interest_confirmed",
+      "kind": "hf:gate",
+      "label": "maintainer_interest_confirmed",
+      "attributes": {
+        "passed": false,
+        "cited": false,
+        "rationale": "Maintainer explained the CGI authentication requirement, but has not confirmed this proposed verification contribution or replacement search contract. No Humanifest inquiry sent."
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:hf:confirmation:off-496-text-search-contract-verification",
+      "kind": "hf:confirmation",
+      "label": "off-496-text-search-contract-verification",
+      "attributes": {
+        "confirmed": false
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Aprobable_reviewer_identified",
+      "kind": "hf:gate",
+      "label": "probable_reviewer_identified",
+      "attributes": {
+        "passed": false,
+        "cited": false,
+        "rationale": "Not established in this research intake; inspect supporting evidence before advancement."
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Abenefit_justifies_review_cost",
+      "kind": "hf:gate",
+      "label": "benefit_justifies_review_cost",
+      "attributes": {
+        "passed": false,
+        "cited": false,
+        "rationale": "Not established in this research intake; inspect supporting evidence before advancement."
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Auser_can_explain_line_by_line",
+      "kind": "hf:gate",
+      "label": "user_can_explain_line_by_line",
+      "attributes": {
+        "passed": false,
+        "cited": false,
+        "rationale": "Not established in this research intake; inspect supporting evidence before advancement."
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:hf:contribution:off-496-text-search-contract-verification",
+      "kind": "hf:contribution",
+      "label": "off-496-text-search-contract-verification",
+      "attributes": {
+        "recordedState": "OPPORTUNITY-RESEARCH",
+        "deliveryEvidenceRequired": true
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:hf:report:off-496-text-search-contract-verification",
+      "kind": "hf:report",
+      "label": "off-496-text-search-contract-verification",
+      "attributes": {
+        "generated": true
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:hf:handoff:off-496-text-search-contract-verification",
+      "kind": "hf:handoff",
+      "label": "off-496-text-search-contract-verification",
       "attributes": {
         "generated": true
       },
@@ -8110,6 +8733,38 @@
       }
     },
     {
+      "id": "urn:humanifest:mapping:4f2b46cf84b212f23dbe82c9942325df95dd9bf5f40e81c19b927314380d3572",
+      "relation": "hf:source",
+      "sources": [
+        "urn:humanifest:hf:project:hot-tasking-manager"
+      ],
+      "targets": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aproject%3Ahot-tasking-manager%3Ahot-bot-account-policy-2026-09-09"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:76b6b672b473ccf2acef3bdfdb82a652dfb0b78b69b9c9ceb0f3ff424d096379",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aproject%3Ahot-tasking-manager%3Ahot-bot-account-policy-2026-09-09"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fprojects%2Fhot-tasking-manager.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
       "id": "urn:humanifest:mapping:ff6704447954a8d788daa9111bf04f67092fe3226986dbd1e7cd0d97ad7a5fd1",
       "relation": "hf:evidence",
       "sources": [
@@ -8686,6 +9341,38 @@
       }
     },
     {
+      "id": "urn:humanifest:mapping:c8a30681b827b7ca7925b7201ebd2ceeafd30410619676bbb4f76b6afffee3e4",
+      "relation": "hf:source",
+      "sources": [
+        "urn:humanifest:hf:project:kobotoolbox-kpi"
+      ],
+      "targets": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aproject%3Akobotoolbox-kpi%3Akobo-environment-audit-2026-09-09"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:efd15426fbb47335bef80699a1b93fa8aa532c461b1138a0d8dd7f8810efbbe7",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aproject%3Akobotoolbox-kpi%3Akobo-environment-audit-2026-09-09"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fprojects%2Fkobotoolbox-kpi.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
       "id": "urn:humanifest:mapping:ef8985d59fe5f0ad87fd4dd99915ac4ea1bf32afae91279c2236dc4a95c625fd",
       "relation": "hf:evidence",
       "sources": [
@@ -9141,6 +9828,198 @@
       ],
       "targets": [
         "urn:humanifest:hf:record:portfolio%2Fprojects%2Fodk-central.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:adfdefb22ed808b1a5c223ca09c8146ab1149969f85a91d97bafcd5ba4a8944a",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:project:openfoodfacts-python"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fprojects%2Fopenfoodfacts-python.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:ade4034a0d9ee67851028ce83b58c44be0b266cd190ed3f5960bbfce52a9a6ad",
+      "relation": "hf:source",
+      "sources": [
+        "urn:humanifest:hf:project:openfoodfacts-python"
+      ],
+      "targets": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aproject%3Aopenfoodfacts-python%3Aoff-purpose"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:ed91266a444825b1b3845baaeedfe6de385a11b06923b52af30c5aeab700718e",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aproject%3Aopenfoodfacts-python%3Aoff-purpose"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fprojects%2Fopenfoodfacts-python.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:8d369a3739d0bfa762eb9e58e09c7e34affc8170dfc48ec9729d7b96f37ae544",
+      "relation": "hf:source",
+      "sources": [
+        "urn:humanifest:hf:project:openfoodfacts-python"
+      ],
+      "targets": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aproject%3Aopenfoodfacts-python%3Aoff-repo"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:0a63f6689ed66d08398fe28b83fbb705240f82fa7527743580706a3ca8a5d9d2",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aproject%3Aopenfoodfacts-python%3Aoff-repo"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fprojects%2Fopenfoodfacts-python.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:c636f2dafcc95ffd1a77b49b4822b55f6c70e668b210c05c75b6c7e8d003601d",
+      "relation": "hf:source",
+      "sources": [
+        "urn:humanifest:hf:project:openfoodfacts-python"
+      ],
+      "targets": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aproject%3Aopenfoodfacts-python%3Aoff-contributing"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:f61079cedda47ef383f9d09fa72c1f517242626f02204d5dea77fa22c8419024",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aproject%3Aopenfoodfacts-python%3Aoff-contributing"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fprojects%2Fopenfoodfacts-python.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:1080e418535a20bd27336262c042abedf57e293bfd9fea9dcbb498d234d93ef7",
+      "relation": "hf:source",
+      "sources": [
+        "urn:humanifest:hf:project:openfoodfacts-python"
+      ],
+      "targets": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aproject%3Aopenfoodfacts-python%3Aoff-search-audit"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:e1930bd07aea25134c96b086901f50f0d9bdc6dfceca0d11da60355a45be092e",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aproject%3Aopenfoodfacts-python%3Aoff-search-audit"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fprojects%2Fopenfoodfacts-python.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:8574ec3bffd675020f241446a909541cac726d1a35e2fc1367d96ef797e6f1a0",
+      "relation": "hf:evidence",
+      "sources": [
+        "urn:humanifest:hf:project:openfoodfacts-python"
+      ],
+      "targets": [
+        "urn:humanifest:hf:evidence:urn%3Ahumanifest%3Ahf%3Aproject%3Aopenfoodfacts-python%3A0"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:b68db016305ff811278b4d001891562b426579552e3447f22e338fca2d589067",
+      "relation": "hf:source",
+      "sources": [
+        "urn:humanifest:hf:evidence:urn%3Ahumanifest%3Ahf%3Aproject%3Aopenfoodfacts-python%3A0"
+      ],
+      "targets": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aproject%3Aopenfoodfacts-python%3Aoff-purpose"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:6cecbbac86f89d0966a0c322067e8cd6a09e6c4c6e00c720b8889fd7a9a1d070",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:evidence:urn%3Ahumanifest%3Ahf%3Aproject%3Aopenfoodfacts-python%3A0"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fprojects%2Fopenfoodfacts-python.json"
       ],
       "cardinality": "one-to-one",
       "lossiness": "lossless",
@@ -17918,6 +18797,38 @@
       }
     },
     {
+      "id": "urn:humanifest:mapping:e5af854068cb08ec3203a1040ca2701ba3e8c62789ad3a34fea5c7158186f578",
+      "relation": "hf:source",
+      "sources": [
+        "urn:humanifest:hf:opportunity:hot-7227-archived-project-data-access"
+      ],
+      "targets": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Ahot-7227-archived-project-data-access%3Ahot-bot-account-policy-2026-09-09"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:2c6cadb5e06f8ab98ea3267829cf3efb875cd9ad034986381a94a03c16264954",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Ahot-7227-archived-project-data-access%3Ahot-bot-account-policy-2026-09-09"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fopportunities%2Fhot-7227-archived-project-data-access.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
       "id": "urn:humanifest:mapping:3126424fc55def0ea97b36d1964740906e629b24f6050b58c68713269b9d3d3a",
       "relation": "hf:evidence",
       "sources": [
@@ -18254,6 +19165,54 @@
       }
     },
     {
+      "id": "urn:humanifest:mapping:e99ff58c1a3fd66c77478c54d71120055f0131a7c421c22ed96a8d91aafa2387",
+      "relation": "hf:evidence",
+      "sources": [
+        "urn:humanifest:hf:opportunity:hot-7227-archived-project-data-access"
+      ],
+      "targets": [
+        "urn:humanifest:hf:evidence:urn%3Ahumanifest%3Ahf%3Aopportunity%3Ahot-7227-archived-project-data-access%3A7"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:3479690e3d4318d3f8d4dcfa6925cf601c5ee7b0e4a535a8d0fed2704b9b7ef1",
+      "relation": "hf:source",
+      "sources": [
+        "urn:humanifest:hf:evidence:urn%3Ahumanifest%3Ahf%3Aopportunity%3Ahot-7227-archived-project-data-access%3A7"
+      ],
+      "targets": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Ahot-7227-archived-project-data-access%3Ahot-bot-account-policy-2026-09-09"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:cca191e04ed5b42511dd5d18bf470cd582bb5f16dd998adba245e7f8469e1deb",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:evidence:urn%3Ahumanifest%3Ahf%3Aopportunity%3Ahot-7227-archived-project-data-access%3A7"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fopportunities%2Fhot-7227-archived-project-data-access.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
       "id": "urn:humanifest:mapping:ed59fd9722e1773f71492db467c3bd9347c1256d7c3e475d391f2713b3ff7bbf",
       "relation": "hf:project",
       "sources": [
@@ -18270,13 +19229,13 @@
       }
     },
     {
-      "id": "urn:humanifest:mapping:6e03c061d247aa0521756ca04b3e9e5f6c434a96c6b4d01b82d4ae478604363f",
+      "id": "urn:humanifest:mapping:20f79f40e06f6afb749f6e79f9ed18267decb95f9e7df8902d16244c0f4c3127",
       "relation": "hf:guidance",
       "sources": [
         "urn:humanifest:hf:opportunity:hot-7227-archived-project-data-access"
       ],
       "targets": [
-        "urn:humanifest:routing:command:MAINTAINER-CHECK"
+        "urn:humanifest:routing:command:PARKED"
       ],
       "cardinality": "one-to-one",
       "lossiness": "lossless",
@@ -18485,6 +19444,22 @@
       ],
       "targets": [
         "urn:humanifest:hf:record:portfolio%2Fopportunities%2Fhot-7227-archived-project-data-access.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:37b5c7dae93b37eb7418a0b3b7cfdd3f60c07e823df725f0845efae3bb2e9dec",
+      "relation": "hf:source",
+      "sources": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Ahot-7227-archived-project-data-access%3Aexternal_contributions_accepted"
+      ],
+      "targets": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Ahot-7227-archived-project-data-access%3Ahot-bot-account-policy-2026-09-09"
       ],
       "cardinality": "one-to-one",
       "lossiness": "lossless",
@@ -19454,13 +20429,13 @@
       }
     },
     {
-      "id": "urn:humanifest:mapping:4bb4d60b4dcfae3bce3d94bf07dfb860eb7d6ee37072008c2582fe28737cb217",
+      "id": "urn:humanifest:mapping:3a1525d4875514db8e3c68b95c2a779b0f90e54186fd7d2cbddf721f07cf31b4",
       "relation": "hf:guidance",
       "sources": [
         "urn:humanifest:hf:report:hot-7227-archived-project-data-access"
       ],
       "targets": [
-        "urn:humanifest:routing:command:MAINTAINER-CHECK"
+        "urn:humanifest:routing:command:PARKED"
       ],
       "cardinality": "one-to-one",
       "lossiness": "lossless",
@@ -19550,13 +20525,13 @@
       }
     },
     {
-      "id": "urn:humanifest:mapping:de5e6b6af08a6a5c66243fc6e308036210372f3272e12ada49a1d7050d581fbe",
+      "id": "urn:humanifest:mapping:062e6112277b1a4bd5062b4f1805ae456775471e21d17fc04b6da238bfed952b",
       "relation": "hf:guidance",
       "sources": [
         "urn:humanifest:hf:handoff:hot-7227-archived-project-data-access"
       ],
       "targets": [
-        "urn:humanifest:routing:command:MAINTAINER-CHECK"
+        "urn:humanifest:routing:command:PARKED"
       ],
       "cardinality": "one-to-one",
       "lossiness": "lossless",
@@ -22798,6 +23773,38 @@
       }
     },
     {
+      "id": "urn:humanifest:mapping:83417de02f05facf6872ed8076e434cc79df9e2b9388ac15e69b625d687bf994",
+      "relation": "hf:source",
+      "sources": [
+        "urn:humanifest:hf:opportunity:kobo-7259-incremental-sync-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Akobo-7259-incremental-sync-verification%3Akobo-environment-audit-2026-09-09"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:b8726201b73d9a22a4fc2f0233636716e1047773b817ded8190f6596cbaea890",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Akobo-7259-incremental-sync-verification%3Akobo-environment-audit-2026-09-09"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fopportunities%2Fkobo-7259-incremental-sync-verification.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
       "id": "urn:humanifest:mapping:961522a673f7947e782879803b0244e6725d79328fd663b5f5b204f5f7c3d699",
       "relation": "hf:evidence",
       "sources": [
@@ -23074,6 +24081,54 @@
       "relation": "hf:current_record",
       "sources": [
         "urn:humanifest:hf:evidence:urn%3Ahumanifest%3Ahf%3Aopportunity%3Akobo-7259-incremental-sync-verification%3A5"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fopportunities%2Fkobo-7259-incremental-sync-verification.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:42e4278b2030c8053ad6f07595b581078feae6a7d22b9c832ba3383e56715a3b",
+      "relation": "hf:evidence",
+      "sources": [
+        "urn:humanifest:hf:opportunity:kobo-7259-incremental-sync-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:evidence:urn%3Ahumanifest%3Ahf%3Aopportunity%3Akobo-7259-incremental-sync-verification%3A6"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:767dafd7a59b06350e94dc8d738b7575df01714b5f36d92c5488fa2ec1a5f563",
+      "relation": "hf:source",
+      "sources": [
+        "urn:humanifest:hf:evidence:urn%3Ahumanifest%3Ahf%3Aopportunity%3Akobo-7259-incremental-sync-verification%3A6"
+      ],
+      "targets": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Akobo-7259-incremental-sync-verification%3Akobo-environment-audit-2026-09-09"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:83b4648459f4452a7f4c6c48dd11a70ee35851e2e288a3a669fa4e3be0fffceb",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:evidence:urn%3Ahumanifest%3Ahf%3Aopportunity%3Akobo-7259-incremental-sync-verification%3A6"
       ],
       "targets": [
         "urn:humanifest:hf:record:portfolio%2Fopportunities%2Fkobo-7259-incremental-sync-verification.json"
@@ -23365,6 +24420,22 @@
       ],
       "targets": [
         "urn:humanifest:hf:record:portfolio%2Fopportunities%2Fkobo-7259-incremental-sync-verification.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:c193f886033cce680bee9017c00c9504d6840b55d02eda7a8c67198b989e8a5b",
+      "relation": "hf:source",
+      "sources": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Akobo-7259-incremental-sync-verification%3Acontribution_policy_understood"
+      ],
+      "targets": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Akobo-7259-incremental-sync-verification%3Akobo-environment-audit-2026-09-09"
       ],
       "cardinality": "one-to-one",
       "lossiness": "lossless",
@@ -26236,6 +27307,1686 @@
         "status": "generated",
         "assertedBy": "humanifest-python-shard@1"
       }
+    },
+    {
+      "id": "urn:humanifest:mapping:8941ebac34ba581e53201f83f2a294853a7b3240b660311ddff07d4b33efc6a9",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:opportunity:off-496-text-search-contract-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fopportunities%2Foff-496-text-search-contract-verification.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:26290e7be0af439f5765fc378a0b7b29d6d23c0fc2a8df9750666c45287765b8",
+      "relation": "hf:source",
+      "sources": [
+        "urn:humanifest:hf:opportunity:off-496-text-search-contract-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Aoff-purpose"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:2478f285e47a7ae1a39b9f8ed6e0aa95b1a9ff337bed9b5618c71a9852fb0f5f",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Aoff-purpose"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fopportunities%2Foff-496-text-search-contract-verification.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:161d628174a3a8838f1d564104ebe479358a2a02561a8b69d5fa1590a45a2bc4",
+      "relation": "hf:source",
+      "sources": [
+        "urn:humanifest:hf:opportunity:off-496-text-search-contract-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Aoff-repo"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:64e16cb9175b69521c046850cb3ad3c5e200e0a2e7fd76438ab7b2d85a8da0da",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Aoff-repo"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fopportunities%2Foff-496-text-search-contract-verification.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:e564360e2ec140bfbf6e007606fbbdc6dca2cd84a156fca2eb5d560b11da05c7",
+      "relation": "hf:source",
+      "sources": [
+        "urn:humanifest:hf:opportunity:off-496-text-search-contract-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Aoff-contributing"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:47ae684beb9e65d0be3db9a18c10bd92c81ff6ce5814a3f695162da7f2aeda58",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Aoff-contributing"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fopportunities%2Foff-496-text-search-contract-verification.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:a5a0f9d77e93b24b362346acdc71e4d16a1373141bf300a2eeb2f6fe3348adca",
+      "relation": "hf:source",
+      "sources": [
+        "urn:humanifest:hf:opportunity:off-496-text-search-contract-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Aoff-issue-496"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:9fa5bd6a1921093e730f54f4551ebbd7615bad7b89fa7dd6d12dec8007f71532",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Aoff-issue-496"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fopportunities%2Foff-496-text-search-contract-verification.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:bf841f40e2c5cc5d43eef6aaef384159b26cd4e2573b090cc36aab87c680a8f5",
+      "relation": "hf:source",
+      "sources": [
+        "urn:humanifest:hf:opportunity:off-496-text-search-contract-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Aoff-maintainer-auth"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:e14f36432d6105b199e30ba1e9b7361fbc685aae1de788592551086d86953a36",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Aoff-maintainer-auth"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fopportunities%2Foff-496-text-search-contract-verification.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:caf7976d02966f29c44b5d8424ccec089531bff5820039ee71d1660f5c2e1c8e",
+      "relation": "hf:source",
+      "sources": [
+        "urn:humanifest:hf:opportunity:off-496-text-search-contract-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Aoff-pr-504"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:05a2431178f6a8dc489248df44476a18b3578210a81c6f92a840ef369a34efda",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Aoff-pr-504"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fopportunities%2Foff-496-text-search-contract-verification.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:ebb4d6490795e1d0f1ff8165f58d24d2c7f99c7442ec81f1abd4e3a0b692812b",
+      "relation": "hf:source",
+      "sources": [
+        "urn:humanifest:hf:opportunity:off-496-text-search-contract-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Aoff-v2-search"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:597d08555963604b8d4726ce19d8f54fbc8b23a081e834b2cafcc08f83cf8df5",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Aoff-v2-search"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fopportunities%2Foff-496-text-search-contract-verification.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:d180c9c5e640600bfde912cf9ce71fc923633cfe80e1aa5637249d1fc7e7b31f",
+      "relation": "hf:source",
+      "sources": [
+        "urn:humanifest:hf:opportunity:off-496-text-search-contract-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Aoff-search-audit"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:9fe5bcd640bd7dac78627f1f597be010244e5130cf5987c6b21ae24fd77199de",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Aoff-search-audit"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fopportunities%2Foff-496-text-search-contract-verification.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:c77529f1078cbf5551a19000e07faad566333d50955c4b9fe0af9d66265e48cc",
+      "relation": "hf:evidence",
+      "sources": [
+        "urn:humanifest:hf:opportunity:off-496-text-search-contract-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:evidence:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3A0"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:e7f499b4715b54167140ab1af5f5b75a0439bc2c20948477bda9c68f8e34e49f",
+      "relation": "hf:source",
+      "sources": [
+        "urn:humanifest:hf:evidence:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3A0"
+      ],
+      "targets": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Aoff-maintainer-auth"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:f9482dbd6c8f1512388f55d579edf5edc2d28672837389fb714a7ce5ab178611",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:evidence:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3A0"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fopportunities%2Foff-496-text-search-contract-verification.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:016bded0079e84d376b244a4c491a6862ec5e6a9e5adc1f76fe27acf9eb307e2",
+      "relation": "hf:evidence",
+      "sources": [
+        "urn:humanifest:hf:opportunity:off-496-text-search-contract-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:evidence:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3A1"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:28cc57b1ce42c1093f716bc82ecb357120313511689dbc4b4672bade9ac24d70",
+      "relation": "hf:source",
+      "sources": [
+        "urn:humanifest:hf:evidence:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3A1"
+      ],
+      "targets": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Aoff-search-audit"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:3e85239ed412b93efe1f77fab49448c6d807c698435e1902798badceeb253619",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:evidence:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3A1"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fopportunities%2Foff-496-text-search-contract-verification.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:b7bbbcbac753b41158a5e5015779592d2807f1c01bdf7c1cb9cf59030fc16924",
+      "relation": "hf:evidence",
+      "sources": [
+        "urn:humanifest:hf:opportunity:off-496-text-search-contract-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:evidence:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3A2"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:cd579460b4bc6174709426206721de21b678012ee89333ed11c670d9cdf7269e",
+      "relation": "hf:source",
+      "sources": [
+        "urn:humanifest:hf:evidence:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3A2"
+      ],
+      "targets": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Aoff-v2-search"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:5d3751663b1811562959b5cce385e43df18e587f4cbdae813cb50793c60bc9fa",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:evidence:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3A2"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fopportunities%2Foff-496-text-search-contract-verification.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:f10dddda73e9b279d4b560b20a34f698069f1c9b387ecff8ab9e22fc4293fe4d",
+      "relation": "hf:project",
+      "sources": [
+        "urn:humanifest:hf:opportunity:off-496-text-search-contract-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:project:openfoodfacts-python"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:bb9aea27a7463a48ec974ebe24cd6ca010e72ff215f8ac58334357823cf1e796",
+      "relation": "hf:guidance",
+      "sources": [
+        "urn:humanifest:hf:opportunity:off-496-text-search-contract-verification"
+      ],
+      "targets": [
+        "urn:humanifest:routing:command:OPPORTUNITY-RESEARCH"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:38cc263918ce9c5daae4e6e86b5481224dee64bada25ead9eedf471f4de27cf4",
+      "relation": "hf:policy",
+      "sources": [
+        "urn:humanifest:hf:opportunity:off-496-text-search-contract-verification"
+      ],
+      "targets": [
+        "urn:humanifest:routing:policy:contribution-protocol"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:357f9e282dc811637425b1ecd6af3417fb893477763ca6e379c007367fed01e4",
+      "relation": "hf:actor",
+      "sources": [
+        "urn:humanifest:hf:opportunity:off-496-text-search-contract-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:actor:humanifest-bot"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:812382ced0d32b6c70e152fb962c30c3cb15169ba237b4521814adbade4d4d21",
+      "relation": "hf:handoff_route",
+      "sources": [
+        "urn:humanifest:hf:opportunity:off-496-text-search-contract-verification"
+      ],
+      "targets": [
+        "urn:humanifest:routing:command:handoff-codex"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:eaa32f2fa7abb81a85308b7ed1240fb50ebdb6e7c374bc149d0b2347944a9e25",
+      "relation": "hf:handoff_route",
+      "sources": [
+        "urn:humanifest:hf:opportunity:off-496-text-search-contract-verification"
+      ],
+      "targets": [
+        "urn:humanifest:routing:command:handoff-spark"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:314d2e83926ecbcf1a6e54f9fa8f70ae34a6973bd2ad66e351daae7f30252be2",
+      "relation": "hf:handoff_route",
+      "sources": [
+        "urn:humanifest:hf:opportunity:off-496-text-search-contract-verification"
+      ],
+      "targets": [
+        "urn:humanifest:routing:command:handoff-cursor-red-team"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:a0e8a2879ccafc83d3fe318625c90c4f15325a4ba88ae404abf37ac7ab59acd2",
+      "relation": "hf:gate",
+      "sources": [
+        "urn:humanifest:hf:opportunity:off-496-text-search-contract-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Ahumanitarian_relevance_supported"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:e78380b5c0c44c0f1e2664a14702da76825a020a32565ae35f6980a89349cd3c",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Ahumanitarian_relevance_supported"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fopportunities%2Foff-496-text-search-contract-verification.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:cf6238ab9eb0980ad309fe0b67db5672a7afd7c3808c48cae1df08c26705aad3",
+      "relation": "hf:source",
+      "sources": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Ahumanitarian_relevance_supported"
+      ],
+      "targets": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Aoff-purpose"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:bdae8fe01cf8b7e478dafea37afaa95cfabc25d0cc62a32e04fab239357902ca",
+      "relation": "hf:prerequisite",
+      "sources": [
+        "urn:humanifest:hf:opportunity:off-496-text-search-contract-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Ahumanitarian_relevance_supported"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:8ebf8abdae2b25c86361fcfa19ad113a7886fc31404e678414f38a2758b87535",
+      "relation": "hf:gate",
+      "sources": [
+        "urn:humanifest:hf:opportunity:off-496-text-search-contract-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Arepository_active"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:aa0197c2f988b03c9d3a7aeb831d19d586857dad25044ed435ed93222f71a02c",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Arepository_active"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fopportunities%2Foff-496-text-search-contract-verification.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:0e20dacc845fbc0114919384fd02bdbb81a6998d2bb5a63ad8565cd72d4c1321",
+      "relation": "hf:source",
+      "sources": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Arepository_active"
+      ],
+      "targets": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Aoff-repo"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:1b1fa19c81f97aa5e2d3973a8ac3f3920993074462f19c1ed6329615becb9767",
+      "relation": "hf:source",
+      "sources": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Arepository_active"
+      ],
+      "targets": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Aoff-pr-504"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:4125ac4a4678c7b6451717ad8aab1ccb7ae3a9dd4832a6c56530f32275d65db5",
+      "relation": "hf:prerequisite",
+      "sources": [
+        "urn:humanifest:hf:opportunity:off-496-text-search-contract-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Arepository_active"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:ebb4dc6037e330e9c5c5317ee18406cfef609fb9452b5f936c9e75c83de5477c",
+      "relation": "hf:gate",
+      "sources": [
+        "urn:humanifest:hf:opportunity:off-496-text-search-contract-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Aexternal_contributions_accepted"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:85a9dd9d0e99bf1b1e24d332e1292f2a9c0ca901e52e1bf5553e519dbd1e0976",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Aexternal_contributions_accepted"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fopportunities%2Foff-496-text-search-contract-verification.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:c2f08ab081deae95a261418178385ce411d836c5a1f908f2b3eae0d6affc2e32",
+      "relation": "hf:source",
+      "sources": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Aexternal_contributions_accepted"
+      ],
+      "targets": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Aoff-contributing"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:90ef97eb0c6034506334fab054fcfbfd875b0b37e5d0ea259d16b86ff0bf3dcf",
+      "relation": "hf:prerequisite",
+      "sources": [
+        "urn:humanifest:hf:opportunity:off-496-text-search-contract-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Aexternal_contributions_accepted"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:dd130f83dfe28648e68b515733ff89e045acc4b345943c85dea892960d3ef454",
+      "relation": "hf:gate",
+      "sources": [
+        "urn:humanifest:hf:opportunity:off-496-text-search-contract-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Acontribution_policy_understood"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:84526263be0437ebe3d28a8056bf3d60be5eb071231d4ef001ba5d32d5bec7fd",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Acontribution_policy_understood"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fopportunities%2Foff-496-text-search-contract-verification.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:319162179c5892c0b44ca9d7df1381a7a725cebf4cce55e0e6d289523a174a2c",
+      "relation": "hf:prerequisite",
+      "sources": [
+        "urn:humanifest:hf:opportunity:off-496-text-search-contract-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Acontribution_policy_understood"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:b95748509b10b9d2b674d954bb54ad547ce675a63e5066228511770e0ada7ca7",
+      "relation": "hf:gate",
+      "sources": [
+        "urn:humanifest:hf:opportunity:off-496-text-search-contract-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Aai_policy_understood"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:35918ee138905f19b07ad6d427eef63675a2c754e979bfa0da104f5074300c37",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Aai_policy_understood"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fopportunities%2Foff-496-text-search-contract-verification.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:dc96900ebecc10634aaaf4ffdaca4acf95eca1b46d51aac2793312140a750de3",
+      "relation": "hf:prerequisite",
+      "sources": [
+        "urn:humanifest:hf:opportunity:off-496-text-search-contract-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Aai_policy_understood"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:0f84154f14ffa63aa6508a5017ebcf531e61ae53467f512a2a73b246bc860079",
+      "relation": "hf:gate",
+      "sources": [
+        "urn:humanifest:hf:opportunity:off-496-text-search-contract-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Aproblem_current_and_consequential"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:6bd608c935e4bc4465a36787ae2de484a746042b8943985163fff77bae096d7b",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Aproblem_current_and_consequential"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fopportunities%2Foff-496-text-search-contract-verification.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:4fbb4e91e46a92869374a470ab981c4d881a5bd76d3a501787b6cb00c7468c5f",
+      "relation": "hf:prerequisite",
+      "sources": [
+        "urn:humanifest:hf:opportunity:off-496-text-search-contract-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Aproblem_current_and_consequential"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:9ec73c374f2d23004b04c52cda4c5c154299e41186c530d17de8206863171713",
+      "relation": "hf:gate",
+      "sources": [
+        "urn:humanifest:hf:opportunity:off-496-text-search-contract-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Abehavior_reproducible_or_verifiable"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:106b1875ef8f4ee61b132b262029db6be64128e1059ede7e50469c8d4a6c9bf8",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Abehavior_reproducible_or_verifiable"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fopportunities%2Foff-496-text-search-contract-verification.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:e1b5124d7aeb9e73879750f92a199cfeee1cd5fe92fb5bafcaab6c58715b43b9",
+      "relation": "hf:prerequisite",
+      "sources": [
+        "urn:humanifest:hf:opportunity:off-496-text-search-contract-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Abehavior_reproducible_or_verifiable"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:3ce239d474c63d0709efd4b72fe47db097360123a85f038223f289cc125c7274",
+      "relation": "hf:gate",
+      "sources": [
+        "urn:humanifest:hf:opportunity:off-496-text-search-contract-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Acode_and_tests_located"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:0cd426b5001d9aa5e2b20191d8b7da8265e1acaeb8a11d07c955541e461fef47",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Acode_and_tests_located"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fopportunities%2Foff-496-text-search-contract-verification.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:bd7440352e5f6c6598bc100c27fb5b272acc334db908b7017e4110d44877f362",
+      "relation": "hf:source",
+      "sources": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Acode_and_tests_located"
+      ],
+      "targets": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Aoff-search-audit"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:091ea365dd0c327f12ce3e9f4da670b891dca4343163c58da7d3d1bde62fd9dd",
+      "relation": "hf:prerequisite",
+      "sources": [
+        "urn:humanifest:hf:opportunity:off-496-text-search-contract-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Acode_and_tests_located"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:371676b655dfac4bc11bd63fa0ee8fb2c4638429b050dddd583b516ff8ff00ea",
+      "relation": "hf:gate",
+      "sources": [
+        "urn:humanifest:hf:opportunity:off-496-text-search-contract-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Achange_bounded"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:167264ebd968c2138608c65e7c4c25a6c607c3edcd83144acfa71da164efa249",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Achange_bounded"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fopportunities%2Foff-496-text-search-contract-verification.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:854f456c840461bd069148c0677ee9e6fb6917584bc98f3b89dcf6ed1cbb28fc",
+      "relation": "hf:prerequisite",
+      "sources": [
+        "urn:humanifest:hf:opportunity:off-496-text-search-contract-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Achange_bounded"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:90b36a527104fb2866a930c6cc6c5e24b1f792807e6711e01cc0f001311986e0",
+      "relation": "hf:gate",
+      "sources": [
+        "urn:humanifest:hf:opportunity:off-496-text-search-contract-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Aregression_strategy_credible"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:eed0f77356d47a9011c0aa90a28227e1a0d2f37c8e83b4da8e8cfe77cb0b0d2a",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Aregression_strategy_credible"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fopportunities%2Foff-496-text-search-contract-verification.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:8d6199216b5c6285410481bd4c985f01069cdb091d421903b44fa859cbd44249",
+      "relation": "hf:prerequisite",
+      "sources": [
+        "urn:humanifest:hf:opportunity:off-496-text-search-contract-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Aregression_strategy_credible"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:adc0ac3bca51492ec8999c54be3c5e9e6d17f5ee15e9fc0637515bf28bea3f64",
+      "relation": "hf:gate",
+      "sources": [
+        "urn:humanifest:hf:opportunity:off-496-text-search-contract-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Ano_private_data_required"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:fd6e90e5981437047806037c35799f32d4ae8236f9b8d88b66d976602b8599a3",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Ano_private_data_required"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fopportunities%2Foff-496-text-search-contract-verification.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:e991f62167a0fc03991311c1b62619022df921eb5397e5f4490fd1fa5e92df77",
+      "relation": "hf:source",
+      "sources": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Ano_private_data_required"
+      ],
+      "targets": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Aoff-search-audit"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:dde922fb522db35ed7b3b76f7362078d2a78927bc819af48b353611724f9dc80",
+      "relation": "hf:prerequisite",
+      "sources": [
+        "urn:humanifest:hf:opportunity:off-496-text-search-contract-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Ano_private_data_required"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:14ee015de149a23950c8ea5efa0aeabb1e8e0fc8cbd0a9391ca5dc6dbc5e520a",
+      "relation": "hf:gate",
+      "sources": [
+        "urn:humanifest:hf:opportunity:off-496-text-search-contract-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Asecurity_and_licensing_risk_acceptable"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:44e98af16e99e3050b13a4be94975063dd9b453098f664534c0292efc56863e1",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Asecurity_and_licensing_risk_acceptable"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fopportunities%2Foff-496-text-search-contract-verification.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:816c0641477876f148648943b88b519de731e19c297e449a3274b209963dbe62",
+      "relation": "hf:prerequisite",
+      "sources": [
+        "urn:humanifest:hf:opportunity:off-496-text-search-contract-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Asecurity_and_licensing_risk_acceptable"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:d23a006011cfdb28378aa2a0e2a44e3db0c1c073353e57cc2050c7f981f1e569",
+      "relation": "hf:gate",
+      "sources": [
+        "urn:humanifest:hf:opportunity:off-496-text-search-contract-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Aenvironment_feasible"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:6c4e0e032ead2de00c4b5faed327916fe1dae2583284ce53b8c603a2ecd7992b",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Aenvironment_feasible"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fopportunities%2Foff-496-text-search-contract-verification.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:f97d7cd47540b7442a294e0781ab3caf4b8640f73369f3bd5087759739a9efa9",
+      "relation": "hf:prerequisite",
+      "sources": [
+        "urn:humanifest:hf:opportunity:off-496-text-search-contract-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Aenvironment_feasible"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:9849ba10fd1cfd4d76ecadb587c37f7c6378bc04221e56de0b0edafad51ea129",
+      "relation": "hf:gate",
+      "sources": [
+        "urn:humanifest:hf:opportunity:off-496-text-search-contract-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Amaintainer_interest_confirmed"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:7ee1b41fee7dc511f4e17a4f269ebc565a026b31342d45bdd619f84c90ba9688",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Amaintainer_interest_confirmed"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fopportunities%2Foff-496-text-search-contract-verification.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:1031a4f54b539e349355c0f7b68fc2223398f77810c6f3a7c3a8b3104f5f8b7d",
+      "relation": "hf:prerequisite",
+      "sources": [
+        "urn:humanifest:hf:opportunity:off-496-text-search-contract-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Amaintainer_interest_confirmed"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:7e7afb56d7997b1c6e0b81c6ac5c90a4455f0dda8115871fc02bffaa4654ed85",
+      "relation": "hf:confirmation",
+      "sources": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Amaintainer_interest_confirmed"
+      ],
+      "targets": [
+        "urn:humanifest:hf:confirmation:off-496-text-search-contract-verification"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:1391bb7d1699c507184ad527254ed23371cab5e63ddee0aabf7255f8daa0efaf",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:confirmation:off-496-text-search-contract-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fopportunities%2Foff-496-text-search-contract-verification.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:ee5fc0e54b9fe9b1978aee8a06ef9928c76d0fe39876d99f3aa378d2f106ab7c",
+      "relation": "hf:gate",
+      "sources": [
+        "urn:humanifest:hf:opportunity:off-496-text-search-contract-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Aprobable_reviewer_identified"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:fe0e8eef068c72b13897e4b44ad2296458a9be63090352a48648ff431e1c04cd",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Aprobable_reviewer_identified"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fopportunities%2Foff-496-text-search-contract-verification.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:23d0ae8008ff3d8c25dba4bfc7fdb65880ee75812b57ce6be97dd68bbdb37468",
+      "relation": "hf:prerequisite",
+      "sources": [
+        "urn:humanifest:hf:opportunity:off-496-text-search-contract-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Aprobable_reviewer_identified"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:37edc4186d80dc4c681703bb7071caeae5fe22445cdcf771ed6607060659f879",
+      "relation": "hf:gate",
+      "sources": [
+        "urn:humanifest:hf:opportunity:off-496-text-search-contract-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Abenefit_justifies_review_cost"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:ea2d0c24a6cc7e820d12b8d0e09ac09162cff52632082e32daf334f4da4e9f0d",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Abenefit_justifies_review_cost"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fopportunities%2Foff-496-text-search-contract-verification.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:0788d7db0e1461b5494f7c340b82d266de4bbabd4a0735655bced977a9dc24e8",
+      "relation": "hf:prerequisite",
+      "sources": [
+        "urn:humanifest:hf:opportunity:off-496-text-search-contract-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Abenefit_justifies_review_cost"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:8cbfdb661880422341ed21cfa05cc997a8294d826a2dcd405a26e78b7c4ee763",
+      "relation": "hf:gate",
+      "sources": [
+        "urn:humanifest:hf:opportunity:off-496-text-search-contract-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Auser_can_explain_line_by_line"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:327b4b513d53ae448da2d079f8092e9366552b9f94f43bdf25df2b3cbebddd2e",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Auser_can_explain_line_by_line"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fopportunities%2Foff-496-text-search-contract-verification.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:679c75833cdb46a75458bdfe8d2703c39d915c4deb39039893a86bbee36429c6",
+      "relation": "hf:prerequisite",
+      "sources": [
+        "urn:humanifest:hf:opportunity:off-496-text-search-contract-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Auser_can_explain_line_by_line"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:9ec0e24a5bbe2779834f6600da01fe103ea6bb48c233a5c1bfe845d959c0e981",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:contribution:off-496-text-search-contract-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fopportunities%2Foff-496-text-search-contract-verification.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:72e14fca34d90fc2cc904a764f8d532ad84c06fd0878e2f70a5c9be7c5d62df9",
+      "relation": "hf:output",
+      "sources": [
+        "urn:humanifest:hf:opportunity:off-496-text-search-contract-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:report:off-496-text-search-contract-verification"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:f75a4235e917cebad4311949f52844b34f222481b446a34c4bc5d81e78e7182b",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:report:off-496-text-search-contract-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fopportunities%2Foff-496-text-search-contract-verification.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:a2ba19750f0c221e1d4272f2b4e27960a6019a1dbdfcdc4d96b8902fd439089e",
+      "relation": "hf:project",
+      "sources": [
+        "urn:humanifest:hf:report:off-496-text-search-contract-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:project:openfoodfacts-python"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:a3f404d29ef8302176158ef573927d80228c850d6f771167c0834f32323373f4",
+      "relation": "hf:policy",
+      "sources": [
+        "urn:humanifest:hf:report:off-496-text-search-contract-verification"
+      ],
+      "targets": [
+        "urn:humanifest:routing:policy:contribution-protocol"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:fa174d19ceb66c4a9294b11e79e8e65a578c28b0ff218766be4fa093e7f8f1de",
+      "relation": "hf:actor",
+      "sources": [
+        "urn:humanifest:hf:report:off-496-text-search-contract-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:actor:humanifest-bot"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:23adc66b5a55ed0d2e9d18ea6681187103dd894b456741558c5ef2791bdb1c28",
+      "relation": "hf:guidance",
+      "sources": [
+        "urn:humanifest:hf:report:off-496-text-search-contract-verification"
+      ],
+      "targets": [
+        "urn:humanifest:routing:command:OPPORTUNITY-RESEARCH"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:9afebbe38f781195e3d9193ed64bea002e52ceec5d75f59b527835f30e1fab38",
+      "relation": "hf:output",
+      "sources": [
+        "urn:humanifest:hf:opportunity:off-496-text-search-contract-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:handoff:off-496-text-search-contract-verification"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:27437f09a2268cb0e8412e6021e0b0d48d240c16a29110453b72df6a557b9b98",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:handoff:off-496-text-search-contract-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fopportunities%2Foff-496-text-search-contract-verification.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:a5223221e6c77fe52742c9560f5623bc6f51fb103edbb6ce89e1a403ec904c9b",
+      "relation": "hf:project",
+      "sources": [
+        "urn:humanifest:hf:handoff:off-496-text-search-contract-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:project:openfoodfacts-python"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:b74e19cab11ab64c5efb77feb99356acf3b8d22e20c000f97df6da350ffd3733",
+      "relation": "hf:policy",
+      "sources": [
+        "urn:humanifest:hf:handoff:off-496-text-search-contract-verification"
+      ],
+      "targets": [
+        "urn:humanifest:routing:policy:contribution-protocol"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:1dc85fb5220733d8bc134f3942c1ebc6bae9eca68ab8f48ab6fc04f5e4703f89",
+      "relation": "hf:actor",
+      "sources": [
+        "urn:humanifest:hf:handoff:off-496-text-search-contract-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:actor:humanifest-bot"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:cacb1983007cb896a233ba8ba04def6819d5d3779aba273c2381e14b50694f56",
+      "relation": "hf:guidance",
+      "sources": [
+        "urn:humanifest:hf:handoff:off-496-text-search-contract-verification"
+      ],
+      "targets": [
+        "urn:humanifest:routing:command:OPPORTUNITY-RESEARCH"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
     }
   ],
   "authorities": [
@@ -26308,6 +29059,19 @@
       "id": "urn:humanifest:authority:urn%3Ahumanifest%3Ahf%3Aproject%3Aodk-central",
       "concept": "urn:humanifest:hf:project:odk-central",
       "source": "urn:humanifest:hf:record:portfolio%2Fprojects%2Fodk-central.json",
+      "facts": [
+        "current-record"
+      ],
+      "mode": "canonical",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:authority:urn%3Ahumanifest%3Ahf%3Aproject%3Aopenfoodfacts-python",
+      "concept": "urn:humanifest:hf:project:openfoodfacts-python",
+      "source": "urn:humanifest:hf:record:portfolio%2Fprojects%2Fopenfoodfacts-python.json",
       "facts": [
         "current-record"
       ],
@@ -26412,6 +29176,19 @@
       "id": "urn:humanifest:authority:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aodk-2169-worker-memory-threshold",
       "concept": "urn:humanifest:hf:opportunity:odk-2169-worker-memory-threshold",
       "source": "urn:humanifest:hf:record:portfolio%2Fopportunities%2Fodk-2169-worker-memory-threshold.json",
+      "facts": [
+        "current-record"
+      ],
+      "mode": "canonical",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:authority:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification",
+      "concept": "urn:humanifest:hf:opportunity:off-496-text-search-contract-verification",
+      "source": "urn:humanifest:hf:record:portfolio%2Fopportunities%2Foff-496-text-search-contract-verification.json",
       "facts": [
         "current-record"
       ],
