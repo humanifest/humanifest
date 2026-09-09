@@ -3,7 +3,7 @@
   "project_id": "hot-tasking-manager",
   "title": "Investigate unavailable OSM data downloads for completed, archived projects",
   "pipeline_state": "MAINTAINER-CHECK",
-  "research_next_step": "Complete read-only frontend CI, nested dependency, and lifecycle-hook inspection to identify a safe isolated test command for download error handling, including the sandbox-iD install and Sentry upload paths.",
+  "research_next_step": "Use one bounded diagnostic retry of the frozen, scripts-disabled frontend install with the retained cache and informative fetch logging. If successful, run the existing AOI test with synthetic configuration and a socket/DNS guard, then reproduce the original download component. If fetching fails again, capture the endpoint/error and move to independent queue work.",
   "problem": "Issue #7227 reports that a completed project cannot supply its building GeoJSON to data requestors. A HOT member identifies archived status as the reason downloads are not updated and suggests considering on-demand refresh for authorized project users.",
   "humanitarian_relevance": "Enabling access to validated mapping outputs has a direct operational pathway to requestors using maps. The affected user describes an immediate sharing problem; reach and realized benefit remain unmeasured.",
   "evidence": [
@@ -36,12 +36,17 @@
       "type": "measured",
       "claim": "GitHub returned the exact prepared scope question authored by humanifest-bot at 2026-09-09T01:38:11Z. Before posting, the issue remained open/unassigned and develop still matched the audited source SHA. This proves delivery, not maintainer approval.",
       "source_id": "hot-coordination"
+    },
+    {
+      "type": "measured",
+      "claim": "Completed required contribution-policy and frontend setup review, including CI/Docker, CRACO/MSW and exact locked Git manifests. A local network guard rejected four socket/DNS/listen attempts. The single frozen scripts-disabled install timed out after 1,200 seconds during fetching; no target tests ran and environment readiness remains unconfirmed.",
+      "source_id": "hot-environment-audit-2026-09-09"
     }
   ],
   "code_surface": "Inspected pinned DownloadOsmData handler, messages, AOI-only downloadButtons tests, ProjectService.get_active_projects and TM-Extractor v1.0.1. A hash-checked standalone probe exercises the original handler with mocked browser/network objects; no React component coverage located for this handler.",
   "proposed_change": "Await scope confirmation for a small frontend failure-handling contribution: check unsuccessful HEAD before navigation, handle a null browser handle, and give guidance based on known facts. It does not restore archived artifacts or close #7227 by itself. Scheduling and permission changes remain separate protected work.",
   "tests": "Ran research/fixtures/hot-download-reproduction.mjs against the hash-checked pinned handler on Node v22.16.0: 200 success control, 404 opening before status check, null browser handle misreported as extraction unavailable, and rejected HEAD control all verified; loading cleared in each. No React, browser, target suite or production reproduction. Component plan includes these cases and unsuccessful metadata HEAD requests.",
-  "environment": "Read-only public source retrieval plus a dependency-free probe evaluating only the inspected original handler with mocked network/browser objects. No clone, target setup, package installation, secrets or production calls. Frontend scripts inspected; full setup/CI/hook audit remains incomplete.",
+  "environment": "Pinned disposable sparse frontend checkout at 2b917a14ea7b0b76935c4e2d6985ab25764cd1c9. Required contribution docs, manifests, locked Git dependencies, CI/Docker and test setup were inspected. A minimal-environment Node 22.16.0/Yarn 1.22.22 frozen install with lifecycle scripts disabled timed out after 1,200 seconds during fetching following a network retry. No node_modules or target-test result; cache retained. No backend, editor build, Sentry upload, deployment or live account used.",
   "maintainer": "First scoped inquiry sent as humanifest-bot at 2026-09-09T01:38:11Z: asks whether frontend download failure handling is useful separately from archived-data refresh. It discloses mocked-handler scope and AI involvement, preserves scheduling/permissions, and does not claim to resolve #7227. Await maintainer scope confirmation and respect published human-review requirements.",
   "risks": "Frontend error handling cannot restore missing archived artifacts. Actual deployed configuration, CORS and browser popup behavior remain unverified. HOT full AI guide requires human involvement in shared code updates and PR descriptions; no such review is claimed. Refresh crosses protected scheduling/permission boundaries.",
   "priority_rationale": "Source investigation produced a verified handler failure and a distinct archive-selection path. Retain these findings for a bounded scope discussion; continue Kobo existing-PR verification independently while HOT readiness and human-review requirements remain unresolved.",
@@ -60,8 +65,13 @@
       "rationale": "Retrieved contribution guides explicitly welcome volunteer code contributions and fork-based PRs."
     },
     "contribution_policy_understood": {
-      "passed": false,
-      "rationale": "Not established in this initial research intake; inspect relevant evidence before advancing."
+      "passed": true,
+      "rationale": "Read the pinned AGENTS required setup/contribution/review documents, existing test standards and fork/develop workflow. Protected workflows and human-review/AI disclosure constraints are retained; reading them does not satisfy maintainer confirmation.",
+      "source_ids": [
+        "hot-environment-audit-2026-09-09",
+        "hot-agent-guide",
+        "hot-ai-full-policy"
+      ]
     },
     "ai_policy_understood": {
       "passed": true,
@@ -102,7 +112,10 @@
     },
     "environment_feasible": {
       "passed": false,
-      "rationale": "The dependency-free handler probe ran; it does not establish full React or extractor setup feasibility. Frontend scripts include nested setup and optional sourcemap upload; no target setup executed."
+      "rationale": "Setup and contribution-policy audit completed, but the single frozen frontend install timed out during fetching after 1,200 seconds. No component test ran; feasibility remains unconfirmed until a bounded target baseline passes.",
+      "source_ids": [
+        "hot-environment-audit-2026-09-09"
+      ]
     },
     "maintainer_interest_confirmed": {
       "passed": false,
@@ -222,6 +235,11 @@
       "id": "hot-coordination",
       "url": "https://github.com/hotosm/tasking-manager/issues/7227#issuecomment-5594446967",
       "accessed": "2026-09-08"
+    },
+    {
+      "id": "hot-environment-audit-2026-09-09",
+      "url": "https://github.com/humanifest-bot/humanifest/blob/codex/cht-admin-environment-audit/research/2026-09-09-hot-frontend-environment-audit.md",
+      "accessed": "2026-09-09"
     }
   ]
 }

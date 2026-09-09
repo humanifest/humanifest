@@ -3,7 +3,7 @@
   "project_id": "community-health-toolkit",
   "title": "DHIS2 export reads the wrong Bikram Sambat month when month_start_date is not 1",
   "pipeline_state": "MAINTAINER-CHECK",
-  "research_next_step": "Recheck the live issue, linked work and contribution requirements, then coordinate the prepared reporting-period scope question using the concrete eight-case reproduction. No backend-only fix or reporting semantics are assumed.",
+  "research_next_step": "Obtain the approval required by automatic approval review for the exact prepared GitHub scope inquiry in research/2026-09-09-cht-dhis-scope-inquiry.md, then recheck the live discussion and post as humanifest-bot. No inquiry was delivered. Continue independent queue work while this action is pending.",
   "problem": "CHT issue #11342 reports that with Bikram Sambat reporting months enabled and month_start_date not equal to 1, DHIS2 target export can read an adjacent target month or zero because the export key derives from the raw selected date rather than the reporting interval used by target writers.",
   "humanitarian_relevance": "Target exports can feed health program reporting and supervision workflows. Incorrect month aggregation could misstate operational performance for Nepali-language deployments, but Humanifest should not overclaim patient outcome impact from this issue alone.",
   "evidence": [
@@ -41,13 +41,18 @@
       "type": "measured",
       "claim": "September 9 read-only GitHub check found #11342 open, unassigned and without comments. The issue author describes the BS work as an unreleased epic; release or deployment status was not independently established by this check.",
       "source_id": "issue-11342-recheck-2026-09-09"
+    },
+    {
+      "type": "measured",
+      "claim": "Fresh September 9 API checks found the related epic #10707 closed and PR #11237 merged. Current master exporter and admin picker are byte-identical to the reproduced files. Open PR #11414 addresses Nepali locale serialization without editing those two files; its diff was read, not executed. The prepared inquiry was blocked by automatic approval review and was not delivered.",
+      "source_id": "dhis-scope-recheck-2026-09-09"
     }
   ],
   "code_surface": "medic/cht-core: api/src/services/export/dhis.js and API DHIS tests; shared-libs/calendar-interval, rules-engine provider-wireup, webapp UHC settings, and admin export-dhis controller/tests. Inspected committed source at 35b2bb6dac0844bee3228476591d08d56c5dd10d; final implementation scope awaits maintainer agreement.",
   "proposed_change": "After maintainer confirmation, agree the meaning of from, picker labels, and exported period before selecting the smallest coherent fix. Align target-doc lookup with writer interval semantics and existing start-day setting precedence; a backend-only lookup change must not be assumed to resolve the full issue.",
   "tests": "37 existing calendar-interval tests pass. Eight hash-checked original-exporter cases cover Gregorian/BS start-day boundaries, default-day controls and a Gregorian year transition using distinct nonzero totals. Two clock settings reproduce day-dependent timestamps behind the same admin period label. API database tests and additional real Angular DHIS tests were not run. See research/2026-09-09-cht-dhis-period-reproduction.md; passing probes assert current behavior, not accepted fix semantics.",
   "environment": "Bounded local source execution in the previously inspected CHT baseline, Node 22.16.0 with existing locked dependencies and TZ=UTC. Exporter DB/config/logger and Angular registration are replaced with synthetic harnesses. No new installation, CouchDB, target setup, deployment or source mutation. This local runner is not a VM/container security boundary; full environment readiness must match the confirmed implementation scope.",
-  "maintainer": "No current maintainer confirmation or assignee. A future authorized inquiry should settle the reporting-period contract (from, picker, payload label), not assume interval-derived lookup alone closes the issue.",
+  "maintainer": "No current maintainer confirmation or assignee for #11342. The exact evidence-backed scope inquiry is prepared but automatic approval review rejected its posting action; user approval is required before retrying. Related epic #10707 is completed and locale PR #11414 is separate ongoing work.",
   "risks": "Controller execution confirms that identical month labels retain different days; a containing-interval lookup can therefore change the selected reporting interval across visit dates. The synthetic exporter reads a different nonzero target total in four boundary cases. Maintainers must settle picker/lookup/output-period semantics, and production consequence remains unmeasured.",
   "gates": {
     "humanitarian_relevance_supported": {
@@ -123,7 +128,7 @@
     },
     "maintainer_interest_confirmed": {
       "passed": false,
-      "rationale": "Rechecked September 9: the issue remains open, unassigned and without comments. The prepared reproduction and scope question do not establish maintainer confirmation.",
+      "rationale": "September 9 fresh issue/timeline check found no assignment or comments. The prepared scope inquiry was not posted after automatic approval review rejected it. Neither the reproduction nor completed related epic establishes confirmation for this export contribution.",
       "source_ids": [
         "issue-11342-recheck-2026-09-09"
       ]
@@ -212,6 +217,11 @@
     {
       "id": "issue-11342-recheck-2026-09-09",
       "url": "https://github.com/medic/cht-core/issues/11342",
+      "accessed": "2026-09-09"
+    },
+    {
+      "id": "dhis-scope-recheck-2026-09-09",
+      "url": "https://github.com/humanifest-bot/humanifest/blob/codex/cht-admin-environment-audit/research/2026-09-09-cht-dhis-scope-inquiry.md",
       "accessed": "2026-09-09"
     }
   ]

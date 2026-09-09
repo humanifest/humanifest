@@ -110,3 +110,11 @@ TZ=UTC /path/to/node22 research/fixtures/cht-dhis-period-reproduction.cjs /absol
 Source locators and policy context remain in the
 [original source audit](2026-09-08-cht-dhis-period-audit.md). The fixture embeds the
 source/lockfile hashes and refuses other revisions.
+
+## Subsequent coordination check
+
+The [fresh scope check](2026-09-09-cht-dhis-scope-inquiry.md) verified that the
+related epic is now complete and the two reproduced export/picker files remain
+unchanged on current master. It records the separate locale PR and the exact
+prepared inquiry. Automatic approval review rejected posting that inquiry; it
+was not delivered and maintainer confirmation remains unresolved.

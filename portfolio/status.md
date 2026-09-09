@@ -26,18 +26,17 @@ Scores do not authorize implementation or external writes. Candidates are listed
 - cht-11342-dhis2-bs-month-export: MAINTAINER-CHECK; score=0.0; failed_gates=3
   Next: Coordinate within standing authorization using the verified Humanifest identity; record current maintainer confirmation.
   - change_bounded: Writer and exporter tags differ, but the admin picker retains a day-dependent timestamp and payload period remains Gregorian. Maintainers have not chosen whether lookup, picker, and label changes belong in one bounded fix. A backend-only change cannot yet be assumed to resolve the full report.
-  - maintainer_interest_confirmed: Rechecked September 9: the issue remains open, unassigned and without comments. The prepared reproduction and scope question do not establish maintainer confirmation.
+  - maintainer_interest_confirmed: September 9 fresh issue/timeline check found no assignment or comments. The prepared scope inquiry was not posted after automatic approval review rejected it. Neither the reproduction nor completed related epic establishes confirmation for this export contribution.
   - probable_reviewer_identified: No reviewer is assigned on the issue.
-- hot-7227-archived-project-data-access: MAINTAINER-CHECK; score=0.0; failed_gates=12
+- hot-7227-archived-project-data-access: MAINTAINER-CHECK; score=0.0; failed_gates=11
   Next: Coordinate within standing authorization using the verified Humanifest identity; record current maintainer confirmation.
-  - contribution_policy_understood: Not established in this initial research intake; inspect relevant evidence before advancing.
   - problem_current_and_consequential: Operational need is reported, but the issue was last updated in April; current deployed behavior must be checked without triggering production extraction.
   - behavior_reproducible_or_verifiable: Four isolated handler cases verified against pinned source. The archived-project end-to-end failure and deployed extractor configuration remain unverified, so the original opportunity gate stays false.
   - code_and_tests_located: Download handler, messages, extractor and active-project service read. The neighboring tests exercise AOI download, not this handler; target regression coverage still needs implementation after scope confirmation.
   - change_bounded: A frontend error-handling scope is identifiable but does not restore archived data. Maintainers must choose whether that separate contribution or a supervised refresh design is wanted.
   - regression_strategy_credible: Not established in this initial research intake; inspect relevant evidence before advancing.
   - security_and_licensing_risk_acceptable: Not established in this initial research intake; inspect relevant evidence before advancing.
-  - environment_feasible: The dependency-free handler probe ran; it does not establish full React or extractor setup feasibility. Frontend scripts include nested setup and optional sourcemap upload; no target setup executed.
+  - environment_feasible: Setup and contribution-policy audit completed, but the single frozen frontend install timed out during fetching after 1,200 seconds. No component test ran; feasibility remains unconfirmed until a bounded target baseline passes.
   - maintainer_interest_confirmed: Scoped inquiry delivered by humanifest-bot at 2026-09-09T01:38:11Z; no reply or acceptance is established by the outbound message.
   - probable_reviewer_identified: Not established in this initial research intake; inspect relevant evidence before advancing.
   - benefit_justifies_review_cost: Not established in this initial research intake; inspect relevant evidence before advancing.
