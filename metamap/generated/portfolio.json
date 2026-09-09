@@ -21,8 +21,8 @@
     "portfolio/projects/ifrc-pystac-monty.json": "sha256:64e8bca4f4642632c5d1ddb4a1f8f602c9c472ab50c5b790e961dcd1bb1ee265",
     "portfolio/projects/kobotoolbox-kpi.json": "sha256:b4f6cb61a45cd25e3464d1858da97d97bf94b769911e30f99f0f8b68b501c179",
     "portfolio/projects/odk-central.json": "sha256:c7bf38b4f7ba88a769f35d913bc456cc9f77a8984954d171f6241b162c2e13d0",
-    "portfolio/projects/openfoodfacts-python.json": "sha256:4e2b59a24d8a39c0c6b36ae7155f1af6a54671fbf002b94e58ef2846e6c9c903",
-    "portfolio/projects/xlsform-pyxform.json": "sha256:d26d075d2edd4a7c3050360250f3e9ce6ede1fcd878914e43ab9371238723850",
+    "portfolio/projects/openfoodfacts-python.json": "sha256:9e997572d71d162e6c9c35ebb7a6d4bba164a0b719a98ea16647b5ec0cf507d5",
+    "portfolio/projects/xlsform-pyxform.json": "sha256:6111dba835f5b95a0941552cbc61e10e8d832ba0f86127f6c9084378da6df87e",
     "portfolio/opportunities/cht-10155-edit-user-load-failure.json": "sha256:e7961f3f143e441f97481f1ba879d15bdbf95d7dd1ae6b459b494bc77591e99b",
     "portfolio/opportunities/cht-dhis2-bs-month-export.json": "sha256:a22bdb58a75e6f5e062a32dc49b64b0680eda726c6b89574befb18803bb39ab6",
     "portfolio/opportunities/cht-unique-race.json": "sha256:3d7fa47074d2c3830142f2170114d7391f42bc60a2f7e2d252959aa8afbd695b",
@@ -31,8 +31,8 @@
     "portfolio/opportunities/ifrc-usgs-economic-rounding.json": "sha256:693fc1a5a80f54f8b8c2a038b9354e172fdb89ae05049c36d30401a19f6aa90c",
     "portfolio/opportunities/kobo-7259-incremental-sync-verification.json": "sha256:17b75e58b90a32cec1349444bb7cc7d637d8817f7d8c9834984af13399c67dcb",
     "portfolio/opportunities/odk-2169-worker-memory-threshold.json": "sha256:796efd222f1aed1c50b2e0f89bf3359b62dba8f7667dfd9893e934697b7a7901",
-    "portfolio/opportunities/off-496-text-search-contract-verification.json": "sha256:f6d16cd51dadded0be6222f39171590fcaeb589fe74ed963f947360b6307525f",
-    "portfolio/opportunities/pyxform-821-nested-repeat-instances.json": "sha256:22bd9fc8b197710e1ce1865d5278eed578ecf07cf5bd3b9bbeb82fd789b94946",
+    "portfolio/opportunities/off-496-text-search-contract-verification.json": "sha256:3afedfff7975729543c8e3da4e44e93deaf22ef1bcf2820d84e112aa7d46289a",
+    "portfolio/opportunities/pyxform-821-nested-repeat-instances.json": "sha256:eb89cfe8fd4ba13f3739ab791e83ad656bb2c61d8ea30d4e41016fde99fa5751",
     "handoffs/codex-implementation-cht-11342.md": "sha256:e7dadb4c05a2ab8e7f448008d2c8128dde0656662764ac0ed16b0e51aa2d1864",
     "handoffs/cursor-red-team-cht-11342.md": "sha256:d0bf56a9598ab8cd9d91bd64d4ab3c0008617742b4b169ade63b242a6b8d2664",
     "handoffs/maintainer-inquiry-cht-10155.md": "sha256:b4bc1c2143e3639719930e630db437c955fd8206910322d41d37c4ceb2bb2f5e",
@@ -46,12 +46,12 @@
     "evaluatedAt": "2026-09-09T00:00:00.000Z",
     "graph": {
       "id": "urn:humanifest:portfolio",
-      "revision": "sha256:dbf8e417ff32f4484d52f1f85065ad49ea394eb0a1f1271b59fb7826cbfee84d",
-      "digest": "sha256:32af5b434d07cd12f308f682613b616d54c965321bc86166f33fcdeead7b62ef"
+      "revision": "sha256:f56b5b2f8c1b2336445c4ffc6ac7352b614637edb26188946f1e46170db73023",
+      "digest": "sha256:a5fe8197e065891b4ddca4dd7371bca6ad3698e8afae87f1c69e67d6d03037f5"
     },
     "policy": {
       "id": "urn:humanifest:viability",
-      "digest": "sha256:7930d15ca71ed54655197879de5a0ffc01d266f685c6a1cfa93c5e1d59e2fb09"
+      "digest": "sha256:96a2153d266d08a3f390610670b2c17e00015cda848a5e2a18097b6aa53d0a6a"
     },
     "context": {},
     "activeMappings": [
@@ -107,6 +107,7 @@
       "urn:humanifest:mapping:062e6112277b1a4bd5062b4f1805ae456775471e21d17fc04b6da238bfed952b",
       "urn:humanifest:mapping:0670b183e8f32df69e0649f09b7b6f4d722b8d6619b76e6221f38529b797cec4",
       "urn:humanifest:mapping:068abefe38f1570f8eb7ecd2400fb3e9f9e13a2976e56c1278f6a173ec3921a9",
+      "urn:humanifest:mapping:0691f8fb33b076782df3b859e274704cb175ae71e43371fb69d37bea541857ae",
       "urn:humanifest:mapping:06aa2508707a99e80347b1a278622059c85c34809a3eb0239f3d193b3c87b89b",
       "urn:humanifest:mapping:06bc2992c8b23ac15529467edb21cf70d70af2a2eea8efe14842cf692dc0018e",
       "urn:humanifest:mapping:06f698a8585d098ae246cefdf5ea173697149a1508f04126288f4fc9d545c554",
@@ -253,6 +254,7 @@
       "urn:humanifest:mapping:1fa760ee1fe74536264851e5f4525bcae0a92048c5407aa74c2d0d236f839f5a",
       "urn:humanifest:mapping:1fd7104eaf75ead598298ffccb8c17373c4412d9121b91b8847a5fbd75d7b6cf",
       "urn:humanifest:mapping:1fe4633e6b1a0d6f9f1569ecf0eef274c1eb1a4904cf5b726ad86a53a51cec5d",
+      "urn:humanifest:mapping:1fe8bc1e37805aeec5aa13d2a77f50571a86d0f5e9f256f1fe135196623a8f6e",
       "urn:humanifest:mapping:1ff415b71560012617865cd6ea84762d7422982f894bd758a1df051dd4c7d016",
       "urn:humanifest:mapping:1ff93d9abdf2ff73c355cc22b634332c0c56cfba073f09d10821a300bd5d031d",
       "urn:humanifest:mapping:202b480e2638773497f037e70eb7980a76989d697eccd49d38c355ca29e34e94",
@@ -363,6 +365,7 @@
       "urn:humanifest:mapping:34b265634da896b88f3c758a8b9571ddcaa0900a5fe366dabca948cbe9e66546",
       "urn:humanifest:mapping:34c0bf3a5202a5140ff04584f2cd5f58f8a3e3ec60c876dd551c710d004ec3eb",
       "urn:humanifest:mapping:34f2c4fb4ae154aa0de74e91bcefd3b38438215f74d3d14b83c9d1c835b3d8f7",
+      "urn:humanifest:mapping:3539f463e95d15e71cbad9bd3d281570f224431ea878aade23dacab76870654d",
       "urn:humanifest:mapping:3559b28b90a003f08af81dc6550c3d6f457733b4b8a7a8b4408114912b55514f",
       "urn:humanifest:mapping:35603f4e61ff02bc97e78720a9830e4250a056f1d71d0110dda79d7a0b279ff6",
       "urn:humanifest:mapping:357ce57752f2bd44fb60d42ecb8cef1e5b5c47bbbc8c61fb1ae1af20fbd5f10e",
@@ -452,6 +455,7 @@
       "urn:humanifest:mapping:44dd817e13b191ff22f73141df498d9f83acaea6c710062a03d05b0d86e544c6",
       "urn:humanifest:mapping:44e98af16e99e3050b13a4be94975063dd9b453098f664534c0292efc56863e1",
       "urn:humanifest:mapping:454c275b3fa9e04c499ca90eb14868ed1d3bd7db9658dc74bdf8cf16c2ade161",
+      "urn:humanifest:mapping:455594d2e100993ccf9b32390167c1c2fa7130694475293ae09c9263f3ca05f6",
       "urn:humanifest:mapping:4564e1076ffd3456d37ae53e594c1747494caf829f28c14689b310163bbd83eb",
       "urn:humanifest:mapping:458154f455ce58554893bcb6328050b31a73a58cab4502e737618412d9cc4f70",
       "urn:humanifest:mapping:45ba8b22476b28ed1667633fe8e980486889e5aba88f91d84cdd3ea4a2fef635",
@@ -484,6 +488,7 @@
       "urn:humanifest:mapping:4b9b90ffa7c12dc011dbf0289ec40e519362470dd5af1e1e746b73973ca37a66",
       "urn:humanifest:mapping:4ba897a87756249ead90d7115cd1b4aeafcbe71ba0f6964e5bbd61ea3f4969f0",
       "urn:humanifest:mapping:4bb80b4dfd4a28fbe87b36f5d7e74c44b65b123546a00237d99a9ce5f8ec4e2a",
+      "urn:humanifest:mapping:4bc107d214483abdd7370ae92d7179620c14544416757ecf4f2e0284118e1ec8",
       "urn:humanifest:mapping:4bcc3c7b071468f319e1c49a51ff47d47ea690f7f7c97b7650c80fc54f35a1a9",
       "urn:humanifest:mapping:4c9bdcfd0072d7fae72e1328799753d828f6fe6b8792bcf8c391cc991690b779",
       "urn:humanifest:mapping:4cb1ae8404c3533e9b5bf2881407b98ffe296f15133a461baedc922ef2937526",
@@ -637,6 +642,7 @@
       "urn:humanifest:mapping:67e378399d9dad157acc1257bdeeb305f33414ae673847271701bd1c621bffe9",
       "urn:humanifest:mapping:67fee86c01c6354332bd01e75aef22735296d3494f1edf2e41c4016149a26330",
       "urn:humanifest:mapping:6832673bd544164d3b254c1f409e34527c641dcfcf33c6d42c6e4ca60373d52d",
+      "urn:humanifest:mapping:68b20807a57c40b7bc30842ff523b05bb35c3d4e1617882043a7be2314455a73",
       "urn:humanifest:mapping:691090f0ffedad63a58477dccec67088a71162006ea050a3e2001f6b41aff6fe",
       "urn:humanifest:mapping:693890a78594fef1c0673464ec24183e49f7cdefd04e9eff8939ed78c919c130",
       "urn:humanifest:mapping:695a0e5cefc110ea3b8bd5123f406858c773e5c44e907b858c5cd2821628f57a",
@@ -740,6 +746,7 @@
       "urn:humanifest:mapping:78818837f72a6731601213732831be407efbbe0243092f93978ae9fed5a0ad90",
       "urn:humanifest:mapping:78829b5213b8053d8c961b88f33243328e3b3695fb579bc9e7648f4c771019b0",
       "urn:humanifest:mapping:78c311291fdde023c89ef0352905e721f8e0eb9ee6f49d52fc08e1fd16b7bb61",
+      "urn:humanifest:mapping:78e7845ba94acb25ad9bf2f9ea3137716c007f069d7702bed7acdde8cd5c86a1",
       "urn:humanifest:mapping:791627fa26ee8c245c7f528261700798c24f03578010b3c365cf4a02f0679424",
       "urn:humanifest:mapping:792ad2cb85347ff9b3f97fddbc004b114073741f6410571e07d323ed5c09353e",
       "urn:humanifest:mapping:7956f68aa9f31d066f4701b20baa846f7843bb329aa6af2b8bfb14e7d5c42d88",
@@ -754,6 +761,7 @@
       "urn:humanifest:mapping:7b180f5611ca7eecc154264ca5116c2a72c54aaae43ca5b215f81806b323f68c",
       "urn:humanifest:mapping:7b1f301d32985ad338af71f77901071d40da904df3fb9f8eec870f9ccd22474c",
       "urn:humanifest:mapping:7b394606bb60957f670f6e4d77f68556b182a352c86ecf2668ec79bc75f040a2",
+      "urn:humanifest:mapping:7b822929035c38b7f58c074066fd042fc311e6bdb93d5ec5216825f9f9856028",
       "urn:humanifest:mapping:7b9be4e7d1f90440f5cc7e087d03eeeebea1a45e0cd87d1ddaeb7ec3c0928c16",
       "urn:humanifest:mapping:7bc74d690673fdda18515cb8c6f204adc63cbef322ec5692ce0c5da226de9519",
       "urn:humanifest:mapping:7be3691901b4b4869dc81a78428405c538045dc4618d9d6ccfa98afd82ae40d0",
@@ -891,6 +899,7 @@
       "urn:humanifest:mapping:8e35f550c837c9a13f1674addaec36dae61db3a662506358d5bf5cf04be81acf",
       "urn:humanifest:mapping:8e941b3a8936547568a4616a5e75330062ab5b1a1c5f4b921926f6c2bf98ec0f",
       "urn:humanifest:mapping:8ebf8abdae2b25c86361fcfa19ad113a7886fc31404e678414f38a2758b87535",
+      "urn:humanifest:mapping:8ed070de55ee635a0296f6f5dd72588d480eee839832fe043ce7715405fa9ada",
       "urn:humanifest:mapping:8ed489aa610c91defb3de6523dbba75ae86153af8e1fdbc40c1dfb83f5a2fc68",
       "urn:humanifest:mapping:8ed7fdab1e39d9b668ced62a2b3fd2784fb623fae93c9b5fcc32b9fbb1cb9055",
       "urn:humanifest:mapping:8eebeebae0bd17e267b1bf5dc993c95d570efa2a585f11d32486181e4e796e34",
@@ -907,6 +916,7 @@
       "urn:humanifest:mapping:90c82eab5d41ae4c473d9f57cf9adca7b4de9fff29b78525b68ef4c5372b4e61",
       "urn:humanifest:mapping:90ef97eb0c6034506334fab054fcfbfd875b0b37e5d0ea259d16b86ff0bf3dcf",
       "urn:humanifest:mapping:910e57a192363c667ff74d4e0b792e3fb30a18bc0fb19deaa23b4280e011b9ba",
+      "urn:humanifest:mapping:912d8d4cd9adb3c7f9600abe4b058ebb5518b50b030891deeb6cfc6e24f2422e",
       "urn:humanifest:mapping:9194c8b22b543a90831efc20b69acee323d80d5e63460149db7f6ee74634d5a8",
       "urn:humanifest:mapping:9198a94ad9f29ed235bb37aa2391935bbe5adbefdf2665bdd09e7b0e7cb0ca8a",
       "urn:humanifest:mapping:91d7ecca7a55dd284d634e5ac2b0784320c1b5e280a13edbc8463d0f0e95c808",
@@ -1044,6 +1054,7 @@
       "urn:humanifest:mapping:a57fbcb1fe110632c53733e911d2b19e54cb2fe1c4287b8b011a1e9fbf76b874",
       "urn:humanifest:mapping:a59bbdd0ff35a082ca2903ab9e1e56bf796093a8fd0b4148a7c0952d0a6decf0",
       "urn:humanifest:mapping:a5a0f9d77e93b24b362346acdc71e4d16a1373141bf300a2eeb2f6fe3348adca",
+      "urn:humanifest:mapping:a5adf0234754419c9f0a25645c5d211371ace92e96b94104fc44b0dfdccb2757",
       "urn:humanifest:mapping:a5e608ff73016b87e6cf723ee0c5763bfce5fb00779f612dc9c9d27f6d03a804",
       "urn:humanifest:mapping:a67ad062fbb651e621c1e248b3cd5a85cc94bc4d0f280d7d00d1338cb1192a72",
       "urn:humanifest:mapping:a6c2a8c43448b874fcda82d482396f51931251ab8cd0d9ce5000f1d55db41e12",
@@ -1085,6 +1096,7 @@
       "urn:humanifest:mapping:ac5b8d39ba8e27dc34615819681440097794a95ca67f2005f8c1c748e257d2ba",
       "urn:humanifest:mapping:ac88b87ebd39e728bd4821f44262d0924e5289968614eafd91aa988dc56d66db",
       "urn:humanifest:mapping:ac8e273f2ec05c0243d1bebdd9d84f569715f6b130c5ea037af0e790638d3aae",
+      "urn:humanifest:mapping:ad333ae0b7e2c4833928ec7386bf9c4a16d95b771f7cf2ee8759a4a09c5cf869",
       "urn:humanifest:mapping:ad7aa77dc5c6c9daa3d97383d39f1255223be6a42b8665a9dddfb799a3859c4b",
       "urn:humanifest:mapping:ad8d84ffecff1ac66bba08f71b5023e306c39d81e0dccb85b41583ac3f875af0",
       "urn:humanifest:mapping:adbff3a16fb105fa18091d0bc3cb9ca38e1f4cc552073d040044944f2e1c3aa3",
@@ -1198,6 +1210,7 @@
       "urn:humanifest:mapping:bd89f4066273915bf848ad103af268fcca4f89430f0ea8fc1c7a27a645816395",
       "urn:humanifest:mapping:bd980174a7fbc82d79ad3cedcc116e261f87db18ad0d88b8c0249a0442158c47",
       "urn:humanifest:mapping:bdae8fe01cf8b7e478dafea37afaa95cfabc25d0cc62a32e04fab239357902ca",
+      "urn:humanifest:mapping:bdd5affde6057929ffbb38ae69d0189edf9f2ce9b799cc9c9e2b8cdb9ded2271",
       "urn:humanifest:mapping:bdee57ea2cd41a23adec1773da446eaf55ac28abe4a2b47cd947f40369832738",
       "urn:humanifest:mapping:be267bf9d3f915c41acd774dc0ecc595f895b442287ccb60ae4971e490a03b83",
       "urn:humanifest:mapping:be8a6e99536c995616d628c3ec104d14ccfe4da6a7802ad2283d98eeb83b81ac",
@@ -1341,6 +1354,7 @@
       "urn:humanifest:mapping:d568cf6ef95bbfaa2110fe32085542065a39947a257424918f1853ecd1ce11f4",
       "urn:humanifest:mapping:d5809a9387c271c851c489cc3d9c53b5579795160deab7488eb7a9ff7339d282",
       "urn:humanifest:mapping:d5cc4f069882db995d8955a06ae5dbcdd396bf8eb3c0bb7a21f38db2e44d3702",
+      "urn:humanifest:mapping:d62d5693ce9d40abfaf50e639af09b30616ac2b34ead49c291a2848b5273300a",
       "urn:humanifest:mapping:d64781eeb47948faeac64bd698c436d40b4366f71b749362c395e6ddd8c8fc4a",
       "urn:humanifest:mapping:d6862f3edc61d2bd593d03e4c163002da798fb0ad2cfa279b30ba28b4702b96d",
       "urn:humanifest:mapping:d6f1262c1bd62b304c804275b2c724d32ecf9b9b4edadf25f92f916345918268",
@@ -1353,6 +1367,7 @@
       "urn:humanifest:mapping:d810efdf8613b0691ceb202140afb35228ac14effdbe106dc3bef22e2a78fead",
       "urn:humanifest:mapping:d82518e46024fb1e2eb9210feb553384c2f0a1979b1df04896022459bdbc2f41",
       "urn:humanifest:mapping:d835c96d76ad046d165e1ebc6dbe9fc00fb95eeb28e1bf93ebe6d8dddf8bd21b",
+      "urn:humanifest:mapping:d8373d9a52e1ff3e0957eb8230f856f46b7298f72fdd4acbd996fdc1a0a363e7",
       "urn:humanifest:mapping:d83ccf185ee135b882cd3839b07bd11edb287622ec4641620d103d89565c6ec5",
       "urn:humanifest:mapping:d85171fed4aef894daf0167a7adbf86d0e6d0a3d560d18beb6d396b6785dd0a8",
       "urn:humanifest:mapping:d87031d8add2b283a48cfc04a5cf06e13946383dcf46d593e7b77cd83014da8e",
@@ -1364,6 +1379,7 @@
       "urn:humanifest:mapping:d940466daabf94b39ebc9198bf742d3a3a270d040d85fe64d4cdd466a6729f70",
       "urn:humanifest:mapping:d9b293dc10131ac6d377d0d76a132b8bb493ac225197c64918a7d2d39c04d2a8",
       "urn:humanifest:mapping:d9b9638d9e3c18829d296fe19b38b8e47d1524414fa212dd57ef03746ee47bff",
+      "urn:humanifest:mapping:d9bb40777276b17bf853c746a74e3e5267b248e9a0a11ccbfe61807974cee5d8",
       "urn:humanifest:mapping:d9e02d53e6f67e2e73a9d06969a270ebcfafe28b268e82fb3ab857820ea66780",
       "urn:humanifest:mapping:d9e1f82e47c7d915c659ada7253d831074c2ae078ebfecc89755e7cfb74725c7",
       "urn:humanifest:mapping:da363bed5d41fd73c99414074cb12304a202155d7ccb0ce4954087dbed81cefb",
@@ -1374,6 +1390,7 @@
       "urn:humanifest:mapping:dad3d97f4446837818b7b0abf08119db8c161c6b1a45868799e56c171891f446",
       "urn:humanifest:mapping:db0ff9e12b99cd9e7278f31e6dac85e354109aa7b522e79fe3bddfd4293626ad",
       "urn:humanifest:mapping:db15251a5f033fef243a0021ece2a47a420b899e140327ab54066df9d9a67a59",
+      "urn:humanifest:mapping:db5b4e82d033137648450ff1b776a4e2043b910eef806180eeb51b473ee9c7db",
       "urn:humanifest:mapping:db6eba9b1b5c8e23420ca44beec581fbbd910bebaa76fac51903a32d83cec32c",
       "urn:humanifest:mapping:dc491a807a845d6dc657a43190addcce71da9ca28dfc229d327f199f47f151ee",
       "urn:humanifest:mapping:dc4c5ef354c40f38fe84f2bd3db697495ad327b2256f9b231143c2db4c4c413e",
@@ -1493,6 +1510,7 @@
       "urn:humanifest:mapping:ee556e00d02dda2960bcb3d4d60edabd19befaa1fcea42d3c98f252d6d41e266",
       "urn:humanifest:mapping:ee5fc0e54b9fe9b1978aee8a06ef9928c76d0fe39876d99f3aa378d2f106ab7c",
       "urn:humanifest:mapping:eeb52e7e9160d88ac2eec9a31923f5baa6086a93fb322dbfc714edab24b404f8",
+      "urn:humanifest:mapping:eebec51b43df972f9de5f43aba6ccee3661fddb4abaa9e39ce9528d69074f23c",
       "urn:humanifest:mapping:eed0f77356d47a9011c0aa90a28227e1a0d2f37c8e83b4da8e8cfe77cb0b0d2a",
       "urn:humanifest:mapping:eedbec74c910165c26c7257ca3193bd172edb24eab0a3c6105d896e3193e1c22",
       "urn:humanifest:mapping:ef2ec4a995974d0f8917eb71a3bc8ca996aa73b4408a411b686098f34c0029dc",
@@ -1604,19 +1622,19 @@
     "inactiveMappings": [],
     "evidence": [],
     "waiversApplied": [],
-    "id": "urn:metamap:generation:e1d4398ad87624ef4d8a15e72df0b65a8735c86e76a925f8485496240eb66305",
-    "digest": "sha256:e1d4398ad87624ef4d8a15e72df0b65a8735c86e76a925f8485496240eb66305"
+    "id": "urn:metamap:generation:12025a9dbc7b0fbdd74973cea4f3cfca6bd77375b326d75dbaa398cb8fd54fa6",
+    "digest": "sha256:12025a9dbc7b0fbdd74973cea4f3cfca6bd77375b326d75dbaa398cb8fd54fa6"
   },
   "projection": {
     "$schema": "https://raw.githubusercontent.com/roryscot/metamap/v0.4.0/schemas/metamap-projection.schema.json",
     "schemaVersion": "1.0.0",
     "generation": {
-      "id": "urn:metamap:generation:e1d4398ad87624ef4d8a15e72df0b65a8735c86e76a925f8485496240eb66305",
-      "digest": "sha256:e1d4398ad87624ef4d8a15e72df0b65a8735c86e76a925f8485496240eb66305"
+      "id": "urn:metamap:generation:12025a9dbc7b0fbdd74973cea4f3cfca6bd77375b326d75dbaa398cb8fd54fa6",
+      "digest": "sha256:12025a9dbc7b0fbdd74973cea4f3cfca6bd77375b326d75dbaa398cb8fd54fa6"
     },
     "graph": {
       "id": "urn:humanifest:portfolio",
-      "digest": "sha256:32af5b434d07cd12f308f682613b616d54c965321bc86166f33fcdeead7b62ef"
+      "digest": "sha256:a5fe8197e065891b4ddca4dd7371bca6ad3698e8afae87f1c69e67d6d03037f5"
     },
     "spec": {
       "id": "urn:humanifest:report-projection",
@@ -3135,7 +3153,7 @@
           "attributes": {
             "recordId": "off-496-text-search-contract-verification",
             "path": "portfolio/opportunities/off-496-text-search-contract-verification.json",
-            "digest": "sha256:f6d16cd51dadded0be6222f39171590fcaeb589fe74ed963f947360b6307525f",
+            "digest": "sha256:3afedfff7975729543c8e3da4e44e93deaf22ef1bcf2820d84e112aa7d46289a",
             "projectId": "openfoodfacts-python"
           }
         },
@@ -3174,7 +3192,7 @@
                 "label": "portfolio/opportunities/off-496-text-search-contract-verification.json",
                 "attributes": {
                   "path": "portfolio/opportunities/off-496-text-search-contract-verification.json",
-                  "digest": "sha256:f6d16cd51dadded0be6222f39171590fcaeb589fe74ed963f947360b6307525f"
+                  "digest": "sha256:3afedfff7975729543c8e3da4e44e93deaf22ef1bcf2820d84e112aa7d46289a"
                 }
               }
             ]
@@ -3307,7 +3325,7 @@
                 "attributes": {
                   "recordId": "openfoodfacts-python",
                   "path": "portfolio/projects/openfoodfacts-python.json",
-                  "digest": "sha256:4e2b59a24d8a39c0c6b36ae7155f1af6a54671fbf002b94e58ef2846e6c9c903",
+                  "digest": "sha256:9e997572d71d162e6c9c35ebb7a6d4bba164a0b719a98ea16647b5ec0cf507d5",
                   "projectId": null
                 }
               }
@@ -3323,7 +3341,7 @@
           "attributes": {
             "recordId": "pyxform-821-nested-repeat-instances",
             "path": "portfolio/opportunities/pyxform-821-nested-repeat-instances.json",
-            "digest": "sha256:22bd9fc8b197710e1ce1865d5278eed578ecf07cf5bd3b9bbeb82fd789b94946",
+            "digest": "sha256:eb89cfe8fd4ba13f3739ab791e83ad656bb2c61d8ea30d4e41016fde99fa5751",
             "projectId": "xlsform-pyxform"
           }
         },
@@ -3362,7 +3380,7 @@
                 "label": "portfolio/opportunities/pyxform-821-nested-repeat-instances.json",
                 "attributes": {
                   "path": "portfolio/opportunities/pyxform-821-nested-repeat-instances.json",
-                  "digest": "sha256:22bd9fc8b197710e1ce1865d5278eed578ecf07cf5bd3b9bbeb82fd789b94946"
+                  "digest": "sha256:eb89cfe8fd4ba13f3739ab791e83ad656bb2c61d8ea30d4e41016fde99fa5751"
                 }
               }
             ]
@@ -3495,7 +3513,7 @@
                 "attributes": {
                   "recordId": "xlsform-pyxform",
                   "path": "portfolio/projects/xlsform-pyxform.json",
-                  "digest": "sha256:d26d075d2edd4a7c3050360250f3e9ce6ede1fcd878914e43ab9371238723850",
+                  "digest": "sha256:6111dba835f5b95a0941552cbc61e10e8d832ba0f86127f6c9084378da6df87e",
                   "projectId": null
                 }
               }
@@ -3504,8 +3522,8 @@
         ]
       }
     ],
-    "id": "urn:metamap:projection:752c4cafd3bc5d3ec92db88ba651d5f8e06a5980c4b9d488f9d361814a18de43",
-    "digest": "sha256:752c4cafd3bc5d3ec92db88ba651d5f8e06a5980c4b9d488f9d361814a18de43"
+    "id": "urn:metamap:projection:36e7a5e419b1aa266633fe98e4003eca5ed6aea565ac14334f1edce98651383f",
+    "digest": "sha256:36e7a5e419b1aa266633fe98e4003eca5ed6aea565ac14334f1edce98651383f"
   },
-  "projection_checksum": "sha256:06df2e1a8a2b45a92ee644d49d8ffc120c83c70224cd50039456434abcbef4e7"
+  "projection_checksum": "sha256:55b7a2e62c1cd8bb6c9a5441867f1891cfde3fca52fd11032e23ceaeb0bd0376"
 }

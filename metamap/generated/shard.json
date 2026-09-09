@@ -2,7 +2,7 @@
   "schemaVersion": "2.0.0",
   "id": "urn:humanifest:portfolio",
   "namespace": "humanifest",
-  "revision": "sha256:dbf8e417ff32f4484d52f1f85065ad49ea394eb0a1f1271b59fb7826cbfee84d",
+  "revision": "sha256:f56b5b2f8c1b2336445c4ffc6ac7352b614637edb26188946f1e46170db73023",
   "entities": [
     {
       "id": "urn:humanifest:routing:policy:contribution-protocol",
@@ -1225,7 +1225,7 @@
       "attributes": {
         "recordId": "openfoodfacts-python",
         "path": "portfolio/projects/openfoodfacts-python.json",
-        "digest": "sha256:4e2b59a24d8a39c0c6b36ae7155f1af6a54671fbf002b94e58ef2846e6c9c903",
+        "digest": "sha256:9e997572d71d162e6c9c35ebb7a6d4bba164a0b719a98ea16647b5ec0cf507d5",
         "projectId": null
       },
       "provenance": {
@@ -1239,7 +1239,7 @@
       "label": "portfolio/projects/openfoodfacts-python.json",
       "attributes": {
         "path": "portfolio/projects/openfoodfacts-python.json",
-        "digest": "sha256:4e2b59a24d8a39c0c6b36ae7155f1af6a54671fbf002b94e58ef2846e6c9c903"
+        "digest": "sha256:9e997572d71d162e6c9c35ebb7a6d4bba164a0b719a98ea16647b5ec0cf507d5"
       },
       "provenance": {
         "status": "generated",
@@ -1312,6 +1312,19 @@
       }
     },
     {
+      "id": "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aproject%3Aopenfoodfacts-python%3Aoff-verification-delivered",
+      "kind": "hf:source",
+      "label": "urn:humanifest:hf:project:openfoodfacts-python:off-verification-delivered",
+      "attributes": {
+        "url": "https://github.com/openfoodfacts/openfoodfacts-python/pull/504#issuecomment-5597968719",
+        "accessed": "2026-09-09"
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
       "id": "urn:humanifest:hf:evidence:urn%3Ahumanifest%3Ahf%3Aproject%3Aopenfoodfacts-python%3A0",
       "kind": "hf:evidence",
       "label": "Open Food Facts describes itself as a nonprofit publishing reusable food information for consumers, research and sustainability work. This supports a public-benefit pathway, not measured impact from an SDK patch.",
@@ -1330,7 +1343,7 @@
       "attributes": {
         "recordId": "xlsform-pyxform",
         "path": "portfolio/projects/xlsform-pyxform.json",
-        "digest": "sha256:d26d075d2edd4a7c3050360250f3e9ce6ede1fcd878914e43ab9371238723850",
+        "digest": "sha256:6111dba835f5b95a0941552cbc61e10e8d832ba0f86127f6c9084378da6df87e",
         "projectId": null
       },
       "provenance": {
@@ -1344,7 +1357,7 @@
       "label": "portfolio/projects/xlsform-pyxform.json",
       "attributes": {
         "path": "portfolio/projects/xlsform-pyxform.json",
-        "digest": "sha256:d26d075d2edd4a7c3050360250f3e9ce6ede1fcd878914e43ab9371238723850"
+        "digest": "sha256:6111dba835f5b95a0941552cbc61e10e8d832ba0f86127f6c9084378da6df87e"
       },
       "provenance": {
         "status": "generated",
@@ -1448,6 +1461,19 @@
       "label": "urn:humanifest:hf:project:xlsform-pyxform:pyxform-runtime",
       "attributes": {
         "url": "https://github.com/humanifest-bot/humanifest/blob/codex/cht-admin-environment-audit/research/2026-09-09-pyxform-repeat-runtime.md",
+        "accessed": "2026-09-09"
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aproject%3Axlsform-pyxform%3Apyxform-verification-delivered",
+      "kind": "hf:source",
+      "label": "urn:humanifest:hf:project:xlsform-pyxform:pyxform-verification-delivered",
+      "attributes": {
+        "url": "https://github.com/XLSForm/pyxform/issues/821#issuecomment-5598015763",
         "accessed": "2026-09-09"
       },
       "provenance": {
@@ -6189,7 +6215,7 @@
       "attributes": {
         "recordId": "off-496-text-search-contract-verification",
         "path": "portfolio/opportunities/off-496-text-search-contract-verification.json",
-        "digest": "sha256:f6d16cd51dadded0be6222f39171590fcaeb589fe74ed963f947360b6307525f",
+        "digest": "sha256:3afedfff7975729543c8e3da4e44e93deaf22ef1bcf2820d84e112aa7d46289a",
         "projectId": "openfoodfacts-python"
       },
       "provenance": {
@@ -6203,7 +6229,7 @@
       "label": "portfolio/opportunities/off-496-text-search-contract-verification.json",
       "attributes": {
         "path": "portfolio/opportunities/off-496-text-search-contract-verification.json",
-        "digest": "sha256:f6d16cd51dadded0be6222f39171590fcaeb589fe74ed963f947360b6307525f"
+        "digest": "sha256:3afedfff7975729543c8e3da4e44e93deaf22ef1bcf2820d84e112aa7d46289a"
       },
       "provenance": {
         "status": "generated",
@@ -6328,6 +6354,19 @@
       }
     },
     {
+      "id": "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Aoff-verification-delivered",
+      "kind": "hf:source",
+      "label": "urn:humanifest:hf:opportunity:off-496-text-search-contract-verification:off-verification-delivered",
+      "attributes": {
+        "url": "https://github.com/openfoodfacts/openfoodfacts-python/pull/504#issuecomment-5597968719",
+        "accessed": "2026-09-09"
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
       "id": "urn:humanifest:hf:evidence:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3A0",
       "kind": "hf:evidence",
       "label": "Issue #496 reports HTTP 503 from the documented text_search example; a maintainer says the CGI endpoint now requires authentication.",
@@ -6367,6 +6406,18 @@
       "id": "urn:humanifest:hf:evidence:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3A3",
       "kind": "hf:evidence",
       "label": "38 unchanged SDK API tests pass with blocked Python socket/DNS operations. Four cases executing the pinned original server filter verify that search_terms is removed before query construction, with structured-filter and pagination controls. Source dispatch was traced but full HTTP/server/database execution did not occur.",
+      "attributes": {
+        "evidenceType": "measured"
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:hf:evidence:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3A4",
+      "kind": "hf:evidence",
+      "label": "Verification note delivered as humanifest-bot at 2026-09-09T07:30:38Z. A separate GitHub API read verified exact author and body. Delivery is not maintainer confirmation or acceptance.",
       "attributes": {
         "evidenceType": "measured"
       },
@@ -6563,8 +6614,8 @@
       "label": "maintainer_interest_confirmed",
       "attributes": {
         "passed": false,
-        "cited": false,
-        "rationale": "Maintainer explained the CGI authentication requirement, but has not confirmed this proposed verification contribution or replacement search contract. No Humanifest inquiry sent."
+        "cited": true,
+        "rationale": "The maintainer previously explained CGI authentication. Humanifest has now delivered the bounded verification on PR #504, but no accepted search contract or Humanifest scope is established."
       },
       "provenance": {
         "status": "generated",
@@ -6669,7 +6720,7 @@
       "attributes": {
         "recordId": "pyxform-821-nested-repeat-instances",
         "path": "portfolio/opportunities/pyxform-821-nested-repeat-instances.json",
-        "digest": "sha256:22bd9fc8b197710e1ce1865d5278eed578ecf07cf5bd3b9bbeb82fd789b94946",
+        "digest": "sha256:eb89cfe8fd4ba13f3739ab791e83ad656bb2c61d8ea30d4e41016fde99fa5751",
         "projectId": "xlsform-pyxform"
       },
       "provenance": {
@@ -6683,7 +6734,7 @@
       "label": "portfolio/opportunities/pyxform-821-nested-repeat-instances.json",
       "attributes": {
         "path": "portfolio/opportunities/pyxform-821-nested-repeat-instances.json",
-        "digest": "sha256:22bd9fc8b197710e1ce1865d5278eed578ecf07cf5bd3b9bbeb82fd789b94946"
+        "digest": "sha256:eb89cfe8fd4ba13f3739ab791e83ad656bb2c61d8ea30d4e41016fde99fa5751"
       },
       "provenance": {
         "status": "generated",
@@ -6795,6 +6846,19 @@
       }
     },
     {
+      "id": "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Apyxform-821-nested-repeat-instances%3Apyxform-verification-delivered",
+      "kind": "hf:source",
+      "label": "urn:humanifest:hf:opportunity:pyxform-821-nested-repeat-instances:pyxform-verification-delivered",
+      "attributes": {
+        "url": "https://github.com/XLSForm/pyxform/issues/821#issuecomment-5598015763",
+        "accessed": "2026-09-09"
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
       "id": "urn:humanifest:hf:evidence:urn%3Ahumanifest%3Ahf%3Aopportunity%3Apyxform-821-nested-repeat-instances%3A0",
       "kind": "hf:evidence",
       "label": "lognaturel reports repeated encounters and requests investigating effort for consistent initial instances at all nesting depths. This is not approval of a Humanifest implementation.",
@@ -6822,6 +6886,18 @@
       "id": "urn:humanifest:hf:evidence:urn%3Ahumanifest%3Ahf%3Aopportunity%3Apyxform-821-nested-repeat-instances%3A2",
       "kind": "hf:evidence",
       "label": "65 unchanged repeat tests pass, one upstream performance test remains skipped, and two Java-only tests are deferred. Fifteen actual converter cases show a concrete inner instance absent under directly nested outer templates but present with an intervening group. Defaults and sibling controls survive. No client behavior was tested.",
+      "attributes": {
+        "evidenceType": "measured"
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:hf:evidence:urn%3Ahumanifest%3Ahf%3Aopportunity%3Apyxform-821-nested-repeat-instances%3A3",
+      "kind": "hf:evidence",
+      "label": "Verification note delivered as humanifest-bot at 2026-09-09T07:34:50Z. A separate GitHub API read verified exact author and body. Delivery is not maintainer confirmation or acceptance.",
       "attributes": {
         "evidenceType": "measured"
       },
@@ -7018,8 +7094,8 @@
       "label": "maintainer_interest_confirmed",
       "attributes": {
         "passed": false,
-        "cited": false,
-        "rationale": "The public request to explore effort supports research, but no maintainer has accepted Humanifest support, implementation scope or bot identity."
+        "cited": true,
+        "rationale": "The public request to explore effort supports research. Humanifest delivered its reproduction but has no confirmation of accepted implementation scope or bot contribution pathway."
       },
       "provenance": {
         "status": "generated",
@@ -10662,6 +10738,38 @@
       }
     },
     {
+      "id": "urn:humanifest:mapping:d8373d9a52e1ff3e0957eb8230f856f46b7298f72fdd4acbd996fdc1a0a363e7",
+      "relation": "hf:source",
+      "sources": [
+        "urn:humanifest:hf:project:openfoodfacts-python"
+      ],
+      "targets": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aproject%3Aopenfoodfacts-python%3Aoff-verification-delivered"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:78e7845ba94acb25ad9bf2f9ea3137716c007f069d7702bed7acdde8cd5c86a1",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aproject%3Aopenfoodfacts-python%3Aoff-verification-delivered"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fprojects%2Fopenfoodfacts-python.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
       "id": "urn:humanifest:mapping:8574ec3bffd675020f241446a909541cac726d1a35e2fc1367d96ef797e6f1a0",
       "relation": "hf:evidence",
       "sources": [
@@ -10970,6 +11078,38 @@
       "relation": "hf:current_record",
       "sources": [
         "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aproject%3Axlsform-pyxform%3Apyxform-runtime"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fprojects%2Fxlsform-pyxform.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:db5b4e82d033137648450ff1b776a4e2043b910eef806180eeb51b473ee9c7db",
+      "relation": "hf:source",
+      "sources": [
+        "urn:humanifest:hf:project:xlsform-pyxform"
+      ],
+      "targets": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aproject%3Axlsform-pyxform%3Apyxform-verification-delivered"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:1fe8bc1e37805aeec5aa13d2a77f50571a86d0f5e9f256f1fe135196623a8f6e",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aproject%3Axlsform-pyxform%3Apyxform-verification-delivered"
       ],
       "targets": [
         "urn:humanifest:hf:record:portfolio%2Fprojects%2Fxlsform-pyxform.json"
@@ -28662,6 +28802,38 @@
       }
     },
     {
+      "id": "urn:humanifest:mapping:d62d5693ce9d40abfaf50e639af09b30616ac2b34ead49c291a2848b5273300a",
+      "relation": "hf:source",
+      "sources": [
+        "urn:humanifest:hf:opportunity:off-496-text-search-contract-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Aoff-verification-delivered"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:ad333ae0b7e2c4833928ec7386bf9c4a16d95b771f7cf2ee8759a4a09c5cf869",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Aoff-verification-delivered"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fopportunities%2Foff-496-text-search-contract-verification.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
       "id": "urn:humanifest:mapping:c77529f1078cbf5551a19000e07faad566333d50955c4b9fe0af9d66265e48cc",
       "relation": "hf:evidence",
       "sources": [
@@ -28842,6 +29014,54 @@
       "relation": "hf:current_record",
       "sources": [
         "urn:humanifest:hf:evidence:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3A3"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fopportunities%2Foff-496-text-search-contract-verification.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:0691f8fb33b076782df3b859e274704cb175ae71e43371fb69d37bea541857ae",
+      "relation": "hf:evidence",
+      "sources": [
+        "urn:humanifest:hf:opportunity:off-496-text-search-contract-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:evidence:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3A4"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:4bc107d214483abdd7370ae92d7179620c14544416757ecf4f2e0284118e1ec8",
+      "relation": "hf:source",
+      "sources": [
+        "urn:humanifest:hf:evidence:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3A4"
+      ],
+      "targets": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Aoff-verification-delivered"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:bdd5affde6057929ffbb38ae69d0189edf9f2ce9b799cc9c9e2b8cdb9ded2271",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:evidence:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3A4"
       ],
       "targets": [
         "urn:humanifest:hf:record:portfolio%2Fopportunities%2Foff-496-text-search-contract-verification.json"
@@ -29798,6 +30018,22 @@
       }
     },
     {
+      "id": "urn:humanifest:mapping:a5adf0234754419c9f0a25645c5d211371ace92e96b94104fc44b0dfdccb2757",
+      "relation": "hf:source",
+      "sources": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Amaintainer_interest_confirmed"
+      ],
+      "targets": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Aoff-verification-delivered"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
       "id": "urn:humanifest:mapping:1031a4f54b539e349355c0f7b68fc2223398f77810c6f3a7c3a8b3104f5f8b7d",
       "relation": "hf:prerequisite",
       "sources": [
@@ -29837,6 +30073,22 @@
       ],
       "targets": [
         "urn:humanifest:hf:record:portfolio%2Fopportunities%2Foff-496-text-search-contract-verification.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:d9bb40777276b17bf853c746a74e3e5267b248e9a0a11ccbfe61807974cee5d8",
+      "relation": "hf:source",
+      "sources": [
+        "urn:humanifest:hf:confirmation:off-496-text-search-contract-verification"
+      ],
+      "targets": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Aoff-496-text-search-contract-verification%3Aoff-verification-delivered"
       ],
       "cardinality": "one-to-one",
       "lossiness": "lossless",
@@ -30470,6 +30722,38 @@
       }
     },
     {
+      "id": "urn:humanifest:mapping:912d8d4cd9adb3c7f9600abe4b058ebb5518b50b030891deeb6cfc6e24f2422e",
+      "relation": "hf:source",
+      "sources": [
+        "urn:humanifest:hf:opportunity:pyxform-821-nested-repeat-instances"
+      ],
+      "targets": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Apyxform-821-nested-repeat-instances%3Apyxform-verification-delivered"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:3539f463e95d15e71cbad9bd3d281570f224431ea878aade23dacab76870654d",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Apyxform-821-nested-repeat-instances%3Apyxform-verification-delivered"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fopportunities%2Fpyxform-821-nested-repeat-instances.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
       "id": "urn:humanifest:mapping:a5e608ff73016b87e6cf723ee0c5763bfce5fb00779f612dc9c9d27f6d03a804",
       "relation": "hf:evidence",
       "sources": [
@@ -30602,6 +30886,54 @@
       "relation": "hf:current_record",
       "sources": [
         "urn:humanifest:hf:evidence:urn%3Ahumanifest%3Ahf%3Aopportunity%3Apyxform-821-nested-repeat-instances%3A2"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fopportunities%2Fpyxform-821-nested-repeat-instances.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:7b822929035c38b7f58c074066fd042fc311e6bdb93d5ec5216825f9f9856028",
+      "relation": "hf:evidence",
+      "sources": [
+        "urn:humanifest:hf:opportunity:pyxform-821-nested-repeat-instances"
+      ],
+      "targets": [
+        "urn:humanifest:hf:evidence:urn%3Ahumanifest%3Ahf%3Aopportunity%3Apyxform-821-nested-repeat-instances%3A3"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:68b20807a57c40b7bc30842ff523b05bb35c3d4e1617882043a7be2314455a73",
+      "relation": "hf:source",
+      "sources": [
+        "urn:humanifest:hf:evidence:urn%3Ahumanifest%3Ahf%3Aopportunity%3Apyxform-821-nested-repeat-instances%3A3"
+      ],
+      "targets": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Apyxform-821-nested-repeat-instances%3Apyxform-verification-delivered"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:8ed070de55ee635a0296f6f5dd72588d480eee839832fe043ce7715405fa9ada",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:evidence:urn%3Ahumanifest%3Ahf%3Aopportunity%3Apyxform-821-nested-repeat-instances%3A3"
       ],
       "targets": [
         "urn:humanifest:hf:record:portfolio%2Fopportunities%2Fpyxform-821-nested-repeat-instances.json"
@@ -31542,6 +31874,22 @@
       }
     },
     {
+      "id": "urn:humanifest:mapping:eebec51b43df972f9de5f43aba6ccee3661fddb4abaa9e39ce9528d69074f23c",
+      "relation": "hf:source",
+      "sources": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Apyxform-821-nested-repeat-instances%3Amaintainer_interest_confirmed"
+      ],
+      "targets": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Apyxform-821-nested-repeat-instances%3Apyxform-verification-delivered"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
       "id": "urn:humanifest:mapping:00270c93d2d2ed0a34a13fb9269fa66ecb89c0447de3e54d2a79a6e647009f2f",
       "relation": "hf:prerequisite",
       "sources": [
@@ -31581,6 +31929,22 @@
       ],
       "targets": [
         "urn:humanifest:hf:record:portfolio%2Fopportunities%2Fpyxform-821-nested-repeat-instances.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:455594d2e100993ccf9b32390167c1c2fa7130694475293ae09c9263f3ca05f6",
+      "relation": "hf:source",
+      "sources": [
+        "urn:humanifest:hf:confirmation:pyxform-821-nested-repeat-instances"
+      ],
+      "targets": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Apyxform-821-nested-repeat-instances%3Apyxform-verification-delivered"
       ],
       "cardinality": "one-to-one",
       "lossiness": "lossless",
