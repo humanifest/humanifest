@@ -2,7 +2,7 @@
   "schemaVersion": "2.0.0",
   "id": "urn:humanifest:portfolio",
   "namespace": "humanifest",
-  "revision": "sha256:27b6a0ca7c517eba7b06c8ddc08b1fe558dab7aa6062d6ad6bd0f967721af64a",
+  "revision": "sha256:ce050843619b36c4922230910f0586c683dc2e7352f09d44db7c1fb00955e5e1",
   "entities": [
     {
       "id": "urn:humanifest:routing:policy:contribution-protocol",
@@ -1866,7 +1866,7 @@
       "attributes": {
         "recordId": "cht-11342-dhis2-bs-month-export",
         "path": "portfolio/opportunities/cht-dhis2-bs-month-export.json",
-        "digest": "sha256:0c6f1e527a12a58c76df81f96fe89b2f8bc64171606e3bd58671143d0caf4179",
+        "digest": "sha256:a22bdb58a75e6f5e062a32dc49b64b0680eda726c6b89574befb18803bb39ab6",
         "projectId": "community-health-toolkit"
       },
       "provenance": {
@@ -1880,7 +1880,7 @@
       "label": "portfolio/opportunities/cht-dhis2-bs-month-export.json",
       "attributes": {
         "path": "portfolio/opportunities/cht-dhis2-bs-month-export.json",
-        "digest": "sha256:0c6f1e527a12a58c76df81f96fe89b2f8bc64171606e3bd58671143d0caf4179"
+        "digest": "sha256:a22bdb58a75e6f5e062a32dc49b64b0680eda726c6b89574befb18803bb39ab6"
       },
       "provenance": {
         "status": "generated",
@@ -2057,6 +2057,19 @@
       }
     },
     {
+      "id": "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Acht-11342-dhis2-bs-month-export%3Adhis-scope-recheck-2026-09-09",
+      "kind": "hf:source",
+      "label": "urn:humanifest:hf:opportunity:cht-11342-dhis2-bs-month-export:dhis-scope-recheck-2026-09-09",
+      "attributes": {
+        "url": "https://github.com/humanifest-bot/humanifest/blob/codex/cht-admin-environment-audit/research/2026-09-09-cht-dhis-scope-inquiry.md",
+        "accessed": "2026-09-09"
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
       "id": "urn:humanifest:hf:evidence:urn%3Ahumanifest%3Ahf%3Aopportunity%3Acht-11342-dhis2-bs-month-export%3A0",
       "kind": "hf:evidence",
       "label": "Issue author reports a local 5.2.0 reproduction where an August 2026 export returned the BS 2083-04 total rather than the stored 2083-05 total.",
@@ -2132,6 +2145,18 @@
       "id": "urn:humanifest:hf:evidence:urn%3Ahumanifest%3Ahf%3Aopportunity%3Acht-11342-dhis2-bs-month-export%3A6",
       "kind": "hf:evidence",
       "label": "September 9 read-only GitHub check found #11342 open, unassigned and without comments. The issue author describes the BS work as an unreleased epic; release or deployment status was not independently established by this check.",
+      "attributes": {
+        "evidenceType": "measured"
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:hf:evidence:urn%3Ahumanifest%3Ahf%3Aopportunity%3Acht-11342-dhis2-bs-month-export%3A7",
+      "kind": "hf:evidence",
+      "label": "Fresh September 9 API checks found the related epic #10707 closed and PR #11237 merged. Current master exporter and admin picker are byte-identical to the reproduced files. Open PR #11414 addresses Nepali locale serialization without editing those two files; its diff was read, not executed. The prepared inquiry was blocked by automatic approval review and was not delivered.",
       "attributes": {
         "evidenceType": "measured"
       },
@@ -2329,7 +2354,7 @@
       "attributes": {
         "passed": false,
         "cited": true,
-        "rationale": "Rechecked September 9: the issue remains open, unassigned and without comments. The prepared reproduction and scope question do not establish maintainer confirmation."
+        "rationale": "September 9 fresh issue/timeline check found no assignment or comments. The prepared scope inquiry was not posted after automatic approval review rejected it. Neither the reproduction nor completed related epic establishes confirmation for this export contribution."
       },
       "provenance": {
         "status": "generated",
@@ -3367,7 +3392,7 @@
       "attributes": {
         "recordId": "hot-7227-archived-project-data-access",
         "path": "portfolio/opportunities/hot-7227-archived-project-data-access.json",
-        "digest": "sha256:7e711a520f19612e3c599d254dc2c3b5578408db5c61e19bf002afe3fe36c8b5",
+        "digest": "sha256:a0f096b1a3267dc03e7712c8dbab2336ced1451d061ac34f559f6b4a04a3d8ee",
         "projectId": "hot-tasking-manager"
       },
       "provenance": {
@@ -3381,7 +3406,7 @@
       "label": "portfolio/opportunities/hot-7227-archived-project-data-access.json",
       "attributes": {
         "path": "portfolio/opportunities/hot-7227-archived-project-data-access.json",
-        "digest": "sha256:7e711a520f19612e3c599d254dc2c3b5578408db5c61e19bf002afe3fe36c8b5"
+        "digest": "sha256:a0f096b1a3267dc03e7712c8dbab2336ced1451d061ac34f559f6b4a04a3d8ee"
       },
       "provenance": {
         "status": "generated",
@@ -3623,6 +3648,19 @@
       }
     },
     {
+      "id": "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Ahot-7227-archived-project-data-access%3Ahot-environment-audit-2026-09-09",
+      "kind": "hf:source",
+      "label": "urn:humanifest:hf:opportunity:hot-7227-archived-project-data-access:hot-environment-audit-2026-09-09",
+      "attributes": {
+        "url": "https://github.com/humanifest-bot/humanifest/blob/codex/cht-admin-environment-audit/research/2026-09-09-hot-frontend-environment-audit.md",
+        "accessed": "2026-09-09"
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
       "id": "urn:humanifest:hf:evidence:urn%3Ahumanifest%3Ahf%3Aopportunity%3Ahot-7227-archived-project-data-access%3A0",
       "kind": "hf:evidence",
       "label": "The reporter could not share completed project map data through the download feature; a later comment explains why post-completion access matters.",
@@ -3695,6 +3733,18 @@
       }
     },
     {
+      "id": "urn:humanifest:hf:evidence:urn%3Ahumanifest%3Ahf%3Aopportunity%3Ahot-7227-archived-project-data-access%3A6",
+      "kind": "hf:evidence",
+      "label": "Completed required contribution-policy and frontend setup review, including CI/Docker, CRACO/MSW and exact locked Git manifests. A local network guard rejected four socket/DNS/listen attempts. The single frozen scripts-disabled install timed out after 1,200 seconds during fetching; no target tests ran and environment readiness remains unconfirmed.",
+      "attributes": {
+        "evidenceType": "measured"
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
       "id": "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Ahot-7227-archived-project-data-access%3Ahumanitarian_relevance_supported",
       "kind": "hf:gate",
       "label": "humanitarian_relevance_supported",
@@ -3741,9 +3791,9 @@
       "kind": "hf:gate",
       "label": "contribution_policy_understood",
       "attributes": {
-        "passed": false,
-        "cited": false,
-        "rationale": "Not established in this initial research intake; inspect relevant evidence before advancing."
+        "passed": true,
+        "cited": true,
+        "rationale": "Read the pinned AGENTS required setup/contribution/review documents, existing test standards and fork/develop workflow. Protected workflows and human-review/AI disclosure constraints are retained; reading them does not satisfy maintainer confirmation."
       },
       "provenance": {
         "status": "generated",
@@ -3868,8 +3918,8 @@
       "label": "environment_feasible",
       "attributes": {
         "passed": false,
-        "cited": false,
-        "rationale": "The dependency-free handler probe ran; it does not establish full React or extractor setup feasibility. Frontend scripts include nested setup and optional sourcemap upload; no target setup executed."
+        "cited": true,
+        "rationale": "Setup and contribution-policy audit completed, but the single frozen frontend install timed out during fetching after 1,200 seconds. No component test ran; feasibility remains unconfirmed until a bounded target baseline passes."
       },
       "provenance": {
         "status": "generated",
@@ -11932,6 +11982,38 @@
       }
     },
     {
+      "id": "urn:humanifest:mapping:b45a4b7957d9bfaf63e9287905f1466a2205e650febf8c04368cc8ed27cd3fc6",
+      "relation": "hf:source",
+      "sources": [
+        "urn:humanifest:hf:opportunity:cht-11342-dhis2-bs-month-export"
+      ],
+      "targets": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Acht-11342-dhis2-bs-month-export%3Adhis-scope-recheck-2026-09-09"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:0c84a094723552bb5ca55f4e5fde3ea201f480629e0356e02c145994aed34f20",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Acht-11342-dhis2-bs-month-export%3Adhis-scope-recheck-2026-09-09"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fopportunities%2Fcht-dhis2-bs-month-export.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
       "id": "urn:humanifest:mapping:bc90ac2263a16c6ac98c1f222502926016cd42c34ece3a8963c19390af874c6f",
       "relation": "hf:evidence",
       "sources": [
@@ -12256,6 +12338,54 @@
       "relation": "hf:current_record",
       "sources": [
         "urn:humanifest:hf:evidence:urn%3Ahumanifest%3Ahf%3Aopportunity%3Acht-11342-dhis2-bs-month-export%3A6"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fopportunities%2Fcht-dhis2-bs-month-export.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:27a04dd727a544865d264ab9573c9d5d2d0e0c23bbf290d05607ca1402d73615",
+      "relation": "hf:evidence",
+      "sources": [
+        "urn:humanifest:hf:opportunity:cht-11342-dhis2-bs-month-export"
+      ],
+      "targets": [
+        "urn:humanifest:hf:evidence:urn%3Ahumanifest%3Ahf%3Aopportunity%3Acht-11342-dhis2-bs-month-export%3A7"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:e27fa41dba1ef77414354885ab7d55a584321476309d28729cded3b49e52fc0f",
+      "relation": "hf:source",
+      "sources": [
+        "urn:humanifest:hf:evidence:urn%3Ahumanifest%3Ahf%3Aopportunity%3Acht-11342-dhis2-bs-month-export%3A7"
+      ],
+      "targets": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Acht-11342-dhis2-bs-month-export%3Adhis-scope-recheck-2026-09-09"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:971d3849d913c4de88a3bf0fa88963ff02634976a30d1e2e022ec03ca2c8d650",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:evidence:urn%3Ahumanifest%3Ahf%3Aopportunity%3Acht-11342-dhis2-bs-month-export%3A7"
       ],
       "targets": [
         "urn:humanifest:hf:record:portfolio%2Fopportunities%2Fcht-dhis2-bs-month-export.json"
@@ -17756,6 +17886,38 @@
       }
     },
     {
+      "id": "urn:humanifest:mapping:0b47697e87a0364d193c1bbe211b2c59590a1b52ff05b827702ef23b0a479b7d",
+      "relation": "hf:source",
+      "sources": [
+        "urn:humanifest:hf:opportunity:hot-7227-archived-project-data-access"
+      ],
+      "targets": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Ahot-7227-archived-project-data-access%3Ahot-environment-audit-2026-09-09"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:124d6d91bee15f6e0484e8165f65560b3b7de85c15c2326c3ab718ec9109d76f",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Ahot-7227-archived-project-data-access%3Ahot-environment-audit-2026-09-09"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fopportunities%2Fhot-7227-archived-project-data-access.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
       "id": "urn:humanifest:mapping:3126424fc55def0ea97b36d1964740906e629b24f6050b58c68713269b9d3d3a",
       "relation": "hf:evidence",
       "sources": [
@@ -18032,6 +18194,54 @@
       "relation": "hf:current_record",
       "sources": [
         "urn:humanifest:hf:evidence:urn%3Ahumanifest%3Ahf%3Aopportunity%3Ahot-7227-archived-project-data-access%3A5"
+      ],
+      "targets": [
+        "urn:humanifest:hf:record:portfolio%2Fopportunities%2Fhot-7227-archived-project-data-access.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:7ca415501efaef79f2cb866c29c14463ec4c1e2aff21909770e837e9c77932c8",
+      "relation": "hf:evidence",
+      "sources": [
+        "urn:humanifest:hf:opportunity:hot-7227-archived-project-data-access"
+      ],
+      "targets": [
+        "urn:humanifest:hf:evidence:urn%3Ahumanifest%3Ahf%3Aopportunity%3Ahot-7227-archived-project-data-access%3A6"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:97af57329cadc8bf0baf214ee0b5cd767e2bf6b10fccaeea409e31ac1d95175f",
+      "relation": "hf:source",
+      "sources": [
+        "urn:humanifest:hf:evidence:urn%3Ahumanifest%3Ahf%3Aopportunity%3Ahot-7227-archived-project-data-access%3A6"
+      ],
+      "targets": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Ahot-7227-archived-project-data-access%3Ahot-environment-audit-2026-09-09"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:3b86dc29a464f37148afc47d3a7a984d781186b71819fe8eb89fa002df3377b1",
+      "relation": "hf:current_record",
+      "sources": [
+        "urn:humanifest:hf:evidence:urn%3Ahumanifest%3Ahf%3Aopportunity%3Ahot-7227-archived-project-data-access%3A6"
       ],
       "targets": [
         "urn:humanifest:hf:record:portfolio%2Fopportunities%2Fhot-7227-archived-project-data-access.json"
@@ -18323,6 +18533,54 @@
       ],
       "targets": [
         "urn:humanifest:hf:record:portfolio%2Fopportunities%2Fhot-7227-archived-project-data-access.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:b4563baf5bb0b2258930aa6713e1aa5423567b55693e36da414f3cef3cf00f37",
+      "relation": "hf:source",
+      "sources": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Ahot-7227-archived-project-data-access%3Acontribution_policy_understood"
+      ],
+      "targets": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Ahot-7227-archived-project-data-access%3Ahot-environment-audit-2026-09-09"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:b2d1f8468ac6c36760495c72b8eb58e8fe67df598cd0e2a14fb0a4650a018eb5",
+      "relation": "hf:source",
+      "sources": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Ahot-7227-archived-project-data-access%3Acontribution_policy_understood"
+      ],
+      "targets": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Ahot-7227-archived-project-data-access%3Ahot-agent-guide"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:9c75077b1cf6b8e6fa09afab38a1c3f5de9a0e141b60f0f652861bddce11039f",
+      "relation": "hf:source",
+      "sources": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Ahot-7227-archived-project-data-access%3Acontribution_policy_understood"
+      ],
+      "targets": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Ahot-7227-archived-project-data-access%3Ahot-ai-full-policy"
       ],
       "cardinality": "one-to-one",
       "lossiness": "lossless",
@@ -18803,6 +19061,22 @@
       ],
       "targets": [
         "urn:humanifest:hf:record:portfolio%2Fopportunities%2Fhot-7227-archived-project-data-access.json"
+      ],
+      "cardinality": "one-to-one",
+      "lossiness": "lossless",
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:mapping:a46f149938e8bfcadac13536eb67512f2f03dc7546ae61ab9dba8d0fb2f4a67e",
+      "relation": "hf:source",
+      "sources": [
+        "urn:humanifest:hf:gate:urn%3Ahumanifest%3Ahf%3Aopportunity%3Ahot-7227-archived-project-data-access%3Aenvironment_feasible"
+      ],
+      "targets": [
+        "urn:humanifest:hf:source:urn%3Ahumanifest%3Ahf%3Aopportunity%3Ahot-7227-archived-project-data-access%3Ahot-environment-audit-2026-09-09"
       ],
       "cardinality": "one-to-one",
       "lossiness": "lossless",
