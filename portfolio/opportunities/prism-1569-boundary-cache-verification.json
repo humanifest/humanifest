@@ -1,0 +1,155 @@
+{
+  "id": "prism-1569-boundary-cache-verification",
+  "project_id": "wfp-prism",
+  "title": "Verify repeat-visit boundary transfers before extending cache lifetime",
+  "pipeline_state": "OPPORTUNITY-RESEARCH",
+  "research_next_step": "Trace final fetch options and boundary references; finish lockfile/lifecycle audit, then measure the existing browser fetch path for first load, warm reload, expired conditional response and changed content. Record actual transfer bytes and freshness, distinguishing controlled synthetic fixtures from any live-app observations. Reassess claimed savings before proposing content-addressed assets.",
+  "problem": "Large boundary JSON files retain stable paths and staging serves a one-hour cache lifetime. The endpoint supports 304 revalidation and an in-memory cache already exists, so the historical proposed transfer savings need independent verification.",
+  "humanitarian_relevance": "Reducing repeated loading cost may help users of a humanitarian risk-monitoring tool on constrained networks. No measured operational or beneficiary outcome.",
+  "evidence": [
+    {
+      "type": "self_reported",
+      "claim": "Issue author estimated 30\u201350% savings on an older preview by versioning heavy JSON assets. Not independently reproduced or assumed current.",
+      "source_id": "prism-1569"
+    },
+    {
+      "type": "measured",
+      "claim": "September 9 staging boundary HEAD returns JSON, Content-Length 17,207,428 and max-age=3600; conditional HEAD returns 304. The production-named host returns 642-byte HTML at that path. These checks download no boundary body and measure neither GET transfer nor browser cache behavior.",
+      "source_id": "prism-cache-audit"
+    },
+    {
+      "type": "measured",
+      "claim": "Pinned code uses stable public JSON paths and already caches boundary data/promises in memory by layer/ISO3. Existing tests mock the loader. Entry point unregisters the service worker.",
+      "source_id": "prism-cache-audit"
+    }
+  ],
+  "code_surface": "At master 603710958a025f15507164ccdaa24bc2515b70dc: frontend/vite.config.ts, firebase.json, scripts/country_build.sh, config/mozambique/layers.json, context/layers/boundary.ts, utils/boundary-cache.ts and its tests; fetchWithTimeout wrapper still to inspect.",
+  "proposed_change": "First establish actual avoidable transfer and required freshness. If justified and accepted, scope content-addressed static assets and reference rewriting; preserve dynamic data and update/rollback behavior.",
+  "tests": "Read three existing boundary-cache cases for force refresh, empty PMTiles and ISO3 keys. No target test execution. Proposed browser controls must measure GET bytes and new-content discovery across cache states.",
+  "environment": "Node >=20.6, Yarn 1.22.22, React/Vite and local common package. Manifest hooks, common build, Node Dockerfile and frontend CI inspected. No clone/install/target code/server/deployment. Lockfile/transitive hooks pending. Public HEAD requests require no account.",
+  "maintainer": "CODEOWNERS names ericboucher and wadhwamatic; no reviewer commitment or Humanifest outreach. Existing JSON-helper issue has two competing PRs and is excluded.",
+  "risks": "A 304 response may already avoid the claimed payload cost. Source size is not transfer size; staging is not proof of production revision. Long caching of mutable boundaries or dates could serve stale analysis. Browser eviction, compression and in-memory reuse affect benefit.",
+  "priority_rationale": "Public-benefit use case, current unassigned lead and concrete falsifiable browser-transfer investigation. Add research rather than claiming the historical saving or duplicating existing caching/PRs.",
+  "gates": {
+    "humanitarian_relevance_supported": {
+      "passed": true,
+      "rationale": "WFP describes a direct climate-risk and humanitarian-analysis use case; contribution-specific benefit remains unmeasured.",
+      "source_ids": [
+        "prism-purpose"
+      ]
+    },
+    "repository_active": {
+      "passed": true,
+      "rationale": "Unarchived, master pinned and repository pushed September 9; open issue and current PR list inspected.",
+      "source_ids": [
+        "prism-repo"
+      ]
+    },
+    "external_contributions_accepted": {
+      "passed": false,
+      "rationale": "Not yet established by the bounded intake; verify before implementation."
+    },
+    "contribution_policy_understood": {
+      "passed": false,
+      "rationale": "Not yet established by the bounded intake; verify before implementation."
+    },
+    "ai_policy_understood": {
+      "passed": false,
+      "rationale": "Not yet established by the bounded intake; verify before implementation."
+    },
+    "problem_current_and_consequential": {
+      "passed": false,
+      "rationale": "Staging JSON has a one-hour lifetime but supports 304 revalidation. Historical 30\u201350% transfer-saving claim is not independently verified; measure actual browser transfer and freshness before prioritizing a change."
+    },
+    "behavior_reproducible_or_verifiable": {
+      "passed": false,
+      "rationale": "Live HEAD and conditional HEAD responses are measured; browser GET transfer, expiry/eviction and deployed application behavior remain unverified."
+    },
+    "code_and_tests_located": {
+      "passed": true,
+      "rationale": "Vite/public-asset configuration, stable boundary references, existing in-memory cache and three cache tests located; no target tests executed.",
+      "source_ids": [
+        "prism-cache-audit"
+      ]
+    },
+    "change_bounded": {
+      "passed": false,
+      "rationale": "Research is limited to repeat-visit boundary transfers. Any implementation requires agreement on asset versioning, references and freshness; do not apply immutable caching to mutable data."
+    },
+    "regression_strategy_credible": {
+      "passed": false,
+      "rationale": "Existing tests mock network loading and do not cover browser caching. First/warm/expired/changed-content controls proposed but not executed."
+    },
+    "no_private_data_required": {
+      "passed": true,
+      "rationale": "Read-only public HTTP headers and synthetic browser fixtures can examine cache semantics without operational accounts or private data.",
+      "source_ids": [
+        "prism-cache-audit"
+      ]
+    },
+    "security_and_licensing_risk_acceptable": {
+      "passed": false,
+      "rationale": "Not yet established by the bounded intake; verify before implementation."
+    },
+    "environment_feasible": {
+      "passed": false,
+      "rationale": "Manifests, Vite, Docker and CI inspected, but lockfile/lifecycle audit and frontend baseline remain. No installation or target execution."
+    },
+    "maintainer_interest_confirmed": {
+      "passed": false,
+      "rationale": "Issue open and unassigned with no comments; no Humanifest inquiry, accepted scope or bot eligibility."
+    },
+    "probable_reviewer_identified": {
+      "passed": false,
+      "rationale": "Not yet established by the bounded intake; verify before implementation."
+    },
+    "benefit_justifies_review_cost": {
+      "passed": false,
+      "rationale": "Not yet established by the bounded intake; verify before implementation."
+    },
+    "user_can_explain_line_by_line": {
+      "passed": false,
+      "rationale": "Not yet established by the bounded intake; verify before implementation."
+    }
+  },
+  "score_inputs": {
+    "humanitarian_benefit": 3,
+    "acceptance_probability": 0,
+    "technical_confidence": 1,
+    "review_burden": 3,
+    "deployment_probability": 0
+  },
+  "score_basis": "Plausible constrained-network benefit; actual savings, accepted scope and deployment unverified, keeping implementation score zero.",
+  "sources": [
+    {
+      "id": "prism-purpose",
+      "url": "https://innovation.wfp.org/project/prism",
+      "accessed": "2026-09-09"
+    },
+    {
+      "id": "prism-repo",
+      "url": "https://api.github.com/repos/WFP-VAM/prism-app",
+      "accessed": "2026-09-09"
+    },
+    {
+      "id": "prism-1569",
+      "url": "https://github.com/WFP-VAM/prism-app/issues/1569",
+      "accessed": "2026-09-09"
+    },
+    {
+      "id": "prism-cache-audit",
+      "url": "https://github.com/humanifest-bot/humanifest/blob/codex/cht-admin-environment-audit/research/2026-09-09-prism-boundary-cache-audit.md",
+      "accessed": "2026-09-09"
+    },
+    {
+      "id": "prism-pr-template",
+      "url": "https://github.com/WFP-VAM/prism-app/blob/603710958a025f15507164ccdaa24bc2515b70dc/.github/pull_request_template.md",
+      "accessed": "2026-09-09"
+    },
+    {
+      "id": "prism-staging-boundary",
+      "url": "https://staging-prism-frontend.web.app/data/mozambique/moz_bnd_adm3_WFP.json",
+      "accessed": "2026-09-09"
+    }
+  ]
+}

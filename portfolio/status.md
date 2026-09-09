@@ -1,7 +1,7 @@
 # Portfolio Status
 
-Projects: 9
-Opportunities: 11
+Projects: 10
+Opportunities: 12
 Active implementations: 0/1
 Open external PRs: 0/2 (at most 1 per organization)
 
@@ -20,6 +20,21 @@ Scores do not authorize implementation or external writes. Candidates are listed
   - probable_reviewer_identified: Not established in the bounded source review; verify before implementation.
   - benefit_justifies_review_cost: Not established in the bounded source review; verify before implementation.
   - user_can_explain_line_by_line: Not established in the bounded source review; verify before implementation.
+- prism-1569-boundary-cache-verification: OPPORTUNITY-RESEARCH; score=0.0; failed_gates=13
+  Next: Verify the issue is current and bound its code surface and regression strategy.
+  - external_contributions_accepted: Not yet established by the bounded intake; verify before implementation.
+  - contribution_policy_understood: Not yet established by the bounded intake; verify before implementation.
+  - ai_policy_understood: Not yet established by the bounded intake; verify before implementation.
+  - problem_current_and_consequential: Staging JSON has a one-hour lifetime but supports 304 revalidation. Historical 30–50% transfer-saving claim is not independently verified; measure actual browser transfer and freshness before prioritizing a change.
+  - behavior_reproducible_or_verifiable: Live HEAD and conditional HEAD responses are measured; browser GET transfer, expiry/eviction and deployed application behavior remain unverified.
+  - change_bounded: Research is limited to repeat-visit boundary transfers. Any implementation requires agreement on asset versioning, references and freshness; do not apply immutable caching to mutable data.
+  - regression_strategy_credible: Existing tests mock network loading and do not cover browser caching. First/warm/expired/changed-content controls proposed but not executed.
+  - security_and_licensing_risk_acceptable: Not yet established by the bounded intake; verify before implementation.
+  - environment_feasible: Manifests, Vite, Docker and CI inspected, but lockfile/lifecycle audit and frontend baseline remain. No installation or target execution.
+  - maintainer_interest_confirmed: Issue open and unassigned with no comments; no Humanifest inquiry, accepted scope or bot eligibility.
+  - probable_reviewer_identified: Not yet established by the bounded intake; verify before implementation.
+  - benefit_justifies_review_cost: Not yet established by the bounded intake; verify before implementation.
+  - user_can_explain_line_by_line: Not yet established by the bounded intake; verify before implementation.
 - cht-10155-edit-user-load-failure: MAINTAINER-CHECK; score=0.0; failed_gates=1
   Next: Coordinate within standing authorization using the verified Humanifest identity; record current maintainer confirmation.
   - maintainer_interest_confirmed: Replacement inquiry sent as humanifest-bot at 2026-09-08T19:02:19Z. Await maintainer response; the outbound inquiry is not confirmation.

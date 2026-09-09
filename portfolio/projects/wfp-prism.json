@@ -1,0 +1,58 @@
+{
+  "id": "wfp-prism",
+  "name": "WFP PRISM risk-monitoring dashboard",
+  "repository": "https://github.com/WFP-VAM/prism-app",
+  "homepage": "https://innovation.wfp.org/project/prism",
+  "license": "MIT; root license retrieved at pinned master. Full dependency audit pending.",
+  "humanitarian_domain": "Climate-risk monitoring, hazard exposure and humanitarian decision support",
+  "impact_evidence": [
+    {
+      "type": "self_reported",
+      "claim": "WFP describes use of PRISM by government and humanitarian partners to combine hazard, vulnerability and exposure information. This supplies a plausible benefit pathway; no contribution-specific assistance or resource saving is measured.",
+      "source_id": "prism-purpose"
+    }
+  ],
+  "maintenance": {
+    "default_branch": "master",
+    "inspected_revision": "603710958a025f15507164ccdaa24bc2515b70dc",
+    "archived": false,
+    "pushed_at": "2026-09-09T04:15:35Z"
+  },
+  "contribution": {
+    "pathway": "README and PR template inspected; tests for RBD, Cambodia and Mozambique plus docs and appropriate visual evidence. No root CONTRIBUTING found. Verify organization policy and accepted scope before a fork-based PR to master.",
+    "ai_policy": "No explicit AI/bot rule established in inspected files; Humanifest bot pathway unconfirmed.",
+    "maintainer_check_required": true
+  },
+  "sources": [
+    {
+      "id": "prism-purpose",
+      "url": "https://innovation.wfp.org/project/prism",
+      "accessed": "2026-09-09"
+    },
+    {
+      "id": "prism-repo",
+      "url": "https://api.github.com/repos/WFP-VAM/prism-app",
+      "accessed": "2026-09-09"
+    },
+    {
+      "id": "prism-1569",
+      "url": "https://github.com/WFP-VAM/prism-app/issues/1569",
+      "accessed": "2026-09-09"
+    },
+    {
+      "id": "prism-cache-audit",
+      "url": "https://github.com/humanifest-bot/humanifest/blob/codex/cht-admin-environment-audit/research/2026-09-09-prism-boundary-cache-audit.md",
+      "accessed": "2026-09-09"
+    },
+    {
+      "id": "prism-pr-template",
+      "url": "https://github.com/WFP-VAM/prism-app/blob/603710958a025f15507164ccdaa24bc2515b70dc/.github/pull_request_template.md",
+      "accessed": "2026-09-09"
+    },
+    {
+      "id": "prism-staging-boundary",
+      "url": "https://staging-prism-frontend.web.app/data/mozambique/moz_bnd_adm3_WFP.json",
+      "accessed": "2026-09-09"
+    }
+  ]
+}
