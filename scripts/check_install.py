@@ -71,7 +71,7 @@ def main() -> None:
         compile_portfolio(fixture)
         commands = [
             ["--help"], ["validate", "--root", str(root)], ["report", "--root", str(root)],
-            ["finance", "--root", str(root)],
+            ["finance", "--root", str(root)], ["compute", "--root", str(root)],
             ["score", str(candidate)], ["brief", str(candidate)],
             ["handoff", str(records / "opportunities/sample.json"), "--target", "codex"],
             ["sources", "--root", str(root), "--as-of", "2026-09-08", "--max-age-days", "30", "--format", "json"],

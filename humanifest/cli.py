@@ -8,6 +8,7 @@ import json
 from pathlib import Path
 import sys
 
+from .compute import compute_report, load_compute_resources, validate_compute_resources
 from .finance import finance_report, load_funding_ledger, validate_funding_ledger
 from .models import (
     generate_candidate_brief,
@@ -47,6 +48,9 @@ def main(argv: list[str] | None = None) -> int:
     finance_parser = subparsers.add_parser("finance", help="Validate and summarize the public funding ledger")
     finance_parser.add_argument("--root", default=".", help="Repository root")
 
+    compute_parser = subparsers.add_parser("compute", help="Validate and summarize the public compute-resource registry")
+    compute_parser.add_argument("--root", default=".", help="Repository root")
+
     sources_parser = subparsers.add_parser("sources", help="List source access dates and offline review reminders")
     sources_parser.add_argument("--root", default=".", help="Repository root")
     sources_parser.add_argument("--as-of", required=True, type=_date, help="Review date in YYYY-MM-DD form")
@@ -57,7 +61,12 @@ def main(argv: list[str] | None = None) -> int:
     args = parser.parse_args(argv)
 
     try:
-        if args.command == "finance":
+        if args.command == "compute":
+            resources = load_compute_resources(Path(args.root))
+            if _print_issues(validate_compute_resources(resources)):
+                return 1
+            print(compute_report(resources))
+        elif args.command == "finance":
             ledger = load_funding_ledger(Path(args.root))
             if _print_issues(validate_funding_ledger(ledger)):
                 return 1

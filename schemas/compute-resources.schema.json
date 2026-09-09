@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://humanifest.org/schemas/compute-resources.schema.json",
+  "title": "Humanifest Compute Resources",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["version", "resources"],
+  "properties": {
+    "version": { "type": "integer", "const": 1 },
+    "resources": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/resource" }
+    }
+  },
+  "$defs": {
+    "resource": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "provider",
+        "account_scope",
+        "cost_basis",
+        "status",
+        "allowed_tasks",
+        "disallowed_tasks",
+        "limits",
+        "policy_url",
+        "policy_accessed",
+        "oversight"
+      ],
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$" },
+        "provider": { "type": "string", "minLength": 1 },
+        "account_scope": { "type": "string", "enum": ["individual", "organization", "fiscal-steward", "self-hosted", "sponsored", "other"] },
+        "cost_basis": { "type": "string", "enum": ["free-limited", "paid", "paid-or-sponsored", "donated", "self-hosted", "unknown"] },
+        "status": { "type": "string", "enum": ["allowed", "allowed-with-constraints", "requires-review", "disabled"] },
+        "allowed_tasks": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string", "minLength": 1 },
+          "uniqueItems": true
+        },
+        "disallowed_tasks": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string", "minLength": 1 },
+          "uniqueItems": true
+        },
+        "limits": { "type": "string", "minLength": 1 },
+        "policy_url": { "type": "string", "format": "uri" },
+        "policy_accessed": { "type": "string", "format": "date" },
+        "oversight": { "type": "string", "minLength": 1 }
+      }
+    }
+  }
+}

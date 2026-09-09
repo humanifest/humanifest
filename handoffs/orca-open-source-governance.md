@@ -20,7 +20,9 @@ Authority files to read first:
 - `docs/impact-methodology.md`
 - `docs/model-routing.md`
 - `docs/finance-governance.md`
+- `docs/compute-governance.md`
 - `portfolio/funding-ledger.json`
+- `portfolio/compute-resources.json`
 - `.github/FUNDING.yml`, when present
 
 Complexity to preserve:
@@ -31,6 +33,9 @@ Complexity to preserve:
   guaranteed pull requests, merge outcomes, or favorable scoring.
 - Humanifest is currently fiscally administered by Avaelus LLC/Inc.; funding
   records must keep Humanifest funds separate from Avaelus operating funds.
+- Extra compute is a governed resource. Do not pool personal accounts, share
+  credentials, evade provider limits, or use free capacity to increase
+  maintainer-facing volume.
 - External maintainer contact, issue comments, upstream pull requests, and other
   external writes require explicit authorization and the verified Humanifest
   identity.
@@ -65,6 +70,8 @@ Acceptance criteria:
 - Sponsorship language cannot reasonably be read as paid prioritization.
 - Fiscal-steward, ledger, and conflict language remain consistent with
   `docs/finance-governance.md`.
+- Compute-resource language remains consistent with
+  `docs/compute-governance.md`.
 - Contributor guidance invites useful negative findings and evidence-preserving
   review.
 - External-write constraints remain visible.
@@ -77,6 +84,7 @@ Verification:
 python3 -m unittest
 python3 -m humanifest.cli validate --root .
 python3 -m humanifest.cli finance --root .
+python3 -m humanifest.cli compute --root .
 python3 -m humanifest.cli report --root .
 ```
 

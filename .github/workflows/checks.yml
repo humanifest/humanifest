@@ -42,6 +42,8 @@ jobs:
         run: python -m humanifest.cli validate --root .
       - name: Validate finance ledger
         run: python -m humanifest.cli finance --root .
+      - name: Validate compute resources
+        run: python -m humanifest.cli compute --root .
       - name: Validate public schemas
         run: python -m scripts.check_schemas
       - name: Check generated status

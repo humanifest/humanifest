@@ -166,6 +166,23 @@ Use [GitHub Sponsors](https://github.com/sponsors/humanifest) or this
 repository's Sponsor button. Funding configuration lives in
 [.github/FUNDING.yml](.github/FUNDING.yml).
 
+## Compute Resources
+
+Humanifest can use donated, free, sponsored, paid, or self-hosted compute when
+the provider's terms and Humanifest's gates allow it. Extra compute should reduce
+review burden and improve verification; it must not increase unsolicited
+maintainer contact, bypass provider limits, pool personal accounts, or substitute
+model output for cited evidence.
+
+Compute-resource policy lives in [docs/compute-governance.md](docs/compute-governance.md)
+and the public registry lives in
+[portfolio/compute-resources.json](portfolio/compute-resources.json). Validate it
+with:
+
+```bash
+python3 -m humanifest.cli compute --root .
+```
+
 ## License
 
 Humanifest is licensed under the [MIT License](LICENSE). See

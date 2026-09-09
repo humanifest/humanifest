@@ -38,7 +38,7 @@
     },
     {
       "path": "handoffs/orca-open-source-governance.md",
-      "digest": "sha256:f94c3a4d8e465e0f34af9e093017dcc1ceb25b2c7374f4b0c6c3b69a697204af",
+      "digest": "sha256:bbe106b618c234a7b9ba4bfacc17ddd7006602dc70ddc23bd6918b62b0567f18",
       "relations": [
         "hf:current_record"
       ],

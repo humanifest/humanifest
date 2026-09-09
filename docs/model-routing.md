@@ -12,6 +12,11 @@ handoff when the next step is not immediately executed.
 Finance and sponsorship changes must also route through Orca unless they only add
 ledger entries that already satisfy `docs/finance-governance.md`.
 
+Compute-resource changes must route through Orca when they add a provider,
+change allowed tasks, alter identity or usage-limit assumptions, or affect
+automation boundaries. Simple registry updates may use faster Codex only when
+they already satisfy `docs/compute-governance.md`.
+
 Use faster Codex or Spark for bounded, independently verifiable work:
 
 - test or lint fixes with known failures;

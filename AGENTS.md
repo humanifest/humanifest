@@ -6,8 +6,10 @@ Humanifest is the source-of-truth control repository for humanitarian OSS contri
 
 - `GOALS.md`, `README.md`, and `docs/contribution-protocol.md` are controlling protocol documents.
 - `docs/finance-governance.md` controls fiscal-steward, sponsorship, ledger, and conflict-of-interest records.
+- `docs/compute-governance.md` controls donated, free, sponsored, paid, and self-hosted compute-resource records.
 - `schemas/*.schema.json` and `humanifest/models.py` define the current machine-readable record contract.
 - `humanifest/finance.py` and `portfolio/funding-ledger.json` define and store the current public finance-governance contract.
+- `humanifest/compute.py` and `portfolio/compute-resources.json` define and store the current public compute-governance contract.
 - `portfolio/projects/*.json` and `portfolio/opportunities/*.json` are current audited records.
 - `research/*.md` contains evidence synthesis and is not a substitute for project records.
 - `handoffs/*.md` contains reusable prompts derived from current records.
@@ -33,5 +35,6 @@ Run:
 python3 -m unittest
 python3 -m humanifest.cli validate --root .
 python3 -m humanifest.cli finance --root .
+python3 -m humanifest.cli compute --root .
 python3 -m humanifest.cli report --root .
 ```

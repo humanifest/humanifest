@@ -53,6 +53,18 @@ with:
 python3 -m humanifest.cli finance --root .
 ```
 
+## Compute resources
+
+Humanifest may use donated, free, sponsored, paid, or self-hosted compute only
+within provider terms and Humanifest gates. Do not pool personal accounts, share
+credentials, evade limits, or use extra compute to contact more maintainers.
+Follow [compute governance](docs/compute-governance.md) and validate resource
+records with:
+
+```bash
+python3 -m humanifest.cli compute --root .
+```
+
 ## Development checks
 
 Record validation and generated reports use the Python standard library. The

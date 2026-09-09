@@ -2,7 +2,7 @@
   "schemaVersion": "2.0.0",
   "id": "urn:humanifest:portfolio",
   "namespace": "humanifest",
-  "revision": "sha256:0faf572f112e0e5fc9a0470fedbab3e3e5e240d5f2c7a1eedb6c23f084a4d774",
+  "revision": "sha256:3d20588edaab646cc64d39de72b94a1649976cd7a9b1a26ada413767328588b5",
   "entities": [
     {
       "id": "urn:humanifest:routing:policy:contribution-protocol",

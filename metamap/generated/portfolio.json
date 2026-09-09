@@ -1,16 +1,16 @@
 {
   "compiler": "@roryscot/metamap@0.5.0",
   "inputs": {
-    "AGENTS.md": "sha256:d5fba8b6c2b98df47e5add839c3c631914ace8c3965563f0cc79ccfd06d1cf09",
+    "AGENTS.md": "sha256:5b2effe542c198937941cc20232b74aabfbc6eeb3e7f05d56531948376eaed53",
     "GOALS.md": "sha256:64cb6dc975ed2a5d43aa9274c2182eb338acd95727976f9d9a8349630d068370",
-    "README.md": "sha256:32ed708a8bfed54b6afb850e01b6d49495fee693495c871e0fba2c31cc466ac6",
+    "README.md": "sha256:bb8dc52d14b04c19f2b5b20145806d45fc2ee1c59470e1a8f2d2b9a5fd0ea98a",
     "docs/contribution-protocol.md": "sha256:b1ff355937fb1629bbe23b6d4471f2df9cfc9c444553cf56f16969cf38b35165",
     "schemas/project.schema.json": "sha256:ff4e4913b2cd9282766d9574a4c86582879b5bf3a01fcbc3a9b6bec4d1b04cce",
     "schemas/opportunity.schema.json": "sha256:0c3f3ec4c00e82fd3f8a7ff70972c55852d3ea9bca7b8ae87fd6e80701ce46ae",
     "humanifest/models.py": "sha256:9aa59368a9bccb5ec284376258e490b87cf2f235723c73bac03a0f1a0e5101f6",
     "humanifest/workflow.py": "sha256:b31ed1da0fc84c41ccb801fe8182e9b108b28d6fe9281a6f2da3de87d9e806c8",
     "humanifest/correspondence.py": "sha256:9c94d6c5fc380bdc549e3ec58d96757446891198018392ac16459d8e781764b1",
-    "metamap/exclusions.json": "sha256:30562bed54e9511becd6d2b4506b9026e26ec951dc75c265259731bb62202b7b",
+    "metamap/exclusions.json": "sha256:e90a561e7cca55e29181ab603a6664a24c127b89e48ef58346629523543f1e7e",
     "tools/metamap/compile.mjs": "sha256:d79009985f8f22a84202f4012939e4cb16f6070392360f8d8989d01ed46697a7",
     "tools/metamap/package-lock.json": "sha256:b48021b0e12efe06bbd279e8a01ce3b4b79879eb85d25cd7044d7e165ab18e76",
     "tools/metamap/package.json": "sha256:e8a27e41cab6a921d2c6c6e7c7fc15c4c61da94ad595977d3ceff5c0a94f118d",
@@ -43,7 +43,7 @@
     "handoffs/cursor-red-team-cht-11342.md": "sha256:d0bf56a9598ab8cd9d91bd64d4ab3c0008617742b4b169ade63b242a6b8d2664",
     "handoffs/maintainer-inquiry-cht-10155.md": "sha256:b4bc1c2143e3639719930e630db437c955fd8206910322d41d37c4ceb2bb2f5e",
     "handoffs/maintainer-inquiry-cht-11342.md": "sha256:9c0ae6a4573bafdc10cc34dee08f4954270f791e27e5614df7da8a0936c1172b",
-    "handoffs/orca-open-source-governance.md": "sha256:f94c3a4d8e465e0f34af9e093017dcc1ceb25b2c7374f4b0c6c3b69a697204af",
+    "handoffs/orca-open-source-governance.md": "sha256:bbe106b618c234a7b9ba4bfacc17ddd7006602dc70ddc23bd6918b62b0567f18",
     "handoffs/spark-record-review.md": "sha256:0478acd56543b354b3c7c7b6c913a8b3468b3e9b8ed041f9fd9ed6554632986a"
   },
   "generation": {
@@ -52,12 +52,12 @@
     "evaluatedAt": "2026-09-09T00:00:00.000Z",
     "graph": {
       "id": "urn:humanifest:portfolio",
-      "revision": "sha256:0faf572f112e0e5fc9a0470fedbab3e3e5e240d5f2c7a1eedb6c23f084a4d774",
-      "digest": "sha256:a460962842a26d84168a02b5b10227ca537caf7f8cd7f3384bc4eefa905fc1fa"
+      "revision": "sha256:3d20588edaab646cc64d39de72b94a1649976cd7a9b1a26ada413767328588b5",
+      "digest": "sha256:1c8708ae9429aae7fc0f2833e1f3577f9bb31ef8661e95559c4cbda6692fc647"
     },
     "policy": {
       "id": "urn:humanifest:viability",
-      "digest": "sha256:598beead2ba3e80d46bcf3f9d9da906dd120f91781f5cda14fbdec6a8931fdd4"
+      "digest": "sha256:3561f4de851ac8ad288de11dd3f566bdc295cccdd7a70c2c6ef4e6fdc7a2fcf1"
     },
     "context": {},
     "activeMappings": [
@@ -1987,19 +1987,19 @@
     "inactiveMappings": [],
     "evidence": [],
     "waiversApplied": [],
-    "id": "urn:metamap:generation:b7e1bba45ed89596fbbe523a14e96851058e4df620aa66a1c3d45903da619257",
-    "digest": "sha256:b7e1bba45ed89596fbbe523a14e96851058e4df620aa66a1c3d45903da619257"
+    "id": "urn:metamap:generation:f2cdc7c26b1962598f0c4a36b7b48b95ece4dce844ca88d79b604ee1e06584bc",
+    "digest": "sha256:f2cdc7c26b1962598f0c4a36b7b48b95ece4dce844ca88d79b604ee1e06584bc"
   },
   "projection": {
     "$schema": "https://raw.githubusercontent.com/roryscot/metamap/v0.4.0/schemas/metamap-projection.schema.json",
     "schemaVersion": "1.0.0",
     "generation": {
-      "id": "urn:metamap:generation:b7e1bba45ed89596fbbe523a14e96851058e4df620aa66a1c3d45903da619257",
-      "digest": "sha256:b7e1bba45ed89596fbbe523a14e96851058e4df620aa66a1c3d45903da619257"
+      "id": "urn:metamap:generation:f2cdc7c26b1962598f0c4a36b7b48b95ece4dce844ca88d79b604ee1e06584bc",
+      "digest": "sha256:f2cdc7c26b1962598f0c4a36b7b48b95ece4dce844ca88d79b604ee1e06584bc"
     },
     "graph": {
       "id": "urn:humanifest:portfolio",
-      "digest": "sha256:a460962842a26d84168a02b5b10227ca537caf7f8cd7f3384bc4eefa905fc1fa"
+      "digest": "sha256:1c8708ae9429aae7fc0f2833e1f3577f9bb31ef8661e95559c4cbda6692fc647"
     },
     "spec": {
       "id": "urn:humanifest:report-projection",
@@ -4451,8 +4451,8 @@
         ]
       }
     ],
-    "id": "urn:metamap:projection:53d9c1ed65c0ce4969acfbdae6cf4d87e379bb7624d80c0802e85c2697766ab7",
-    "digest": "sha256:53d9c1ed65c0ce4969acfbdae6cf4d87e379bb7624d80c0802e85c2697766ab7"
+    "id": "urn:metamap:projection:f4a51382233f013e9e58da885a143eead54cb29b44e60892e372d99afcdf31aa",
+    "digest": "sha256:f4a51382233f013e9e58da885a143eead54cb29b44e60892e372d99afcdf31aa"
   },
-  "projection_checksum": "sha256:edc80f34a0b0709fcccce4295e788384b87ad4d0e2b69d652f2ba25279923aef"
+  "projection_checksum": "sha256:1cc1e856e406fcedc2a896d809084dc70ea5c733519bdc48dd68d89e21526d6d"
 }

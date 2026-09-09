@@ -9,6 +9,7 @@ from pathlib import Path
 
 from jsonschema import Draft202012Validator, FormatChecker
 
+from humanifest.compute import validate_compute_resources
 from humanifest.finance import validate_funding_ledger
 from humanifest.models import BUILDING_STATES, HARD_GATES, MAINTAINER_CONFIRMED_STATES
 from tests.test_models import opportunity
@@ -39,6 +40,14 @@ def main() -> None:
     issues = validate_funding_ledger(ledger)
     if issues:
         raise AssertionError(f"funding ledger failed model validation: {issues[0].message}")
+    compute_schema = json.loads((root / "schemas" / "compute-resources.schema.json").read_text())
+    Draft202012Validator.check_schema(compute_schema)
+    compute_validator = Draft202012Validator(compute_schema, format_checker=FormatChecker())
+    resources = json.loads((root / "portfolio" / "compute-resources.json").read_text())
+    compute_validator.validate(resources)
+    issues = validate_compute_resources(resources)
+    if issues:
+        raise AssertionError(f"compute resources failed model validation: {issues[0].message}")
     print(f"Both public schemas and {record_count} audited records pass; invalid gate and source fixtures are rejected.")
 
 
