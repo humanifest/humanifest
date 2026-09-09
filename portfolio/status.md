@@ -1,13 +1,28 @@
 # Portfolio Status
 
-Projects: 8
-Opportunities: 10
+Projects: 9
+Opportunities: 11
 Active implementations: 0/1
 Open external PRs: 0/2 (at most 1 per organization)
 
 Status reflects supplied records; source access dates are not a live upstream check.
 Scores do not authorize implementation or external writes. Candidates are listed by state and ID, not ranked by raw score.
 
+- climada-1312-wildfire-fraction-verification: OPPORTUNITY-RESEARCH; score=0.0; failed_gates=13
+  Next: Verify the issue is current and bound its code surface and regression strategy.
+  - external_contributions_accepted: Not established in this initial source audit; verify evidence before advancing.
+  - contribution_policy_understood: Not established in this initial source audit; verify evidence before advancing.
+  - ai_policy_understood: Not established in this initial source audit; verify evidence before advancing.
+  - problem_current_and_consequential: Open issue and source path support investigation. Live wildfire version, reported percentages and operational consequences remain independently unverified.
+  - behavior_reproducible_or_verifiable: Not established in this initial source audit; verify evidence before advancing.
+  - change_bounded: Synthetic method-level research is bounded. A production fix could belong in data generation, validation or warnings; generic max/clipping may corrupt valid matrix semantics.
+  - regression_strategy_credible: Not established in this initial source audit; verify evidence before advancing.
+  - security_and_licensing_risk_acceptable: Not established in this initial source audit; verify evidence before advancing.
+  - environment_feasible: Not established in this initial source audit; verify evidence before advancing.
+  - maintainer_interest_confirmed: Issue is open and unassigned with no comments. No accepted Humanifest scope, reviewer commitment or bot pathway established.
+  - probable_reviewer_identified: Not established in this initial source audit; verify evidence before advancing.
+  - benefit_justifies_review_cost: Not established in this initial source audit; verify evidence before advancing.
+  - user_can_explain_line_by_line: Not established in this initial source audit; verify evidence before advancing.
 - odk-2169-worker-memory-threshold: OPPORTUNITY-RESEARCH; score=0.0; failed_gates=10
   Next: Verify the issue is current and bound its code surface and regression strategy.
   - contribution_policy_understood: Not established in the bounded source review; verify before implementation.

@@ -56,3 +56,12 @@ Sources accessed September 9: [OWID #6572](https://github.com/owid/etl/issues/65
 [XLSForm #856](https://github.com/XLSForm/pyxform/issues/856),
 [XLSForm #844](https://github.com/XLSForm/pyxform/issues/844),
 [XLSForm open PRs](https://github.com/XLSForm/pyxform/pulls).
+
+## Climate-risk intake
+
+The [CLIMADA fraction audit](2026-09-09-climada-wildfire-fraction-audit.md) adds
+#1312 as an independent source-to-synthetic-verification opportunity. The FAST
+track-duplication fix is already merged, and neighboring pandas/CI/World Bank
+issues have existing PRs. Source checks distinguish ordinary sparse addition
+from dataset/validation defects; reported national impact percentages remain
+unverified. No target setup or data download occurred.

@@ -1,0 +1,146 @@
+{
+  "id": "climada-1312-wildfire-fraction-verification",
+  "project_id": "climada-python",
+  "title": "Verify wildfire fraction bounds and impact propagation",
+  "pipeline_state": "OPPORTUNITY-RESEARCH",
+  "research_next_step": "Finish CI/configuration and dependency audit, then execute hash-checked original sparse canonicalization, fraction and impact methods on tiny synthetic matrices with duplicate, bounded, empty and invalid controls. Compare apparent values before/after without mutating observations. Keep full package import and live hazard downloads out until their paths are audited; agree a data-validation versus data-generation scope before any patch.",
+  "problem": "Issue #1312 reports duplicated wildfire fraction entries that can represent values above one and propagate into modeled impact. Source confirms summation and subsequent multiplication, but live data and reported country-level differences have not been independently reproduced.",
+  "humanitarian_relevance": "Reliable climate-risk estimates may support adaptation appraisal. The cause is relevant; no decision improvement, avoided loss or population benefit from this contribution is established.",
+  "evidence": [
+    {
+      "type": "self_reported",
+      "claim": "The issue reporter says v1.1 deduplicates intensity but retains duplicate fraction entries, with higher modeled totals in country comparisons. Those numerical results and the live dataset remain unverified.",
+      "source_id": "climada-1312"
+    },
+    {
+      "type": "measured",
+      "claim": "Pinned source normalizes sparse matrices by addition and multiplies returned fraction into damage ratios/exposure. Existing fixtures include out-of-range fraction values, so a new range check needs compatibility review. No runtime check occurred.",
+      "source_id": "climada-fraction-audit"
+    }
+  ],
+  "code_surface": "At develop dea46facc7856ed1c26adc1ee03e954c77d30c1b: climada/util/checker.py prune_csr_matrix; climada/hazard/base.py check_matrices and _get_fraction; climada/engine/impact_calc.py constructor and impact_matrix. Existing checker, hazard-base and impact-calculation test files inspected.",
+  "proposed_change": "First verify the mechanism and scope a regression strategy. Preserve sparse addition semantics; do not choose max/clipping or regenerate hazard data without provenance and maintainer agreement. Separate data repair from framework validation.",
+  "tests": "Read existing canonicalization, shape/empty-fraction and impact tests. Proposed method-level synthetic cases cover duplicate ones, bounded/fractional duplicates, negative/out-of-range data, empty identity and shape mismatch with known exposure/damage-ratio controls. No target tests or full-model run yet.",
+  "environment": "Public source retrieval only. Manifest has broad native/geospatial dependencies; importing climada creates configured data directories and copies bundled files with home defaults. CI, Conda, hooks and Docker setup paths still need review. No clone, install, import or data download.",
+  "maintainer": "Global CODEOWNERS lists emanuel-schmid, chahank and peanutfun, but no specific reviewer commitment. No Humanifest outreach or accepted scope.",
+  "risks": "Canonicalization preserves apparent sparse values; changing generic summation could be mathematically wrong. Dataset-specific deduplication semantics, empty-fraction identity, existing arbitrary-valued fixtures and full client/model behavior require separate checks. Reported numerical impact is not verified.",
+  "priority_rationale": "A recent, unresolved data-correctness report has an inspectable path into climate-impact calculation and a small independent synthetic verification step. This merits research, not a claim of high realized impact. Already-owned or merged neighboring fixes were not duplicated.",
+  "gates": {
+    "humanitarian_relevance_supported": {
+      "passed": true,
+      "rationale": "The project supplies open climate-risk/adaptation tooling; correctness has a plausible public-benefit pathway without a demonstrated contribution outcome.",
+      "source_ids": [
+        "climada-purpose"
+      ]
+    },
+    "repository_active": {
+      "passed": true,
+      "rationale": "Unarchived repository pushed September 7; develop and related issue/PR states read September 9.",
+      "source_ids": [
+        "climada-repo",
+        "climada-fraction-audit"
+      ]
+    },
+    "external_contributions_accepted": {
+      "passed": false,
+      "rationale": "Not established in this initial source audit; verify evidence before advancing."
+    },
+    "contribution_policy_understood": {
+      "passed": false,
+      "rationale": "Not established in this initial source audit; verify evidence before advancing."
+    },
+    "ai_policy_understood": {
+      "passed": false,
+      "rationale": "Not established in this initial source audit; verify evidence before advancing."
+    },
+    "problem_current_and_consequential": {
+      "passed": false,
+      "rationale": "Open issue and source path support investigation. Live wildfire version, reported percentages and operational consequences remain independently unverified."
+    },
+    "behavior_reproducible_or_verifiable": {
+      "passed": false,
+      "rationale": "Not established in this initial source audit; verify evidence before advancing."
+    },
+    "code_and_tests_located": {
+      "passed": true,
+      "rationale": "Pinned canonicalization, hazard checks and impact multiplication plus three existing test files inspected. No target execution.",
+      "source_ids": [
+        "climada-fraction-audit"
+      ]
+    },
+    "change_bounded": {
+      "passed": false,
+      "rationale": "Synthetic method-level research is bounded. A production fix could belong in data generation, validation or warnings; generic max/clipping may corrupt valid matrix semantics."
+    },
+    "regression_strategy_credible": {
+      "passed": false,
+      "rationale": "Not established in this initial source audit; verify evidence before advancing."
+    },
+    "no_private_data_required": {
+      "passed": true,
+      "rationale": "A tiny synthetic sparse-matrix probe can examine the reported mechanism without operational exposure or patient data.",
+      "source_ids": [
+        "climada-fraction-audit"
+      ]
+    },
+    "security_and_licensing_risk_acceptable": {
+      "passed": false,
+      "rationale": "Not established in this initial source audit; verify evidence before advancing."
+    },
+    "environment_feasible": {
+      "passed": false,
+      "rationale": "Not established in this initial source audit; verify evidence before advancing."
+    },
+    "maintainer_interest_confirmed": {
+      "passed": false,
+      "rationale": "Issue is open and unassigned with no comments. No accepted Humanifest scope, reviewer commitment or bot pathway established."
+    },
+    "probable_reviewer_identified": {
+      "passed": false,
+      "rationale": "Not established in this initial source audit; verify evidence before advancing."
+    },
+    "benefit_justifies_review_cost": {
+      "passed": false,
+      "rationale": "Not established in this initial source audit; verify evidence before advancing."
+    },
+    "user_can_explain_line_by_line": {
+      "passed": false,
+      "rationale": "Not established in this initial source audit; verify evidence before advancing."
+    }
+  },
+  "score_inputs": {
+    "humanitarian_benefit": 3,
+    "acceptance_probability": 0,
+    "technical_confidence": 0,
+    "review_burden": 3,
+    "deployment_probability": 0
+  },
+  "score_basis": "Provisional research relevance only. Unverified reproduction, acceptance and deployment keep implementation score zero.",
+  "sources": [
+    {
+      "id": "climada-purpose",
+      "url": "https://climada.ethz.ch/",
+      "accessed": "2026-09-09"
+    },
+    {
+      "id": "climada-repo",
+      "url": "https://api.github.com/repos/CLIMADA-project/climada_python",
+      "accessed": "2026-09-09"
+    },
+    {
+      "id": "climada-contributing",
+      "url": "https://github.com/CLIMADA-project/climada_python/blob/dea46facc7856ed1c26adc1ee03e954c77d30c1b/CONTRIBUTING.md",
+      "accessed": "2026-09-09"
+    },
+    {
+      "id": "climada-1312",
+      "url": "https://github.com/CLIMADA-project/climada_python/issues/1312",
+      "accessed": "2026-09-09"
+    },
+    {
+      "id": "climada-fraction-audit",
+      "url": "https://github.com/humanifest-bot/humanifest/blob/codex/cht-admin-environment-audit/research/2026-09-09-climada-wildfire-fraction-audit.md",
+      "accessed": "2026-09-09"
+    }
+  ]
+}

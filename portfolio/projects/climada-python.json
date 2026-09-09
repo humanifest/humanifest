@@ -1,0 +1,54 @@
+{
+  "id": "climada-python",
+  "name": "CLIMADA climate-risk framework",
+  "repository": "https://github.com/CLIMADA-project/climada_python",
+  "homepage": "https://climada.ethz.ch/",
+  "license": "GPLv3 declared by pinned manifest, README and source headers; LICENSE retrieved. Full dependency/license review pending.",
+  "humanitarian_domain": "Climate-risk assessment, natural-hazard modeling and adaptation option appraisal",
+  "impact_evidence": [
+    {
+      "type": "self_reported",
+      "claim": "The ETH-hosted project describes open climate-risk analysis and adaptation appraisal for research and decision support. This establishes a public-benefit pathway, not measured impact of the proposed fraction investigation.",
+      "source_id": "climada-purpose"
+    }
+  ],
+  "maintenance": {
+    "default_branch": "main",
+    "contribution_branch": "develop",
+    "inspected_revision": "dea46facc7856ed1c26adc1ee03e954c77d30c1b",
+    "archived": false,
+    "pushed_at": "2026-09-07T09:31:58Z"
+  },
+  "contribution": {
+    "pathway": "Fork contributions target develop with tests, Pylint, documentation/changelog and attribution requirements. Linked developer/reviewer guidance remains to inspect.",
+    "ai_policy": "No explicit AI/bot rule established in inspected files; eligibility of humanifest-bot remains unconfirmed.",
+    "maintainer_check_required": true
+  },
+  "sources": [
+    {
+      "id": "climada-purpose",
+      "url": "https://climada.ethz.ch/",
+      "accessed": "2026-09-09"
+    },
+    {
+      "id": "climada-repo",
+      "url": "https://api.github.com/repos/CLIMADA-project/climada_python",
+      "accessed": "2026-09-09"
+    },
+    {
+      "id": "climada-contributing",
+      "url": "https://github.com/CLIMADA-project/climada_python/blob/dea46facc7856ed1c26adc1ee03e954c77d30c1b/CONTRIBUTING.md",
+      "accessed": "2026-09-09"
+    },
+    {
+      "id": "climada-1312",
+      "url": "https://github.com/CLIMADA-project/climada_python/issues/1312",
+      "accessed": "2026-09-09"
+    },
+    {
+      "id": "climada-fraction-audit",
+      "url": "https://github.com/humanifest-bot/humanifest/blob/codex/cht-admin-environment-audit/research/2026-09-09-climada-wildfire-fraction-audit.md",
+      "accessed": "2026-09-09"
+    }
+  ]
+}
