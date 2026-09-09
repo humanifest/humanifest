@@ -71,3 +71,11 @@ Accessed September 9, 2026:
 - [Official v2 search documentation](https://openfoodfacts.github.io/documentation/docs/Product-Opener/v2/search/get-search/)
 - [Official server API overview](https://github.com/openfoodfacts/openfoodfacts-server/blob/main/docs/api/index.md)
 - [Current contribution guide](https://github.com/openfoodfacts/openfoodfacts-python/blob/34d0629c970b3887a63c615ace7497a9a28b294b/CONTRIBUTING.md)
+
+## Subsequent bounded execution
+
+The [runtime verification](2026-09-09-openfoodfacts-runtime-verification.md) records
+38 passing unchanged SDK API tests and four original server-filter cases. It
+supersedes the initial no-execution status for those surfaces, while retaining
+full-service, deployment and acceptance limits. The candidate is now
+MAINTAINER-CHECK; the prepared verification note has not been sent.

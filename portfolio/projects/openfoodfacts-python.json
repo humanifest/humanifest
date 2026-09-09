@@ -3,7 +3,7 @@
   "name": "Open Food Facts Python SDK",
   "repository": "https://github.com/openfoodfacts/openfoodfacts-python",
   "homepage": "https://world.openfoodfacts.org/",
-  "license": "Not yet audited; repository contains LICENSE and MIT/CC0 license files. Read applicability before implementation.",
+  "license": "MIT: pinned project metadata, LICENSE target LICENSES/MIT.txt and REUSE catch-all notice inspected September 9.",
   "humanitarian_domain": "Public-benefit food information, transparent data access, health and sustainability research",
   "impact_evidence": [
     {
@@ -18,8 +18,8 @@
     "current_public_activity": "Unarchived; GitHub pushed_at 2026-09-01T12:46:38Z. Current issue and PR discussions inspected September 9."
   },
   "contribution": {
-    "pathway": "CONTRIBUTING welcomes fork-based PRs against develop with tests and passing CI. Existing PR #504 belongs to another author; support it rather than submit a replacement.",
-    "ai_policy": "Not established from the initial contribution-guide read. Complete policy, template and license inspection before considering submission.",
+    "pathway": "Fork-based PRs against develop with tests/CI. Pinned PR template requires maintainer agreement to assignment before acceptance. Humanifest is preparing verification support for existing PR #504; no replacement patch or accepted scope.",
+    "ai_policy": "Pinned PR template requires disclosure of LLM/version/mode, successful execution and screenshot/video proof. Bot-identity eligibility and specific support scope remain unconfirmed; no independent human review is claimed.",
     "maintainer_check_required": true
   },
   "sources": [
@@ -41,6 +41,11 @@
     {
       "id": "off-search-audit",
       "url": "https://github.com/humanifest-bot/humanifest/blob/codex/cht-admin-environment-audit/research/2026-09-09-openfoodfacts-search-contract-audit.md",
+      "accessed": "2026-09-09"
+    },
+    {
+      "id": "off-runtime-2026-09-09",
+      "url": "https://github.com/humanifest-bot/humanifest/blob/codex/cht-admin-environment-audit/research/2026-09-09-openfoodfacts-runtime-verification.md",
       "accessed": "2026-09-09"
     }
   ]

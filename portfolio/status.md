@@ -20,20 +20,6 @@ Scores do not authorize implementation or external writes. Candidates are listed
   - probable_reviewer_identified: Not established in the bounded source review; verify before implementation.
   - benefit_justifies_review_cost: Not established in the bounded source review; verify before implementation.
   - user_can_explain_line_by_line: Not established in the bounded source review; verify before implementation.
-- off-496-text-search-contract-verification: OPPORTUNITY-RESEARCH; score=0.0; failed_gates=12
-  Next: Verify the issue is current and bound its code surface and regression strategy.
-  - contribution_policy_understood: Not established in this research intake; inspect supporting evidence before advancement.
-  - ai_policy_understood: Not established in this research intake; inspect supporting evidence before advancement.
-  - problem_current_and_consequential: Not established in this research intake; inspect supporting evidence before advancement.
-  - behavior_reproducible_or_verifiable: A mismatch with the documented endpoint contract is source-backed. No SDK test, server query or end-to-end search reproduction ran.
-  - change_bounded: Not established in this research intake; inspect supporting evidence before advancement.
-  - regression_strategy_credible: Not established in this research intake; inspect supporting evidence before advancement.
-  - security_and_licensing_risk_acceptable: Not established in this research intake; inspect supporting evidence before advancement.
-  - environment_feasible: Not established in this research intake; inspect supporting evidence before advancement.
-  - maintainer_interest_confirmed: Maintainer explained the CGI authentication requirement, but has not confirmed this proposed verification contribution or replacement search contract. No Humanifest inquiry sent.
-  - probable_reviewer_identified: Not established in this research intake; inspect supporting evidence before advancement.
-  - benefit_justifies_review_cost: Not established in this research intake; inspect supporting evidence before advancement.
-  - user_can_explain_line_by_line: Not established in this research intake; inspect supporting evidence before advancement.
 - cht-10155-edit-user-load-failure: MAINTAINER-CHECK; score=0.0; failed_gates=1
   Next: Coordinate within standing authorization using the verified Humanifest identity; record current maintainer confirmation.
   - maintainer_interest_confirmed: Replacement inquiry sent as humanifest-bot at 2026-09-08T19:02:19Z. Await maintainer response; the outbound inquiry is not confirmation.
@@ -64,6 +50,16 @@ Scores do not authorize implementation or external writes. Candidates are listed
   - probable_reviewer_identified: Not established in this initial research intake; inspect relevant evidence before advancing.
   - benefit_justifies_review_cost: Not established in this initial research intake; inspect relevant evidence before advancing.
   - user_can_explain_line_by_line: No implementation or human line-by-line review has occurred.
+- off-496-text-search-contract-verification: MAINTAINER-CHECK; score=0.0; failed_gates=8
+  Next: Coordinate within standing authorization using the verified Humanifest identity; record current maintainer confirmation.
+  - problem_current_and_consequential: The current pinned server source supports the documented mismatch, and the SDK issue reports a failed search example. Deployment state, actual returned products and downstream consequence remain unverified.
+  - change_bounded: Not established in this research intake; inspect supporting evidence before advancement.
+  - regression_strategy_credible: Not established in this research intake; inspect supporting evidence before advancement.
+  - security_and_licensing_risk_acceptable: Not established in this research intake; inspect supporting evidence before advancement.
+  - maintainer_interest_confirmed: Maintainer explained the CGI authentication requirement, but has not confirmed this proposed verification contribution or replacement search contract. No Humanifest inquiry sent.
+  - probable_reviewer_identified: Not established in this research intake; inspect supporting evidence before advancement.
+  - benefit_justifies_review_cost: Not established in this research intake; inspect supporting evidence before advancement.
+  - user_can_explain_line_by_line: Not established in this research intake; inspect supporting evidence before advancement.
 - cht-10241-unique-race: PARKED; score=0.0; failed_gates=8
   Next: Keep parked until the stopping reason is resolved and evidence supports reconsideration.
   - behavior_reproducible_or_verifiable: Reproduction depends on timing/resource constraints and was not independently reproduced in this run.
