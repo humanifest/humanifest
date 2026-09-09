@@ -24,7 +24,7 @@
     "portfolio/projects/openfoodfacts-python.json": "sha256:9e997572d71d162e6c9c35ebb7a6d4bba164a0b719a98ea16647b5ec0cf507d5",
     "portfolio/projects/xlsform-pyxform.json": "sha256:6111dba835f5b95a0941552cbc61e10e8d832ba0f86127f6c9084378da6df87e",
     "portfolio/opportunities/cht-10155-edit-user-load-failure.json": "sha256:e7961f3f143e441f97481f1ba879d15bdbf95d7dd1ae6b459b494bc77591e99b",
-    "portfolio/opportunities/cht-dhis2-bs-month-export.json": "sha256:a22bdb58a75e6f5e062a32dc49b64b0680eda726c6b89574befb18803bb39ab6",
+    "portfolio/opportunities/cht-dhis2-bs-month-export.json": "sha256:65219076f75efe38d9f6086c3486e98714ad958719cbd086598d6ef5df0c3352",
     "portfolio/opportunities/cht-unique-race.json": "sha256:3d7fa47074d2c3830142f2170114d7391f42bc60a2f7e2d252959aa8afbd695b",
     "portfolio/opportunities/crisiscleanup-success-banner-failure.json": "sha256:39df8909e6723057cd5220635f83b07af17064e22830639cfce126f2d143e013",
     "portfolio/opportunities/hot-7227-archived-project-data-access.json": "sha256:cb2ff475f4f4b2d912e328f7ecb10fee614d8b1726fea6a714317b8436d3843c",
@@ -46,12 +46,12 @@
     "evaluatedAt": "2026-09-09T00:00:00.000Z",
     "graph": {
       "id": "urn:humanifest:portfolio",
-      "revision": "sha256:f56b5b2f8c1b2336445c4ffc6ac7352b614637edb26188946f1e46170db73023",
-      "digest": "sha256:a5fe8197e065891b4ddca4dd7371bca6ad3698e8afae87f1c69e67d6d03037f5"
+      "revision": "sha256:7beca0ed88821b3f0753fb5af3e902c7355c1a51086198e54391907989d876c4",
+      "digest": "sha256:b5e65cf73a6bfa707cff3c1e36d8b9728908b105cbc5acc7921a91f31544f691"
     },
     "policy": {
       "id": "urn:humanifest:viability",
-      "digest": "sha256:96a2153d266d08a3f390610670b2c17e00015cda848a5e2a18097b6aa53d0a6a"
+      "digest": "sha256:26ba0fcf5ea165dcfe76fe1dd5b621e996f979224449d937fd0f99d1dbcfaa17"
     },
     "context": {},
     "activeMappings": [
@@ -1622,19 +1622,19 @@
     "inactiveMappings": [],
     "evidence": [],
     "waiversApplied": [],
-    "id": "urn:metamap:generation:12025a9dbc7b0fbdd74973cea4f3cfca6bd77375b326d75dbaa398cb8fd54fa6",
-    "digest": "sha256:12025a9dbc7b0fbdd74973cea4f3cfca6bd77375b326d75dbaa398cb8fd54fa6"
+    "id": "urn:metamap:generation:37be0f51c56d4f566f02a16d2438b13cb329dd611fd38fc82654cc51d58cb966",
+    "digest": "sha256:37be0f51c56d4f566f02a16d2438b13cb329dd611fd38fc82654cc51d58cb966"
   },
   "projection": {
     "$schema": "https://raw.githubusercontent.com/roryscot/metamap/v0.4.0/schemas/metamap-projection.schema.json",
     "schemaVersion": "1.0.0",
     "generation": {
-      "id": "urn:metamap:generation:12025a9dbc7b0fbdd74973cea4f3cfca6bd77375b326d75dbaa398cb8fd54fa6",
-      "digest": "sha256:12025a9dbc7b0fbdd74973cea4f3cfca6bd77375b326d75dbaa398cb8fd54fa6"
+      "id": "urn:metamap:generation:37be0f51c56d4f566f02a16d2438b13cb329dd611fd38fc82654cc51d58cb966",
+      "digest": "sha256:37be0f51c56d4f566f02a16d2438b13cb329dd611fd38fc82654cc51d58cb966"
     },
     "graph": {
       "id": "urn:humanifest:portfolio",
-      "digest": "sha256:a5fe8197e065891b4ddca4dd7371bca6ad3698e8afae87f1c69e67d6d03037f5"
+      "digest": "sha256:b5e65cf73a6bfa707cff3c1e36d8b9728908b105cbc5acc7921a91f31544f691"
     },
     "spec": {
       "id": "urn:humanifest:report-projection",
@@ -2025,7 +2025,7 @@
           "attributes": {
             "recordId": "cht-11342-dhis2-bs-month-export",
             "path": "portfolio/opportunities/cht-dhis2-bs-month-export.json",
-            "digest": "sha256:a22bdb58a75e6f5e062a32dc49b64b0680eda726c6b89574befb18803bb39ab6",
+            "digest": "sha256:65219076f75efe38d9f6086c3486e98714ad958719cbd086598d6ef5df0c3352",
             "projectId": "community-health-toolkit"
           }
         },
@@ -2064,7 +2064,7 @@
                 "label": "portfolio/opportunities/cht-dhis2-bs-month-export.json",
                 "attributes": {
                   "path": "portfolio/opportunities/cht-dhis2-bs-month-export.json",
-                  "digest": "sha256:a22bdb58a75e6f5e062a32dc49b64b0680eda726c6b89574befb18803bb39ab6"
+                  "digest": "sha256:65219076f75efe38d9f6086c3486e98714ad958719cbd086598d6ef5df0c3352"
                 }
               }
             ]
@@ -3522,8 +3522,8 @@
         ]
       }
     ],
-    "id": "urn:metamap:projection:36e7a5e419b1aa266633fe98e4003eca5ed6aea565ac14334f1edce98651383f",
-    "digest": "sha256:36e7a5e419b1aa266633fe98e4003eca5ed6aea565ac14334f1edce98651383f"
+    "id": "urn:metamap:projection:10871e9ee6b2ae8997f5d92ce49ecdbf089d8da545f45241d74a196cbf3bcbff",
+    "digest": "sha256:10871e9ee6b2ae8997f5d92ce49ecdbf089d8da545f45241d74a196cbf3bcbff"
   },
-  "projection_checksum": "sha256:55b7a2e62c1cd8bb6c9a5441867f1891cfde3fca52fd11032e23ceaeb0bd0376"
+  "projection_checksum": "sha256:76a0a5084c7575be2fa49b1c96be2f3fe91754a5e47ab139ace58456d968a573"
 }

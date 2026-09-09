@@ -2,7 +2,7 @@
   "schemaVersion": "2.0.0",
   "id": "urn:humanifest:portfolio",
   "namespace": "humanifest",
-  "revision": "sha256:f56b5b2f8c1b2336445c4ffc6ac7352b614637edb26188946f1e46170db73023",
+  "revision": "sha256:7beca0ed88821b3f0753fb5af3e902c7355c1a51086198e54391907989d876c4",
   "entities": [
     {
       "id": "urn:humanifest:routing:policy:contribution-protocol",
@@ -2179,7 +2179,7 @@
       "attributes": {
         "recordId": "cht-11342-dhis2-bs-month-export",
         "path": "portfolio/opportunities/cht-dhis2-bs-month-export.json",
-        "digest": "sha256:a22bdb58a75e6f5e062a32dc49b64b0680eda726c6b89574befb18803bb39ab6",
+        "digest": "sha256:65219076f75efe38d9f6086c3486e98714ad958719cbd086598d6ef5df0c3352",
         "projectId": "community-health-toolkit"
       },
       "provenance": {
@@ -2193,7 +2193,7 @@
       "label": "portfolio/opportunities/cht-dhis2-bs-month-export.json",
       "attributes": {
         "path": "portfolio/opportunities/cht-dhis2-bs-month-export.json",
-        "digest": "sha256:a22bdb58a75e6f5e062a32dc49b64b0680eda726c6b89574befb18803bb39ab6"
+        "digest": "sha256:65219076f75efe38d9f6086c3486e98714ad958719cbd086598d6ef5df0c3352"
       },
       "provenance": {
         "status": "generated",
