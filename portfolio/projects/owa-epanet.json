@@ -1,0 +1,53 @@
+{
+  "id": "owa-epanet",
+  "name": "OWA-EPANET water-network modeling engine",
+  "repository": "https://github.com/OpenWaterAnalytics/EPANET",
+  "homepage": "https://wateranalytics.org/EPANET/",
+  "license": "MIT; pinned root license and attribution terms read. Dependency/license audit for test environment remains.",
+  "humanitarian_domain": "Water-distribution hydraulics, water quality modeling and infrastructure resilience",
+  "impact_evidence": [
+    {
+      "type": "self_reported",
+      "claim": "EPA describes EPANET applications in drinking-water distribution analysis, infrastructure and operations planning, and emergency preparation. OWA is a community branch distinguished from the official EPA release. No contribution-specific water-safety or resource-saving outcome is measured.",
+      "source_id": "epanet-purpose"
+    }
+  ],
+  "maintenance": {
+    "default_branch": "dev",
+    "inspected_revision": "83e25bbe2b0b460803e71df03bc989afe9557ea3",
+    "archived": false,
+    "pushed_at": "2026-08-27T19:53:29Z"
+  },
+  "contribution": {
+    "pathway": "README asks for issue discussion, a clear path, then a fork/branch based on dev and a PR. Build/test guidance inspected; no accepted Humanifest scope.",
+    "ai_policy": "No explicit AI/bot rule established in inspected files; organization policy and bot pathway need verification.",
+    "maintainer_check_required": true
+  },
+  "sources": [
+    {
+      "id": "epanet-purpose",
+      "url": "https://www.epa.gov/water-research/epanet",
+      "accessed": "2026-09-09"
+    },
+    {
+      "id": "epanet-repo",
+      "url": "https://api.github.com/repos/OpenWaterAnalytics/EPANET",
+      "accessed": "2026-09-09"
+    },
+    {
+      "id": "epanet-readme",
+      "url": "https://github.com/OpenWaterAnalytics/EPANET/blob/83e25bbe2b0b460803e71df03bc989afe9557ea3/README.md",
+      "accessed": "2026-09-09"
+    },
+    {
+      "id": "epanet-883",
+      "url": "https://github.com/OpenWaterAnalytics/EPANET/issues/883",
+      "accessed": "2026-09-09"
+    },
+    {
+      "id": "epanet-tank-audit",
+      "url": "https://github.com/humanifest-bot/humanifest/blob/codex/cht-admin-environment-audit/research/2026-09-09-epanet-tank-curve-audit.md",
+      "accessed": "2026-09-09"
+    }
+  ]
+}
