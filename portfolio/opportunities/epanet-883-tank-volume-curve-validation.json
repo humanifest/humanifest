@@ -3,7 +3,7 @@
   "project_id": "owa-epanet",
   "title": "Verify invalid tank-volume curves across file loading and API updates",
   "pipeline_state": "OPPORTUNITY-RESEARCH",
-  "research_next_step": "Set up audited isolated Boost dependencies and run the unchanged native test suite. Check whether the separately observed metric EN_VOLCURVE diameter discrepancy is already tracked. Then prepare a concise #883 evidence/scope inquiry covering file loading, assignment and later edits, with pump compatibility and explicit bot/AI disclosure; await maintainer confirmation before a fix.",
+  "research_next_step": "Verify whether the separately observed metric EN_VOLCURVE nominal-diameter discrepancy changes file round-trips or simulated results, using the unchanged library and valid synthetic networks in fixed units. Distinguish presentation-only differences from consequential behavior before proposing separate work. Prepare the existing #883 evidence/scope inquiry under current contribution and compute review rules; no implementation before maintainer confirmation.",
   "problem": "The real pinned library accepts decreasing and interior-dip water-storage volume curves through file loading, API assignment and later curve edits. Direct decreasing assignment returns a NaN diameter without an API error; increasing requested depth yields decreasing initial volume. No process crash or operational consequence is established.",
   "humanitarian_relevance": "Clear validation may improve reliability of water-network analysis tools. No measured effect on drinking-water safety, utility decisions or resource use.",
   "evidence": [
@@ -21,12 +21,17 @@
       "type": "measured",
       "claim": "Thirty-four native-library cases pass as current-behavior assertions across GPM/LPS units, three curve shapes and five entry paths, plus cylindrical and decreasing-pump controls. All open/assignment/hydraulic-initialization calls succeed. Direct decreasing assignment yields NaN diameter; interior dips and subsequent edits retain finite diameter while volume decreases with greater requested depth. Metric EN_VOLCURVE assignment also yields 0.3048 times the diameter from file/EN_settankdata routes for the same valid curve. All 144 tracked source files remain byte-identical before build and after probes.",
       "source_id": "epanet-native-reproduction"
+    },
+    {
+      "type": "measured",
+      "claim": "The unchanged native CMake baseline passes: 88 Boost cases across six binaries, plus two threaded runs returning status zero. All six CTest entries pass and the unregistered string-helper binary passes separately. All 34 behavior cases pass again against the test-enabled library; 144 tracked files remain byte-identical. Bounded searches found historical unit-changing/parameter issues, but not a matching report of the fixed-unit EN_VOLCURVE nominal-diameter discrepancy.",
+      "source_id": "epanet-native-baseline"
     }
   ],
   "code_surface": "At dev 83e25bbe2b0b460803e71df03bc989afe9557ea3: src/input1.c inittanks; src/input2.c parser; src/validate.c validatetanks/validatecurves; src/epanet.c public tank assignment, curve mutation and getters. Existing tests/test_curve.cpp and tests/test_node.cpp located. Real C library exercised through public API; no copied-function simulation.",
   "proposed_change": "First reproduce invalid-data handling through the real library and agree scope. Consider consistent tank-specific validation across relevant entry points only after maintainer confirmation; preserve generic/pump curve semantics and document errors/rollback.",
-  "tests": "34 native-library current-behavior cases pass: GPM/LPS \u00d7 increasing/decreasing/interior-dip curves \u00d7 file/EN_VOLCURVE/EN_settankdata/bulk-edit/point-edit, plus two cylindrical and two decreasing-pump controls. Level 3/6 volume queries and hydraulic initialization succeed even for invalid volume shapes. Existing Boost suite not yet run; no EN_runH or extended-period simulation.",
-  "environment": "Pinned unmodified library, output library and CLI built in /private/tmp with CMake 3.31.6, Apple Clang 21.0.0 and BUILD_TESTS=OFF. CMake wheel SHA256 verified against PyPI metadata, unpacked without global installation. Python 3.13.7 ctypes calls original native API. No target services, credentials or utility data; 144 tracked files unchanged, expected ignored generated export header accounted for. Isolated Boost setup remains for unchanged test suite.",
+  "tests": "All six registered CTest programs pass: 86 unchanged Boost cases plus a threaded program whose two EPANET runs each report status zero. The separately run, unregistered string-helper binary adds two cases, for 88 Boost cases across six binaries and seven executables overall. All 34 native-library behavior cases pass against the test-enabled library; all 144 tracked source files remain unchanged. No added production regression/fix or real-world operational validation.",
+  "environment": "Pinned native Release build with BUILD_TESTS=ON, CMake 3.31.6, Apple Clang 21.0.0 and isolated Boost 1.85.0. Official Boost archive SHA256 verified; selected test/system/thread/filesystem plus chrono/atomic components built locally with no global installation, inherited credentials or user/site build configuration. 88 Boost cases, two successful threaded runs and 34 native behavior cases pass; 144 tracked target files unchanged. No external services or operational-system access.",
   "maintainer": "Issue reported by LRossman; no assignment or Humanifest scope confirmation. General README invites discussion before fork-based changes. No outreach yet.",
   "risks": "NaN diameter reproduced without a process crash. Positive endpoint slope hides interior dips; later edits preserve old nominal diameter while volume queries change. A separate metric assignment discrepancy needs duplicate/scope verification. Valid decreasing pump curves must remain supported. No physical network simulation, field effect, accepted error/rollback policy or bot eligibility is established.",
   "priority_rationale": "A bounded invalid-input correctness report has current inspectable paths and clear controls in a public-benefit modeling engine. Already-fixed leakage and existing feature PRs are excluded; operational impact and acceptance remain unverified.",
@@ -80,8 +85,12 @@
       "rationale": "Research can compare loader, assignment and later mutation. Production checks must preserve legitimate other curve types and agree error/rollback semantics."
     },
     "regression_strategy_credible": {
-      "passed": false,
-      "rationale": "Real-library controls now cover five entry paths and both unit systems. Existing Boost baseline, accepted failure/rollback semantics and production regression integration remain."
+      "passed": true,
+      "rationale": "Unchanged native suite passes and real-library reproduction covers file/API assignment, later mutation, increasing/decreasing/interior-dip curves, pump/cylindrical controls and GPM/LPS modes. Accepted error/rollback semantics and a production regression patch remain to agree.",
+      "source_ids": [
+        "epanet-native-baseline",
+        "epanet-native-reproduction"
+      ]
     },
     "no_private_data_required": {
       "passed": true,
@@ -91,12 +100,18 @@
       ]
     },
     "security_and_licensing_risk_acceptable": {
-      "passed": false,
-      "rationale": "Not established in this bounded source intake; verify before implementation."
+      "passed": true,
+      "rationale": "Selected native build and test dependency path audited. MIT target and Boost Software License 1.0 reviewed, official archive checksums verified, local restricted setup with no operational-system access. This gate covers the inspected reproduction environment, not unreviewed future dependencies.",
+      "source_ids": [
+        "epanet-native-baseline"
+      ]
     },
     "environment_feasible": {
-      "passed": false,
-      "rationale": "Original native library builds and 34 public-API cases pass in isolation. Boost test dependencies and unchanged-suite baseline remain before full environment readiness."
+      "passed": true,
+      "rationale": "Audited isolated CMake/Clang/Boost setup builds the unchanged native suite; 88 Boost cases, two threaded runs and 34 behavior cases pass. No services/private inputs or global dependency installation are required.",
+      "source_ids": [
+        "epanet-native-baseline"
+      ]
     },
     "maintainer_interest_confirmed": {
       "passed": false,
@@ -118,7 +133,7 @@
   "score_inputs": {
     "humanitarian_benefit": 3,
     "acceptance_probability": 0,
-    "technical_confidence": 2,
+    "technical_confidence": 3,
     "review_burden": 3,
     "deployment_probability": 0
   },
@@ -152,6 +167,11 @@
     {
       "id": "epanet-native-reproduction",
       "url": "https://github.com/humanifest-bot/humanifest/blob/codex/cht-admin-environment-audit/research/2026-09-09-epanet-native-reproduction.md",
+      "accessed": "2026-09-09"
+    },
+    {
+      "id": "epanet-native-baseline",
+      "url": "https://github.com/humanifest-bot/humanifest/blob/codex/cht-admin-environment-audit/research/2026-09-09-epanet-native-baseline.md",
       "accessed": "2026-09-09"
     }
   ]

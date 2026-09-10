@@ -3,7 +3,7 @@
   "name": "OWA-EPANET water-network modeling engine",
   "repository": "https://github.com/OpenWaterAnalytics/EPANET",
   "homepage": "https://wateranalytics.org/EPANET/",
-  "license": "MIT; pinned root license and attribution terms read. Dependency/license audit for test environment remains.",
+  "license": "MIT target license and Boost Software License 1.0 for isolated test dependencies reviewed; checksum-verified CMake binary used locally. No source/dependency redistribution beyond the Humanifest fixture.",
   "humanitarian_domain": "Water-distribution hydraulics, water quality modeling and infrastructure resilience",
   "impact_evidence": [
     {
@@ -52,6 +52,11 @@
     {
       "id": "epanet-native-reproduction",
       "url": "https://github.com/humanifest-bot/humanifest/blob/codex/cht-admin-environment-audit/research/2026-09-09-epanet-native-reproduction.md",
+      "accessed": "2026-09-09"
+    },
+    {
+      "id": "epanet-native-baseline",
+      "url": "https://github.com/humanifest-bot/humanifest/blob/codex/cht-admin-environment-audit/research/2026-09-09-epanet-native-baseline.md",
       "accessed": "2026-09-09"
     }
   ]

@@ -1,6 +1,6 @@
 # EPANET water-storage curve behavior in the original native library
 
-September 9, 2026. This follows the [source intake](2026-09-09-epanet-tank-curve-audit.md).
+Initial runtime record, September 9, 2026. The [subsequent unchanged native baseline](2026-09-09-epanet-native-baseline.md) completes the Boost setup described as pending below. This follows the [source intake](2026-09-09-epanet-tank-curve-audit.md).
 The subject is water-storage geometry in a drinking-water distribution model.
 All networks here are synthetic local files. No real utility system, operational
 data, military system, security assessment or deployed service is involved.

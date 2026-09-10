@@ -8,16 +8,13 @@ Open external PRs: 0/2 (at most 1 per organization)
 Status reflects supplied records; source access dates are not a live upstream check.
 Scores do not authorize implementation or external writes. Candidates are listed by state and ID, not ranked by raw score.
 
-- epanet-883-tank-volume-curve-validation: OPPORTUNITY-RESEARCH; score=0.0; failed_gates=12
+- epanet-883-tank-volume-curve-validation: OPPORTUNITY-RESEARCH; score=0.0; failed_gates=9
   Next: Verify the issue is current and bound its code surface and regression strategy.
   - external_contributions_accepted: Not established in this bounded source intake; verify before implementation.
   - contribution_policy_understood: Not established in this bounded source intake; verify before implementation.
   - ai_policy_understood: Not established in this bounded source intake; verify before implementation.
   - problem_current_and_consequential: Current pinned runtime accepts invalid volume ordering and returns NaN diameter without errors. Operational consequences and practical priority remain unconfirmed.
   - change_bounded: Research can compare loader, assignment and later mutation. Production checks must preserve legitimate other curve types and agree error/rollback semantics.
-  - regression_strategy_credible: Real-library controls now cover five entry paths and both unit systems. Existing Boost baseline, accepted failure/rollback semantics and production regression integration remain.
-  - security_and_licensing_risk_acceptable: Not established in this bounded source intake; verify before implementation.
-  - environment_feasible: Original native library builds and 34 public-API cases pass in isolation. Boost test dependencies and unchanged-suite baseline remain before full environment readiness.
   - maintainer_interest_confirmed: Issue open, unassigned and without comments; no Humanifest inquiry, acceptance or bot eligibility established.
   - probable_reviewer_identified: Not established in this bounded source intake; verify before implementation.
   - benefit_justifies_review_cost: Not established in this bounded source intake; verify before implementation.
