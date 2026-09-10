@@ -6,6 +6,8 @@ source files match their Git blob IDs in the pinned, non-truncated source tree.
 No target source was modified, full repository cloned, app installed, server
 contacted or upstream message posted.
 
+Follow-up: [native baseline and four workflow probes](2026-09-10-mdsync-native-workflow.md) verify additional original-code paths and correct the workspace-install script assumption below.
+
 ## Result and consequence for the proposed scope
 
 The missing indicator-type option is supported by the pinned global-mapping
@@ -93,7 +95,9 @@ This is a bounded comparison of these two PRs, not an exhaustive duplicate searc
 The repository's `.yarnrc.yml` specifies `enableScripts: false`, hardened mode,
 checksum failures and a seven-day package age gate. This qualifies the earlier
 manifest-only concern: installation hooks exist, but this Yarn configuration
-already disables scripts. Preserve that setting. The `prepare`/`postinstall`
+disables dependency scripts but still permits workspace postinstall scripts. The
+subsequent native setup confirmed this exception; use `--mode=skip-build` to
+skip the install build phase. Preserve the dependency-script setting. The `prepare`/`postinstall`
 commands, Husky pre-push formatting/localization/tests and post-merge install
 hook were read and not executed.
 

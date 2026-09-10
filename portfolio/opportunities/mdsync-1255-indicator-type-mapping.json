@@ -20,15 +20,20 @@
       "type": "measured",
       "claim": "Seven isolated checks run the unchanged MappingMapper and original metadata helpers with schema-only adapters and published DHIS2 2.40 schemas. Supplied mappings rewrite indicator-type references; included source type objects receive destination IDs while retaining source fields. Inputs and pinned files remain unchanged. No full app, persistence or server-import behavior is established.",
       "source_id": "mdsync-mapping-audit"
+    },
+    {
+      "type": "measured",
+      "claim": "Thirteen unchanged native metadata tests and four additional original-code probes pass with network denied. The original factory resolves indicator types; the builder includes the source type; the mapper retains source fields under the destination ID; mapping round-trips through the original repository with memory storage. All 898 pinned source files remain unchanged after restoring one installer-generated translation template. No browser or actual DHIS2 import is tested.",
+      "source_id": "mdsync-native-workflow"
     }
   ],
   "code_surface": "At 78c8b8c22278dcbb7d2d5678eaafaa80b0fd0cf9: global mapping page omits indicator types; modelFactory registers IndicatorTypeModel; MetadataSyncUseCase invokes MappingMapper before repository save. Original mapper and metadata helpers exercised with schema-only boundaries. Existing payload-builder and mapping integration tests located but not run.",
   "proposed_change": "Verify the missing global option together with reference rewriting, mapping persistence and included-type behavior. Agree whether mapped indicator types should be reused, excluded or updated before implementing a focused change; a picker-only patch is not yet justified.",
-  "research_next_step": "Complete the isolated native test-path audit (shared test/build workflow, dependencies and fixtures), then verify original model/mapping persistence and whether the builder includes mapped indicator types. Check import semantics with synthetic metadata before proposing reuse or update behavior; no operational instances.",
-  "tests": "Seven isolated original-mapper checks pass with original metadata helpers, published DHIS2 2.40 schemas and explicit schema-only API/model adapters. Covers absent/supplied/disabled/unrelated mappings, global flag, included source fields, category-option control and input immutability. No native upstream suite, browser, persistence, expressions or server-import test.",
-  "environment": "Node 22.16.0, TypeScript 5.8.3 transpilation, checksum-verified lodash 4.18.0 and d2-api 1.21.0 static schemas in /tmp/humanifest-malaria-integration-screen. No package install, target clone or lifecycle commands. All 33 retrieved source blobs verified against pinned Git tree. Full app baseline and exact project toolchain remain pending.",
+  "research_next_step": "Verify the original Global Mapping UI with synthetic instances: absent indicator-type option, picker behavior and saved selection. Use the existing isolated native setup, then prepare a bounded inquiry about destination-type reuse versus update; do not access operational systems or change global import defaults.",
+  "tests": "13 unchanged upstream tests pass (10 payload-builder, 2 metadata synchronization, 1 local mapping), plus four native probes of original factory, mapper, builder and repository with synthetic metadata/memory storage. Network denial verified by EPERM control. Earlier seven schema-adapter checks also passed. No whole suite, type check, browser or server import.",
+  "environment": "Isolated Node 22.22.0 and immutable Yarn 4.12.0 setup; lockfile TypeScript 4.9.5, Vitest 3.2.4, lodash 4.18.1. 1974 packages installed with no inherited credentials. Dependency scripts disabled, but workspace localization ran; missing msgmerge warned and generated en.pot was preserved then restored. All 898 pinned files verified after tests. Future installs use --mode=skip-build; tests run under OS network denial.",
   "maintainer": "Issue #1255 is open and unassigned with zero comments; inspected timeline has project events and no linked PR. No scope or AI/bot confirmation. No outreach sent or follow-up date invented.",
-  "risks": "The mapper changes included source type IDs while retaining source fields such as factor. Destination overwrite is not demonstrated; builder inclusion and server semantics require verification. Existing PR #1051 overlaps the picker but neither #1051 nor #1251 adds this feature. AI/bot eligibility, accepted scope, full environment and benefit remain unresolved.",
+  "risks": "Native builder and mapper include source type fields under the mapped destination ID; actual target updates remain untested. Original importer defaults permit updates, but DHIS2 documentation notes MERGE limitations, so reuse/update semantics need confirmation. Browser behavior, AI/bot eligibility, accepted scope and real benefit remain unresolved.",
   "priority_rationale": "Cause-led selection links WHO malaria integration guidance to a current, narrow public request. Investigate it independently while other organizations review existing inquiries; do not equate issue age or activity with impact.",
   "gates": {
     "humanitarian_relevance_supported": {
@@ -63,8 +68,11 @@
       "rationale": "Pinned global-mapping list omits indicator types, consistent with the report. Runtime behavior, current user cost and deployment consequence remain unverified."
     },
     "behavior_reproducible_or_verifiable": {
-      "passed": false,
-      "rationale": "Original mapper behavior is verified in seven isolated cases with explicit adapters; missing-option UI and complete app workflow remain unreproduced, so the full behavior gate stays false."
+      "passed": true,
+      "rationale": "Native original factory/builder/mapper/repository behavior is verified in four synthetic probes after 13 unchanged tests pass. Static missing-option observation remains separate; no actual browser or destination update claimed.",
+      "source_ids": [
+        "mdsync-native-workflow"
+      ]
     },
     "code_and_tests_located": {
       "passed": true,
@@ -78,8 +86,11 @@
       "rationale": "Existing mapper can rewrite supplied indicator-type references, but included source type fields survive under the destination ID. Agree import/reuse behavior and verify builder/persistence scope before a production change."
     },
     "regression_strategy_credible": {
-      "passed": false,
-      "rationale": "Need original-code tests covering different indicator-type IDs, retained mappings and resulting metadata references; no tests run."
+      "passed": true,
+      "rationale": "Reusable original-code probes now cover builder inclusion, reference rewriting, retained source fields and mapping repository round-trip, alongside 13 passing upstream tests. Accepted semantics and UI/server checks remain to agree.",
+      "source_ids": [
+        "mdsync-native-workflow"
+      ]
     },
     "no_private_data_required": {
       "passed": true,
@@ -90,11 +101,14 @@
     },
     "security_and_licensing_risk_acceptable": {
       "passed": false,
-      "rationale": "Small probe uses verified published packages and pinned original files without installs or network-exposed adapters. Target Yarn disables scripts. Full application dependencies, shared workflows and fixture side effects are not yet fully audited."
+      "rationale": "Pinned target and published dependency setup inspected for local testing; network denied during 17 native checks. Full contribution/license eligibility remains unconfirmed. Workspace localization ran despite disabled dependency scripts, and its generated file was restored; do not repeat a claim that all scripts were disabled."
     },
     "environment_feasible": {
-      "passed": false,
-      "rationale": "README and manifest describe Yarn/Vitest/DHIS2 setup, but no isolated baseline has been attempted."
+      "passed": true,
+      "rationale": "Pinned project dependencies install immutably and selected native tests run successfully with network denied. Whole build/localization and browser readiness remain unverified; workspace postinstall exception is documented.",
+      "source_ids": [
+        "mdsync-native-workflow"
+      ]
     },
     "maintainer_interest_confirmed": {
       "passed": false,
@@ -116,11 +130,11 @@
   "score_inputs": {
     "humanitarian_benefit": 3,
     "acceptance_probability": 0,
-    "technical_confidence": 1,
+    "technical_confidence": 2,
     "review_burden": 2,
     "deployment_probability": 0
   },
-  "score_basis": "Cause relevance and isolated mapper behavior support continued research. Full environment, accepted scope and deployment remain unverified; implementation score stays zero.",
+  "score_basis": "Native baseline and four original-code workflow probes strengthen technical confidence. Accepted scope, browser behavior, actual destination effect and deployment remain unverified; implementation score is zero.",
   "sources": [
     {
       "id": "who-malaria-integration",
@@ -170,6 +184,11 @@
     {
       "id": "mdsync-mapping-audit",
       "url": "https://github.com/humanifest-bot/humanifest/blob/codex/cht-admin-environment-audit/research/2026-09-10-mdsync-mapping-audit.md",
+      "accessed": "2026-09-10"
+    },
+    {
+      "id": "mdsync-native-workflow",
+      "url": "https://github.com/humanifest-bot/humanifest/blob/codex/cht-admin-environment-audit/research/2026-09-10-mdsync-native-workflow.md",
       "accessed": "2026-09-10"
     }
   ]
