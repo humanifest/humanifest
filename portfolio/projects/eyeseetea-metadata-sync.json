@@ -1,0 +1,75 @@
+{
+  "id": "eyeseetea-metadata-sync",
+  "name": "MetaData Sync for DHIS2",
+  "repository": "https://github.com/EyeSeeTea/metadata-synchronization",
+  "homepage": "https://apps.dhis2.org/app/fd5f3f76-e306-477e-bcb6-3a28cdc784dd",
+  "license": "GitHub identifies GPL-3.0; full contribution and dependency license audit remains pending.",
+  "humanitarian_domain": "Malaria information-system integration and reusable health metadata",
+  "impact_evidence": [
+    {
+      "type": "self_reported",
+      "claim": "WHO July 2025 guidance recommends MetaData Sync for exchange between DHIS2 malaria repositories and other instances. This establishes a documented use pathway, not measured contribution-specific health benefit.",
+      "source_id": "who-malaria-integration"
+    }
+  ],
+  "maintenance": {
+    "default_branch": "development",
+    "inspected_revision": "78c8b8c22278dcbb7d2d5678eaafaa80b0fd0cf9",
+    "archived": false,
+    "pushed_at": "2026-08-24T12:44:45Z",
+    "latest_release": "v2.25.0",
+    "release_published_at": "2026-07-13T16:53:46Z"
+  },
+  "contribution": {
+    "pathway": "App Hub requests contact before contributing features. Pinned PR template asks for issue linkage, implementation, visual evidence and testing instructions. No Humanifest scope is accepted.",
+    "ai_policy": "Unresolved. No contributing file in repository community profile and organization .github lookup returned 404; neither proves bot eligibility or absence of agreements.",
+    "maintainer_check_required": true
+  },
+  "sources": [
+    {
+      "id": "who-malaria-integration",
+      "url": "https://cdn.who.int/media/docs/default-source/malaria/surveillance/guidance-on-establishing-a-national-malaria-data-repository-version-1.0-july-2025.pdf",
+      "accessed": "2026-09-10"
+    },
+    {
+      "id": "mdsync-app",
+      "url": "https://apps.dhis2.org/app/fd5f3f76-e306-477e-bcb6-3a28cdc784dd",
+      "accessed": "2026-09-10"
+    },
+    {
+      "id": "mdsync-repo",
+      "url": "https://api.github.com/repos/EyeSeeTea/metadata-synchronization",
+      "accessed": "2026-09-10"
+    },
+    {
+      "id": "mdsync-release",
+      "url": "https://github.com/EyeSeeTea/metadata-synchronization/releases/tag/v2.25.0",
+      "accessed": "2026-09-10"
+    },
+    {
+      "id": "mdsync-1255",
+      "url": "https://github.com/EyeSeeTea/metadata-synchronization/issues/1255",
+      "accessed": "2026-09-10"
+    },
+    {
+      "id": "mdsync-mapping-page",
+      "url": "https://github.com/EyeSeeTea/metadata-synchronization/blob/78c8b8c22278dcbb7d2d5678eaafaa80b0fd0cf9/src/presentation/webapp/core/pages/instance-mapping/InstanceMappingPage.tsx",
+      "accessed": "2026-09-10"
+    },
+    {
+      "id": "mdsync-readme",
+      "url": "https://github.com/EyeSeeTea/metadata-synchronization/blob/78c8b8c22278dcbb7d2d5678eaafaa80b0fd0cf9/README.md",
+      "accessed": "2026-09-10"
+    },
+    {
+      "id": "mdsync-pr-template",
+      "url": "https://github.com/EyeSeeTea/metadata-synchronization/blob/78c8b8c22278dcbb7d2d5678eaafaa80b0fd0cf9/.github/pull_request_template.md",
+      "accessed": "2026-09-10"
+    },
+    {
+      "id": "mdsync-screen",
+      "url": "https://github.com/humanifest-bot/humanifest/blob/codex/cht-admin-environment-audit/research/2026-09-10-malaria-data-integration-screen.md",
+      "accessed": "2026-09-10"
+    }
+  ]
+}

@@ -51,14 +51,27 @@ These are already proposed work, not invitations for a competing patch. Their
 contents, current discussion, deployment relevance and need for verification
 support would require inspection before considering a contribution.
 
-## Next action
+## Contribution-policy follow-up and decision
 
-Find the current public planning/backlog and contribution policies (many PR titles
-refer to OLMIS tracker identifiers), check bot/AI eligibility and contributor
-agreement requirements, and trace an actively maintained service/release to a
-malaria commodity workflow. If this yields a bounded unresolved problem or a
-maintainer-welcomed test-support task, create an audited project/opportunity record.
-Otherwise retain the negative screen and investigate another cause-led pathway.
+The current v3 contribution guide directs bugs to the OLMIS Jira project and
+describes fork/branch/PR contributions. Contributions to official repositories
+require a signed Contributor Assignment Agreement, or a Contributor License
+Agreement with approval. No completed Humanifest agreement is established here.
+The guide's backlog link redirected this read-only request to Atlassian login;
+the backlog contents and available work were not verified. No AI/bot eligibility
+was established. The older `open-lmis` repository's branching instructions differ
+from the v3 guide, so they must not be blended into a service contribution plan.
+
+**Defer OpenLMIS implementation discovery for now.** An unsigned agreement,
+unverified backlog and missing current deployment link make further setup a poor
+next use of compute. This is not a judgment against the cause or project. Revisit
+if an authorized contributor agreement and a concrete, current task become
+available. No new account, agreement, email or upstream message was submitted.
+
+Continue malaria discovery through DHIS2 data integration: WHO's July 2025
+national malaria repository guidance identifies specific software pathways that
+can be screened against current repositories. This is the next evidence search,
+not an accepted implementation opportunity.
 
 This work can proceed while the prepared EPANET inquiry awaits the human review
 required by current compute governance. It does not consume an implementation
@@ -75,6 +88,9 @@ Accessed September 10, 2026:
 - [Stock-management README](https://github.com/OpenLMIS/openlmis-stockmanagement/blob/master/README.md)
 - [Requisition open issues/PRs](https://api.github.com/repos/OpenLMIS/openlmis-requisition/issues?state=open&per_page=100)
 - [Stock-management open issues/PRs](https://api.github.com/repos/OpenLMIS/openlmis-stockmanagement/issues?state=open&per_page=100)
+- [OpenLMIS v3 contribution guide](https://docs.openlmis.org/en/latest/contribute/contributionGuide.html)
+- [Guide-linked backlog](https://openlmis.atlassian.net/secure/RapidBoard.jspa?rapidView=46&view=planning.nodetail) (login redirect; contents not verified)
+- [Legacy contribution guide](https://github.com/OpenLMIS/open-lmis/blob/master/CONTRIBUTING.md) (different repository/generation)
 
 Local public source snapshots are under `/tmp/humanifest-openlmis-screen`.
 This first screen is not a pinned source/build audit.
