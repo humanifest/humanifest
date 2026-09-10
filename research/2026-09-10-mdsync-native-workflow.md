@@ -1,5 +1,7 @@
 # MetaData Sync native baseline and indicator-type workflow
 
+> Follow-up: the [original Global Mapping browser probe](2026-09-10-mdsync-global-mapping-ui.md) now verifies the missing selector option and a category mapping control with synthetic services. The scope below remains the earlier native checks.
+
 Accessed September 10, 2026. Revision
 `78c8b8c22278dcbb7d2d5678eaafaa80b0fd0cf9`. This follow-up replaces the earlier
 schema-adapter limitation for the paths tested here; it does not establish

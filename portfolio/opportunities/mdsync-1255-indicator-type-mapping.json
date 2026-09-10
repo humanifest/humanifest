@@ -3,7 +3,7 @@
   "project_id": "eyeseetea-metadata-sync",
   "title": "Verify indicator-type mapping through DHIS2 global metadata settings",
   "pipeline_state": "OPPORTUNITY-RESEARCH",
-  "problem": "Issue #1255 requests remapping indicator types when source and target DHIS2 instances use different definitions. The pinned global-mapping model list omits this type; end-to-end behavior is not yet reproduced.",
+  "problem": "Issue #1255 requests remapping indicator types when source and target DHIS2 instances use different definitions. The original Global Mapping UI omits the type in a browser probe; an existing category mapping selects, saves and reloads with synthetic services. Actual destination import semantics remain unverified.",
   "humanitarian_relevance": "MetaData Sync is explicitly recommended in WHO malaria repository guidance. Reliable mapping could reduce integration work, but contribution-specific time savings and deployment are unverified.",
   "evidence": [
     {
@@ -23,17 +23,22 @@
     },
     {
       "type": "measured",
-      "claim": "Thirteen unchanged native metadata tests and four additional original-code probes pass with network denied. The original factory resolves indicator types; the builder includes the source type; the mapper retains source fields under the destination ID; mapping round-trips through the original repository with memory storage. All 898 pinned source files remain unchanged after restoring one installer-generated translation template. No browser or actual DHIS2 import is tested.",
+      "claim": "Thirteen unchanged native metadata tests and four additional original-code probes pass with network denied. The original factory resolves indicator types; the builder includes the source type; the mapper retains source fields under the destination ID; mapping round-trips through the original repository with memory storage. All 898 pinned source files remain unchanged after restoring one installer-generated translation template. Those native checks do not test browser behavior or actual DHIS2 import.",
       "source_id": "mdsync-native-workflow"
+    },
+    {
+      "type": "measured",
+      "claim": "The original Global Mapping UI rendered seven options without indicator types in the in-app browser. A synthetic category mapping selected destination A, survived full reload with its picker selection restored, then changed to B and survived another reload. Original apply/get/save use cases and repository ran with synthetic metadata and browser localStorage boundaries. All 898 original source files remain unchanged; no DHIS2 storage/import or deployed benefit is established.",
+      "source_id": "mdsync-global-ui"
     }
   ],
-  "code_surface": "At 78c8b8c22278dcbb7d2d5678eaafaa80b0fd0cf9: global mapping page omits indicator types; modelFactory registers IndicatorTypeModel; MetadataSyncUseCase invokes MappingMapper before repository save. Original mapper and metadata helpers exercised with schema-only boundaries. Existing payload-builder and mapping integration tests located but not run.",
-  "proposed_change": "Verify the missing global option together with reference rewriting, mapping persistence and included-type behavior. Agree whether mapped indicator types should be reused, excluded or updated before implementing a focused change; a picker-only patch is not yet justified.",
-  "research_next_step": "Verify the original Global Mapping UI with synthetic instances: absent indicator-type option, picker behavior and saved selection. Use the existing isolated native setup, then prepare a bounded inquiry about destination-type reuse versus update; do not access operational systems or change global import defaults.",
-  "tests": "13 unchanged upstream tests pass (10 payload-builder, 2 metadata synchronization, 1 local mapping), plus four native probes of original factory, mapper, builder and repository with synthetic metadata/memory storage. Network denial verified by EPERM control. Earlier seven schema-adapter checks also passed. No whole suite, type check, browser or server import.",
-  "environment": "Isolated Node 22.22.0 and immutable Yarn 4.12.0 setup; lockfile TypeScript 4.9.5, Vitest 3.2.4, lodash 4.18.1. 1974 packages installed with no inherited credentials. Dependency scripts disabled, but workspace localization ran; missing msgmerge warned and generated en.pot was preserved then restored. All 898 pinned files verified after tests. Future installs use --mode=skip-build; tests run under OS network denial.",
+  "code_surface": "At 78c8b8c22278dcbb7d2d5678eaafaa80b0fd0cf9: InstanceMappingPage global selector omits indicator types; modelFactory registers IndicatorTypeModel; MetadataSyncUseCase invokes MappingMapper before repository save. Thirteen unchanged payload-builder/integration tests and four native workflow probes passed. Original page, picker, mapping use cases and repository also exercised in the in-app browser with synthetic service/storage boundaries.",
+  "proposed_change": "If maintainers accept the contribution, add indicator types to the existing global mapping workflow with regression coverage for reference rewriting, mapping persistence and agreed included-type semantics. Agree whether destination types are reused unchanged, excluded from import or updated; do not widen global import defaults.",
+  "research_next_step": "Prepare a concise scope inquiry for human review: confirm that the original missing indicator-type option is still wanted, agree destination-type reuse versus update semantics and AI/bot contribution eligibility. Reference the browser control and native probes; do not change global import defaults or contact maintainers before review.",
+  "tests": "13 unchanged upstream tests pass (10 payload-builder, 2 metadata synchronization, 1 local mapping), plus four native probes of original factory, mapper, builder and repository with synthetic metadata/memory storage. Network denial verified by EPERM control. Earlier seven schema-adapter checks also passed. No whole suite, type check or server import. Original browser control verifies the missing selector option and category selection/save/reload/replacement through actual mapping code with synthetic metadata and localStorage; this is manual browser evidence, not an automated UI suite or DHIS2 datastore test.",
+  "environment": "Isolated Node 22.22.0 and immutable Yarn 4.12.0 setup; lockfile TypeScript 4.9.5, Vitest 3.2.4, lodash 4.18.1. 1974 packages installed with no inherited credentials. Dependency scripts disabled, but workspace localization ran; missing msgmerge warned and generated en.pot was preserved then restored. All 898 pinned files verified after tests. Future installs use --mode=skip-build; tests run under OS network denial. Synthetic UI bundle built with network denied, then served only on loopback with CSP connect-src none. Initial envDir:false was corrected to the empty probe env directory after inspecting Vite 4 behavior; rebuilt bundle rechecked. Full application build remains unverified.",
   "maintainer": "Issue #1255 is open and unassigned with zero comments; inspected timeline has project events and no linked PR. No scope or AI/bot confirmation. No outreach sent or follow-up date invented.",
-  "risks": "Native builder and mapper include source type fields under the mapped destination ID; actual target updates remain untested. Original importer defaults permit updates, but DHIS2 documentation notes MERGE limitations, so reuse/update semantics need confirmation. Browser behavior, AI/bot eligibility, accepted scope and real benefit remain unresolved.",
+  "risks": "Native builder and mapper include source type fields under the mapped destination ID; actual target updates remain untested. Original importer defaults permit updates, but DHIS2 documentation notes MERGE limitations, so reuse/update semantics need confirmation. Indicator-type UI behavior after a future change, actual DHIS2 storage/import, AI/bot eligibility, accepted scope and real benefit remain unresolved.",
   "priority_rationale": "Cause-led selection links WHO malaria integration guidance to a current, narrow public request. Investigate it independently while other organizations review existing inquiries; do not equate issue age or activity with impact.",
   "gates": {
     "humanitarian_relevance_supported": {
@@ -65,13 +70,18 @@
     },
     "problem_current_and_consequential": {
       "passed": false,
-      "rationale": "Pinned global-mapping list omits indicator types, consistent with the report. Runtime behavior, current user cost and deployment consequence remain unverified."
+      "rationale": "The original global selector omission is reproduced in a synthetic browser probe; issue remains open with zero comments on September 10. Current user cost and deployment consequence remain unverified.",
+      "source_ids": [
+        "mdsync-1255",
+        "mdsync-global-ui"
+      ]
     },
     "behavior_reproducible_or_verifiable": {
       "passed": true,
-      "rationale": "Native original factory/builder/mapper/repository behavior is verified in four synthetic probes after 13 unchanged tests pass. Static missing-option observation remains separate; no actual browser or destination update claimed.",
+      "rationale": "Native original factory/builder/mapper/repository behavior is verified, and the original global selector omission and category mapping control are reproduced in the in-app browser with synthetic services/storage. Actual destination import remains untested.",
       "source_ids": [
-        "mdsync-native-workflow"
+        "mdsync-native-workflow",
+        "mdsync-global-ui"
       ]
     },
     "code_and_tests_located": {
@@ -83,7 +93,7 @@
     },
     "change_bounded": {
       "passed": false,
-      "rationale": "Existing mapper can rewrite supplied indicator-type references, but included source type fields survive under the destination ID. Agree import/reuse behavior and verify builder/persistence scope before a production change."
+      "rationale": "Native probes and the browser category control establish existing behavior, but included source indicator-type fields survive under the destination ID. Agree type reuse/update semantics and any required exclusions before proposing a production change."
     },
     "regression_strategy_credible": {
       "passed": true,
@@ -105,9 +115,10 @@
     },
     "environment_feasible": {
       "passed": true,
-      "rationale": "Pinned project dependencies install immutably and selected native tests run successfully with network denied. Whole build/localization and browser readiness remain unverified; workspace postinstall exception is documented.",
+      "rationale": "Selected native tests and a probe browser bundle run successfully. Original UI control works with synthetic services and localStorage; full application build/localization and operational import remain unverified.",
       "source_ids": [
-        "mdsync-native-workflow"
+        "mdsync-native-workflow",
+        "mdsync-global-ui"
       ]
     },
     "maintainer_interest_confirmed": {
@@ -134,7 +145,7 @@
     "review_burden": 2,
     "deployment_probability": 0
   },
-  "score_basis": "Native baseline and four original-code workflow probes strengthen technical confidence. Accepted scope, browser behavior, actual destination effect and deployment remain unverified; implementation score is zero.",
+  "score_basis": "Native baseline, original-code workflow probes and the original browser selector/control strengthen technical confidence. Accepted scope, actual destination effect and deployment remain unverified; implementation score is zero.",
   "sources": [
     {
       "id": "who-malaria-integration",
@@ -189,6 +200,11 @@
     {
       "id": "mdsync-native-workflow",
       "url": "https://github.com/humanifest-bot/humanifest/blob/codex/cht-admin-environment-audit/research/2026-09-10-mdsync-native-workflow.md",
+      "accessed": "2026-09-10"
+    },
+    {
+      "id": "mdsync-global-ui",
+      "url": "https://github.com/humanifest-bot/humanifest/blob/codex/cht-admin-environment-audit/research/2026-09-10-mdsync-global-mapping-ui.md",
       "accessed": "2026-09-10"
     }
   ]
