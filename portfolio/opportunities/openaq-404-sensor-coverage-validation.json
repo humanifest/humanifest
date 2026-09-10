@@ -20,16 +20,21 @@
       "type": "measured",
       "claim": "Eight original-model/synthetic FastAPI scenarios passed expected assertions, including HTTP 500 for incomplete coverage and mixed valid/invalid sensors. Seven outputs from two unchanged SQL coverage functions were checked against the original model; two zero-period controls returned SQLSTATE 22012. The original router and deployed schema were not exercised.",
       "source_id": "openaq-coverage-reproduction"
+    },
+    {
+      "type": "measured",
+      "claim": "All 24 original sensor-route scenarios met assertions using the original query builder, response models and unedited DB.fetchPage with synthetic DB.fetch rows. Both endpoints reject incomplete coverage; valid and absent coverage pass. Database init.sql includes tables/metadata.sql, where both period columns are nullable integers without defaults in their definitions. Deployed constraints and ingestion remain unverified.",
+      "source_id": "openaq-original-router"
     }
   ],
-  "code_surface": "API 87c060c28f5b484e0e9953d247082f5e678935c9: Coverage/Sensor/SensorsResponse, fetch_sensors and existing sensor smoke tests. Database 0e49c258186372f4af6c5679a4e1ab47157f0158: two calculate_coverage functions in openaqdb/idempotent/util_functions.sql. Current period-column/migration contract remains unresolved.",
+  "code_surface": "API 87c060c28f5b484e0e9953d247082f5e678935c9: Coverage/Sensor/SensorsResponse, original sensor routes, QueryBuilder and DB.fetchPage. Database 0e49c258186372f4af6c5679a4e1ab47157f0158: calculate_coverage in idempotent/util_functions.sql; init.sql includes tables/metadata.sql, which adds both period columns as nullable integers.",
   "proposed_change": "First verify the failure and intended coverage contract. If accepted, provide a focused regression and agreed handling for missing reporting metadata; do not silently invent intervals, zero coverage, or widen response nullability.",
-  "research_next_step": "Exercise the original location-sensor router with synthetic database results and locate the current averaging/logging-period schema and ingestion contract. Resolve API fallback versus ingestion/database invariants before preparing a scope inquiry; do not repeat the completed pure-model and SQL probes.",
+  "research_next_step": "Check current ingestion ownership and complete contributor/AI-policy review, then prepare a concise scope inquiry grounded in the original-route reproduction and nullable column definitions. Maintainers must choose API handling versus ingestion/database invariants. Pure models, calculation functions and routes with synthetic database rows are already tested.",
   "priority_rationale": "Air-pollution burden and named OpenAQ community use motivate this research path. Select the unassigned sensor-access report over future SDK cleanup and already-owned Explorer/API fixes. No implementation priority or realized impact is implied.",
-  "tests": "Eight original-model/synthetic HTTP scenarios pass expected assertions. Two unchanged calculate_coverage functions ran in PostgreSQL 14.18 single-user mode: seven output/model checks and two division-by-zero boundary checks passed. Source integrity verified for 15 API and five database files. Original router, full upstream suite, deployed schema and operational API remain untested.",
-  "environment": "Isolated Python 3.13.7 environment installed 17 lockfile-hashed wheels without source builds. Original response models use Pydantic 2.11.1 and FastAPI 0.115.12. SQL ran in a fresh temporary PostgreSQL 14.18 cluster in single-user mode. Both probes ran with OS network denial; no listening service, existing database, cloud deployment or operational data request. Full application/test setup remains unresolved.",
+  "tests": "Prior eight model/HTTP scenarios and nine SQL checks passed. Now 24 original-router scenarios pass: ten row conditions on each endpoint plus four invalid-ID controls. Original QueryBuilder and unedited DB.fetchPage execute with synthetic DB.fetch rows; expected validation exceptions and HTTP effects checked separately. All 22 fetched API and 21 database files remain unchanged. Full SQL joins, middleware, upstream suite and deployed data remain untested.",
+  "environment": "Isolated Python 3.13.7 environment installed 17 lockfile-hashed wheels without source builds. Original response models use Pydantic 2.11.1 and FastAPI 0.115.12. SQL ran in a fresh temporary PostgreSQL 14.18 cluster in single-user mode. Both probes ran with OS network denial; no listening service, existing database, cloud deployment or operational data request. Full application/test setup remains unresolved. The original router and query builder now run with original response wrapping and synthetic DB.fetch rows; no additional packages or connection settings needed.",
   "maintainer": "Issue #404 is open and unassigned with one diagnostic comment; its inspected timeline has no linked PR. No Humanifest outreach, confirmed scope, reviewer commitment or follow-up date.",
-  "risks": "The demonstrated contract failure may need ingestion/database invariants rather than nullable API fields. Public table SQL omits the period columns while historical import SQL defines nullable columns, so deployed constraints cannot be inferred. Actual prevalence, affected users, full regression environment, AI/bot eligibility and complete contribution policy remain unresolved.",
+  "risks": "Checked-in initialization adds nullable period columns in tables/metadata.sql; the earlier missing source location is resolved. This does not prove deployed constraints or current ingestion behavior. Actual prevalence, affected users, full regression environment, AI/bot eligibility and complete contribution policy remain unresolved.",
   "gates": {
     "humanitarian_relevance_supported": {
       "passed": true,
@@ -67,10 +72,11 @@
     },
     "behavior_reproducible_or_verifiable": {
       "passed": true,
-      "rationale": "Pinned original SQL produces the five reported null coverage fields; original response models reject them. A synthetic FastAPI route reproduces HTTP 500 for incomplete and mixed sensor responses. This verifies the contract mechanism, not original routing or deployment.",
+      "rationale": "Original SQL produces the reported null fields. Original sensor routes, QueryBuilder and unedited DB.fetchPage reproduce the expected response-validation errors and HTTP 500 with synthetic database rows; valid/absent coverage, empty results and invalid IDs provide controls. Full middleware, SQL joins and deployment remain outside this probe.",
       "source_ids": [
         "openaq-coverage-reproduction",
-        "openaq-coverage-functions"
+        "openaq-coverage-functions",
+        "openaq-original-router"
       ]
     },
     "code_and_tests_located": {
@@ -90,7 +96,8 @@
       "passed": true,
       "rationale": "Executed controls distinguish valid, absent, null, incomplete, mixed and zero-observation responses, and default versus explicit-null SQL periods. They provide a reproducible contract regression basis; original-route integration and any eventual database constraint still require tests matching the agreed fix.",
       "source_ids": [
-        "openaq-coverage-reproduction"
+        "openaq-coverage-reproduction",
+        "openaq-original-router"
       ]
     },
     "no_private_data_required": {
@@ -106,7 +113,7 @@
     },
     "environment_feasible": {
       "passed": false,
-      "rationale": "Isolated original-model and PostgreSQL single-user probes ran successfully after manifest, lockfile, workflows, Dockerfile and settings inspection. Full application setup, current database schema and upstream test workflow paths remain unresolved."
+      "rationale": "Original models, routes, query builder, response wrapping and PostgreSQL calculation probes run in an isolated environment. Full application setup, deployed schema and upstream suite remain unresolved; current checked-in period definitions have been located."
     },
     "maintainer_interest_confirmed": {
       "passed": false,
@@ -217,6 +224,16 @@
     {
       "id": "openaq-coverage-functions",
       "url": "https://github.com/openaq/openaq-db/blob/0e49c258186372f4af6c5679a4e1ab47157f0158/openaqdb/idempotent/util_functions.sql",
+      "accessed": "2026-09-10"
+    },
+    {
+      "id": "openaq-original-router",
+      "url": "https://github.com/humanifest-bot/humanifest/blob/codex/cht-admin-environment-audit/research/2026-09-10-openaq-original-router.md",
+      "accessed": "2026-09-10"
+    },
+    {
+      "id": "openaq-period-columns",
+      "url": "https://github.com/openaq/openaq-db/blob/0e49c258186372f4af6c5679a4e1ab47157f0158/openaqdb/tables/metadata.sql",
       "accessed": "2026-09-10"
     }
   ]

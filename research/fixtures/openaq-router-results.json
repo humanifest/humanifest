@@ -1,0 +1,231 @@
+{
+  "api_revision": "87c060c28f5b484e0e9953d247082f5e678935c9",
+  "boundary": "Original sensor router, query builder, response models and extracted unedited DB.fetchPage; synthetic DB.fetch rows, no SQL execution or full app middleware",
+  "original_sources_unchanged": true,
+  "network_denial_control_passed": true,
+  "scenarios": [
+    {
+      "scenario": "valid",
+      "route": "location",
+      "status": 200,
+      "validation_fields": [],
+      "query_and_params_checked": true
+    },
+    {
+      "scenario": "valid",
+      "route": "sensor",
+      "status": 200,
+      "validation_fields": [],
+      "query_and_params_checked": true
+    },
+    {
+      "scenario": "zero_observations",
+      "route": "location",
+      "status": 200,
+      "validation_fields": [],
+      "query_and_params_checked": true
+    },
+    {
+      "scenario": "zero_observations",
+      "route": "sensor",
+      "status": 200,
+      "validation_fields": [],
+      "query_and_params_checked": true
+    },
+    {
+      "scenario": "coverage_absent",
+      "route": "location",
+      "status": 200,
+      "validation_fields": [],
+      "query_and_params_checked": true
+    },
+    {
+      "scenario": "coverage_absent",
+      "route": "sensor",
+      "status": 200,
+      "validation_fields": [],
+      "query_and_params_checked": true
+    },
+    {
+      "scenario": "coverage_null",
+      "route": "location",
+      "status": 200,
+      "validation_fields": [],
+      "query_and_params_checked": true
+    },
+    {
+      "scenario": "coverage_null",
+      "route": "sensor",
+      "status": 200,
+      "validation_fields": [],
+      "query_and_params_checked": true
+    },
+    {
+      "scenario": "both_periods_null",
+      "route": "location",
+      "status": 500,
+      "validation_fields": [
+        "expected_count",
+        "expected_interval",
+        "observed_interval",
+        "percent_complete",
+        "percent_coverage"
+      ],
+      "query_and_params_checked": true
+    },
+    {
+      "scenario": "both_periods_null",
+      "route": "sensor",
+      "status": 500,
+      "validation_fields": [
+        "expected_count",
+        "expected_interval",
+        "observed_interval",
+        "percent_complete",
+        "percent_coverage"
+      ],
+      "query_and_params_checked": true
+    },
+    {
+      "scenario": "averaging_null",
+      "route": "location",
+      "status": 500,
+      "validation_fields": [
+        "expected_interval",
+        "observed_interval",
+        "percent_coverage"
+      ],
+      "query_and_params_checked": true
+    },
+    {
+      "scenario": "averaging_null",
+      "route": "sensor",
+      "status": 500,
+      "validation_fields": [
+        "expected_interval",
+        "observed_interval",
+        "percent_coverage"
+      ],
+      "query_and_params_checked": true
+    },
+    {
+      "scenario": "logging_null",
+      "route": "location",
+      "status": 500,
+      "validation_fields": [
+        "expected_count",
+        "expected_interval",
+        "percent_complete"
+      ],
+      "query_and_params_checked": true
+    },
+    {
+      "scenario": "logging_null",
+      "route": "sensor",
+      "status": 500,
+      "validation_fields": [
+        "expected_count",
+        "expected_interval",
+        "percent_complete"
+      ],
+      "query_and_params_checked": true
+    },
+    {
+      "scenario": "mixed",
+      "route": "location",
+      "status": 500,
+      "validation_fields": [
+        "expected_count",
+        "expected_interval",
+        "observed_interval",
+        "percent_complete",
+        "percent_coverage"
+      ],
+      "query_and_params_checked": true
+    },
+    {
+      "scenario": "mixed",
+      "route": "sensor",
+      "status": 500,
+      "validation_fields": [
+        "expected_count",
+        "expected_interval",
+        "observed_interval",
+        "percent_complete",
+        "percent_coverage"
+      ],
+      "query_and_params_checked": true
+    },
+    {
+      "scenario": "empty_coverage",
+      "route": "location",
+      "status": 500,
+      "validation_fields": [
+        "expectedCount",
+        "expectedInterval",
+        "observedCount",
+        "observedInterval",
+        "percentComplete",
+        "percentCoverage"
+      ],
+      "query_and_params_checked": true
+    },
+    {
+      "scenario": "empty_coverage",
+      "route": "sensor",
+      "status": 500,
+      "validation_fields": [
+        "expectedCount",
+        "expectedInterval",
+        "observedCount",
+        "observedInterval",
+        "percentComplete",
+        "percentCoverage"
+      ],
+      "query_and_params_checked": true
+    },
+    {
+      "scenario": "no_results",
+      "route": "location",
+      "status": 200,
+      "validation_fields": [],
+      "query_and_params_checked": true
+    },
+    {
+      "scenario": "no_results",
+      "route": "sensor",
+      "status": 404,
+      "validation_fields": [],
+      "query_and_params_checked": true
+    },
+    {
+      "scenario": "invalid_path",
+      "path": "/v3/locations/0/sensors",
+      "status": 422,
+      "database_not_called": true
+    },
+    {
+      "scenario": "invalid_path",
+      "path": "/v3/locations/not-an-id/sensors",
+      "status": 422,
+      "database_not_called": true
+    },
+    {
+      "scenario": "invalid_path",
+      "path": "/v3/sensors/0",
+      "status": 422,
+      "database_not_called": true
+    },
+    {
+      "scenario": "invalid_path",
+      "path": "/v3/sensors/not-an-id",
+      "status": 422,
+      "database_not_called": true
+    }
+  ],
+  "all_checks_passed": true,
+  "source_integrity_counts": {
+    "api": 22,
+    "db": 21
+  }
+}

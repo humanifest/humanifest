@@ -1,5 +1,7 @@
 # OpenAQ #404: original coverage calculation and response validation
 
+Follow-up: the [original-router audit](2026-09-10-openaq-original-router.md) extends these checks and locates the period-column definitions in the initialization path. Untested-route and missing-column-source statements below describe this earlier probe.
+
 Executed September 10, 2026. API revision
 `87c060c28f5b484e0e9953d247082f5e678935c9`; database revision
 `0e49c258186372f4af6c5679a4e1ab47157f0158`.
