@@ -1,0 +1,110 @@
+{
+  "id": "openaq-api",
+  "name": "OpenAQ API",
+  "repository": "https://github.com/openaq/openaq-api",
+  "homepage": "https://openaq.org/platform/",
+  "license": "GitHub identifies MIT for this API repository; full contribution and dependency license audit remains pending.",
+  "humanitarian_domain": "Public air-quality measurement access and environmental-health data",
+  "impact_evidence": [
+    {
+      "type": "self_reported",
+      "claim": "OpenAQ reports that Clean Air One Atmosphere uses its platform to preserve and share air-quality measurements in Ghana and Malawi. This is a named operational pathway, not independent attribution of health benefit or proof that API #404 affects that organization.",
+      "source_id": "openaq-community-use"
+    },
+    {
+      "type": "inferred",
+      "claim": "Reliable access to sensor metadata could reduce interrupted analysis of public pollution measurements. Contribution-specific use, acceptance and benefits remain unverified.",
+      "source_id": "openaq-screen"
+    }
+  ],
+  "maintenance": {
+    "default_branch": "main",
+    "inspected_revision": "87c060c28f5b484e0e9953d247082f5e678935c9",
+    "archived": false,
+    "pushed_at": "2026-05-22T17:12:13Z",
+    "open_issue_count_excluding_prs": 10,
+    "open_pr_count": 6
+  },
+  "contribution": {
+    "pathway": "Pinned guide welcomes fork-based contributions and focused patches. No Humanifest scope is accepted. The web issue-creation control appeared restricted; posting availability must be verified without attempting a workaround.",
+    "ai_policy": "Unresolved; the inspected guide does not establish Humanifest AI/bot eligibility. Organization policy and complete setup/contribution review remain pending.",
+    "maintainer_check_required": true
+  },
+  "sources": [
+    {
+      "id": "who-air-burden",
+      "url": "https://www.who.int/publications/i/item/B09563",
+      "accessed": "2026-09-10"
+    },
+    {
+      "id": "openaq-platform",
+      "url": "https://openaq.org/about/initiatives/openaq-data-platform/",
+      "accessed": "2026-09-10"
+    },
+    {
+      "id": "openaq-community-use",
+      "url": "https://openaq.org/about/use-cases/data-for-communities/",
+      "accessed": "2026-09-10"
+    },
+    {
+      "id": "openaq-api-repo",
+      "url": "https://api.github.com/repos/openaq/openaq-api",
+      "accessed": "2026-09-10"
+    },
+    {
+      "id": "openaq-api-items",
+      "url": "https://api.github.com/repos/openaq/openaq-api/issues?state=open&per_page=100",
+      "accessed": "2026-09-10"
+    },
+    {
+      "id": "openaq-404",
+      "url": "https://github.com/openaq/openaq-api/issues/404",
+      "accessed": "2026-09-10"
+    },
+    {
+      "id": "openaq-404-diagnosis",
+      "url": "https://github.com/openaq/openaq-api/issues/404#issuecomment-4783126755",
+      "accessed": "2026-09-10"
+    },
+    {
+      "id": "openaq-404-timeline",
+      "url": "https://api.github.com/repos/openaq/openaq-api/issues/404/timeline",
+      "accessed": "2026-09-10"
+    },
+    {
+      "id": "openaq-contributing",
+      "url": "https://github.com/openaq/openaq-api/blob/87c060c28f5b484e0e9953d247082f5e678935c9/CONTRIBUTING.md",
+      "accessed": "2026-09-10"
+    },
+    {
+      "id": "openaq-responses",
+      "url": "https://github.com/openaq/openaq-api/blob/87c060c28f5b484e0e9953d247082f5e678935c9/openaq_api/v3/models/responses.py",
+      "accessed": "2026-09-10"
+    },
+    {
+      "id": "openaq-sensor-route",
+      "url": "https://github.com/openaq/openaq-api/blob/87c060c28f5b484e0e9953d247082f5e678935c9/openaq_api/v3/routers/sensors.py",
+      "accessed": "2026-09-10"
+    },
+    {
+      "id": "openaq-sensor-tests",
+      "url": "https://github.com/openaq/openaq-api/blob/87c060c28f5b484e0e9953d247082f5e678935c9/tests/test_sensors.py",
+      "accessed": "2026-09-10"
+    },
+    {
+      "id": "openaq-manifest",
+      "url": "https://github.com/openaq/openaq-api/blob/87c060c28f5b484e0e9953d247082f5e678935c9/pyproject.toml",
+      "accessed": "2026-09-10"
+    },
+    {
+      "id": "openaq-test-workflow",
+      "url": "https://github.com/openaq/openaq-api/blob/87c060c28f5b484e0e9953d247082f5e678935c9/.github/workflows/test.yml",
+      "accessed": "2026-09-10"
+    },
+    {
+      "id": "openaq-screen",
+      "url": "https://github.com/humanifest-bot/humanifest/blob/codex/cht-admin-environment-audit/research/2026-09-10-openaq-air-quality-screen.md",
+      "accessed": "2026-09-10"
+    }
+  ]
+}

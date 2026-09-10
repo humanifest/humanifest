@@ -1,0 +1,82 @@
+{
+  "id": "ifrc-pystac-monty",
+  "name": "IFRC Montandon PySTAC extension",
+  "repository": "https://github.com/IFRCGo/pystac-monty",
+  "homepage": "https://ifrcgo.org/monty-stac-extension/",
+  "license": "Apache-2.0 explicitly declared in README, manifest and license notice; linked full terms reviewed. GitHub community profile labels the notice NOASSERTION.",
+  "humanitarian_domain": "Disaster hazard and impact data integration for humanitarian analysis",
+  "impact_evidence": [
+    {
+      "type": "self_reported",
+      "claim": "IFRC identifies Montandon as the data source for disaster-trend analysis in World Disasters Report 2026 Annex 2. This supports operational relevance, not realized impact of a proposed library change.",
+      "source_id": "ifrc-use"
+    }
+  ],
+  "maintenance": {
+    "default_branch": "main",
+    "inspected_tree_revision": "7dd2d48cd599c3e0b894f1676b5de88c19028c46",
+    "current_public_activity": "Unarchived; pushed_at 2026-09-08T19:57:02Z. Retrieved recursive tree was not truncated."
+  },
+  "contribution": {
+    "pathway": "README welcomes issues/PRs. Reviewed pytest/cassette guidance, Python 3.11\u20133.13 CI, pre-commit checks, conventional commits and semantic PR titles. Focused USGS tests ran; complete CI matrix did not.",
+    "ai_policy": "No explicit AI/bot rule found in the inspected pinned docs/configuration; community-profile policy fields are null and the public organization .github lookup returned 404. Existing bot inquiry asks for acceptance; absence of a located rule is not acceptance.",
+    "maintainer_check_required": true
+  },
+  "sources": [
+    {
+      "id": "ifrc-use",
+      "url": "https://wdr26.org/en/reports/wdr26/annex2",
+      "accessed": "2026-09-08"
+    },
+    {
+      "id": "monty-repo",
+      "url": "https://api.github.com/repos/IFRCGo/pystac-monty",
+      "accessed": "2026-09-08"
+    },
+    {
+      "id": "monty-readme",
+      "url": "https://github.com/IFRCGo/pystac-monty/blob/7dd2d48cd599c3e0b894f1676b5de88c19028c46/README.md",
+      "accessed": "2026-09-08"
+    },
+    {
+      "id": "monty-license",
+      "url": "https://github.com/IFRCGo/pystac-monty/blob/7dd2d48cd599c3e0b894f1676b5de88c19028c46/LICENSE",
+      "accessed": "2026-09-08"
+    },
+    {
+      "id": "monty-manifest",
+      "url": "https://github.com/IFRCGo/pystac-monty/blob/7dd2d48cd599c3e0b894f1676b5de88c19028c46/pyproject.toml",
+      "accessed": "2026-09-08"
+    },
+    {
+      "id": "monty-tree",
+      "url": "https://api.github.com/repos/IFRCGo/pystac-monty/git/trees/7dd2d48cd599c3e0b894f1676b5de88c19028c46?recursive=1",
+      "accessed": "2026-09-08"
+    },
+    {
+      "id": "monty-policy-review",
+      "url": "https://github.com/humanifest-bot/humanifest/blob/codex/cht-admin-environment-audit/research/2026-09-08-ifrc-contribution-review.md",
+      "accessed": "2026-09-08"
+    },
+    {
+      "id": "apache-full-terms",
+      "url": "https://www.apache.org/licenses/LICENSE-2.0",
+      "accessed": "2026-09-08"
+    },
+    {
+      "id": "monty-community-profile",
+      "url": "https://api.github.com/repos/IFRCGo/pystac-monty/community/profile",
+      "accessed": "2026-09-08"
+    },
+    {
+      "id": "monty-hooks",
+      "url": "https://github.com/IFRCGo/pystac-monty/blob/7dd2d48cd599c3e0b894f1676b5de88c19028c46/.pre-commit-config.yaml",
+      "accessed": "2026-09-08"
+    },
+    {
+      "id": "monty-title-check",
+      "url": "https://github.com/IFRCGo/pystac-monty/blob/7dd2d48cd599c3e0b894f1676b5de88c19028c46/.github/workflows/lint-pr-title.yml",
+      "accessed": "2026-09-08"
+    }
+  ]
+}

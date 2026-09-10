@@ -3,9 +3,20 @@
   "project_id": "community-health-toolkit",
   "title": "Show a loading/error state when edit-user details fail to load",
   "pipeline_state": "MAINTAINER-CHECK",
+  "next_external_status_check": "2026-09-15",
   "problem": "CHT issue #10155 reports that the admin edit-user modal can render empty fields when user-detail population fails, including an SSO username request failure reproduced with Chrome DevTools offline throttling.",
   "humanitarian_relevance": "Reliable user administration matters for health-system deployments, especially where offline users, SSO, and role/facility assignment affect field access. This is operational tooling rather than direct clinical logic.",
   "evidence": [
+    {
+      "type": "measured",
+      "claim": "Two Chrome DOM probes compile the original edit-user template, modal directive and controller with the real Modal scope service. Pending and failed synthetic SSO lookup both leave an editable blank Add User form, enabled submit action and no error alert. Successful resolution populates and locks the username and changes the title to Edit User. Production styling, Bootstrap window, submission side effects and video remain unverified.",
+      "source_id": "cht-admin-runtime-2026-09-08"
+    },
+    {
+      "type": "measured",
+      "claim": "A clean pinned baseline passes all 431 admin tests and three additional browser-based controller probes. Failed SSO/settings requests leave editUserModel unset and only log errors; the successful SSO control populates the model. Those three controller probes alone do not establish rendered-modal/video behavior; subsequent DOM verification is recorded separately. No target patch is claimed.",
+      "source_id": "cht-admin-runtime-2026-09-08"
+    },
     {
       "type": "self_reported",
       "claim": "Issue report describes the failure and points to admin/src/js/controllers/edit-user.js where model population failure is only logged.",
@@ -50,12 +61,17 @@
       "type": "measured",
       "claim": "At the inspected commit, setupPromise catches and logs model-population failure without setting a modal error state. The separate local working tree contains an uncommitted preparation patch.",
       "source_id": "edit-user-pinned-2026-09-08"
+    },
+    {
+      "type": "measured",
+      "claim": "Read-only Karma configuration inspection found Chrome, separately installed admin dependencies, and generated main.js/templates.js as test inputs. No target setup or test execution was performed.",
+      "source_id": "admin-karma-config-2026-09-08"
     }
   ],
   "code_surface": "medic/cht-core: admin/src/js/controllers/edit-user.js, admin modal template for edit user, admin translation files, and associated admin unit tests once located.",
   "proposed_change": "Prepare a replacement PR only after current maintainer confirmation. The local prep branch adds loadingUserDetails and userDetailsLoadFailed controller state, hides the form until data is loaded, disables/guards submit while loading or failed, surfaces admin.user.load.error through the existing modal error path, and adds focused controller tests.",
   "tests": "Focused tests added locally in admin/tests/unit/controllers/edit-user.spec.js for loading state, failed detail load, and submit guards. Not run under Karma because dependencies are not installed; exact target command is npm run unit-admin after approved setup. If work is confirmed, also capture a short synthetic-data video of the loading and error flow requested during prior review; no such video was produced in this recheck.",
-  "environment": "Tier 1 now for source/test inspection. Tier 3 devcontainer/Codespaces before implementation because CHT admin tests may require project-controlled npm setup.",
+  "environment": "Verified bounded local admin baseline on macOS arm64 with Node 22.16.0, npm 11.6.2 and Chrome 153.0.8010.36: locked installs with automatic hooks disabled, explicit inspected patches/builds, 431 existing tests and 3 controller probes pass. Separate temporary checkout and sanitized child environment; not a VM/container security boundary. Live CHT services and the requested video remain unverified. See research/2026-09-08-cht-admin-runtime-verification.md.",
   "maintainer": "The authorized replacement inquiry was posted as humanifest-bot at 2026-09-08T19:02:19Z and verified through GitHub's API. Await maintainer response; sending the inquiry does not establish maintainer confirmation.",
   "risks": "Medium: likely bounded frontend/admin work, but translations, templates, and prior stale PR history can increase maintainer burden if not handled exactly. Current translation documentation permits tool-assisted drafts with fluent-speaker validation before merge; historical English-placeholder preparation alone is not evidence of compliance.",
   "gates": {
@@ -65,13 +81,13 @@
     "contribution_policy_understood": { "passed": true, "rationale": "Reviewed 2026-09-08: follow the branch/PR workflow, link the issue, provide testing evidence, self-review, and coordinate with a reviewer. Environment setup remains separately gated.", "source_ids": ["cht-workflow-2026-09-08"] },
     "ai_policy_understood": { "passed": true, "rationale": "Reviewed 2026-09-08: disclose the AI tool and its role; retain responsibility for review, regression tests, dependency/license checks, and explaining the contribution.", "source_ids": ["cht-ai-guidelines-2026-09-08", "cht-translations-2026-09-08"] },
     "problem_current_and_consequential": { "passed": true, "rationale": "Issue remains open, is labeled Help wanted, and prior PR #10824 closed stale rather than merged." },
-    "behavior_reproducible_or_verifiable": { "passed": false, "rationale": "Source-level behavior is mapped, but UI/Karma reproduction has not been run because dependencies are not installed." },
+    "behavior_reproducible_or_verifiable": { "passed": true, "rationale": "Three synthetic Chrome/Angular controller probes reproduce unset edit models and absent modal error callbacks after SSO/settings failure, with a successful SSO control. Two further DOM probes verify the original modal pending/failure state; production styling and video remain unverified.", "source_ids": ["cht-admin-runtime-2026-09-08"] },
     "code_and_tests_located": { "passed": true, "rationale": "Controller, template, translation, and admin unit-test surfaces were located." },
     "change_bounded": { "passed": true, "rationale": "Likely limited to edit-user loading/error states and tests." },
-    "regression_strategy_credible": { "passed": true, "rationale": "Mocking failed data load in controller/template tests should cover the behavior." },
+    "regression_strategy_credible": { "passed": true, "rationale": "The unchanged 431-test admin baseline and three synthetic controller probes execute successfully. A fix still needs acceptance assertions for visible loading/error states, pending requests and unchanged successful flows; current-fault assertions are not fix acceptance criteria.", "source_ids": ["cht-admin-runtime-2026-09-08"] },
     "no_private_data_required": { "passed": true, "rationale": "Can use mocked SSO user data and offline/error simulation." },
     "security_and_licensing_risk_acceptable": { "passed": true, "rationale": "No secret, auth-policy, or data-model change required if limited to UI error state." },
-    "environment_feasible": { "passed": true, "rationale": "Feasible in a CHT devcontainer/Codespaces after setup inspection." },
+    "environment_feasible": { "passed": true, "rationale": "Focused admin test feasibility demonstrated in a clean temporary local checkout: both locked installs, inspected dependency patches, datasource and browser builds, 431 existing tests and 3 probes pass. Approximate checkout/cache disk use is 1.4 GiB/246 MiB; no CPU/RAM measurements or full deployment/VM isolation are claimed.", "source_ids": ["cht-admin-runtime-2026-09-08"] },
     "maintainer_interest_confirmed": { "passed": false, "rationale": "Replacement inquiry sent as humanifest-bot at 2026-09-08T19:02:19Z. Await maintainer response; the outbound inquiry is not confirmation.", "source_ids": ["humanifest-inquiry-10155"] },
     "probable_reviewer_identified": { "passed": true, "rationale": "Prior maintainer comments identify likely reviewers involved in the issue/PR." },
     "benefit_justifies_review_cost": { "passed": true, "rationale": "If current, a small admin UX fix should have low review cost." },
@@ -85,6 +101,11 @@
     "deployment_probability": 2.5
   },
   "sources": [
+    {
+      "id": "cht-admin-runtime-2026-09-08",
+      "url": "https://github.com/humanifest-bot/humanifest/blob/codex/cht-admin-environment-audit/research/2026-09-08-cht-admin-runtime-verification.md",
+      "accessed": "2026-09-08"
+    },
     {
       "id": "humanifest-inquiry-10155",
       "url": "https://github.com/medic/cht-core/issues/10155#issuecomment-5590328371",
@@ -143,6 +164,21 @@
     {
       "id": "edit-user-pinned-2026-09-08",
       "url": "https://github.com/medic/cht-core/blob/35b2bb6dac0844bee3228476591d08d56c5dd10d/admin/src/js/controllers/edit-user.js#L178-L187",
+      "accessed": "2026-09-08"
+    },
+    {
+      "id": "admin-karma-config-2026-09-08",
+      "url": "https://github.com/medic/cht-core/blob/35b2bb6dac0844bee3228476591d08d56c5dd10d/admin/tests/karma-unit.conf.js",
+      "accessed": "2026-09-08"
+    },
+    {
+      "id": "cht-runtime-manifest-2026-09-08",
+      "url": "https://github.com/medic/cht-core/blob/35b2bb6dac0844bee3228476591d08d56c5dd10d/package.json",
+      "accessed": "2026-09-08"
+    },
+    {
+      "id": "cht-workspace-hook-2026-09-08",
+      "url": "https://github.com/medic/cht-core/blob/35b2bb6dac0844bee3228476591d08d56c5dd10d/shared-libs/cht-datasource/package.json",
       "accessed": "2026-09-08"
     }
   ]

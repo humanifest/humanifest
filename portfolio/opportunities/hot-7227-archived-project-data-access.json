@@ -1,0 +1,256 @@
+{
+  "id": "hot-7227-archived-project-data-access",
+  "project_id": "hot-tasking-manager",
+  "title": "Investigate unavailable OSM data downloads for completed, archived projects",
+  "pipeline_state": "PARKED",
+  "problem": "Issue #7227 reports that a completed project cannot supply its building GeoJSON to data requestors. A HOT member identifies archived status as the reason downloads are not updated and suggests considering on-demand refresh for authorized project users.",
+  "humanitarian_relevance": "Enabling access to validated mapping outputs has a direct operational pathway to requestors using maps. The affected user describes an immediate sharing problem; reach and realized benefit remain unmeasured.",
+  "evidence": [
+    {
+      "type": "self_reported",
+      "claim": "The reporter could not share completed project map data through the download feature; a later comment explains why post-completion access matters.",
+      "source_id": "hot-user-need"
+    },
+    {
+      "type": "self_reported",
+      "claim": "A GitHub MEMBER attributes stale downloads to archived project status and proposes considering authorized on-demand fetching. This is historical context, not approval of Humanifest work.",
+      "source_id": "hot-archive-explanation"
+    },
+    {
+      "type": "measured",
+      "claim": "Read-only issue/timeline inspection on 2026-09-08 found OPEN, unassigned, last updated 2026-04-28, and no returned cross-referenced PR. The bounded timeline is not an exhaustive competing-work search.",
+      "source_id": "hot-7227-timeline"
+    },
+    {
+      "type": "measured",
+      "claim": "Four controlled probes of the original hash-checked download handler confirmed a 404 URL opens before status checking and a null browser handle on HTTP 200 shows the same error popup. This is function-level reproduction only; no real browser or deployed service tested.",
+      "source_id": "hot-handler-probe"
+    },
+    {
+      "type": "measured",
+      "claim": "The pinned get_active_projects service filters recent task/chat activity to PUBLISHED projects, excluding ARCHIVED. This is a source observation, not confirmation of production deployment or the specific missing artifact cause.",
+      "source_id": "hot-active-service"
+    },
+    {
+      "type": "measured",
+      "claim": "GitHub returned the exact prepared scope question authored by humanifest-bot at 2026-09-09T01:38:11Z. Before posting, the issue remained open/unassigned and develop still matched the audited source SHA. This proves delivery, not maintainer approval.",
+      "source_id": "hot-coordination"
+    },
+    {
+      "type": "measured",
+      "claim": "Completed required contribution-policy and frontend setup review, including CI/Docker, CRACO/MSW and exact locked Git manifests. A local network guard rejected four socket/DNS/listen attempts. The single frozen scripts-disabled install timed out after 1,200 seconds during fetching; no target tests ran and environment readiness remains unconfirmed.",
+      "source_id": "hot-environment-audit-2026-09-09"
+    },
+    {
+      "type": "measured",
+      "claim": "HOT's shared contribution guide states it does not accept contributions from automated bot/AI accounts. This is distinct from its permission for human-led AI assistance and makes the required Humanifest bot contribution workflow incompatible absent an explicit accepted pathway. The earlier setup audit omitted this restriction.",
+      "source_id": "hot-bot-account-policy-2026-09-09"
+    }
+  ],
+  "code_surface": "Inspected pinned DownloadOsmData handler, messages, AOI-only downloadButtons tests, ProjectService.get_active_projects and TM-Extractor v1.0.1. A hash-checked standalone probe exercises the original handler with mocked browser/network objects; no React component coverage located for this handler.",
+  "proposed_change": "Await scope confirmation for a small frontend failure-handling contribution: check unsuccessful HEAD before navigation, handle a null browser handle, and give guidance based on known facts. It does not restore archived artifacts or close #7227 by itself. Scheduling and permission changes remain separate protected work.",
+  "tests": "Ran research/fixtures/hot-download-reproduction.mjs against the hash-checked pinned handler on Node v22.16.0: 200 success control, 404 opening before status check, null browser handle misreported as extraction unavailable, and rejected HEAD control all verified; loading cleared in each. No React, browser, target suite or production reproduction. Component plan includes these cases and unsuccessful metadata HEAD requests.",
+  "environment": "Pinned disposable sparse frontend checkout at 2b917a14ea7b0b76935c4e2d6985ab25764cd1c9. Required contribution docs, manifests, locked Git dependencies, CI/Docker and test setup were inspected. A minimal-environment Node 22.16.0/Yarn 1.22.22 frozen install with lifecycle scripts disabled timed out after 1,200 seconds during fetching following a network retry. No node_modules or target-test result; cache retained. No backend, editor build, Sentry upload, deployment or live account used.",
+  "maintainer": "First scoped inquiry sent as humanifest-bot at 2026-09-09T01:38:11Z: asks whether frontend download failure handling is useful separately from archived-data refresh. It discloses mocked-handler scope and AI involvement, preserves scheduling/permissions, and does not claim to resolve #7227. Await maintainer scope confirmation and respect published human-review requirements.",
+  "risks": "Frontend error handling cannot restore missing archived artifacts. Actual deployed configuration, CORS and browser popup behavior remain unverified. HOT full AI guide requires human involvement in shared code updates and PR descriptions; no such review is claimed. Refresh crosses protected scheduling/permission boundaries. The shared HOT contribution guide explicitly excludes automated bot/AI accounts. The earlier audit missed that separate identity restriction; permission for AI assistance does not authorize bot-authored contributions.",
+  "priority_rationale": "Parked after September 9 review of HOT's organization-wide contribution guide: it does not accept contributions from automated bot/AI accounts. This conflicts with Humanifest's required bot identity. Preserve completed evidence; do not spend further setup/implementation compute or post a PR unless an authorized compatible pathway is explicitly established. Do not fall back to the personal account.",
+  "gates": {
+    "humanitarian_relevance_supported": {
+      "passed": true,
+      "rationale": "HOT documents mapping coordination and access to data for humanitarian operations."
+    },
+    "repository_active": {
+      "passed": true,
+      "rationale": "Unarchived repository pushed on 2026-09-08; inspected tree pinned."
+    },
+    "external_contributions_accepted": {
+      "passed": false,
+      "rationale": "External human contributions are welcomed, but the September 9 shared HOT guide explicitly rejects automated bot/AI accounts. Humanifest's required posting identity is humanifest-bot; no compatible exception or pathway is established.",
+      "source_ids": [
+        "hot-bot-account-policy-2026-09-09"
+      ]
+    },
+    "contribution_policy_understood": {
+      "passed": true,
+      "rationale": "Read the pinned AGENTS required setup/contribution/review documents, existing test standards and fork/develop workflow. Protected workflows and human-review/AI disclosure constraints are retained; reading them does not satisfy maintainer confirmation.",
+      "source_ids": [
+        "hot-environment-audit-2026-09-09",
+        "hot-agent-guide",
+        "hot-ai-full-policy"
+      ]
+    },
+    "ai_policy_understood": {
+      "passed": true,
+      "rationale": "Read repository AI guidance, AGENTS, and the linked full guide. Human-authored PR descriptions and human approval of shared code updates are required; good-first-issue and protected-workflow limits apply. Understanding the policy does not satisfy its review requirements.",
+      "source_ids": [
+        "hot-ai-policy",
+        "hot-agent-guide",
+        "hot-ai-full-policy"
+      ]
+    },
+    "problem_current_and_consequential": {
+      "passed": false,
+      "rationale": "Operational need is reported, but the issue was last updated in April; current deployed behavior must be checked without triggering production extraction."
+    },
+    "behavior_reproducible_or_verifiable": {
+      "passed": false,
+      "rationale": "Four isolated handler cases verified against pinned source. The archived-project end-to-end failure and deployed extractor configuration remain unverified, so the original opportunity gate stays false."
+    },
+    "code_and_tests_located": {
+      "passed": false,
+      "rationale": "Download handler, messages, extractor and active-project service read. The neighboring tests exercise AOI download, not this handler; target regression coverage still needs implementation after scope confirmation."
+    },
+    "change_bounded": {
+      "passed": false,
+      "rationale": "A frontend error-handling scope is identifiable but does not restore archived data. Maintainers must choose whether that separate contribution or a supervised refresh design is wanted."
+    },
+    "regression_strategy_credible": {
+      "passed": false,
+      "rationale": "Not established in this initial research intake; inspect relevant evidence before advancing."
+    },
+    "no_private_data_required": {
+      "passed": true,
+      "rationale": "Initial investigation uses public source and synthetic artifact states only."
+    },
+    "security_and_licensing_risk_acceptable": {
+      "passed": false,
+      "rationale": "Not established in this initial research intake; inspect relevant evidence before advancing."
+    },
+    "environment_feasible": {
+      "passed": false,
+      "rationale": "Setup and contribution-policy audit completed, but the single frozen frontend install timed out during fetching after 1,200 seconds. No component test ran; feasibility remains unconfirmed until a bounded target baseline passes.",
+      "source_ids": [
+        "hot-environment-audit-2026-09-09"
+      ]
+    },
+    "maintainer_interest_confirmed": {
+      "passed": false,
+      "rationale": "Scoped inquiry delivered by humanifest-bot at 2026-09-09T01:38:11Z; no reply or acceptance is established by the outbound message.",
+      "source_ids": [
+        "hot-coordination"
+      ]
+    },
+    "probable_reviewer_identified": {
+      "passed": false,
+      "rationale": "Not established in this initial research intake; inspect relevant evidence before advancing."
+    },
+    "benefit_justifies_review_cost": {
+      "passed": false,
+      "rationale": "Not established in this initial research intake; inspect relevant evidence before advancing."
+    },
+    "user_can_explain_line_by_line": {
+      "passed": false,
+      "rationale": "No implementation or human line-by-line review has occurred."
+    }
+  },
+  "score_inputs": {
+    "humanitarian_benefit": 3.5,
+    "acceptance_probability": 0,
+    "technical_confidence": 0,
+    "review_burden": 3,
+    "deployment_probability": 0
+  },
+  "score_basis": "Provisional research estimate only: operational relevance supports investigation, but acceptance, technical confidence and deployment are unknown. Failed gates keep implementation score at zero.",
+  "sources": [
+    {
+      "id": "hot-purpose",
+      "url": "https://www.hotosm.org/en/tools-resources/tech-product-suite/tasking-manager/",
+      "accessed": "2026-09-08"
+    },
+    {
+      "id": "hot-repo",
+      "url": "https://api.github.com/repos/hotosm/tasking-manager",
+      "accessed": "2026-09-08"
+    },
+    {
+      "id": "hot-contributing",
+      "url": "https://github.com/hotosm/tasking-manager/blob/2b917a14ea7b0b76935c4e2d6985ab25764cd1c9/docs/developers/contributing-guidelines.md",
+      "accessed": "2026-09-08"
+    },
+    {
+      "id": "hot-ai-policy",
+      "url": "https://github.com/hotosm/tasking-manager/blob/2b917a14ea7b0b76935c4e2d6985ab25764cd1c9/docs/developers/contributing.md",
+      "accessed": "2026-09-08"
+    },
+    {
+      "id": "hot-agent-guide",
+      "url": "https://github.com/hotosm/tasking-manager/blob/2b917a14ea7b0b76935c4e2d6985ab25764cd1c9/AGENTS.md",
+      "accessed": "2026-09-08"
+    },
+    {
+      "id": "hot-7227",
+      "url": "https://github.com/hotosm/tasking-manager/issues/7227",
+      "accessed": "2026-09-08"
+    },
+    {
+      "id": "hot-archive-explanation",
+      "url": "https://github.com/hotosm/tasking-manager/issues/7227#issuecomment-4334109989",
+      "accessed": "2026-09-08"
+    },
+    {
+      "id": "hot-user-need",
+      "url": "https://github.com/hotosm/tasking-manager/issues/7227#issuecomment-4334172918",
+      "accessed": "2026-09-08"
+    },
+    {
+      "id": "hot-7227-timeline",
+      "url": "https://api.github.com/repos/hotosm/tasking-manager/issues/7227/timeline",
+      "accessed": "2026-09-08"
+    },
+    {
+      "id": "hot-tree",
+      "url": "https://api.github.com/repos/hotosm/tasking-manager/git/trees/2b917a14ea7b0b76935c4e2d6985ab25764cd1c9?recursive=1",
+      "accessed": "2026-09-08"
+    },
+    {
+      "id": "hot-download-handler",
+      "url": "https://github.com/hotosm/tasking-manager/blob/2b917a14ea7b0b76935c4e2d6985ab25764cd1c9/frontend/src/components/projectDetail/downloadOsmData.js",
+      "accessed": "2026-09-08"
+    },
+    {
+      "id": "hot-download-tests",
+      "url": "https://github.com/hotosm/tasking-manager/blob/2b917a14ea7b0b76935c4e2d6985ab25764cd1c9/frontend/src/components/projectDetail/tests/downloadButtons.test.js",
+      "accessed": "2026-09-08"
+    },
+    {
+      "id": "hot-active-service",
+      "url": "https://github.com/hotosm/tasking-manager/blob/2b917a14ea7b0b76935c4e2d6985ab25764cd1c9/backend/services/project_service.py#L789",
+      "accessed": "2026-09-08"
+    },
+    {
+      "id": "hot-extractor-config",
+      "url": "https://github.com/hotosm/tasking-manager/blob/2b917a14ea7b0b76935c4e2d6985ab25764cd1c9/scripts/aws/lambda/TM-Extractor/_envcommon/lambda.hcl",
+      "accessed": "2026-09-08"
+    },
+    {
+      "id": "hot-extractor-source",
+      "url": "https://github.com/hotosm/TM-Extractor/blob/070ea82acecde3be49fc5b8622f365840011943a/tm_extractor.py",
+      "accessed": "2026-09-08"
+    },
+    {
+      "id": "hot-ai-full-policy",
+      "url": "https://responsibleai.guide/ai-assisted-coding-guide/",
+      "accessed": "2026-09-08"
+    },
+    {
+      "id": "hot-handler-probe",
+      "url": "file:///Users/admin/dev/humanifest/research/fixtures/hot-download-reproduction.mjs",
+      "accessed": "2026-09-08"
+    },
+    {
+      "id": "hot-coordination",
+      "url": "https://github.com/hotosm/tasking-manager/issues/7227#issuecomment-5594446967",
+      "accessed": "2026-09-08"
+    },
+    {
+      "id": "hot-environment-audit-2026-09-09",
+      "url": "https://github.com/humanifest-bot/humanifest/blob/codex/cht-admin-environment-audit/research/2026-09-09-hot-frontend-environment-audit.md",
+      "accessed": "2026-09-09"
+    },
+    {
+      "id": "hot-bot-account-policy-2026-09-09",
+      "url": "https://docs.hotosm.org/become-a-contributor/#how-contributions-are-handled",
+      "accessed": "2026-09-09"
+    }
+  ]
+}

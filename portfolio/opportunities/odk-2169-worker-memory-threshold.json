@@ -1,0 +1,197 @@
+{
+  "id": "odk-2169-worker-memory-threshold",
+  "project_id": "odk-central",
+  "title": "Verify memory-unit mismatch in Central backend worker selection",
+  "pipeline_state": "OPPORTUNITY-RESEARCH",
+  "problem": "Startup obtains memory limits in bytes but determines worker count using a 1100000 threshold. The original function returns four workers even for 512 MiB or 1 GiB inputs.",
+  "humanitarian_relevance": "Resource-appropriate server operation could support constrained humanitarian field-data deployments. Specific adoption, resource savings and avoided outages are unmeasured.",
+  "evidence": [
+    {
+      "type": "measured",
+      "claim": "The startup file is byte-identical on inspected master and next revisions; eight original-function probe cases pass, including threshold boundaries and zero/high-memory controls.",
+      "source_id": "odk-audit"
+    },
+    {
+      "type": "self_reported",
+      "claim": "A contributor reports production logs showing four workers at 2023899136 bytes; this high-memory example does not alone distinguish the threshold interpretations.",
+      "source_id": "odk-prod-log"
+    },
+    {
+      "type": "measured",
+      "claim": "GitHub returned the exact prepared scope inquiry by humanifest-bot at 2026-09-09T03:51:43Z. The issue remained open/unassigned and next matched the audited SHA immediately before posting. No maintainer approval is established.",
+      "source_id": "odk-coordination"
+    }
+  ],
+  "code_surface": "files/service/scripts/start-odk.sh: get_memory_limit and determine_worker_count; test/check-scripts.sh and test/service/service.spec.js.",
+  "proposed_change": "Confirm the intended threshold units and strict boundary, then normalize units and add focused tests on a bot fork targeting next. Keep #2170 broader sizing policy separate; no implementation prepared.",
+  "tests": "Eight hash-checked pure-function Bash cases pass. No cgroup discovery, Docker startup, target suite or resource benchmark executed.",
+  "environment": "Read-only source downloads plus isolated function execution with only synthetic positional arguments. No target clone or install. Full startup reads secrets, writes configuration, migrates a database and starts services; do not source it for tests.",
+  "maintainer": "Scoped inquiry delivered as humanifest-bot at 2026-09-09T03:51:43Z; asks whether byte normalization and boundary tests are wanted separately from #2170, and requests intended threshold and AI contribution requirements. Delivery is not scope confirmation; no target implementation prepared.",
+  "risks": "Startup behavior is operationally consequential. Preserve unknown-memory fallback and obtain agreement on threshold/worker policy. Do not claim measured compute savings from worker-count arithmetic.",
+  "gates": {
+    "humanitarian_relevance_supported": {
+      "passed": true,
+      "rationale": "Central supports the data-collection ecosystem used in humanitarian crisis response; no specific deployment benefit is claimed.",
+      "source_ids": [
+        "odk-impact",
+        "odk-readme"
+      ]
+    },
+    "repository_active": {
+      "passed": true,
+      "rationale": "Repository is unarchived, recently pushed, and both production/development startup revisions were inspected.",
+      "source_ids": [
+        "odk-repo",
+        "odk-audit"
+      ]
+    },
+    "external_contributions_accepted": {
+      "passed": true,
+      "rationale": "README welcomes contributions; the PR template gives a next-branch workflow.",
+      "source_ids": [
+        "odk-readme",
+        "odk-pr-template"
+      ]
+    },
+    "contribution_policy_understood": {
+      "passed": false,
+      "rationale": "Not established in the bounded source review; verify before implementation."
+    },
+    "ai_policy_understood": {
+      "passed": false,
+      "rationale": "Not established in the bounded source review; verify before implementation."
+    },
+    "problem_current_and_consequential": {
+      "passed": false,
+      "rationale": "Byte-threshold mismatch is present on production and development source; actual excess memory use, OOM frequency and deployment consequence are unmeasured."
+    },
+    "behavior_reproducible_or_verifiable": {
+      "passed": true,
+      "rationale": "Eight cases execute only the original hash-checked worker-count function; 512 MiB and 1 GiB byte inputs select four workers. No full startup or resource benchmark ran.",
+      "source_ids": [
+        "odk-audit",
+        "odk-startup"
+      ]
+    },
+    "code_and_tests_located": {
+      "passed": true,
+      "rationale": "Located startup helper and existing service/shell tests; the inspected service test covers DB_SSL rather than worker-count boundaries.",
+      "source_ids": [
+        "odk-startup",
+        "odk-service-tests"
+      ]
+    },
+    "change_bounded": {
+      "passed": false,
+      "rationale": "A narrow unit-normalization/test proposal is plausible, but the intended threshold and separation from broader #2170 worker-sizing policy need confirmation."
+    },
+    "regression_strategy_credible": {
+      "passed": true,
+      "rationale": "Pure worker-count function admits exact byte-boundary cases and zero/high-memory controls; cgroup discovery and target test integration remain additional work.",
+      "source_ids": [
+        "odk-audit"
+      ]
+    },
+    "no_private_data_required": {
+      "passed": true,
+      "rationale": "Threshold verification uses synthetic integers and public code, without executing secret-reading or migration steps.",
+      "source_ids": [
+        "odk-audit"
+      ]
+    },
+    "security_and_licensing_risk_acceptable": {
+      "passed": false,
+      "rationale": "Not established in the bounded source review; verify before implementation."
+    },
+    "environment_feasible": {
+      "passed": false,
+      "rationale": "Not established in the bounded source review; verify before implementation."
+    },
+    "maintainer_interest_confirmed": {
+      "passed": false,
+      "rationale": "No Humanifest scope inquiry or maintainer confirmation yet; an open unassigned issue is not approval."
+    },
+    "probable_reviewer_identified": {
+      "passed": false,
+      "rationale": "Not established in the bounded source review; verify before implementation."
+    },
+    "benefit_justifies_review_cost": {
+      "passed": false,
+      "rationale": "Not established in the bounded source review; verify before implementation."
+    },
+    "user_can_explain_line_by_line": {
+      "passed": false,
+      "rationale": "Not established in the bounded source review; verify before implementation."
+    }
+  },
+  "score_inputs": {
+    "humanitarian_benefit": 3,
+    "acceptance_probability": 0,
+    "technical_confidence": 2,
+    "review_burden": 2,
+    "deployment_probability": 0
+  },
+  "sources": [
+    {
+      "id": "odk-impact",
+      "url": "https://getodk.org/success-stories/crisis-response/",
+      "accessed": "2026-09-08"
+    },
+    {
+      "id": "odk-repo",
+      "url": "https://api.github.com/repos/getodk/central",
+      "accessed": "2026-09-08"
+    },
+    {
+      "id": "odk-readme",
+      "url": "https://github.com/getodk/central/blob/47e2f807a8cf10e8c09a528876ebb5a20d9adf34/README.md",
+      "accessed": "2026-09-08"
+    },
+    {
+      "id": "odk-startup",
+      "url": "https://github.com/getodk/central/blob/bc46bbcb80bcb7a0cc04eb57aaeecd3590414671/files/service/scripts/start-odk.sh",
+      "accessed": "2026-09-08"
+    },
+    {
+      "id": "odk-pr-template",
+      "url": "https://github.com/getodk/central/blob/bc46bbcb80bcb7a0cc04eb57aaeecd3590414671/.github/PULL_REQUEST_TEMPLATE.md",
+      "accessed": "2026-09-08"
+    },
+    {
+      "id": "odk-2169",
+      "url": "https://github.com/getodk/central/issues/2169",
+      "accessed": "2026-09-08"
+    },
+    {
+      "id": "odk-2170",
+      "url": "https://github.com/getodk/central/issues/2170",
+      "accessed": "2026-09-08"
+    },
+    {
+      "id": "odk-prod-log",
+      "url": "https://github.com/getodk/central/issues/2169#issuecomment-5450659716",
+      "accessed": "2026-09-08"
+    },
+    {
+      "id": "kernel-cgroup-v2",
+      "url": "https://docs.kernel.org/admin-guide/cgroup-v2.html#memory-interface-files",
+      "accessed": "2026-09-08"
+    },
+    {
+      "id": "odk-audit",
+      "url": "https://github.com/humanifest-bot/humanifest/blob/codex/cht-admin-environment-audit/research/2026-09-08-odk-worker-threshold.md",
+      "accessed": "2026-09-08"
+    },
+    {
+      "id": "odk-service-tests",
+      "url": "https://github.com/getodk/central/blob/47e2f807a8cf10e8c09a528876ebb5a20d9adf34/test/service/service.spec.js",
+      "accessed": "2026-09-08"
+    },
+    {
+      "id": "odk-coordination",
+      "url": "https://github.com/getodk/central/issues/2169#issuecomment-5595510841",
+      "accessed": "2026-09-08"
+    }
+  ],
+  "next_external_status_check": "2026-09-15"
+}

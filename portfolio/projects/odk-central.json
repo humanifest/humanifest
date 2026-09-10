@@ -1,0 +1,84 @@
+{
+  "id": "odk-central",
+  "name": "ODK Central",
+  "repository": "https://github.com/getodk/central",
+  "homepage": "https://docs.getodk.org/central-intro/",
+  "license": "Apache-2.0 declared in README and repository metadata; target license file review remains pending",
+  "humanitarian_domain": "Offline field-data collection and humanitarian crisis response",
+  "maintenance": {
+    "archived": false,
+    "pushed_at": "2026-09-06T04:45:38Z",
+    "production_branch": "master",
+    "contribution_branch": "next",
+    "inspected_next_revision": "bc46bbcb80bcb7a0cc04eb57aaeecd3590414671"
+  },
+  "contribution": {
+    "pathway": "README welcomes contributions and links component-specific guides. Code PRs to this operations repository target next; PR template asks for verification, alternatives, user impact and documentation needs.",
+    "ai_policy": "Not established; inspect linked guidance before advancement.",
+    "maintainer_check_required": true
+  },
+  "impact_evidence": [
+    {
+      "type": "self_reported",
+      "claim": "ODK publishes an American Red Cross account of using ODK for disaster/crisis data collection. This supports the ecosystem use case, not measured benefit of this worker-count proposal.",
+      "source_id": "odk-impact"
+    }
+  ],
+  "sources": [
+    {
+      "id": "odk-impact",
+      "url": "https://getodk.org/success-stories/crisis-response/",
+      "accessed": "2026-09-08"
+    },
+    {
+      "id": "odk-repo",
+      "url": "https://api.github.com/repos/getodk/central",
+      "accessed": "2026-09-08"
+    },
+    {
+      "id": "odk-readme",
+      "url": "https://github.com/getodk/central/blob/47e2f807a8cf10e8c09a528876ebb5a20d9adf34/README.md",
+      "accessed": "2026-09-08"
+    },
+    {
+      "id": "odk-startup",
+      "url": "https://github.com/getodk/central/blob/bc46bbcb80bcb7a0cc04eb57aaeecd3590414671/files/service/scripts/start-odk.sh",
+      "accessed": "2026-09-08"
+    },
+    {
+      "id": "odk-pr-template",
+      "url": "https://github.com/getodk/central/blob/bc46bbcb80bcb7a0cc04eb57aaeecd3590414671/.github/PULL_REQUEST_TEMPLATE.md",
+      "accessed": "2026-09-08"
+    },
+    {
+      "id": "odk-2169",
+      "url": "https://github.com/getodk/central/issues/2169",
+      "accessed": "2026-09-08"
+    },
+    {
+      "id": "odk-2170",
+      "url": "https://github.com/getodk/central/issues/2170",
+      "accessed": "2026-09-08"
+    },
+    {
+      "id": "odk-prod-log",
+      "url": "https://github.com/getodk/central/issues/2169#issuecomment-5450659716",
+      "accessed": "2026-09-08"
+    },
+    {
+      "id": "kernel-cgroup-v2",
+      "url": "https://docs.kernel.org/admin-guide/cgroup-v2.html#memory-interface-files",
+      "accessed": "2026-09-08"
+    },
+    {
+      "id": "odk-audit",
+      "url": "https://github.com/humanifest-bot/humanifest/blob/codex/cht-admin-environment-audit/research/2026-09-08-odk-worker-threshold.md",
+      "accessed": "2026-09-08"
+    },
+    {
+      "id": "odk-service-tests",
+      "url": "https://github.com/getodk/central/blob/47e2f807a8cf10e8c09a528876ebb5a20d9adf34/test/service/service.spec.js",
+      "accessed": "2026-09-08"
+    }
+  ]
+}

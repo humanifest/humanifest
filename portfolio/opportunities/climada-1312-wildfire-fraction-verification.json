@@ -1,0 +1,170 @@
+{
+  "id": "climada-1312-wildfire-fraction-verification",
+  "project_id": "climada-python",
+  "title": "Verify wildfire fraction bounds and impact propagation",
+  "pipeline_state": "MAINTAINER-CHECK",
+  "problem": "The active public COD wildfire v1.1 file independently contains 99,939 duplicated fraction cells representing values up to four, while intensity has no duplicates. Original checked impact methods propagate out-of-range fractions. Population-weighted country comparisons and downstream consequences remain unverified.",
+  "humanitarian_relevance": "Reliable climate-risk estimates may support adaptation appraisal. The cause is relevant; no decision improvement, avoided loss or population benefit from this contribution is established.",
+  "evidence": [
+    {
+      "type": "self_reported",
+      "claim": "The reporter describes country-level population-weighted differences and a 72-country sweep. Those impact estimates remain unverified; a separate public-file check now confirms the COD storage counts.",
+      "source_id": "climada-1312"
+    },
+    {
+      "type": "measured",
+      "claim": "Pinned original sparse-storage unit test passes; eight synthetic original-method impact cases and shape rejection pass. Canonicalization preserves apparent values, out-of-range fractions propagate, and empty/all-zero fraction acts as identity. Damage ratios are a disclosed test double.",
+      "source_id": "climada-fraction-runtime"
+    },
+    {
+      "type": "measured",
+      "claim": "Checksum-verified active COD v1.1 file has 1,296,686 raw fraction ones, 1,191,978 canonical entries, 99,939 cells above one and maximum four. Intensity has no duplicates. Fraction sum/binary support is 1.087843903, a diagnostic arithmetic comparison rather than verified population-weighted impact.",
+      "source_id": "climada-fraction-runtime"
+    }
+  ],
+  "code_surface": "At develop dea46facc7856ed1c26adc1ee03e954c77d30c1b: climada/util/checker.py prune_csr_matrix; climada/hazard/base.py check_matrices and _get_fraction; climada/engine/impact_calc.py constructor and impact_matrix. Existing checker, hazard-base and impact-calculation test files inspected.",
+  "proposed_change": "Mechanism and COD data counts are verified; agree a bounded diagnostics versus data-generation regression scope before patching. Preserve sparse addition semantics and obtain maintainer agreement before max/clipping or hazard regeneration.",
+  "tests": "One unchanged original sparse-storage unit test, eight numeric original-method cases and shape-mismatch rejection pass. Public HDF5 sparse fields independently checked by row, then normalized using pinned original code on copies. No full framework suite, real damage-function/centroid assignment or population-weighted calculation.",
+  "environment": "Audited CI/Conda/hooks/docs Dockerfile/config/API/HDF5 source and linked contribution guides. Original methods run with existing Python 3.13.7, NumPy 2.3.4, SciPy 1.16.2. A temporary system-site-packages venv adds only checksum-verified h5py 3.14.0 binary wheel with no dependencies/network during install; HDF5 1.14.6. Public CC BY 4.0 COD artifact downloaded and read-only checked. No CLIMADA install/import, service or full native environment.",
+  "maintainer": "Verified Humanifest bot inquiry and independent results posted September 9 at #1312 comment 5599217450. No accepted scope, bot eligibility or reviewer commitment yet. Manual September 15 review; continue independent portfolio work meanwhile.",
+  "risks": "Canonicalization preserves apparent sparse values; generic max/clipping may be mathematically wrong. Dataset-specific repair semantics, empty-fraction identity and existing arbitrary-valued fixtures need review. Full model behavior, population-weighted estimates and benefit remain unverified.",
+  "priority_rationale": "Current public data independently reproduces a reported correctness defect and method probes verify its propagation path. Findings were delivered to the existing issue; await a bounded accepted scope while researching other candidates. No realized impact claim.",
+  "gates": {
+    "humanitarian_relevance_supported": {
+      "passed": true,
+      "rationale": "The project supplies open climate-risk/adaptation tooling; correctness has a plausible public-benefit pathway without a demonstrated contribution outcome.",
+      "source_ids": [
+        "climada-purpose"
+      ]
+    },
+    "repository_active": {
+      "passed": true,
+      "rationale": "Unarchived repository pushed September 7; develop and related issue/PR states read September 9.",
+      "source_ids": [
+        "climada-repo",
+        "climada-fraction-audit"
+      ]
+    },
+    "external_contributions_accepted": {
+      "passed": false,
+      "rationale": "General guide welcomes external fork contributions. Eligibility of this AI-assisted bot contribution is now explicitly asked in the delivered inquiry and remains unconfirmed."
+    },
+    "contribution_policy_understood": {
+      "passed": false,
+      "rationale": "Fork/develop, tests, Pylint, formatting and attribution requirements inspected. Final scope-specific checklist and bot pathway need agreement before implementation."
+    },
+    "ai_policy_understood": {
+      "passed": false,
+      "rationale": "No explicit AI/bot rule found in bounded repository and linked guide inspection. Delivered inquiry asks whether this bot pathway is welcome; absence of a rule is not acceptance."
+    },
+    "problem_current_and_consequential": {
+      "passed": false,
+      "rationale": "Current active COD artifact confirms duplicate fractions; original methods propagate out-of-range values. Operational consequences, population-weighted impact and review benefit remain unverified."
+    },
+    "behavior_reproducible_or_verifiable": {
+      "passed": true,
+      "rationale": "Hash-verified original methods and public COD v1.1 sparse fields independently reproduce out-of-range fractions and their checked multiplication path. Scope is method/data-level, not population-weighted impact.",
+      "source_ids": [
+        "climada-fraction-runtime"
+      ]
+    },
+    "code_and_tests_located": {
+      "passed": true,
+      "rationale": "Pinned checker/hazard/impact paths and tests inspected; unchanged checker test and extracted original methods executed. Full framework not run.",
+      "source_ids": [
+        "climada-fraction-runtime"
+      ]
+    },
+    "change_bounded": {
+      "passed": false,
+      "rationale": "Synthetic method-level research is bounded. A production fix could belong in data generation, validation or warnings; generic max/clipping may corrupt valid matrix semantics."
+    },
+    "regression_strategy_credible": {
+      "passed": false,
+      "rationale": "Controlled method and public-file probes pass, but the intended fraction-validation/data-generation behavior has not been agreed for a production regression."
+    },
+    "no_private_data_required": {
+      "passed": true,
+      "rationale": "Completed probes use synthetic inputs and public CC BY 4.0 hazard data only.",
+      "source_ids": [
+        "climada-fraction-runtime",
+        "climada-data-metadata"
+      ]
+    },
+    "security_and_licensing_risk_acceptable": {
+      "passed": false,
+      "rationale": "Bounded source/data path inspected, public artifact licensed CC BY 4.0 and pinned binary reader verified. Full native dependency/license and production change review remains incomplete."
+    },
+    "environment_feasible": {
+      "passed": false,
+      "rationale": "Bounded method/data probes are feasible and pass; full native/geospatial framework baseline remains unestablished."
+    },
+    "maintainer_interest_confirmed": {
+      "passed": false,
+      "rationale": "Verification and scope question delivered as humanifest-bot; posting does not establish maintainer acceptance or bot eligibility."
+    },
+    "probable_reviewer_identified": {
+      "passed": false,
+      "rationale": "Global CODEOWNERS identifies possible reviewers, but no reviewer has accepted this scope."
+    },
+    "benefit_justifies_review_cost": {
+      "passed": false,
+      "rationale": "Independent data confirmation was delivered; deployment need, reviewer interest and useful bounded change remain unconfirmed."
+    },
+    "user_can_explain_line_by_line": {
+      "passed": false,
+      "rationale": "Harnesses and exact results are documented; no independent human explanation or review is claimed."
+    }
+  },
+  "score_inputs": {
+    "humanitarian_benefit": 3,
+    "acceptance_probability": 0,
+    "technical_confidence": 2,
+    "review_burden": 3,
+    "deployment_probability": 0
+  },
+  "score_basis": "Independent method/data reproduction improves technical confidence. Acceptance, agreed production scope and deployment remain unknown and keep implementation score zero.",
+  "sources": [
+    {
+      "id": "climada-purpose",
+      "url": "https://climada.ethz.ch/",
+      "accessed": "2026-09-09"
+    },
+    {
+      "id": "climada-repo",
+      "url": "https://api.github.com/repos/CLIMADA-project/climada_python",
+      "accessed": "2026-09-09"
+    },
+    {
+      "id": "climada-contributing",
+      "url": "https://github.com/CLIMADA-project/climada_python/blob/dea46facc7856ed1c26adc1ee03e954c77d30c1b/CONTRIBUTING.md",
+      "accessed": "2026-09-09"
+    },
+    {
+      "id": "climada-1312",
+      "url": "https://github.com/CLIMADA-project/climada_python/issues/1312",
+      "accessed": "2026-09-09"
+    },
+    {
+      "id": "climada-fraction-audit",
+      "url": "https://github.com/humanifest-bot/humanifest/blob/codex/cht-admin-environment-audit/research/2026-09-09-climada-wildfire-fraction-audit.md",
+      "accessed": "2026-09-09"
+    },
+    {
+      "id": "climada-fraction-runtime",
+      "url": "https://github.com/humanifest-bot/humanifest/blob/codex/cht-admin-environment-audit/research/2026-09-09-climada-fraction-runtime.md",
+      "accessed": "2026-09-09"
+    },
+    {
+      "id": "climada-data-metadata",
+      "url": "https://climada.ethz.ch/data-api/v2/dataset/?data_type=wildfire&country_iso3alpha=COD&status=&limit=100",
+      "accessed": "2026-09-09"
+    },
+    {
+      "id": "climada-verification-delivery",
+      "url": "https://github.com/CLIMADA-project/climada_python/issues/1312#issuecomment-5599217450",
+      "accessed": "2026-09-09"
+    }
+  ],
+  "next_external_status_check": "2026-09-15"
+}

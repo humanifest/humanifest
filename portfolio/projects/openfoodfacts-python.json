@@ -1,0 +1,57 @@
+{
+  "id": "openfoodfacts-python",
+  "name": "Open Food Facts Python SDK",
+  "repository": "https://github.com/openfoodfacts/openfoodfacts-python",
+  "homepage": "https://world.openfoodfacts.org/",
+  "license": "MIT: pinned project metadata, LICENSE target LICENSES/MIT.txt and REUSE catch-all notice inspected September 9.",
+  "humanitarian_domain": "Public-benefit food information, transparent data access, health and sustainability research",
+  "impact_evidence": [
+    {
+      "type": "self_reported",
+      "claim": "Open Food Facts describes itself as a nonprofit publishing reusable food information for consumers, research and sustainability work. This supports a public-benefit pathway, not measured impact from an SDK patch.",
+      "source_id": "off-purpose"
+    }
+  ],
+  "maintenance": {
+    "default_branch": "develop",
+    "inspected_revision": "34d0629c970b3887a63c615ace7497a9a28b294b",
+    "current_public_activity": "Unarchived; GitHub pushed_at 2026-09-01T12:46:38Z. Current issue and PR discussions inspected September 9."
+  },
+  "contribution": {
+    "pathway": "Fork-based PRs against develop with tests/CI. Pinned PR template requires maintainer agreement to assignment before acceptance. Humanifest delivered verification support on existing PR #504; no replacement patch or accepted scope.",
+    "ai_policy": "Pinned PR template requires disclosure of LLM/version/mode, successful execution and screenshot/video proof. Bot-identity eligibility and specific support scope remain unconfirmed; no independent human review is claimed.",
+    "maintainer_check_required": true
+  },
+  "sources": [
+    {
+      "id": "off-purpose",
+      "url": "https://blog.openfoodfacts.org/en/news/why-open-food-facts-is-independent-and-open-and-why-that-matters",
+      "accessed": "2026-09-09"
+    },
+    {
+      "id": "off-repo",
+      "url": "https://api.github.com/repos/openfoodfacts/openfoodfacts-python",
+      "accessed": "2026-09-09"
+    },
+    {
+      "id": "off-contributing",
+      "url": "https://github.com/openfoodfacts/openfoodfacts-python/blob/34d0629c970b3887a63c615ace7497a9a28b294b/CONTRIBUTING.md",
+      "accessed": "2026-09-09"
+    },
+    {
+      "id": "off-search-audit",
+      "url": "https://github.com/humanifest-bot/humanifest/blob/codex/cht-admin-environment-audit/research/2026-09-09-openfoodfacts-search-contract-audit.md",
+      "accessed": "2026-09-09"
+    },
+    {
+      "id": "off-runtime-2026-09-09",
+      "url": "https://github.com/humanifest-bot/humanifest/blob/codex/cht-admin-environment-audit/research/2026-09-09-openfoodfacts-runtime-verification.md",
+      "accessed": "2026-09-09"
+    },
+    {
+      "id": "off-verification-delivered",
+      "url": "https://github.com/openfoodfacts/openfoodfacts-python/pull/504#issuecomment-5597968719",
+      "accessed": "2026-09-09"
+    }
+  ]
+}

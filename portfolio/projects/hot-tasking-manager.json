@@ -1,0 +1,57 @@
+{
+  "id": "hot-tasking-manager",
+  "name": "HOT Tasking Manager",
+  "repository": "https://github.com/hotosm/tasking-manager",
+  "homepage": "https://tasks.hotosm.org/",
+  "license": "BSD-2-Clause",
+  "humanitarian_domain": "Coordinating and validating open mapping for disaster preparedness, response, and local planning",
+  "impact_evidence": [
+    {
+      "type": "self_reported",
+      "claim": "HOT describes coordinated remote mapping, validation, and project data access for humanitarian organizations and local communities. This establishes the intended operational pathway, not the realized benefit of any proposed fix.",
+      "source_id": "hot-purpose"
+    }
+  ],
+  "maintenance": {
+    "default_branch": "develop",
+    "inspected_revision": "2b917a14ea7b0b76935c4e2d6985ab25764cd1c9",
+    "current_public_activity": "Unarchived; GitHub pushed_at 2026-09-08T17:01:32Z. Recursive tree was not truncated. Activity does not prove issue freshness or available review capacity."
+  },
+  "contribution": {
+    "pathway": "Fork-based PRs against develop with tests, formatting and review. The required setup/contribution documents have been audited, but the shared HOT contribution guide excludes automated bot/AI accounts; Humanifest's current bot contribution pathway is incompatible. No agreement signed or exception established.",
+    "ai_policy": "Human-led disclosed AI assistance is permitted under agent and full responsible-AI guidance, with human review and protected-change limits. However, the shared HOT contribution guide explicitly does not accept contributions from automated bot/AI accounts. Humanifest's bot-only contribution pathway is not accepted by that published rule; do not treat AI assistance permission as bot-account approval.",
+    "maintainer_check_required": true
+  },
+  "sources": [
+    {
+      "id": "hot-purpose",
+      "url": "https://www.hotosm.org/en/tools-resources/tech-product-suite/tasking-manager/",
+      "accessed": "2026-09-08"
+    },
+    {
+      "id": "hot-repo",
+      "url": "https://api.github.com/repos/hotosm/tasking-manager",
+      "accessed": "2026-09-08"
+    },
+    {
+      "id": "hot-contributing",
+      "url": "https://github.com/hotosm/tasking-manager/blob/2b917a14ea7b0b76935c4e2d6985ab25764cd1c9/docs/developers/contributing-guidelines.md",
+      "accessed": "2026-09-08"
+    },
+    {
+      "id": "hot-ai-policy",
+      "url": "https://github.com/hotosm/tasking-manager/blob/2b917a14ea7b0b76935c4e2d6985ab25764cd1c9/docs/developers/contributing.md",
+      "accessed": "2026-09-08"
+    },
+    {
+      "id": "hot-agent-guide",
+      "url": "https://github.com/hotosm/tasking-manager/blob/2b917a14ea7b0b76935c4e2d6985ab25764cd1c9/AGENTS.md",
+      "accessed": "2026-09-08"
+    },
+    {
+      "id": "hot-bot-account-policy-2026-09-09",
+      "url": "https://docs.hotosm.org/become-a-contributor/#how-contributions-are-handled",
+      "accessed": "2026-09-09"
+    }
+  ]
+}

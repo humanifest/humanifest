@@ -3,25 +3,87 @@
   "repository": "https://github.com/medic/cht-core",
   "local_branch": "/private/tmp/humanifest-cht-core@10155-edit-user-load-state",
   "commit": "not committed",
-  "tier": 3,
-  "runner": "github-codespaces-or-devcontainer",
-  "operating_system": "Linux",
-  "architecture": "x86_64 preferred",
-  "cpu": "4 cores suggested",
-  "ram_gb": 8,
-  "disk_gb": 32,
-  "package_managers": ["npm"],
-  "lockfiles": ["package-lock.json"],
-  "project_controlled_setup_scripts": ["postinstall: patch-package", "prepare: husky"],
-  "services": [],
-  "ports": [],
-  "secrets": [],
-  "setup_commands": ["npm install or npm ci only after explicit approval or in disposable Codespaces/devcontainer"],
-  "test_commands": ["npm run unit-admin"],
-  "checks_already_run": ["node --check admin/src/js/controllers/edit-user.js", "git diff --check"],
+  "tier": 2,
+  "runner": "Verified bounded temporary local checkout; Docker daemon unavailable. This is not a VM/container security boundary.",
+  "operating_system": "macOS 26.6.2",
+  "architecture": "arm64",
+  "cpu": "Peak use not measured",
+  "ram_gb": null,
+  "disk_gb": null,
+  "package_managers": [
+    "npm"
+  ],
+  "lockfiles": [
+    "package-lock.json",
+    "admin/package-lock.json"
+  ],
+  "project_controlled_setup_scripts": [
+    "root postinstall: patch-package; two tracked dependency patches inspected",
+    "root prepare: husky; tracked pre-commit hook rejects main/master commits",
+    "shared-libs/cht-datasource postinstall: rm -rf dist && npm run build; build invokes TypeScript"
+  ],
+  "services": [
+    "Karma and temporary headless Chrome for unit tests only; no API/CouchDB/live CHT service"
+  ],
+  "ports": [
+    "Karma loopback 127.0.0.1:19876; listener absent after completion",
+    "Chrome debugging requested on loopback with ephemeral port; temporary profile from installed launcher"
+  ],
+  "secrets": [
+    "No application secret reference found in the inspected unit-admin launcher/config; this is not an exhaustive dependency audit",
+    "Do not provide personal GitHub, cloud, registry, or production credentials to target setup"
+  ],
+  "setup_commands": [
+    "npm ci --ignore-scripts --no-audit --no-fund (root and admin separately, sanitized child environment)",
+    "node node_modules/patch-package/index.js",
+    "node node_modules/typescript/bin/tsc -p shared-libs/cht-datasource/tsconfig.build.json",
+    "node scripts/build/build-angularjs-template-cache.js",
+    "bash scripts/build/browserify-admin.sh (local node_modules/.bin on PATH)"
+  ],
+  "test_commands": [
+    "node research/fixtures/run_cht_admin_baseline.cjs (from Humanifest with explicit target/browser paths)",
+    "node research/fixtures/run_cht_admin_baseline.cjs --reproduce",
+    "node research/fixtures/run_cht_admin_baseline.cjs --dom"
+  ],
+  "checks_already_run": [
+    "Historical local prep: node --check admin/src/js/controllers/edit-user.js",
+    "Historical local prep: git diff --check",
+    "2026-09-08: read-only committed manifest, lockfile, launcher, Karma config, bundler, workspace hook and CI inspection",
+    "2026-09-08: root/admin locked installs with automatic hooks disabled; explicit inspected patches and builds pass",
+    "2026-09-08: 431 existing admin tests and 3 synthetic real-controller probes pass in Chrome",
+    "2026-09-08: all 2767 tracked baseline blobs match pinned Git objects after builds",
+    "2026-09-08: two compiled-modal DOM probes pass for pending/failed SSO lookup and successful resolution"
+  ],
   "residual_risks": [
-    "Karma/admin tests not run yet",
-    "UI behavior not visually verified",
-    "maintainer confirmation needed before opening replacement PR"
-  ]
+    "Maintainer confirmation remains absent; no target implementation authorized by this evidence",
+    "Compiled modal DOM verified with synthetic inputs; production styling, loading-state video, translation validation, full deployment and Linux parity remain unverified",
+    "Bounded local runner is not a VM/container; no claim of network egress blocking",
+    "Automatic install hooks remain disabled; no whole-dependency vulnerability audit",
+    "Historical preparation patch is separate and unchanged"
+  ],
+  "inspected_at": "2026-09-08",
+  "source_commit": "35b2bb6dac0844bee3228476591d08d56c5dd10d",
+  "upstream_head_at_review": "372677567640d1d3e77e6e46f168fe69a8a9e218",
+  "audit": "research/2026-09-08-cht-admin-runtime-verification.md",
+  "status": "Focused admin runtime verified; controller failure reproduced. Remains MAINTAINER-CHECK pending scope confirmation.",
+  "resource_estimate_status": "Measured rounded disk use: baseline 1.4 GiB, npm cache 246 MiB. Peak RAM/CPU unmeasured; earlier planning estimates removed.",
+  "runtime_requirements": {
+    "node": ">=22.15.0",
+    "npm": ">=10.9.0",
+    "browser": "Explicit CHROME_BIN; fresh temporary profile in verified baseline runner",
+    "verified_versions": {
+      "node": "22.16.0",
+      "npm": "11.6.2",
+      "chrome": "153.0.8010.36",
+      "karma": "6.4.4"
+    }
+  },
+  "setup_prerequisites": [
+    "Keep verified baseline separate from the existing preparation patch",
+    "Recheck upstream and retain current maintainer confirmation before advancing beyond MAINTAINER-CHECK",
+    "Use inspected locked setup with automatic hooks disabled and no inherited account credentials",
+    "Generate fresh datasource/main/template bundles before tests",
+    "Treat production styling/video and live-service setup as separate work"
+  ],
+  "verified_baseline": "/private/tmp/humanifest-cht-baseline@35b2bb6dac0844bee3228476591d08d56c5dd10d"
 }

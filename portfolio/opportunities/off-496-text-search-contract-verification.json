@@ -1,0 +1,206 @@
+{
+  "id": "off-496-text-search-contract-verification",
+  "project_id": "openfoodfacts-python",
+  "title": "Verify text-search semantics in the existing Open Food Facts SDK fix",
+  "pipeline_state": "MAINTAINER-CHECK",
+  "work_kind": "support-existing-contribution",
+  "problem": "The README text_search example is reported to fail after CGI authentication changes. Existing PR #504 substitutes /api/v2/search while retaining search_terms, but official v2 docs say full-text search is unsupported. Its changed tests mock fixed results and cannot establish server search semantics.",
+  "humanitarian_relevance": "Correct product retrieval supports open food-information tools and research. This is a public-benefit pathway, not a demonstrated health or humanitarian-outcome improvement.",
+  "evidence": [
+    {
+      "type": "self_reported",
+      "claim": "Issue #496 reports HTTP 503 from the documented text_search example; a maintainer says the CGI endpoint now requires authentication.",
+      "source_id": "off-maintainer-auth"
+    },
+    {
+      "type": "measured",
+      "claim": "Read both changed-file diffs at PR head 970a7290a8a5869de8f5784324c166212fdd15ca: the method changes to /api/v2/search and retains search_terms; the tests change URL mocks and return predetermined products. No target test was run.",
+      "source_id": "off-search-audit"
+    },
+    {
+      "type": "measured",
+      "claim": "Current official v2 search documentation explicitly states that full-text requests are unsupported. This is documented contract evidence, not a live query result.",
+      "source_id": "off-v2-search"
+    },
+    {
+      "type": "measured",
+      "claim": "38 unchanged SDK API tests pass with blocked Python socket/DNS operations. Four cases executing the pinned original server filter verify that search_terms is removed before query construction, with structured-filter and pagination controls. Source dispatch was traced but full HTTP/server/database execution did not occur.",
+      "source_id": "off-runtime-2026-09-09"
+    },
+    {
+      "type": "measured",
+      "claim": "Verification note delivered as humanifest-bot at 2026-09-09T07:30:38Z. A separate GitHub API read verified exact author and body. Delivery is not maintainer confirmation or acceptance.",
+      "source_id": "off-verification-delivered"
+    }
+  ],
+  "code_surface": "src/openfoodfacts/api.py ProductResource.text_search and tests/unit/test_api.py in existing PR #504 at 970a7290a8a5869de8f5784324c166212fdd15ca. Server at 3a97b98032d27b7a5e33de0c2edcde0c21ddf4c3: Routing.pm, cgi/display.pl and Display.pm search parameter filter.",
+  "proposed_change": "First verify the documented mismatch and support the existing author with a semantic regression strategy. Agree the supported search/authentication and compatibility contract before changing the SDK. No replacement PR or credential-in-URL workaround.",
+  "tests": "38 unchanged SDK API tests pass on the pinned PR in a frozen wheel-only Python 3.11.10 environment with Python socket/DNS blocking. Four hash-checked cases execute the original server parameter filter: ordinary text, a nonce and no text forward identical empty filters; a structured-brand control survives, pagination/sorting are retained and owner filtering is invoked. No full server, live API, database or deployed-result test ran. Reusable fixtures and exact limits are in research/2026-09-09-openfoodfacts-runtime-verification.md.",
+  "environment": "Disposable pinned PR checkout outside Humanifest. Existing Python 3.11.10/uv 0.8.22 installed 43 frozen core/development wheel dependencies with source builds, project install and automatic Python downloads disabled. No ML/Pillow/Redis extras or services needed for the focused API file. CI uses a different uv version and Linux/all-extras; this is not exact full CI replication. Original server filter runs with system Perl 5.34.1 and request/downstream-query spies. No credentials or live service calls.",
+  "maintainer": "Existing PR author arybhatt4533. Verified findings were posted on PR #504 as humanifest-bot at 2026-09-09T07:30:38Z. The PR remains at the tested head, with no human review in the pre-post read. Await the existing author/maintainers on the intended full-text/authentication contract and support scope; no replacement patch. Manual status review September 15 unless new input arrives.",
+  "risks": "Current server source discards search_terms, while SDK mocks accept fixed response bodies. The filter execution is not a full server or deployed API test. Authentication and response compatibility require an agreed contract. Preserve the existing author; no screenshot/video proof, independent human review, bot-identity acceptance or deployment benefit is claimed.",
+  "priority_rationale": "An existing patch has a specific documented search-contract mismatch that narrow mocked tests do not validate. A focused verification contribution may prevent a misleading fix while reducing review burden; acceptance and realized impact remain unknown.",
+  "gates": {
+    "humanitarian_relevance_supported": {
+      "passed": true,
+      "rationale": "Official project statement supports a public-benefit food-information and research pathway; no patch-level outcomes are claimed.",
+      "source_ids": [
+        "off-purpose"
+      ]
+    },
+    "repository_active": {
+      "passed": true,
+      "rationale": "Current repository is unarchived with September 2026 activity and an open search-fix PR.",
+      "source_ids": [
+        "off-repo",
+        "off-pr-504"
+      ]
+    },
+    "external_contributions_accepted": {
+      "passed": true,
+      "rationale": "Contribution guide explicitly welcomes fork-based PRs against develop; specific bot/AI and proposed-work acceptance remain unresolved.",
+      "source_ids": [
+        "off-contributing"
+      ]
+    },
+    "contribution_policy_understood": {
+      "passed": true,
+      "rationale": "Read the pinned contribution guide and PR template: fork/develop workflow, maintainer assignment agreement, tests/CI, and disclosure/proof requirements are recorded. They do not establish acceptance of this specific support contribution.",
+      "source_ids": [
+        "off-runtime-2026-09-09"
+      ]
+    },
+    "ai_policy_understood": {
+      "passed": true,
+      "rationale": "The pinned PR template explicitly requires LLM/version/mode disclosure, successful execution and screenshot/video proof. The record distinguishes this known requirement from unconfirmed bot-identity acceptance and unclaimed human review.",
+      "source_ids": [
+        "off-runtime-2026-09-09"
+      ]
+    },
+    "problem_current_and_consequential": {
+      "passed": false,
+      "rationale": "The current pinned server source supports the documented mismatch, and the SDK issue reports a failed search example. Deployment state, actual returned products and downstream consequence remain unverified."
+    },
+    "behavior_reproducible_or_verifiable": {
+      "passed": true,
+      "rationale": "The original server filter demonstrably drops search_terms in four hash-checked cases while the unchanged SDK API file passes 38 mocked tests. This establishes the bounded source/filter mismatch, not live product-search results.",
+      "source_ids": [
+        "off-runtime-2026-09-09"
+      ]
+    },
+    "code_and_tests_located": {
+      "passed": true,
+      "rationale": "Both PR diffs were read and all 38 tests in the unchanged API test file pass. Current server route/filter source was traced, and the original filter executed in four bounded cases.",
+      "source_ids": [
+        "off-search-audit",
+        "off-runtime-2026-09-09"
+      ]
+    },
+    "change_bounded": {
+      "passed": false,
+      "rationale": "Not established in this research intake; inspect supporting evidence before advancement."
+    },
+    "regression_strategy_credible": {
+      "passed": false,
+      "rationale": "Not established in this research intake; inspect supporting evidence before advancement."
+    },
+    "no_private_data_required": {
+      "passed": true,
+      "rationale": "Source review and synthetic search fixtures need no account credentials or private operational records.",
+      "source_ids": [
+        "off-search-audit"
+      ]
+    },
+    "security_and_licensing_risk_acceptable": {
+      "passed": false,
+      "rationale": "Not established in this research intake; inspect supporting evidence before advancement."
+    },
+    "environment_feasible": {
+      "passed": true,
+      "rationale": "A frozen wheel-only local environment successfully ran the unchanged 38-test API file. No server/database/ML environment is needed for this focused verification; broader implementation readiness must be reassessed for the agreed scope.",
+      "source_ids": [
+        "off-runtime-2026-09-09"
+      ]
+    },
+    "maintainer_interest_confirmed": {
+      "passed": false,
+      "rationale": "The maintainer previously explained CGI authentication. Humanifest has now delivered the bounded verification on PR #504, but no accepted search contract or Humanifest scope is established.",
+      "source_ids": [
+        "off-verification-delivered"
+      ]
+    },
+    "probable_reviewer_identified": {
+      "passed": false,
+      "rationale": "Not established in this research intake; inspect supporting evidence before advancement."
+    },
+    "benefit_justifies_review_cost": {
+      "passed": false,
+      "rationale": "Not established in this research intake; inspect supporting evidence before advancement."
+    },
+    "user_can_explain_line_by_line": {
+      "passed": false,
+      "rationale": "Not established in this research intake; inspect supporting evidence before advancement."
+    }
+  },
+  "score_inputs": {
+    "humanitarian_benefit": 2.5,
+    "acceptance_probability": 0,
+    "technical_confidence": 3,
+    "review_burden": 2,
+    "deployment_probability": 0
+  },
+  "score_basis": "Focused SDK and original-filter execution now support technical confidence. Acceptance, deployment and downstream impact remain unresolved; failed gates keep implementation score zero.",
+  "sources": [
+    {
+      "id": "off-purpose",
+      "url": "https://blog.openfoodfacts.org/en/news/why-open-food-facts-is-independent-and-open-and-why-that-matters",
+      "accessed": "2026-09-09"
+    },
+    {
+      "id": "off-repo",
+      "url": "https://api.github.com/repos/openfoodfacts/openfoodfacts-python",
+      "accessed": "2026-09-09"
+    },
+    {
+      "id": "off-contributing",
+      "url": "https://github.com/openfoodfacts/openfoodfacts-python/blob/34d0629c970b3887a63c615ace7497a9a28b294b/CONTRIBUTING.md",
+      "accessed": "2026-09-09"
+    },
+    {
+      "id": "off-issue-496",
+      "url": "https://github.com/openfoodfacts/openfoodfacts-python/issues/496",
+      "accessed": "2026-09-09"
+    },
+    {
+      "id": "off-maintainer-auth",
+      "url": "https://github.com/openfoodfacts/openfoodfacts-python/issues/496#issuecomment-4865954261",
+      "accessed": "2026-09-09"
+    },
+    {
+      "id": "off-pr-504",
+      "url": "https://github.com/openfoodfacts/openfoodfacts-python/pull/504",
+      "accessed": "2026-09-09"
+    },
+    {
+      "id": "off-v2-search",
+      "url": "https://openfoodfacts.github.io/documentation/docs/Product-Opener/v2/search/get-search/",
+      "accessed": "2026-09-09"
+    },
+    {
+      "id": "off-search-audit",
+      "url": "https://github.com/humanifest-bot/humanifest/blob/codex/cht-admin-environment-audit/research/2026-09-09-openfoodfacts-search-contract-audit.md",
+      "accessed": "2026-09-09"
+    },
+    {
+      "id": "off-runtime-2026-09-09",
+      "url": "https://github.com/humanifest-bot/humanifest/blob/codex/cht-admin-environment-audit/research/2026-09-09-openfoodfacts-runtime-verification.md",
+      "accessed": "2026-09-09"
+    },
+    {
+      "id": "off-verification-delivered",
+      "url": "https://github.com/openfoodfacts/openfoodfacts-python/pull/504#issuecomment-5597968719",
+      "accessed": "2026-09-09"
+    }
+  ],
+  "next_external_status_check": "2026-09-15"
+}

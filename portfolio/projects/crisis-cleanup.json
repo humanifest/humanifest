@@ -23,7 +23,7 @@
     "current_risk": "Candidate #1164 remains open without comments since 2024. Its current awaited request path weakens a simple missing-await explanation; synthetic reproduction and maintainer confirmation remain necessary."
   },
   "contribution": {
-    "pathway": "Current README links to crisiscleanup-3-web/CONTRIBUTING.md, which requests focused changes, passing tests, review participation, and CLA compliance. Actual CLA text was not retrieved from the JavaScript-only contributions page; current full terms remain unverified.",
+    "pathway": "README links to the older contributing guide, which requests focused, tested fork-based PRs and CLA compliance. The live contributions page and ICLA were retrieved on 2026-09-08: the page asks contributors to sign and email the individual agreement, while the guide says physical signing may be requested for larger changes. Humanifest signatory, agreement status, and application to bot/AI-assisted submissions remain unresolved; nothing has been signed or submitted.",
     "ai_policy": "Current AGENTS.md and CLAUDE.md contain instructions for AI coding tools. These do not establish an external AI-assisted contribution policy; disclosure and accountability expectations still need confirmation.",
     "maintainer_check_required": true
   },
@@ -61,6 +61,11 @@
     {
       "id": "cc-contributions-2026-09-08",
       "url": "https://www.crisiscleanup.org/contributions",
+      "accessed": "2026-09-08"
+    },
+    {
+      "id": "cc-icla-2026-09-08",
+      "url": "https://www.crisiscleanup.org/assets/icla.pdf",
       "accessed": "2026-09-08"
     }
   ]

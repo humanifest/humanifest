@@ -42,12 +42,12 @@
   "tests": "After confirmation and setup inspection, use the existing PhoneOutbound model tests as a fixture pattern for a rejected POST, then verify removeNumberFromQueue emits no success toast on rejection. A hook/integration check must preserve real ORM rejection behavior; a mocked action alone cannot establish the reported cause. No upstream test was run in this audit.",
   "environment": "Tier 1 first, Tier 2 local worktree likely enough after inspecting package scripts; do not touch live phone systems.",
   "maintainer": "No current maintainer confirmation; no assignee.",
-  "risks": "Medium: old issue and possibly a transient outage or different deployed revision. Current source contradicts a simple missing-await explanation. ORM rejection behavior and UI error feedback remain unverified; use synthetic data without live phone services. README links to an older repository's contributing guide and a JavaScript-only CLA page, so full current contribution terms remain unresolved.",
+  "risks": "Medium: old issue and possibly a transient outage or different deployed revision. Current source contradicts a simple missing-await explanation. ORM rejection behavior and UI error feedback remain unverified; use synthetic data without live phone services. The CLA is now retrieved, but Humanifest signatory, agreement status, and AI-assisted contribution expectations remain unresolved.",
   "gates": {
     "humanitarian_relevance_supported": { "passed": true, "rationale": "Crisis Cleanup supports disaster response coordination." },
     "repository_active": { "passed": true, "rationale": "Repository updated in 2026." },
     "external_contributions_accepted": { "passed": true, "rationale": "README references contribution terms and CLA." },
-    "contribution_policy_understood": { "passed": false, "rationale": "Read the contributing guide linked by the current README: bounded PRs, tests, ongoing review participation, and CLA terms apply. The actual CLA text was not retrieved from the JavaScript-only contributions page, so the full terms remain unverified.", "source_ids": ["cc-contributing-2026-09-08", "cc-contributions-2026-09-08"] },
+    "contribution_policy_understood": { "passed": false, "rationale": "Retrieved the live contribution page and ICLA. Published guidance differs on signing expectations; Humanifest signatory and agreement status, including application to bot/AI-assisted submissions, are unresolved. Retrieval is complete, but contribution readiness is not. No agreement was signed or submitted.", "source_ids": ["cc-contributing-2026-09-08", "cc-contributions-2026-09-08", "cc-icla-2026-09-08"] },
     "ai_policy_understood": { "passed": false, "rationale": "Current AGENTS.md and CLAUDE.md provide AI-tool development instructions, but these are not an explicit external AI-assisted contribution policy. Disclosure and accountability requirements remain unconfirmed.", "source_ids": ["cc-agent-guide-2026-09-08"] },
     "problem_current_and_consequential": { "passed": false, "rationale": "Rechecked 2026-09-08: open but last updated 2024-10-02, with no comments; current behavior remains unconfirmed.", "source_ids": ["issue-1164-recheck-2026-09-08"] },
     "behavior_reproducible_or_verifiable": { "passed": false, "rationale": "No reproduction performed and may require phone workflow context." },
@@ -113,6 +113,11 @@
     {
       "id": "cc-agent-guide-2026-09-08",
       "url": "https://github.com/CrisisCleanup/crisiscleanup-4-web/blob/64f72babb32346cca0d32c97d6f6dfd8d9dc56c9/AGENTS.md",
+      "accessed": "2026-09-08"
+    },
+    {
+      "id": "cc-icla-2026-09-08",
+      "url": "https://www.crisiscleanup.org/assets/icla.pdf",
       "accessed": "2026-09-08"
     }
   ]

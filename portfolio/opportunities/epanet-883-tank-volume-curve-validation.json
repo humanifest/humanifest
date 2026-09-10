@@ -1,0 +1,187 @@
+{
+  "id": "epanet-883-tank-volume-curve-validation",
+  "project_id": "owa-epanet",
+  "title": "Verify invalid tank-volume curves across file loading and API updates",
+  "pipeline_state": "MAINTAINER-CHECK",
+  "problem": "The real pinned library accepts decreasing and interior-dip water-storage volume curves through file loading, API assignment and later curve edits. Direct decreasing assignment returns a NaN diameter without an API error; increasing requested depth yields decreasing initial volume. No process crash or operational consequence is established.",
+  "humanitarian_relevance": "Clear validation may improve reliability of water-network analysis tools. No measured effect on drinking-water safety, utility decisions or resource use.",
+  "evidence": [
+    {
+      "type": "self_reported",
+      "claim": "Reporter says invalid tank-volume curves can produce decreasing volume while filling and a floating-point exception when negative area is converted to diameter. These runtime claims have not been independently reproduced.",
+      "source_id": "epanet-883"
+    },
+    {
+      "type": "measured",
+      "claim": "Pinned file initialization and two API assignment routes derive area from endpoint slope. Curve point/bulk setters check increasing X but not Y; generic decreasing pump curves must remain valid. Existing curve/node tests inspected, not run.",
+      "source_id": "epanet-tank-audit"
+    },
+    {
+      "type": "measured",
+      "claim": "Thirty-four native-library cases pass as current-behavior assertions across GPM/LPS units, three curve shapes and five entry paths, plus cylindrical and decreasing-pump controls. All open/assignment/hydraulic-initialization calls succeed. Direct decreasing assignment yields NaN diameter; interior dips and subsequent edits retain finite diameter while volume decreases with greater requested depth. Metric EN_VOLCURVE assignment also yields 0.3048 times the diameter from file/EN_settankdata routes for the same valid curve. All 144 tracked source files remain byte-identical before build and after probes.",
+      "source_id": "epanet-native-reproduction"
+    },
+    {
+      "type": "measured",
+      "claim": "The unchanged native CMake baseline passes: 88 Boost cases across six binaries, plus two threaded runs returning status zero. All six CTest entries pass and the unregistered string-helper binary passes separately. All 34 behavior cases pass again against the test-enabled library; 144 tracked files remain byte-identical. Bounded searches found historical unit-changing/parameter issues, but not a matching report of the fixed-unit EN_VOLCURVE nominal-diameter discrepancy.",
+      "source_id": "epanet-native-baseline"
+    },
+    {
+      "type": "measured",
+      "claim": "Twelve four-hour native hydraulic simulations compare fixed-unit file/EN_VOLCURVE/EN_settankdata routes before/after save-reload. The metric saved row contains the smaller nominal diameter, but reloading recomputes it. Levels, volumes, flow and pressure agree up to floating-point differences (maximum absolute difference 1.82e-12 in volume). No consequential hydraulic effect is established for these two synthetic networks.",
+      "source_id": "epanet-metric-consequence"
+    }
+  ],
+  "code_surface": "At dev 83e25bbe2b0b460803e71df03bc989afe9557ea3: src/input1.c inittanks; src/input2.c parser; src/validate.c validatetanks/validatecurves; src/epanet.c public tank assignment, curve mutation and getters. Existing tests/test_curve.cpp and tests/test_node.cpp located. Real C library exercised through public API; no copied-function simulation.",
+  "proposed_change": "First reproduce invalid-data handling through the real library and agree scope. Consider consistent tank-specific validation across relevant entry points only after maintainer confirmation; preserve generic/pump curve semantics and document errors/rollback.",
+  "tests": "All six registered CTest programs pass: 86 unchanged Boost cases plus a threaded program whose two EPANET runs each report status zero. The separately run, unregistered string-helper binary adds two cases, for 88 Boost cases across six binaries and seven executables overall. All 34 native-library behavior cases pass against the test-enabled library; all 144 tracked source files remain unchanged. No added production regression/fix or real-world operational validation. A further 12 four-hour native runs compare route and save/reload behavior on two valid synthetic networks; no meaningful hydraulic difference is observed.",
+  "environment": "Pinned native Release build with BUILD_TESTS=ON, CMake 3.31.6, Apple Clang 21.0.0 and isolated Boost 1.85.0. Official Boost archive SHA256 verified; selected test/system/thread/filesystem plus chrono/atomic components built locally with no global installation, inherited credentials or user/site build configuration. 88 Boost cases, two successful threaded runs and 34 native behavior cases pass; 144 tracked target files unchanged. No external services or operational-system access.",
+  "maintainer": "Verified local evidence is ready for a concise #883 scope inquiry. No upstream message has been sent, no bot eligibility or scope confirmed, and no review date is invented. The current compute-governance human-review requirement applies to the prepared draft; existing GitHub communication authorization is not revoked.",
+  "risks": "Original invalid water-storage curves remain accepted; their production consequence and desired error/rollback policy are unconfirmed. The separate valid-curve metric discrepancy affects returned/saved diameter but showed no meaningful hydraulic effect in 12 bounded simulations and corrects on reload. Do not promote it as a consequential simulation bug or expand #883 silently. Quality/mixing and other diameter uses remain untested; no independent human review or bot eligibility is claimed.",
+  "priority_rationale": "The invalid-input report has a reproduced mechanism and clean native baseline. Further investigation of a neighboring metric discrepancy yielded a useful negative finding, so that research is closed rather than expanded into another low-evidence contribution. Proceed to scope review and replenish cause-led discovery independently.",
+  "gates": {
+    "humanitarian_relevance_supported": {
+      "passed": true,
+      "rationale": "Water-network modeling has a documented public-benefit use case; no contribution-specific outcome is claimed.",
+      "source_ids": [
+        "epanet-purpose"
+      ]
+    },
+    "repository_active": {
+      "passed": true,
+      "rationale": "Unarchived, pushed August 27; current dev and open issue/PR state inspected September 9.",
+      "source_ids": [
+        "epanet-repo"
+      ]
+    },
+    "external_contributions_accepted": {
+      "passed": false,
+      "rationale": "Not established in this bounded source intake; verify before implementation."
+    },
+    "contribution_policy_understood": {
+      "passed": false,
+      "rationale": "Not established in this bounded source intake; verify before implementation."
+    },
+    "ai_policy_understood": {
+      "passed": false,
+      "rationale": "Not established in this bounded source intake; verify before implementation."
+    },
+    "problem_current_and_consequential": {
+      "passed": false,
+      "rationale": "Current pinned runtime accepts invalid volume ordering and returns NaN diameter without errors. Operational consequences and practical priority remain unconfirmed."
+    },
+    "behavior_reproducible_or_verifiable": {
+      "passed": true,
+      "rationale": "34 assertions exercise the compiled original library, including malformed water-storage curves, genuine parser/API routes, valid pump/cylindrical controls and US/metric cases. Source remains unchanged. This verifies the stated input-handling behavior only.",
+      "source_ids": [
+        "epanet-native-reproduction"
+      ]
+    },
+    "code_and_tests_located": {
+      "passed": true,
+      "rationale": "File tank initialization, API assignment and curve mutation paths identified; existing curve/node tests inspected without execution.",
+      "source_ids": [
+        "epanet-tank-audit"
+      ]
+    },
+    "change_bounded": {
+      "passed": false,
+      "rationale": "Research can compare loader, assignment and later mutation. Production checks must preserve legitimate other curve types and agree error/rollback semantics."
+    },
+    "regression_strategy_credible": {
+      "passed": true,
+      "rationale": "Unchanged native suite passes and real-library reproduction covers file/API assignment, later mutation, increasing/decreasing/interior-dip curves, pump/cylindrical controls and GPM/LPS modes. Accepted error/rollback semantics and a production regression patch remain to agree.",
+      "source_ids": [
+        "epanet-native-baseline",
+        "epanet-native-reproduction"
+      ]
+    },
+    "no_private_data_required": {
+      "passed": true,
+      "rationale": "Tiny synthetic input networks can examine validation and derived values without actual utility data or credentials.",
+      "source_ids": [
+        "epanet-tank-audit"
+      ]
+    },
+    "security_and_licensing_risk_acceptable": {
+      "passed": true,
+      "rationale": "Selected native build and test dependency path audited. MIT target and Boost Software License 1.0 reviewed, official archive checksums verified, local restricted setup with no operational-system access. This gate covers the inspected reproduction environment, not unreviewed future dependencies.",
+      "source_ids": [
+        "epanet-native-baseline"
+      ]
+    },
+    "environment_feasible": {
+      "passed": true,
+      "rationale": "Audited isolated CMake/Clang/Boost setup builds the unchanged native suite; 88 Boost cases, two threaded runs and 34 behavior cases pass. No services/private inputs or global dependency installation are required.",
+      "source_ids": [
+        "epanet-native-baseline"
+      ]
+    },
+    "maintainer_interest_confirmed": {
+      "passed": false,
+      "rationale": "Issue open, unassigned and without comments; no Humanifest inquiry, acceptance or bot eligibility established."
+    },
+    "probable_reviewer_identified": {
+      "passed": false,
+      "rationale": "Not established in this bounded source intake; verify before implementation."
+    },
+    "benefit_justifies_review_cost": {
+      "passed": false,
+      "rationale": "Not established in this bounded source intake; verify before implementation."
+    },
+    "user_can_explain_line_by_line": {
+      "passed": false,
+      "rationale": "Not established in this bounded source intake; verify before implementation."
+    }
+  },
+  "score_inputs": {
+    "humanitarian_benefit": 3,
+    "acceptance_probability": 0,
+    "technical_confidence": 3,
+    "review_burden": 3,
+    "deployment_probability": 0
+  },
+  "score_basis": "Native invalid-input behavior is now independently reproduced, while operational consequence, accepted scope and deployment remain unknown; implementation score remains zero.",
+  "sources": [
+    {
+      "id": "epanet-purpose",
+      "url": "https://www.epa.gov/water-research/epanet",
+      "accessed": "2026-09-09"
+    },
+    {
+      "id": "epanet-repo",
+      "url": "https://api.github.com/repos/OpenWaterAnalytics/EPANET",
+      "accessed": "2026-09-09"
+    },
+    {
+      "id": "epanet-readme",
+      "url": "https://github.com/OpenWaterAnalytics/EPANET/blob/83e25bbe2b0b460803e71df03bc989afe9557ea3/README.md",
+      "accessed": "2026-09-09"
+    },
+    {
+      "id": "epanet-883",
+      "url": "https://github.com/OpenWaterAnalytics/EPANET/issues/883",
+      "accessed": "2026-09-09"
+    },
+    {
+      "id": "epanet-tank-audit",
+      "url": "https://github.com/humanifest-bot/humanifest/blob/codex/cht-admin-environment-audit/research/2026-09-09-epanet-tank-curve-audit.md",
+      "accessed": "2026-09-09"
+    },
+    {
+      "id": "epanet-native-reproduction",
+      "url": "https://github.com/humanifest-bot/humanifest/blob/codex/cht-admin-environment-audit/research/2026-09-09-epanet-native-reproduction.md",
+      "accessed": "2026-09-09"
+    },
+    {
+      "id": "epanet-native-baseline",
+      "url": "https://github.com/humanifest-bot/humanifest/blob/codex/cht-admin-environment-audit/research/2026-09-09-epanet-native-baseline.md",
+      "accessed": "2026-09-09"
+    },
+    {
+      "id": "epanet-metric-consequence",
+      "url": "https://github.com/humanifest-bot/humanifest/blob/codex/cht-admin-environment-audit/research/2026-09-09-epanet-metric-consequence.md",
+      "accessed": "2026-09-09"
+    }
+  ]
+}
