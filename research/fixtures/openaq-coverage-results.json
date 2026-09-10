@@ -1,0 +1,308 @@
+{
+  "executed": "2026-09-10",
+  "api_revision": "87c060c28f5b484e0e9953d247082f5e678935c9",
+  "database_revision": "0e49c258186372f4af6c5679a4e1ab47157f0158",
+  "source_integrity_counts": {
+    "api": 15,
+    "db": 5
+  },
+  "response_probe": {
+    "original_model_files_unchanged": true,
+    "network_denial_control_passed": true,
+    "versions": {
+      "pydantic": "2.11.1",
+      "pydantic-core": "2.33.0",
+      "fastapi": "0.115.12",
+      "starlette": "0.46.1",
+      "httpx": "0.28.1",
+      "pyhumps": "3.8.0"
+    },
+    "boundary": "Original response models in a synthetic FastAPI route; no original router, SQL, middleware or operational API",
+    "scenarios": [
+      {
+        "scenario": "valid",
+        "model_errors": [],
+        "synthetic_http_status": 200,
+        "passed": true
+      },
+      {
+        "scenario": "coverage_absent",
+        "model_errors": [],
+        "synthetic_http_status": 200,
+        "passed": true
+      },
+      {
+        "scenario": "coverage_null",
+        "model_errors": [],
+        "synthetic_http_status": 200,
+        "passed": true
+      },
+      {
+        "scenario": "valid_zero_observations",
+        "model_errors": [],
+        "synthetic_http_status": 200,
+        "passed": true
+      },
+      {
+        "scenario": "partial_null_fields",
+        "model_errors": [
+          {
+            "loc": [
+              "results",
+              0,
+              "coverage",
+              "expected_count"
+            ],
+            "type": "int_type"
+          },
+          {
+            "loc": [
+              "results",
+              0,
+              "coverage",
+              "expected_interval"
+            ],
+            "type": "string_type"
+          },
+          {
+            "loc": [
+              "results",
+              0,
+              "coverage",
+              "observed_interval"
+            ],
+            "type": "string_type"
+          },
+          {
+            "loc": [
+              "results",
+              0,
+              "coverage",
+              "percent_complete"
+            ],
+            "type": "float_type"
+          },
+          {
+            "loc": [
+              "results",
+              0,
+              "coverage",
+              "percent_coverage"
+            ],
+            "type": "float_type"
+          }
+        ],
+        "synthetic_http_status": 500,
+        "passed": true
+      },
+      {
+        "scenario": "valid_and_invalid_sensors",
+        "model_errors": [
+          {
+            "loc": [
+              "results",
+              1,
+              "coverage",
+              "expected_count"
+            ],
+            "type": "int_type"
+          },
+          {
+            "loc": [
+              "results",
+              1,
+              "coverage",
+              "expected_interval"
+            ],
+            "type": "string_type"
+          },
+          {
+            "loc": [
+              "results",
+              1,
+              "coverage",
+              "observed_interval"
+            ],
+            "type": "string_type"
+          },
+          {
+            "loc": [
+              "results",
+              1,
+              "coverage",
+              "percent_complete"
+            ],
+            "type": "float_type"
+          },
+          {
+            "loc": [
+              "results",
+              1,
+              "coverage",
+              "percent_coverage"
+            ],
+            "type": "float_type"
+          }
+        ],
+        "synthetic_http_status": 500,
+        "passed": true
+      },
+      {
+        "scenario": "empty_coverage_object",
+        "model_errors": [
+          {
+            "loc": [
+              "results",
+              0,
+              "coverage",
+              "expectedCount"
+            ],
+            "type": "missing"
+          },
+          {
+            "loc": [
+              "results",
+              0,
+              "coverage",
+              "expectedInterval"
+            ],
+            "type": "missing"
+          },
+          {
+            "loc": [
+              "results",
+              0,
+              "coverage",
+              "observedCount"
+            ],
+            "type": "missing"
+          },
+          {
+            "loc": [
+              "results",
+              0,
+              "coverage",
+              "observedInterval"
+            ],
+            "type": "missing"
+          },
+          {
+            "loc": [
+              "results",
+              0,
+              "coverage",
+              "percentComplete"
+            ],
+            "type": "missing"
+          },
+          {
+            "loc": [
+              "results",
+              0,
+              "coverage",
+              "percentCoverage"
+            ],
+            "type": "missing"
+          }
+        ],
+        "synthetic_http_status": 500,
+        "passed": true
+      },
+      {
+        "scenario": "camel_case_input",
+        "model_errors": [],
+        "synthetic_http_status": 200,
+        "passed": true
+      }
+    ]
+  },
+  "sql_probe": {
+    "postgres_version": "postgres (PostgreSQL) 14.18 (Homebrew)",
+    "single_user": true,
+    "original_function_definitions": 2,
+    "results": {
+      "omitted_periods": {
+        "expected_count": 1,
+        "observed_count": 1,
+        "percent_complete": 100,
+        "percent_coverage": 100,
+        "expected_interval": "01:00:00",
+        "observed_interval": "01:00:00"
+      },
+      "valid_periods": {
+        "expected_count": 1,
+        "observed_count": 1,
+        "percent_complete": 100,
+        "percent_coverage": 100,
+        "expected_interval": "01:00:00",
+        "observed_interval": "01:00:00"
+      },
+      "both_periods_null": {
+        "expected_count": null,
+        "observed_count": 1,
+        "percent_complete": null,
+        "percent_coverage": null,
+        "expected_interval": null,
+        "observed_interval": null
+      },
+      "averaging_null": {
+        "expected_count": 1,
+        "observed_count": 1,
+        "percent_complete": 100,
+        "percent_coverage": null,
+        "expected_interval": null,
+        "observed_interval": null
+      },
+      "logging_null": {
+        "expected_count": null,
+        "observed_count": 1,
+        "percent_complete": null,
+        "percent_coverage": 100,
+        "expected_interval": null,
+        "observed_interval": "01:00:00"
+      },
+      "zero_observations": {
+        "expected_count": 1,
+        "observed_count": 0,
+        "percent_complete": 0,
+        "percent_coverage": 0,
+        "expected_interval": "01:00:00",
+        "observed_interval": "00:00:00"
+      },
+      "timestamp_overload": {
+        "expected_count": 1,
+        "observed_count": 1,
+        "percent_complete": 100,
+        "percent_coverage": 100,
+        "expected_interval": "01:00:00",
+        "observed_interval": "01:00:00"
+      },
+      "zero_averaging_error": "22012",
+      "zero_logging_error": "22012"
+    },
+    "original_model_errors": {
+      "omitted_periods": [],
+      "valid_periods": [],
+      "both_periods_null": [
+        "expected_count",
+        "expected_interval",
+        "observed_interval",
+        "percent_complete",
+        "percent_coverage"
+      ],
+      "averaging_null": [
+        "expected_interval",
+        "observed_interval",
+        "percent_coverage"
+      ],
+      "logging_null": [
+        "expected_count",
+        "expected_interval",
+        "percent_complete"
+      ],
+      "zero_observations": [],
+      "timestamp_overload": []
+    },
+    "all_checks_passed": true
+  }
+}

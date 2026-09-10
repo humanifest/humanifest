@@ -3,7 +3,7 @@
   "project_id": "openaq-api",
   "title": "Verify incomplete coverage metadata in OpenAQ sensor responses",
   "pipeline_state": "OPPORTUNITY-RESEARCH",
-  "problem": "API #404 reports a location sensor-list request failing with HTTP 500 when a sensor lacks reporting-period metadata. A diagnostic comment lists five null coverage-field validation errors. Current runtime failure and intended database/API contract remain unverified.",
+  "problem": "API #404 reports a location sensor-list HTTP 500 when reporting-period metadata is missing. The pinned original SQL functions produce the five reported null fields, which fail the original API response model. This synthetic contract reproduction does not establish deployed frequency or the intended database/API fix.",
   "humanitarian_relevance": "OpenAQ supports community access to pollution measurements. Preventing a sensor metadata failure from interrupting data access could aid analysis; no affected humanitarian user, health outcome or realized benefit is established.",
   "evidence": [
     {
@@ -17,19 +17,19 @@
       "source_id": "openaq-screen"
     },
     {
-      "type": "inferred",
-      "claim": "A synthetic response-model and route probe can distinguish valid, wholly absent and partially null coverage without querying operational data. Database invariants may ultimately be the intended fix.",
-      "source_id": "openaq-screen"
+      "type": "measured",
+      "claim": "Eight original-model/synthetic FastAPI scenarios passed expected assertions, including HTTP 500 for incomplete coverage and mixed valid/invalid sensors. Seven outputs from two unchanged SQL coverage functions were checked against the original model; two zero-period controls returned SQLSTATE 22012. The original router and deployed schema were not exercised.",
+      "source_id": "openaq-coverage-reproduction"
     }
   ],
-  "code_surface": "At 87c060c28f5b484e0e9953d247082f5e678935c9: openaq_api/v3/models/responses.py Coverage/Sensor/SensorsResponse; openaq_api/v3/routers/sensors.py fetch_sensors and location-sensor response validation. Existing tests/test_sensors.py and setup located; calculate_coverage database implementation remains to locate.",
+  "code_surface": "API 87c060c28f5b484e0e9953d247082f5e678935c9: Coverage/Sensor/SensorsResponse, fetch_sensors and existing sensor smoke tests. Database 0e49c258186372f4af6c5679a4e1ab47157f0158: two calculate_coverage functions in openaqdb/idempotent/util_functions.sql. Current period-column/migration contract remains unresolved.",
   "proposed_change": "First verify the failure and intended coverage contract. If accepted, provide a focused regression and agreed handling for missing reporting metadata; do not silently invent intervals, zero coverage, or widen response nullability.",
-  "research_next_step": "Inspect remaining test/setup and calculate_coverage sources, then run original response-model/route probes with synthetic valid, absent and partially null coverage. Determine database-test requirements and separate API handling from the proposed ingestion/database constraint fix before preparing an inquiry.",
+  "research_next_step": "Exercise the original location-sensor router with synthetic database results and locate the current averaging/logging-period schema and ingestion contract. Resolve API fallback versus ingestion/database invariants before preparing a scope inquiry; do not repeat the completed pure-model and SQL probes.",
   "priority_rationale": "Air-pollution burden and named OpenAQ community use motivate this research path. Select the unassigned sensor-access report over future SDK cleanup and already-owned Explorer/API fixes. No implementation priority or realized impact is implied.",
-  "tests": "No target tests run. Eight source/setup files were fetched and Git-blob verified. Existing sensor smoke tests cover mixed v2/v3 endpoints but not the specific location-sensor response with null coverage fields. Proposed synthetic controls remain to execute.",
-  "environment": "Python >=3.11, Pydantic >=2.11,<3 and FastAPI >=0.115.11,<0.116 declared. Database, cache and cloud dependencies are present. Test workflow paths require reconciliation with current tree before an isolated install. No clone, install, service start or live API request performed.",
+  "tests": "Eight original-model/synthetic HTTP scenarios pass expected assertions. Two unchanged calculate_coverage functions ran in PostgreSQL 14.18 single-user mode: seven output/model checks and two division-by-zero boundary checks passed. Source integrity verified for 15 API and five database files. Original router, full upstream suite, deployed schema and operational API remain untested.",
+  "environment": "Isolated Python 3.13.7 environment installed 17 lockfile-hashed wheels without source builds. Original response models use Pydantic 2.11.1 and FastAPI 0.115.12. SQL ran in a fresh temporary PostgreSQL 14.18 cluster in single-user mode. Both probes ran with OS network denial; no listening service, existing database, cloud deployment or operational data request. Full application/test setup remains unresolved.",
   "maintainer": "Issue #404 is open and unassigned with one diagnostic comment; its inspected timeline has no linked PR. No Humanifest outreach, confirmed scope, reviewer commitment or follow-up date.",
-  "risks": "The reported error may require database/ingestion invariants rather than nullable API fields. Actual data prevalence, current deployment, regression harness, AI/bot eligibility and complete contribution/setup policy remain unresolved.",
+  "risks": "The demonstrated contract failure may need ingestion/database invariants rather than nullable API fields. Public table SQL omits the period columns while historical import SQL defines nullable columns, so deployed constraints cannot be inferred. Actual prevalence, affected users, full regression environment, AI/bot eligibility and complete contribution policy remain unresolved.",
   "gates": {
     "humanitarian_relevance_supported": {
       "passed": true,
@@ -66,8 +66,12 @@
       "rationale": "Open report and diagnostic comment identify partial coverage metadata, but current runtime behavior, frequency and affected analysis remain unverified."
     },
     "behavior_reproducible_or_verifiable": {
-      "passed": false,
-      "rationale": "Pinned response fields and SQL are consistent with the reported null-field errors. No original-code runtime reproduction or database-function verification has run."
+      "passed": true,
+      "rationale": "Pinned original SQL produces the five reported null coverage fields; original response models reject them. A synthetic FastAPI route reproduces HTTP 500 for incomplete and mixed sensor responses. This verifies the contract mechanism, not original routing or deployment.",
+      "source_ids": [
+        "openaq-coverage-reproduction",
+        "openaq-coverage-functions"
+      ]
     },
     "code_and_tests_located": {
       "passed": true,
@@ -83,8 +87,11 @@
       "rationale": "Diagnostic commenter proposes required database periods; API fallback versus ingestion/database invariants is unresolved. Agree semantics before changing nullability or constraints."
     },
     "regression_strategy_credible": {
-      "passed": false,
-      "rationale": "Synthetic valid, absent and partially null coverage controls are proposed, but runtime harness and database regression requirements remain unverified."
+      "passed": true,
+      "rationale": "Executed controls distinguish valid, absent, null, incomplete, mixed and zero-observation responses, and default versus explicit-null SQL periods. They provide a reproducible contract regression basis; original-route integration and any eventual database constraint still require tests matching the agreed fix.",
+      "source_ids": [
+        "openaq-coverage-reproduction"
+      ]
     },
     "no_private_data_required": {
       "passed": true,
@@ -95,11 +102,11 @@
     },
     "security_and_licensing_risk_acceptable": {
       "passed": false,
-      "rationale": "Source browsing only. Full setup, dependency, license and policy audit remains incomplete; no production data or access requested."
+      "rationale": "Bounded synthetic probes used lockfile-hashed wheels and OS network denial after setup inspection. Full dependency/license/contribution audit for an implementation remains incomplete; no production data or access requested."
     },
     "environment_feasible": {
       "passed": false,
-      "rationale": "Manifest and one CI workflow inspected, but current test paths differ from workflow assumptions and database/cloud dependencies need isolated setup planning. No installation ran."
+      "rationale": "Isolated original-model and PostgreSQL single-user probes ran successfully after manifest, lockfile, workflows, Dockerfile and settings inspection. Full application setup, current database schema and upstream test workflow paths remain unresolved."
     },
     "maintainer_interest_confirmed": {
       "passed": false,
@@ -121,11 +128,11 @@
   "score_inputs": {
     "humanitarian_benefit": 3,
     "acceptance_probability": 0,
-    "technical_confidence": 1,
+    "technical_confidence": 2,
     "review_burden": 2,
     "deployment_probability": 0
   },
-  "score_basis": "Named environmental-health data use supports investigation. Source matches the reported mechanism, but reproduction, acceptance and deployment are unverified; implementation score remains zero.",
+  "score_basis": "Named environmental-health data use supports investigation. Synthetic original-SQL/model execution verifies the reported contract mechanism; route integration, maintainer acceptance and deployment remain unverified, so implementation score stays zero.",
   "sources": [
     {
       "id": "who-air-burden",
@@ -200,6 +207,16 @@
     {
       "id": "openaq-screen",
       "url": "https://github.com/humanifest-bot/humanifest/blob/codex/cht-admin-environment-audit/research/2026-09-10-openaq-air-quality-screen.md",
+      "accessed": "2026-09-10"
+    },
+    {
+      "id": "openaq-coverage-reproduction",
+      "url": "https://github.com/humanifest-bot/humanifest/blob/codex/cht-admin-environment-audit/research/2026-09-10-openaq-coverage-reproduction.md",
+      "accessed": "2026-09-10"
+    },
+    {
+      "id": "openaq-coverage-functions",
+      "url": "https://github.com/openaq/openaq-db/blob/0e49c258186372f4af6c5679a4e1ab47157f0158/openaqdb/idempotent/util_functions.sql",
       "accessed": "2026-09-10"
     }
   ]

@@ -1,5 +1,7 @@
 # Air-quality data discovery: OpenAQ
 
+Follow-up: the [coverage reproduction audit](2026-09-10-openaq-coverage-reproduction.md) records subsequent original-model and SQL execution. Statements below about tests or installation not yet run describe this initial screen.
+
 Accessed September 10, 2026. This screen moves from a high-burden cause to a
 specific data-access hypothesis. It does not estimate lives saved by software.
 
