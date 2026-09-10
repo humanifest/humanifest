@@ -2,8 +2,9 @@
 
 Build a system anyone can use to direct available compute toward verified
 humanitarian and public-benefit work. Continuously improve both the system and
-its contributions: find worthwhile causes, verify their needs, deliver useful
-work, and check what was accepted and used.
+its contributions: find the highest-impact causes through metrics, verify where
+software can help, deliver useful maintainer-approved work, and check what was
+accepted and used.
 
 Humanifest optimizes for:
 
@@ -13,6 +14,20 @@ expected humanitarian benefit
 × technical confidence
 ÷ maintainer review and coordination burden
 ```
+
+Discovery starts one level earlier:
+
+```text
+global burden
+× neglectedness
+× tractability
+× software leverage
+× maintainer pathway
+÷ uncertainty
+```
+
+The default mode is global impact. Personal skills help decide feasibility after
+the cause signal is strong enough to justify discovery time.
 
 ## Success Criteria
 

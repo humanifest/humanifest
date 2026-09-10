@@ -1,0 +1,80 @@
+{
+  "id": "openmrs-patient-chart",
+  "name": "OpenMRS Patient Chart",
+  "repository": "https://github.com/openmrs/openmrs-esm-patient-chart",
+  "homepage": "https://openmrs.org/",
+  "license": "Inspected LICENSE identifies Mozilla Public License 2.0; complete applicability and dependency audit remains pending.",
+  "humanitarian_domain": "Clinical record displays and care-workflow software",
+  "impact_evidence": [
+    {
+      "type": "self_reported",
+      "claim": "OpenMRS reports more than 8,100 care sites serving over 22 million patients, primarily through local organizations. These are project-reported scale figures, not independently attributed health outcomes or contribution impact.",
+      "source_id": "openmrs-impact"
+    },
+    {
+      "type": "inferred",
+      "claim": "Verification of patient-chart behavior against its cited specification could reduce review uncertainty. No affected patient, deployment or health benefit from this candidate is established.",
+      "source_id": "openmrs-screen"
+    }
+  ],
+  "maintenance": {
+    "default_branch": "main",
+    "inspected_revision": "733a0e7c85f2b134cab37e53eca20ba8d053ab77",
+    "archived": false,
+    "pushed_at": "2026-09-10T04:30:40Z",
+    "open_issue_count_excluding_prs": 0,
+    "open_pr_count": 79
+  },
+  "contribution": {
+    "pathway": "O3 documentation describes Jira coordination, fork PRs and test-supported reviews. Proposed research supports existing PR #3626, preserving its author; no duplicate patch or outreach.",
+    "ai_policy": "Organization tree and templates inspected; official AI discussion located but full thread and any resulting policy require review. Existing automated reviews do not establish Humanifest eligibility.",
+    "maintainer_check_required": true
+  },
+  "sources": [
+    {
+      "id": "openmrs-impact",
+      "url": "https://openmrs.org/our-impact/",
+      "accessed": "2026-09-10"
+    },
+    {
+      "id": "openmrs-patient-chart-repo",
+      "url": "https://api.github.com/repos/openmrs/openmrs-esm-patient-chart",
+      "accessed": "2026-09-10"
+    },
+    {
+      "id": "openmrs-open-items",
+      "url": "https://api.github.com/repos/openmrs/openmrs-esm-patient-chart/issues?state=open&per_page=100",
+      "accessed": "2026-09-10"
+    },
+    {
+      "id": "openmrs-contributing",
+      "url": "https://o3-docs.openmrs.org/en-US/docs/frontend-modules/contributing/",
+      "accessed": "2026-09-10"
+    },
+    {
+      "id": "openmrs-ai-discussion",
+      "url": "https://talk.openmrs.org/t/using-ai-coding-agents-and-llm-generated-code/47562",
+      "accessed": "2026-09-10"
+    },
+    {
+      "id": "openmrs-muac-pr",
+      "url": "https://github.com/openmrs/openmrs-esm-patient-chart/pull/3626",
+      "accessed": "2026-09-10"
+    },
+    {
+      "id": "openmrs-muac-pr-files",
+      "url": "https://api.github.com/repos/openmrs/openmrs-esm-patient-chart/pulls/3626/files",
+      "accessed": "2026-09-10"
+    },
+    {
+      "id": "uganda-imam-2016",
+      "url": "https://platform.who.int/docs/default-source/mca-documents/policy-documents/guideline/UGA-CH-38-03-GUIDELINE-2016-eng-IMAM-Guidelines-for-Uganda-Jan-2016.pdf",
+      "accessed": "2026-09-10"
+    },
+    {
+      "id": "openmrs-screen",
+      "url": "https://github.com/humanifest-bot/humanifest/blob/codex/cht-admin-environment-audit/research/2026-09-10-openmrs-patient-chart-screen.md",
+      "accessed": "2026-09-10"
+    }
+  ]
+}

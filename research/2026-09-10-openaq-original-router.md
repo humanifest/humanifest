@@ -1,5 +1,7 @@
 # OpenAQ #404: original sensor routes and period-column definitions
 
+Follow-up: the [policy and ingestion audit](2026-09-10-openaq-policy-and-ingestion.md) identifies the ingestion paths, records the explicit LLM policy and links the unsent scope inquiry.
+
 Executed September 10, 2026. API revision
 `87c060c28f5b484e0e9953d247082f5e678935c9`; database revision
 `0e49c258186372f4af6c5679a4e1ab47157f0158`.

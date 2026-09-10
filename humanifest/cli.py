@@ -11,12 +11,16 @@ import sys
 from .compute import compute_report, load_compute_resources, validate_compute_resources
 from .finance import finance_report, load_funding_ledger, validate_funding_ledger
 from .models import (
+    cause_report,
     generate_candidate_brief,
     generate_handoff,
+    load_causes,
     load_json,
     load_portfolio,
     portfolio_report,
+    score_cause,
     score_opportunity,
+    validate_cause,
     validate_opportunity,
 )
 from .review import render_source_review, source_review
@@ -30,6 +34,13 @@ def main(argv: list[str] | None = None) -> int:
 
     validate_parser = subparsers.add_parser("validate")
     validate_parser.add_argument("--root", default=".", help="Repository root")
+
+    causes_parser = subparsers.add_parser("causes", help="Validate and summarize cause-area discovery records")
+    causes_parser.add_argument("--root", default=".", help="Repository root")
+    causes_parser.add_argument("--format", choices=["markdown", "json"], default="markdown")
+
+    cause_score_parser = subparsers.add_parser("cause-score")
+    cause_score_parser.add_argument("path", help="Cause-area JSON path")
 
     score_parser = subparsers.add_parser("score")
     score_parser.add_argument("path", help="Opportunity JSON path")
@@ -71,6 +82,20 @@ def main(argv: list[str] | None = None) -> int:
             if _print_issues(validate_funding_ledger(ledger)):
                 return 1
             print(finance_report(ledger))
+        elif args.command == "causes":
+            causes, issues = load_causes(Path(args.root))
+            if _print_issues(issues):
+                return 1
+            if args.format == "json":
+                print(json.dumps([{**cause, "discovery_score": score_cause(cause)} for cause in causes],
+                                 indent=2, allow_nan=False))
+            else:
+                print(cause_report(causes))
+        elif args.command == "cause-score":
+            record = load_json(Path(args.path))
+            if _print_issues(validate_cause(record, args.path)):
+                return 1
+            print(json.dumps(score_cause(record), indent=2, allow_nan=False))
         elif args.command in {"validate", "report", "sources"}:
             projects, opportunities, issues = load_portfolio(Path(args.root))
             if _print_issues(issues):
@@ -82,8 +107,11 @@ def main(argv: list[str] | None = None) -> int:
             elif args.command == "validate":
                 print("validation ok")
             else:
+                causes, cause_issues = load_causes(Path(args.root), require_directory=False)
+                if _print_issues(cause_issues):
+                    return 1
                 projection = load_projection(Path(args.root))
-                print(portfolio_report(projects, opportunities, guidance=projection.guidance))
+                print(portfolio_report(projects, opportunities, causes=causes, guidance=projection.guidance))
         else:
             record = load_json(Path(args.path))
             if _print_issues(validate_opportunity(record, args.path)):

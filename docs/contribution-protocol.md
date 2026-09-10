@@ -51,6 +51,23 @@ and [user versus app token identities](https://docs.github.com/en/apps/oauth-app
 (accessed 2026-09-08). Organization ownership alone cannot make an issue comment
 appear under the organization's name.
 
+## Policy discovery before target testing
+
+During `PROJECT-AUDIT`, inspect the target repository's contribution guide,
+license, templates and linked policies, then inspect its owner's public `.github`
+repository and organization contribution documentation for AI/LLM, bot, conduct
+and agreement rules. Record source URLs, revisions where available and access
+dates. A community-profile response or a generic invitation to contribute does
+not prove that an organization has no additional policy.
+
+Complete this policy screen before substantial target installation or repeated
+runtime reproduction. If a policy excludes the proposed contribution mode, park
+that mode; if review is case-by-case, record the uncertainty before investing
+further compute. Understanding a policy is distinct from eligibility or maintainer
+acceptance. Preserve the actual authorship and human-review status in disclosures.
+Do not continue testing merely to accumulate evidence for work the project does
+not want.
+
 ## Hard Gates
 
 No opportunity may reach `BUILDING` unless every gate in `humanifest.models.HARD_GATES` passes:

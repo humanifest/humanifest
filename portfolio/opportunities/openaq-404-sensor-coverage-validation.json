@@ -2,7 +2,7 @@
   "id": "openaq-404-sensor-coverage-validation",
   "project_id": "openaq-api",
   "title": "Verify incomplete coverage metadata in OpenAQ sensor responses",
-  "pipeline_state": "OPPORTUNITY-RESEARCH",
+  "pipeline_state": "MAINTAINER-CHECK",
   "problem": "API #404 reports a location sensor-list HTTP 500 when reporting-period metadata is missing. The pinned original SQL functions produce the five reported null fields, which fail the original API response model. This synthetic contract reproduction does not establish deployed frequency or the intended database/API fix.",
   "humanitarian_relevance": "OpenAQ supports community access to pollution measurements. Preventing a sensor metadata failure from interrupting data access could aid analysis; no affected humanitarian user, health outcome or realized benefit is established.",
   "evidence": [
@@ -25,16 +25,20 @@
       "type": "measured",
       "claim": "All 24 original sensor-route scenarios met assertions using the original query builder, response models and unedited DB.fetchPage with synthetic DB.fetch rows. Both endpoints reject incomplete coverage; valid and absent coverage pass. Database init.sql includes tables/metadata.sql, where both period columns are nullable integers without defaults in their definitions. Deployed constraints and ingestion remain unverified.",
       "source_id": "openaq-original-router"
+    },
+    {
+      "type": "measured",
+      "claim": "Read-only ingestion review locates a realtime new-sensor insert that omits both dedicated period columns and an LCS upsert that writes staged intervals. Organization policy requires LLM disclosure and says wholly LLM-written work is unlikely to be accepted except possible case-by-case review. This constrains contribution readiness; ingestion execution and acceptance are not established.",
+      "source_id": "openaq-policy-ingestion-audit"
     }
   ],
   "code_surface": "API 87c060c28f5b484e0e9953d247082f5e678935c9: Coverage/Sensor/SensorsResponse, original sensor routes, QueryBuilder and DB.fetchPage. Database 0e49c258186372f4af6c5679a4e1ab47157f0158: calculate_coverage in idempotent/util_functions.sql; init.sql includes tables/metadata.sql, which adds both period columns as nullable integers.",
-  "proposed_change": "First verify the failure and intended coverage contract. If accepted, provide a focused regression and agreed handling for missing reporting metadata; do not silently invent intervals, zero coverage, or widen response nullability.",
-  "research_next_step": "Check current ingestion ownership and complete contributor/AI-policy review, then prepare a concise scope inquiry grounded in the original-route reproduction and nullable column definitions. Maintainers must choose API handling versus ingestion/database invariants. Pure models, calculation functions and routes with synthetic database rows are already tested.",
+  "proposed_change": "Prepared inquiry asks whether the disclosed bot contribution mode is welcome and whether to scope API handling, ingestion/database invariants or both. Wait for maintainer direction before implementing; do not invent periods or change nullability without agreement.",
   "priority_rationale": "Air-pollution burden and named OpenAQ community use motivate this research path. Select the unassigned sensor-access report over future SDK cleanup and already-owned Explorer/API fixes. No implementation priority or realized impact is implied.",
   "tests": "Prior eight model/HTTP scenarios and nine SQL checks passed. Now 24 original-router scenarios pass: ten row conditions on each endpoint plus four invalid-ID controls. Original QueryBuilder and unedited DB.fetchPage execute with synthetic DB.fetch rows; expected validation exceptions and HTTP effects checked separately. All 22 fetched API and 21 database files remain unchanged. Full SQL joins, middleware, upstream suite and deployed data remain untested.",
   "environment": "Isolated Python 3.13.7 environment installed 17 lockfile-hashed wheels without source builds. Original response models use Pydantic 2.11.1 and FastAPI 0.115.12. SQL ran in a fresh temporary PostgreSQL 14.18 cluster in single-user mode. Both probes ran with OS network denial; no listening service, existing database, cloud deployment or operational data request. Full application/test setup remains unresolved. The original router and query builder now run with original response wrapping and synthetic DB.fetch rows; no additional packages or connection settings needed.",
-  "maintainer": "Issue #404 is open and unassigned with one diagnostic comment; its inspected timeline has no linked PR. No Humanifest outreach, confirmed scope, reviewer commitment or follow-up date.",
-  "risks": "Checked-in initialization adds nullable period columns in tables/metadata.sql; the earlier missing source location is resolved. This does not prove deployed constraints or current ingestion behavior. Actual prevalence, affected users, full regression environment, AI/bot eligibility and complete contribution policy remain unresolved.",
+  "maintainer": "Issue #404 remains open, unassigned and unlocked with one diagnostic comment and no linked PR in the refreshed timeline. A disclosed inquiry is prepared for human review and has not been posted. No confirmed scope, reviewer commitment or reply date.",
+  "risks": "OpenAQ says wholly LLM-written contributions are unlikely to be accepted, subject to case-by-case review. Ingestion paths differ, so required database periods need an ingestion/backfill decision. Deployed constraints, actual prevalence, affected users, full regression environment and independent human review remain unresolved.",
   "gates": {
     "humanitarian_relevance_supported": {
       "passed": true,
@@ -59,16 +63,24 @@
       ]
     },
     "contribution_policy_understood": {
-      "passed": false,
-      "rationale": "Read the API contribution guide; organization policies, applicable agreements and full contributor workflow still need review."
+      "passed": true,
+      "rationale": "Read the pinned API contribution guide, MIT license and organization contribution/conduct rules. They require compliance with the linked organization LLM policy; no agreement or additional permission was inferred.",
+      "source_ids": [
+        "openaq-contributing",
+        "openaq-organization-contributing",
+        "openaq-api-license"
+      ]
     },
     "ai_policy_understood": {
-      "passed": false,
-      "rationale": "No explicit AI/bot acceptance established; do not infer it from a generic contribution invitation."
+      "passed": true,
+      "rationale": "Explicit organization LLM policy requires disclosure and contributor understanding, and says wholly LLM-written contributions are unlikely to be accepted with possible case-by-case review. The policy is understood; Humanifest eligibility and scope acceptance are not established.",
+      "source_ids": [
+        "openaq-llm-policy"
+      ]
     },
     "problem_current_and_consequential": {
       "passed": false,
-      "rationale": "Open report and diagnostic comment identify partial coverage metadata, but current runtime behavior, frequency and affected analysis remain unverified."
+      "rationale": "The open report and synthetic original-route reproduction establish a plausible failure mechanism. Its deployed prevalence, affected users and practical consequence remain unverified."
     },
     "behavior_reproducible_or_verifiable": {
       "passed": true,
@@ -90,7 +102,7 @@
     },
     "change_bounded": {
       "passed": false,
-      "rationale": "Diagnostic commenter proposes required database periods; API fallback versus ingestion/database invariants is unresolved. Agree semantics before changing nullability or constraints."
+      "rationale": "Current ingestor realtime insert omits dedicated periods, while LCS writes staged intervals. Required database values may need ingestion/backfill changes; desired API versus ingestion scope remains unconfirmed."
     },
     "regression_strategy_credible": {
       "passed": true,
@@ -117,7 +129,7 @@
     },
     "maintainer_interest_confirmed": {
       "passed": false,
-      "rationale": "No Humanifest inquiry or scope acceptance; the existing diagnosis and proposed database fix do not authorize a new contribution."
+      "rationale": "Prepared inquiry remains unsent pending human review. Existing diagnosis, generic contribution invitation and case-by-case LLM policy do not establish acceptance of Humanifest work."
     },
     "probable_reviewer_identified": {
       "passed": false,
@@ -234,6 +246,31 @@
     {
       "id": "openaq-period-columns",
       "url": "https://github.com/openaq/openaq-db/blob/0e49c258186372f4af6c5679a4e1ab47157f0158/openaqdb/tables/metadata.sql",
+      "accessed": "2026-09-10"
+    },
+    {
+      "id": "openaq-organization-contributing",
+      "url": "https://github.com/openaq/.github/blob/683b47c9bb265c3855b06d004352bc0fdaf64fc4/CONTRIBUTING.md",
+      "accessed": "2026-09-10"
+    },
+    {
+      "id": "openaq-llm-policy",
+      "url": "https://github.com/openaq/.github/blob/683b47c9bb265c3855b06d004352bc0fdaf64fc4/LLM_POLICY.md",
+      "accessed": "2026-09-10"
+    },
+    {
+      "id": "openaq-policy-ingestion-audit",
+      "url": "https://github.com/humanifest-bot/humanifest/blob/codex/cht-admin-environment-audit/research/2026-09-10-openaq-policy-and-ingestion.md",
+      "accessed": "2026-09-10"
+    },
+    {
+      "id": "openaq-api-license",
+      "url": "https://github.com/openaq/openaq-api/blob/87c060c28f5b484e0e9953d247082f5e678935c9/LICENSE.md",
+      "accessed": "2026-09-10"
+    },
+    {
+      "id": "openaq-scope-inquiry",
+      "url": "https://github.com/humanifest-bot/humanifest/blob/codex/cht-admin-environment-audit/research/2026-09-10-openaq-scope-inquiry.md",
       "accessed": "2026-09-10"
     }
   ]

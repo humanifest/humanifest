@@ -23,6 +23,7 @@ authorization.
 
 This repository contains the first deterministic MVP:
 
+- Cause-area records for metric-guided discovery before project selection.
 - JSON records for projects and opportunities.
 - Hard gates that prevent premature implementation.
 - Transparent scoring from supplied evidence.
@@ -52,6 +53,7 @@ checkout without installing dependencies.
 
 ```bash
 python3 -m humanifest.cli validate --root .
+python3 -m humanifest.cli causes --root .
 python3 -m humanifest.cli report --root .
 python3 -m humanifest.cli score portfolio/opportunities/cht-dhis2-bs-month-export.json
 python3 -m humanifest.cli brief portfolio/opportunities/cht-dhis2-bs-month-export.json
@@ -127,6 +129,7 @@ their individual source IDs and access dates. Review reminders return exit code
 
 - `humanifest/`: deterministic Python core.
 - `schemas/`: public JSON schema documents.
+- `portfolio/causes/`: metric-guided cause-area discovery records.
 - `portfolio/projects/`: audited project records.
 - `portfolio/opportunities/`: issue-level opportunity records.
 - `portfolio/contributions/`: future contribution records.

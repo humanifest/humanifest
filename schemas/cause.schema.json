@@ -1,0 +1,160 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Humanifest cause-area record",
+  "type": "object",
+  "required": [
+    "id",
+    "name",
+    "status",
+    "decision_mode",
+    "summary",
+    "metrics",
+    "software_pathways",
+    "score_inputs",
+    "sources"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "\\S"
+    },
+    "name": {
+      "type": "string",
+      "pattern": "\\S"
+    },
+    "status": {
+      "enum": [
+        "DRAFT-SCAN",
+        "EVIDENCE-REVIEW",
+        "PATHWAY-MAPPED",
+        "PROJECT-SEEDING",
+        "ACTIVE",
+        "PARKED"
+      ]
+    },
+    "decision_mode": {
+      "enum": [
+        "global-impact",
+        "personal-fit"
+      ]
+    },
+    "summary": {
+      "type": "string",
+      "pattern": "\\S"
+    },
+    "metrics": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/evidence"
+      }
+    },
+    "software_pathways": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/evidence"
+      }
+    },
+    "score_inputs": {
+      "type": "object",
+      "required": [
+        "global_burden",
+        "neglectedness",
+        "tractability",
+        "software_leverage",
+        "maintainer_pathway",
+        "uncertainty_penalty"
+      ],
+      "properties": {
+        "global_burden": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 5
+        },
+        "neglectedness": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 5
+        },
+        "tractability": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 5
+        },
+        "software_leverage": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 5
+        },
+        "maintainer_pathway": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 5
+        },
+        "uncertainty_penalty": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 5
+        }
+      }
+    },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/source"
+      }
+    }
+  },
+  "additionalProperties": true,
+  "$defs": {
+    "source": {
+      "type": "object",
+      "required": [
+        "id",
+        "url",
+        "accessed"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "\\S"
+        },
+        "url": {
+          "type": "string",
+          "pattern": "^(https?://[^/\\s?#]+|file://(/|localhost/))\\S*$"
+        },
+        "accessed": {
+          "type": "string",
+          "format": "date",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        }
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "required": [
+        "type",
+        "claim",
+        "source_id"
+      ],
+      "properties": {
+        "type": {
+          "enum": [
+            "measured",
+            "modeled",
+            "self_reported",
+            "inferred"
+          ]
+        },
+        "claim": {
+          "type": "string",
+          "pattern": "\\S"
+        },
+        "source_id": {
+          "type": "string",
+          "pattern": "\\S"
+        }
+      }
+    }
+  }
+}

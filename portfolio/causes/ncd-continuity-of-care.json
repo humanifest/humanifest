@@ -1,0 +1,41 @@
+{
+  "id": "ncd-continuity-of-care",
+  "name": "Noncommunicable disease continuity of care",
+  "status": "EVIDENCE-REVIEW",
+  "decision_mode": "global-impact",
+  "summary": "An enormous burden area where the code-donation pathway is likely indirect: registries, reminders, longitudinal records, clinical workflow quality, and population reporting, especially in low- and middle-income settings.",
+  "metrics": [
+    {
+      "type": "modeled",
+      "claim": "WHO's dashboard reports at least 43 million NCD deaths in 2021 and says 75% of non-pandemic-related deaths globally were from NCDs.",
+      "source_id": "who-ucn-dashboard"
+    },
+    {
+      "type": "modeled",
+      "claim": "WHO's dashboard reports that 18 million people died from an NCD before age 70 in 2021, with most premature NCD deaths occurring in low- and middle-income countries.",
+      "source_id": "who-ucn-dashboard"
+    }
+  ],
+  "software_pathways": [
+    {
+      "type": "inferred",
+      "claim": "Likely OSS pathways include longitudinal patient registries, decision-support forms, appointment follow-up, reporting quality, and offline-first clinical tools; opportunity work must avoid private health data and preserve implementation humility.",
+      "source_id": "who-ucn-dashboard"
+    }
+  ],
+  "score_inputs": {
+    "global_burden": 5,
+    "neglectedness": 3,
+    "tractability": 2,
+    "software_leverage": 3,
+    "maintainer_pathway": 2,
+    "uncertainty_penalty": 3
+  },
+  "sources": [
+    {
+      "id": "who-ucn-dashboard",
+      "url": "https://data.who.int/dashboards/ucn/overview",
+      "accessed": "2026-09-10"
+    }
+  ]
+}

@@ -3,7 +3,7 @@
   "name": "OpenAQ API",
   "repository": "https://github.com/openaq/openaq-api",
   "homepage": "https://openaq.org/platform/",
-  "license": "GitHub identifies MIT for this API repository; full contribution and dependency license audit remains pending.",
+  "license": "Pinned API LICENSE.md confirms MIT with copyright/permission notice preservation. Related-repository and full dependency license review remain incomplete.",
   "humanitarian_domain": "Public air-quality measurement access and environmental-health data",
   "impact_evidence": [
     {
@@ -26,8 +26,8 @@
     "open_pr_count": 6
   },
   "contribution": {
-    "pathway": "Pinned guide welcomes fork-based contributions and focused patches. No Humanifest scope is accepted. The web issue-creation control appeared restricted; posting availability must be verified without attempting a workaround.",
-    "ai_policy": "Unresolved; the inspected guide does not establish Humanifest AI/bot eligibility. Organization policy and complete setup/contribution review remain pending.",
+    "pathway": "Organization and API guides welcome external contributions and focused fork PRs, subject to conduct and LLM policies. Issue #404 is open, unassigned and unlocked; no Humanifest scope accepted. Prepared inquiry awaits human review.",
+    "ai_policy": "Organization LLM policy requires disclosure and contributor understanding; wholly LLM-written contributions are unlikely to be accepted but may receive case-by-case review. No acceptance of the Humanifest bot workflow or independent human code review is established.",
     "maintainer_check_required": true
   },
   "sources": [
@@ -104,6 +104,26 @@
     {
       "id": "openaq-screen",
       "url": "https://github.com/humanifest-bot/humanifest/blob/codex/cht-admin-environment-audit/research/2026-09-10-openaq-air-quality-screen.md",
+      "accessed": "2026-09-10"
+    },
+    {
+      "id": "openaq-organization-contributing",
+      "url": "https://github.com/openaq/.github/blob/683b47c9bb265c3855b06d004352bc0fdaf64fc4/CONTRIBUTING.md",
+      "accessed": "2026-09-10"
+    },
+    {
+      "id": "openaq-llm-policy",
+      "url": "https://github.com/openaq/.github/blob/683b47c9bb265c3855b06d004352bc0fdaf64fc4/LLM_POLICY.md",
+      "accessed": "2026-09-10"
+    },
+    {
+      "id": "openaq-policy-ingestion-audit",
+      "url": "https://github.com/humanifest-bot/humanifest/blob/codex/cht-admin-environment-audit/research/2026-09-10-openaq-policy-and-ingestion.md",
+      "accessed": "2026-09-10"
+    },
+    {
+      "id": "openaq-api-license",
+      "url": "https://github.com/openaq/openaq-api/blob/87c060c28f5b484e0e9953d247082f5e678935c9/LICENSE.md",
       "accessed": "2026-09-10"
     }
   ]

@@ -62,6 +62,36 @@ SCORE_WEIGHTS = {
     "deployment_probability": 0.10,
 }
 
+CAUSE_STATUSES = [
+    "DRAFT-SCAN",
+    "EVIDENCE-REVIEW",
+    "PATHWAY-MAPPED",
+    "PROJECT-SEEDING",
+    "ACTIVE",
+    "PARKED",
+]
+
+CAUSE_SCORE_WEIGHTS = {
+    "global_burden": 0.30,
+    "neglectedness": 0.20,
+    "tractability": 0.20,
+    "software_leverage": 0.20,
+    "maintainer_pathway": 0.10,
+    "uncertainty_penalty": -0.20,
+}
+
+REQUIRED_CAUSE_FIELDS = [
+    "id",
+    "name",
+    "status",
+    "decision_mode",
+    "summary",
+    "metrics",
+    "software_pathways",
+    "score_inputs",
+    "sources",
+]
+
 REQUIRED_PROJECT_FIELDS = [
     "id",
     "name",
@@ -142,6 +172,30 @@ def validate_project(record: dict[str, Any], record_name: str) -> list[Validatio
     return issues
 
 
+def validate_cause(record: dict[str, Any], record_name: str) -> list[ValidationIssue]:
+    issues = _require_fields(record, REQUIRED_CAUSE_FIELDS, record_name)
+    issues.extend(_validate_text_fields(record, ["id", "name", "status", "decision_mode", "summary"], record_name))
+    status = record.get("status")
+    if status not in CAUSE_STATUSES:
+        issues.append(ValidationIssue(record_name, f"status must be one of {', '.join(CAUSE_STATUSES)}"))
+    decision_mode = record.get("decision_mode")
+    if decision_mode not in {"global-impact", "personal-fit"}:
+        issues.append(ValidationIssue(record_name, "decision_mode must be global-impact or personal-fit"))
+    issues.extend(_validate_sources(record, record_name))
+    source_ids = _source_ids(record)
+    issues.extend(_validate_evidence_list(record.get("metrics", []), record_name, "metrics", source_ids))
+    issues.extend(_validate_evidence_list(record.get("software_pathways", []), record_name, "software_pathways", source_ids))
+    score_inputs = record.get("score_inputs", {})
+    if not isinstance(score_inputs, dict):
+        issues.append(ValidationIssue(record_name, "score_inputs must be an object"))
+    else:
+        for key in CAUSE_SCORE_WEIGHTS:
+            value = score_inputs.get(key)
+            if isinstance(value, bool) or not isinstance(value, (int, float)) or not 0 <= value <= 5:
+                issues.append(ValidationIssue(record_name, f"score_inputs.{key} must be a number from 0 to 5"))
+    return issues
+
+
 def validate_opportunity(record: dict[str, Any], record_name: str) -> list[ValidationIssue]:
     issues = _require_fields(record, REQUIRED_OPPORTUNITY_FIELDS, record_name)
     issues.extend(_validate_text_fields(record, [field for field in REQUIRED_OPPORTUNITY_FIELDS
@@ -182,6 +236,43 @@ def validate_opportunity(record: dict[str, Any], record_name: str) -> list[Valid
     issues.extend(_validate_sources(record, record_name))
     issues.extend(_validate_evidence_list(record.get("evidence", []), record_name, "evidence", _source_ids(record)))
     return issues
+
+
+def score_cause(record: dict[str, Any], weights: dict[str, float] | None = None) -> dict[str, Any]:
+    weights = weights or CAUSE_SCORE_WEIGHTS
+    inputs = record["score_inputs"]
+    weighted_total = 0.0
+    details = {}
+    for key, weight in weights.items():
+        contribution = float(inputs[key]) * weight
+        details[key] = {"value": inputs[key], "weight": weight, "contribution": round(contribution, 3)}
+        weighted_total += contribution
+    active = record.get("status") not in {"PARKED"}
+    return {
+        "eligible_for_project_seeding": active,
+        "decision_mode": record.get("decision_mode"),
+        "score": round(max(0.0, weighted_total), 3) if active else 0.0,
+        "raw_score": round(weighted_total, 3),
+        "details": details,
+        "scope": "Cause scores rank discovery attention only; they do not rank lives, authorize outreach, or prove a patch will create impact.",
+    }
+
+
+def cause_report(causes: list[dict[str, Any]]) -> str:
+    rows = [
+        "# Cause Discovery",
+        "",
+        f"Cause areas: {len(causes)}",
+        "Default mode: global-impact; personal skills constrain feasibility after cause burden and software leverage are examined.",
+        "Scores are directional discovery aids, not claims of realized impact.",
+        "",
+    ]
+    for cause in sorted(causes, key=lambda item: (-score_cause(item)["score"], item["id"])):
+        score = score_cause(cause)
+        rows.append(f"- {cause['id']}: {cause['status']}; score={score['score']} (raw {score['raw_score']})")
+        rows.append(f"  Mode: {cause['decision_mode']}")
+        rows.append(f"  Summary: {cause['summary']}")
+    return "\n".join(rows)
 
 
 def failed_gates(record: dict[str, Any]) -> list[dict[str, str]]:
@@ -298,8 +389,16 @@ def generate_handoff(record: dict[str, Any], target: str, *, guidance=None, rout
     return "\n".join(base)
 
 
-def portfolio_report(projects: list[dict[str, Any]], opportunities: list[dict[str, Any]], *, guidance=None) -> str:
+def portfolio_report(
+    projects: list[dict[str, Any]],
+    opportunities: list[dict[str, Any]],
+    *,
+    causes: list[dict[str, Any]] | None = None,
+    guidance=None,
+) -> str:
     rows = ["# Portfolio Status", ""]
+    if causes is not None:
+        rows.append(f"Cause areas: {len(causes)}")
     rows.append(f"Projects: {len(projects)}")
     rows.append(f"Opportunities: {len(opportunities)}")
     active = sum(item["pipeline_state"] in ACTIVE_IMPLEMENTATION_STATES for item in opportunities)
@@ -431,9 +530,37 @@ def _validate_evidence_list(items: Any, record_name: str, field: str, source_ids
     return issues
 
 
+def load_causes(root: Path, *, require_directory: bool = True) -> tuple[list[dict[str, Any]], list[ValidationIssue]]:
+    """Load and validate cause-area discovery records."""
+    directory = root / "portfolio" / "causes"
+    issues = []
+    records = []
+    seen = set()
+    if not directory.is_dir():
+        if require_directory:
+            return [], [ValidationIssue(str(directory), "required record directory is missing")]
+        return [], []
+    for path in sorted(directory.glob("*.json")):
+        try:
+            record = load_json(path)
+        except (OSError, ValueError) as error:
+            issues.append(ValidationIssue(str(path), str(error)))
+            continue
+        issues.extend(validate_cause(record, str(path)))
+        record_id = record.get("id")
+        if isinstance(record_id, str):
+            if record_id in seen:
+                issues.append(ValidationIssue(str(path), f"duplicate causes id: {record_id}"))
+            seen.add(record_id)
+        records.append(record)
+    return records, issues
+
+
 def load_portfolio(root: Path) -> tuple[list[dict[str, Any]], list[dict[str, Any]], list[ValidationIssue]]:
     """Collect diagnostics across the portfolio before any report is rendered."""
     issues = []
+    causes, cause_issues = load_causes(root, require_directory=False)
+    issues.extend(cause_issues)
     collections = []
     for kind, validator in [("projects", validate_project), ("opportunities", validate_opportunity)]:
         directory = root / "portfolio" / kind

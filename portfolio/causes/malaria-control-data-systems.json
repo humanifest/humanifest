@@ -1,0 +1,41 @@
+{
+  "id": "malaria-control-data-systems",
+  "name": "Malaria control data systems",
+  "status": "PROJECT-SEEDING",
+  "decision_mode": "global-impact",
+  "summary": "A large, geographically concentrated, preventable disease burden with plausible software leverage in surveillance, reporting, logistics, case management, and decision-support systems used by public-health programs.",
+  "metrics": [
+    {
+      "type": "modeled",
+      "claim": "WHO reported an estimated 282 million malaria cases and 610,000 malaria deaths globally in 2024.",
+      "source_id": "who-malaria-2025"
+    },
+    {
+      "type": "modeled",
+      "claim": "WHO reported that the African Region accounted for about 95% of malaria deaths in 2024, with young children carrying much of the burden.",
+      "source_id": "who-malaria-2025"
+    }
+  ],
+  "software_pathways": [
+    {
+      "type": "inferred",
+      "claim": "Likely OSS pathways include DHIS2/CHT-like surveillance and case-management workflows, supply-chain tooling, test-result data quality, offline sync, and reporting exports; candidate projects need maintainer and deployment evidence.",
+      "source_id": "who-malaria-2025"
+    }
+  ],
+  "score_inputs": {
+    "global_burden": 4,
+    "neglectedness": 4,
+    "tractability": 4,
+    "software_leverage": 4,
+    "maintainer_pathway": 3,
+    "uncertainty_penalty": 2
+  },
+  "sources": [
+    {
+      "id": "who-malaria-2025",
+      "url": "https://www.who.int/news-room/fact-sheets/detail/malaria",
+      "accessed": "2026-09-10"
+    }
+  ]
+}

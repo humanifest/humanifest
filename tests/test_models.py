@@ -2,6 +2,7 @@ import unittest
 
 from humanifest.models import (
     BUILDING_STATES,
+    cause_report,
     HARD_GATES,
     MAINTAINER_CONFIRMED_STATES,
     failed_gates,
@@ -10,7 +11,9 @@ from humanifest.models import (
     next_action,
     PIPELINE_STATES,
     portfolio_report,
+    score_cause,
     score_opportunity,
+    validate_cause,
     validate_opportunity,
 )
 
@@ -65,7 +68,43 @@ def opportunity():
     }
 
 
+def cause():
+    return {
+        "id": "sample-cause",
+        "name": "Sample cause",
+        "status": "PROJECT-SEEDING",
+        "decision_mode": "global-impact",
+        "summary": "A cause area worth investigating",
+        "metrics": [{"type": "modeled", "claim": "Large burden", "source_id": "s1"}],
+        "software_pathways": [{"type": "inferred", "claim": "Software can help", "source_id": "s1"}],
+        "score_inputs": {
+            "global_burden": 5,
+            "neglectedness": 4,
+            "tractability": 3,
+            "software_leverage": 4,
+            "maintainer_pathway": 2,
+            "uncertainty_penalty": 1,
+        },
+        "sources": [{"id": "s1", "url": "https://example.test", "accessed": "2026-09-10"}],
+    }
 class ModelTests(unittest.TestCase):
+    def test_cause_records_score_discovery_attention(self):
+        record = cause()
+        self.assertEqual(validate_cause(record, "sample"), [])
+        score = score_cause(record)
+        self.assertTrue(score["eligible_for_project_seeding"])
+        self.assertEqual(score["decision_mode"], "global-impact")
+        self.assertEqual(score["raw_score"], 3.7)
+        self.assertIn("sample-cause", cause_report([record]))
+
+    def test_cause_records_validate_sources_and_scores(self):
+        record = cause()
+        record["metrics"][0]["source_id"] = "missing"
+        self.assertTrue(validate_cause(record, "sample"))
+        record = cause()
+        record["score_inputs"]["global_burden"] = 6
+        self.assertTrue(validate_cause(record, "sample"))
+
     def test_passing_maintainer_gate_requires_traceable_evidence(self):
         for references in [None, [], ["missing"], ["s1", "s1"], [None], [["s1"]], "s1", [" "]]:
             with self.subTest(references=references):

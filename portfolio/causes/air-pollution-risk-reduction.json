@@ -1,0 +1,46 @@
+{
+  "id": "air-pollution-risk-reduction",
+  "name": "Air pollution risk reduction",
+  "status": "EVIDENCE-REVIEW",
+  "decision_mode": "global-impact",
+  "summary": "A very high-burden global risk area where useful software work is likely to sit in monitoring, exposure data, forecasting, policy analysis, and public-health operations rather than a single obvious upstream application.",
+  "metrics": [
+    {
+      "type": "modeled",
+      "claim": "GBD 2021 reported particulate matter air pollution as the leading analyzed risk factor for global disease burden in 2021, contributing 8.0% of total DALYs with uncertainty intervals.",
+      "source_id": "gbd-2021-risk-factors"
+    },
+    {
+      "type": "modeled",
+      "claim": "WHO's 2024 Global Health Estimates page notes that the latest release covers mortality, morbidity, and burden trends for more than 160 diseases and injuries through 2021.",
+      "source_id": "who-top-causes"
+    }
+  ],
+  "software_pathways": [
+    {
+      "type": "inferred",
+      "claim": "Likely OSS pathways include air-quality data pipelines, exposure models, sensor QA, alerting, and public dashboards; project discovery must verify active maintainers and a concrete issue before any contribution.",
+      "source_id": "gbd-2021-risk-factors"
+    }
+  ],
+  "score_inputs": {
+    "global_burden": 5,
+    "neglectedness": 3,
+    "tractability": 2,
+    "software_leverage": 3,
+    "maintainer_pathway": 1,
+    "uncertainty_penalty": 3
+  },
+  "sources": [
+    {
+      "id": "gbd-2021-risk-factors",
+      "url": "https://doi.org/10.1016/S0140-6736(24)00933-4",
+      "accessed": "2026-09-10"
+    },
+    {
+      "id": "who-top-causes",
+      "url": "https://www.who.int/news-room/fact-sheets/detail/the-top-10-causes-of-death",
+      "accessed": "2026-09-10"
+    }
+  ]
+}

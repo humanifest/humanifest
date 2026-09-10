@@ -1,0 +1,41 @@
+{
+  "id": "disaster-risk-and-response-coordination",
+  "name": "Disaster risk and response coordination",
+  "status": "PROJECT-SEEDING",
+  "decision_mode": "global-impact",
+  "summary": "A recurring global harm area where OSS can plausibly reduce friction in mapping, damage assessment, volunteer coordination, interoperability, early warning, and post-disaster recovery workflows.",
+  "metrics": [
+    {
+      "type": "self_reported",
+      "claim": "UNDRR's 2024 Annual Report says 163 member states reported in the Sendai Framework Monitor and 112 reported disaster losses in DesInventar, indicating substantial public disaster-risk data infrastructure.",
+      "source_id": "undrr-2024"
+    },
+    {
+      "type": "self_reported",
+      "claim": "UNDRR's 2024 Annual Report describes national disaster-risk strategies and infrastructure-resilience work, but this record does not yet include a global mortality or affected-population burden estimate.",
+      "source_id": "undrr-2024"
+    }
+  ],
+  "software_pathways": [
+    {
+      "type": "inferred",
+      "claim": "Likely OSS pathways include HOT, Crisis Cleanup, IFRC and hazard-data libraries, GIS imports, offline mapping, volunteer workflows, and standards interoperability; candidates need current issue and maintainer evidence.",
+      "source_id": "undrr-2024"
+    }
+  ],
+  "score_inputs": {
+    "global_burden": 3,
+    "neglectedness": 4,
+    "tractability": 4,
+    "software_leverage": 5,
+    "maintainer_pathway": 4,
+    "uncertainty_penalty": 2
+  },
+  "sources": [
+    {
+      "id": "undrr-2024",
+      "url": "https://www.undrr.org/annual-report/2024",
+      "accessed": "2026-09-10"
+    }
+  ]
+}

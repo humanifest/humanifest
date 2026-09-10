@@ -1,0 +1,168 @@
+{
+  "id": "openmrs-3626-muac-reference-verification",
+  "project_id": "openmrs-patient-chart",
+  "title": "Verify reference fidelity of the existing MUAC age-boundary PR",
+  "pipeline_state": "OPPORTUNITY-RESEARCH",
+  "problem": "Existing PR #3626 revises patient-chart MUAC color comparisons and cites a national guideline after reviewer feedback. Source fidelity, caller age precision and remaining test gaps need independent verification; no remaining defect is claimed yet.",
+  "humanitarian_relevance": "Patient-chart displays support clinical workflows. Faithful rendering of an agreed specification could reduce review uncertainty; no patient harm or realized benefit is established.",
+  "evidence": [
+    {
+      "type": "self_reported",
+      "claim": "PR author reports correcting missing age-boundary colors and later revising brackets/cutoffs using the Uganda Ministry of Health January 2016 guideline after review.",
+      "source_id": "openmrs-muac-pr"
+    },
+    {
+      "type": "measured",
+      "claim": "Current two-file diff changes getMuacColorCode and adds four expected-color tests. An earlier automated review criticized weaker assertions at an older commit; those comments must not be repeated as current findings.",
+      "source_id": "openmrs-screen"
+    }
+  ],
+  "code_surface": "PR head e917f0c3f9140e1734313e414f6f96dec361087f: packages/esm-patient-vitals-app/src/vitals-biometrics-form/vitals-biometrics-form.utils.ts and matching .test.ts; exact caller age calculation and configuration remain to inspect.",
+  "proposed_change": "Support the existing PR with bounded verification if useful and welcome. Compare current code and tests to the PR reference, preserving author ownership; do not propose a competing fix or infer clinical standards for every deployment.",
+  "research_next_step": "Finish AI/contribution-policy review and current PR feedback; visually inspect the cited guideline table and trace exact utility/caller age handling. Identify any unresolved reference-fidelity question before auditing setup and running synthetic original-code tests.",
+  "priority_rationale": "Select verification support for an existing care-display correction over duplicating one of 79 open PRs. Source-backed uncertainty reduction is the candidate benefit; acceptance and clinical impact remain unproven.",
+  "tests": "No target tests run. Inspected current PR diff and prior automated comment; full revised source, reference table, caller and test environment still require verification.",
+  "environment": "TypeScript/React patient-chart monorepo. README describes Yarn/Turbo unit tests and Playwright; manifest, lockfile, scripts, deployment and isolated runner audit not yet complete. No installation, clone or service start.",
+  "maintainer": "Existing PR belongs to its current author and cites reviewer feedback. No Humanifest outreach, scope agreement or review commitment.",
+  "risks": "Clinical-reference fidelity is not proof of clinical validity across deployments. The 2016 Uganda guideline may not be current or applicable everywhere. Avoid stale review feedback, duplicate patches and patient data; AI eligibility and full setup remain unresolved.",
+  "gates": {
+    "humanitarian_relevance_supported": {
+      "passed": true,
+      "rationale": "Project-reported clinical care use supports a plausible health-software pathway. No contribution-specific benefit is measured.",
+      "source_ids": [
+        "openmrs-impact"
+      ]
+    },
+    "repository_active": {
+      "passed": true,
+      "rationale": "Unarchived repository pushed September 10, 2026; existing PR #3626 is open and under discussion.",
+      "source_ids": [
+        "openmrs-muac-pr"
+      ]
+    },
+    "external_contributions_accepted": {
+      "passed": true,
+      "rationale": "Official O3 guide welcomes fork contributions and test-supported code review; this is not approval of Humanifest scope or bot identity.",
+      "source_ids": [
+        "openmrs-contributing"
+      ]
+    },
+    "contribution_policy_understood": {
+      "passed": false,
+      "rationale": "Read O3 contribution guide and repository/organization templates; complete policy, coordination and license applicability review remains pending."
+    },
+    "ai_policy_understood": {
+      "passed": false,
+      "rationale": "Official AI discussion located but full contents and resulting policy are not yet verified; do not infer eligibility from automated reviews."
+    },
+    "problem_current_and_consequential": {
+      "passed": false,
+      "rationale": "Existing PR reports age-boundary display gaps and has been revised. Any remaining source-fidelity problem, affected use and practical consequence remain unverified."
+    },
+    "behavior_reproducible_or_verifiable": {
+      "passed": false,
+      "rationale": "Read the current two-file diff only; no original-code runtime checks or complete guideline comparison yet."
+    },
+    "code_and_tests_located": {
+      "passed": true,
+      "rationale": "PR diff locates getMuacColorCode and four utility tests in the vitals/biometrics form package.",
+      "source_ids": [
+        "openmrs-muac-pr-files"
+      ]
+    },
+    "change_bounded": {
+      "passed": false,
+      "rationale": "A bounded verification target exists, but any actual change belongs to the existing PR author and requires agreed review scope."
+    },
+    "regression_strategy_credible": {
+      "passed": false,
+      "rationale": "Exact reference boundaries and current tests must be compared before designing independent controls; no harness has run."
+    },
+    "no_private_data_required": {
+      "passed": true,
+      "rationale": "Source comparison and utility boundary checks can use synthetic ages and values without accessing a patient record or operational service.",
+      "source_ids": [
+        "openmrs-screen"
+      ]
+    },
+    "security_and_licensing_risk_acceptable": {
+      "passed": false,
+      "rationale": "Read-only source screen. Full dependency/license/setup review remains incomplete; clinical reference interpretation needs qualified project review."
+    },
+    "environment_feasible": {
+      "passed": false,
+      "rationale": "README describes Yarn/Turbo tests, but manifests, lifecycle hooks and isolated runner setup remain unaudited; no install or service start."
+    },
+    "maintainer_interest_confirmed": {
+      "passed": false,
+      "rationale": "Existing PR review does not authorize Humanifest work. No Humanifest inquiry or scope confirmation."
+    },
+    "probable_reviewer_identified": {
+      "passed": false,
+      "rationale": "An existing reviewer is referenced by the author, but no reviewer has agreed to review Humanifest findings."
+    },
+    "benefit_justifies_review_cost": {
+      "passed": false,
+      "rationale": "Potential source-fidelity verification could help, but overlap with existing review, remaining defects and clinical relevance are not established."
+    },
+    "user_can_explain_line_by_line": {
+      "passed": false,
+      "rationale": "No proposed production patch or independent human code review exists."
+    }
+  },
+  "score_inputs": {
+    "humanitarian_benefit": 3,
+    "acceptance_probability": 0,
+    "technical_confidence": 1,
+    "review_burden": 2,
+    "deployment_probability": 0
+  },
+  "score_basis": "Clinical-workflow use motivates bounded verification, but a remaining defect, acceptance, deployment and benefit are unverified. Implementation score remains zero.",
+  "sources": [
+    {
+      "id": "openmrs-impact",
+      "url": "https://openmrs.org/our-impact/",
+      "accessed": "2026-09-10"
+    },
+    {
+      "id": "openmrs-patient-chart-repo",
+      "url": "https://api.github.com/repos/openmrs/openmrs-esm-patient-chart",
+      "accessed": "2026-09-10"
+    },
+    {
+      "id": "openmrs-open-items",
+      "url": "https://api.github.com/repos/openmrs/openmrs-esm-patient-chart/issues?state=open&per_page=100",
+      "accessed": "2026-09-10"
+    },
+    {
+      "id": "openmrs-contributing",
+      "url": "https://o3-docs.openmrs.org/en-US/docs/frontend-modules/contributing/",
+      "accessed": "2026-09-10"
+    },
+    {
+      "id": "openmrs-ai-discussion",
+      "url": "https://talk.openmrs.org/t/using-ai-coding-agents-and-llm-generated-code/47562",
+      "accessed": "2026-09-10"
+    },
+    {
+      "id": "openmrs-muac-pr",
+      "url": "https://github.com/openmrs/openmrs-esm-patient-chart/pull/3626",
+      "accessed": "2026-09-10"
+    },
+    {
+      "id": "openmrs-muac-pr-files",
+      "url": "https://api.github.com/repos/openmrs/openmrs-esm-patient-chart/pulls/3626/files",
+      "accessed": "2026-09-10"
+    },
+    {
+      "id": "uganda-imam-2016",
+      "url": "https://platform.who.int/docs/default-source/mca-documents/policy-documents/guideline/UGA-CH-38-03-GUIDELINE-2016-eng-IMAM-Guidelines-for-Uganda-Jan-2016.pdf",
+      "accessed": "2026-09-10"
+    },
+    {
+      "id": "openmrs-screen",
+      "url": "https://github.com/humanifest-bot/humanifest/blob/codex/cht-admin-environment-audit/research/2026-09-10-openmrs-patient-chart-screen.md",
+      "accessed": "2026-09-10"
+    }
+  ]
+}

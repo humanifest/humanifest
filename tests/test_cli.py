@@ -7,6 +7,7 @@ import shutil
 import unittest
 
 from humanifest.cli import main
+from tests.test_models import cause
 from tests.test_models import opportunity
 
 
@@ -29,6 +30,7 @@ class CliTests(unittest.TestCase):
         return path
 
     def seed_portfolio(self):
+        self.write_record("portfolio/causes/sample.json", cause())
         project = {
             "id": "sample-project", "name": "Sample", "repository": "https://example.test/repo",
             "homepage": "https://example.test", "license": "MIT", "humanitarian_domain": "Health",
@@ -59,10 +61,13 @@ class CliTests(unittest.TestCase):
     def test_valid_portfolio_and_json_score(self):
         self.seed_portfolio()
         self.compile_report()
-        for command in ["validate", "report"]:
+        for command in ["validate", "report", "causes"]:
             status, out, err = self.run_cli(command, "--root", str(self.root))
             self.assertEqual((status, err), (0, ""))
             self.assertTrue(out)
+        status, out, err = self.run_cli("cause-score", str(self.root / "portfolio/causes/sample.json"))
+        self.assertEqual((status, err), (0, ""))
+        self.assertEqual(json.loads(out)["raw_score"], 3.7)
         status, out, err = self.run_cli("score", str(self.root / "portfolio/opportunities/sample.json"))
         self.assertEqual((status, err), (0, ""))
         self.assertEqual(json.loads(out)["score"], 2.7)

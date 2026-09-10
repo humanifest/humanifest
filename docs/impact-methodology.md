@@ -2,6 +2,11 @@
 
 Humanifest scores opportunities from supplied evidence, not from scraped popularity alone.
 
+Cause-area discovery is upstream of opportunity scoring. Use
+[cause discovery](cause-discovery.md) to decide where to search for projects and
+issues; use this document to decide whether a specific candidate contribution is
+worth advancing.
+
 Evidence types:
 
 - `measured`: independently observed outcome or direct operational measurement.
