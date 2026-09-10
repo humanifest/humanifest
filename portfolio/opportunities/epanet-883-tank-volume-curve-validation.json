@@ -2,8 +2,7 @@
   "id": "epanet-883-tank-volume-curve-validation",
   "project_id": "owa-epanet",
   "title": "Verify invalid tank-volume curves across file loading and API updates",
-  "pipeline_state": "OPPORTUNITY-RESEARCH",
-  "research_next_step": "Verify whether the separately observed metric EN_VOLCURVE nominal-diameter discrepancy changes file round-trips or simulated results, using the unchanged library and valid synthetic networks in fixed units. Distinguish presentation-only differences from consequential behavior before proposing separate work. Prepare the existing #883 evidence/scope inquiry under current contribution and compute review rules; no implementation before maintainer confirmation.",
+  "pipeline_state": "MAINTAINER-CHECK",
   "problem": "The real pinned library accepts decreasing and interior-dip water-storage volume curves through file loading, API assignment and later curve edits. Direct decreasing assignment returns a NaN diameter without an API error; increasing requested depth yields decreasing initial volume. No process crash or operational consequence is established.",
   "humanitarian_relevance": "Clear validation may improve reliability of water-network analysis tools. No measured effect on drinking-water safety, utility decisions or resource use.",
   "evidence": [
@@ -26,15 +25,20 @@
       "type": "measured",
       "claim": "The unchanged native CMake baseline passes: 88 Boost cases across six binaries, plus two threaded runs returning status zero. All six CTest entries pass and the unregistered string-helper binary passes separately. All 34 behavior cases pass again against the test-enabled library; 144 tracked files remain byte-identical. Bounded searches found historical unit-changing/parameter issues, but not a matching report of the fixed-unit EN_VOLCURVE nominal-diameter discrepancy.",
       "source_id": "epanet-native-baseline"
+    },
+    {
+      "type": "measured",
+      "claim": "Twelve four-hour native hydraulic simulations compare fixed-unit file/EN_VOLCURVE/EN_settankdata routes before/after save-reload. The metric saved row contains the smaller nominal diameter, but reloading recomputes it. Levels, volumes, flow and pressure agree up to floating-point differences (maximum absolute difference 1.82e-12 in volume). No consequential hydraulic effect is established for these two synthetic networks.",
+      "source_id": "epanet-metric-consequence"
     }
   ],
   "code_surface": "At dev 83e25bbe2b0b460803e71df03bc989afe9557ea3: src/input1.c inittanks; src/input2.c parser; src/validate.c validatetanks/validatecurves; src/epanet.c public tank assignment, curve mutation and getters. Existing tests/test_curve.cpp and tests/test_node.cpp located. Real C library exercised through public API; no copied-function simulation.",
   "proposed_change": "First reproduce invalid-data handling through the real library and agree scope. Consider consistent tank-specific validation across relevant entry points only after maintainer confirmation; preserve generic/pump curve semantics and document errors/rollback.",
-  "tests": "All six registered CTest programs pass: 86 unchanged Boost cases plus a threaded program whose two EPANET runs each report status zero. The separately run, unregistered string-helper binary adds two cases, for 88 Boost cases across six binaries and seven executables overall. All 34 native-library behavior cases pass against the test-enabled library; all 144 tracked source files remain unchanged. No added production regression/fix or real-world operational validation.",
+  "tests": "All six registered CTest programs pass: 86 unchanged Boost cases plus a threaded program whose two EPANET runs each report status zero. The separately run, unregistered string-helper binary adds two cases, for 88 Boost cases across six binaries and seven executables overall. All 34 native-library behavior cases pass against the test-enabled library; all 144 tracked source files remain unchanged. No added production regression/fix or real-world operational validation. A further 12 four-hour native runs compare route and save/reload behavior on two valid synthetic networks; no meaningful hydraulic difference is observed.",
   "environment": "Pinned native Release build with BUILD_TESTS=ON, CMake 3.31.6, Apple Clang 21.0.0 and isolated Boost 1.85.0. Official Boost archive SHA256 verified; selected test/system/thread/filesystem plus chrono/atomic components built locally with no global installation, inherited credentials or user/site build configuration. 88 Boost cases, two successful threaded runs and 34 native behavior cases pass; 144 tracked target files unchanged. No external services or operational-system access.",
-  "maintainer": "Issue reported by LRossman; no assignment or Humanifest scope confirmation. General README invites discussion before fork-based changes. No outreach yet.",
-  "risks": "NaN diameter reproduced without a process crash. Positive endpoint slope hides interior dips; later edits preserve old nominal diameter while volume queries change. A separate metric assignment discrepancy needs duplicate/scope verification. Valid decreasing pump curves must remain supported. No physical network simulation, field effect, accepted error/rollback policy or bot eligibility is established.",
-  "priority_rationale": "A bounded invalid-input correctness report has current inspectable paths and clear controls in a public-benefit modeling engine. Already-fixed leakage and existing feature PRs are excluded; operational impact and acceptance remain unverified.",
+  "maintainer": "Verified local evidence is ready for a concise #883 scope inquiry. No upstream message has been sent, no bot eligibility or scope confirmed, and no review date is invented. The current compute-governance human-review requirement applies to the prepared draft; existing GitHub communication authorization is not revoked.",
+  "risks": "Original invalid water-storage curves remain accepted; their production consequence and desired error/rollback policy are unconfirmed. The separate valid-curve metric discrepancy affects returned/saved diameter but showed no meaningful hydraulic effect in 12 bounded simulations and corrects on reload. Do not promote it as a consequential simulation bug or expand #883 silently. Quality/mixing and other diameter uses remain untested; no independent human review or bot eligibility is claimed.",
+  "priority_rationale": "The invalid-input report has a reproduced mechanism and clean native baseline. Further investigation of a neighboring metric discrepancy yielded a useful negative finding, so that research is closed rather than expanded into another low-evidence contribution. Proceed to scope review and replenish cause-led discovery independently.",
   "gates": {
     "humanitarian_relevance_supported": {
       "passed": true,
@@ -172,6 +176,11 @@
     {
       "id": "epanet-native-baseline",
       "url": "https://github.com/humanifest-bot/humanifest/blob/codex/cht-admin-environment-audit/research/2026-09-09-epanet-native-baseline.md",
+      "accessed": "2026-09-09"
+    },
+    {
+      "id": "epanet-metric-consequence",
+      "url": "https://github.com/humanifest-bot/humanifest/blob/codex/cht-admin-environment-audit/research/2026-09-09-epanet-metric-consequence.md",
       "accessed": "2026-09-09"
     }
   ]
