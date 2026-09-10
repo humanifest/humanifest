@@ -1,0 +1,206 @@
+{
+  "id": "openaq-404-sensor-coverage-validation",
+  "project_id": "openaq-api",
+  "title": "Verify incomplete coverage metadata in OpenAQ sensor responses",
+  "pipeline_state": "OPPORTUNITY-RESEARCH",
+  "problem": "API #404 reports a location sensor-list request failing with HTTP 500 when a sensor lacks reporting-period metadata. A diagnostic comment lists five null coverage-field validation errors. Current runtime failure and intended database/API contract remain unverified.",
+  "humanitarian_relevance": "OpenAQ supports community access to pollution measurements. Preventing a sensor metadata failure from interrupting data access could aid analysis; no affected humanitarian user, health outcome or realized benefit is established.",
+  "evidence": [
+    {
+      "type": "self_reported",
+      "claim": "The issue reports a location sensor-list error; a diagnostic comment attributes five response-validation errors to missing logging/averaging values and proposes requiring those values in the database.",
+      "source_id": "openaq-404-diagnosis"
+    },
+    {
+      "type": "measured",
+      "claim": "At the pinned source revision, Sensor.coverage permits null but Coverage requires non-null numeric/string fields. The original sensor route calls calculate_coverage with reporting periods when a latest value exists. This is static source evidence, not a reproduced server error.",
+      "source_id": "openaq-screen"
+    },
+    {
+      "type": "inferred",
+      "claim": "A synthetic response-model and route probe can distinguish valid, wholly absent and partially null coverage without querying operational data. Database invariants may ultimately be the intended fix.",
+      "source_id": "openaq-screen"
+    }
+  ],
+  "code_surface": "At 87c060c28f5b484e0e9953d247082f5e678935c9: openaq_api/v3/models/responses.py Coverage/Sensor/SensorsResponse; openaq_api/v3/routers/sensors.py fetch_sensors and location-sensor response validation. Existing tests/test_sensors.py and setup located; calculate_coverage database implementation remains to locate.",
+  "proposed_change": "First verify the failure and intended coverage contract. If accepted, provide a focused regression and agreed handling for missing reporting metadata; do not silently invent intervals, zero coverage, or widen response nullability.",
+  "research_next_step": "Inspect remaining test/setup and calculate_coverage sources, then run original response-model/route probes with synthetic valid, absent and partially null coverage. Determine database-test requirements and separate API handling from the proposed ingestion/database constraint fix before preparing an inquiry.",
+  "priority_rationale": "Air-pollution burden and named OpenAQ community use motivate this research path. Select the unassigned sensor-access report over future SDK cleanup and already-owned Explorer/API fixes. No implementation priority or realized impact is implied.",
+  "tests": "No target tests run. Eight source/setup files were fetched and Git-blob verified. Existing sensor smoke tests cover mixed v2/v3 endpoints but not the specific location-sensor response with null coverage fields. Proposed synthetic controls remain to execute.",
+  "environment": "Python >=3.11, Pydantic >=2.11,<3 and FastAPI >=0.115.11,<0.116 declared. Database, cache and cloud dependencies are present. Test workflow paths require reconciliation with current tree before an isolated install. No clone, install, service start or live API request performed.",
+  "maintainer": "Issue #404 is open and unassigned with one diagnostic comment; its inspected timeline has no linked PR. No Humanifest outreach, confirmed scope, reviewer commitment or follow-up date.",
+  "risks": "The reported error may require database/ingestion invariants rather than nullable API fields. Actual data prevalence, current deployment, regression harness, AI/bot eligibility and complete contribution/setup policy remain unresolved.",
+  "gates": {
+    "humanitarian_relevance_supported": {
+      "passed": true,
+      "rationale": "Project-reported community measurement use in Ghana and Malawi establishes a plausible environmental-health data pathway; contribution-specific health benefit is not claimed.",
+      "source_ids": [
+        "openaq-community-use"
+      ]
+    },
+    "repository_active": {
+      "passed": true,
+      "rationale": "Repository is unarchived with a May 2026 push and a June 2026 sensor issue with diagnostic discussion. Live inventory contains ten issues and six PRs; this does not establish review availability.",
+      "source_ids": [
+        "openaq-api-repo",
+        "openaq-404"
+      ]
+    },
+    "external_contributions_accepted": {
+      "passed": true,
+      "rationale": "The pinned contribution guide explicitly welcomes fork-based pull requests. General invitation does not establish bot eligibility or acceptance of this scope.",
+      "source_ids": [
+        "openaq-contributing"
+      ]
+    },
+    "contribution_policy_understood": {
+      "passed": false,
+      "rationale": "Read the API contribution guide; organization policies, applicable agreements and full contributor workflow still need review."
+    },
+    "ai_policy_understood": {
+      "passed": false,
+      "rationale": "No explicit AI/bot acceptance established; do not infer it from a generic contribution invitation."
+    },
+    "problem_current_and_consequential": {
+      "passed": false,
+      "rationale": "Open report and diagnostic comment identify partial coverage metadata, but current runtime behavior, frequency and affected analysis remain unverified."
+    },
+    "behavior_reproducible_or_verifiable": {
+      "passed": false,
+      "rationale": "Pinned response fields and SQL are consistent with the reported null-field errors. No original-code runtime reproduction or database-function verification has run."
+    },
+    "code_and_tests_located": {
+      "passed": true,
+      "rationale": "Located original Coverage/Sensor/SensorsResponse models, location-sensor route and existing sensor smoke tests. Existing tests do not directly demonstrate incomplete-coverage handling.",
+      "source_ids": [
+        "openaq-responses",
+        "openaq-sensor-route",
+        "openaq-sensor-tests"
+      ]
+    },
+    "change_bounded": {
+      "passed": false,
+      "rationale": "Diagnostic commenter proposes required database periods; API fallback versus ingestion/database invariants is unresolved. Agree semantics before changing nullability or constraints."
+    },
+    "regression_strategy_credible": {
+      "passed": false,
+      "rationale": "Synthetic valid, absent and partially null coverage controls are proposed, but runtime harness and database regression requirements remain unverified."
+    },
+    "no_private_data_required": {
+      "passed": true,
+      "rationale": "The reported failure concerns null fields in a public response contract. Synthetic sensor metadata can test that contract without retrieving real sensor records or operational credentials.",
+      "source_ids": [
+        "openaq-404-diagnosis"
+      ]
+    },
+    "security_and_licensing_risk_acceptable": {
+      "passed": false,
+      "rationale": "Source browsing only. Full setup, dependency, license and policy audit remains incomplete; no production data or access requested."
+    },
+    "environment_feasible": {
+      "passed": false,
+      "rationale": "Manifest and one CI workflow inspected, but current test paths differ from workflow assumptions and database/cloud dependencies need isolated setup planning. No installation ran."
+    },
+    "maintainer_interest_confirmed": {
+      "passed": false,
+      "rationale": "No Humanifest inquiry or scope acceptance; the existing diagnosis and proposed database fix do not authorize a new contribution."
+    },
+    "probable_reviewer_identified": {
+      "passed": false,
+      "rationale": "Issue author and diagnostic commenter are visible, but no reviewer has agreed to review Humanifest work."
+    },
+    "benefit_justifies_review_cost": {
+      "passed": false,
+      "rationale": "Data-access benefit is plausible, but frequency, affected users and comparative cost of a database versus API change remain unmeasured."
+    },
+    "user_can_explain_line_by_line": {
+      "passed": false,
+      "rationale": "No production patch or independent human code review exists."
+    }
+  },
+  "score_inputs": {
+    "humanitarian_benefit": 3,
+    "acceptance_probability": 0,
+    "technical_confidence": 1,
+    "review_burden": 2,
+    "deployment_probability": 0
+  },
+  "score_basis": "Named environmental-health data use supports investigation. Source matches the reported mechanism, but reproduction, acceptance and deployment are unverified; implementation score remains zero.",
+  "sources": [
+    {
+      "id": "who-air-burden",
+      "url": "https://www.who.int/publications/i/item/B09563",
+      "accessed": "2026-09-10"
+    },
+    {
+      "id": "openaq-platform",
+      "url": "https://openaq.org/about/initiatives/openaq-data-platform/",
+      "accessed": "2026-09-10"
+    },
+    {
+      "id": "openaq-community-use",
+      "url": "https://openaq.org/about/use-cases/data-for-communities/",
+      "accessed": "2026-09-10"
+    },
+    {
+      "id": "openaq-api-repo",
+      "url": "https://api.github.com/repos/openaq/openaq-api",
+      "accessed": "2026-09-10"
+    },
+    {
+      "id": "openaq-api-items",
+      "url": "https://api.github.com/repos/openaq/openaq-api/issues?state=open&per_page=100",
+      "accessed": "2026-09-10"
+    },
+    {
+      "id": "openaq-404",
+      "url": "https://github.com/openaq/openaq-api/issues/404",
+      "accessed": "2026-09-10"
+    },
+    {
+      "id": "openaq-404-diagnosis",
+      "url": "https://github.com/openaq/openaq-api/issues/404#issuecomment-4783126755",
+      "accessed": "2026-09-10"
+    },
+    {
+      "id": "openaq-404-timeline",
+      "url": "https://api.github.com/repos/openaq/openaq-api/issues/404/timeline",
+      "accessed": "2026-09-10"
+    },
+    {
+      "id": "openaq-contributing",
+      "url": "https://github.com/openaq/openaq-api/blob/87c060c28f5b484e0e9953d247082f5e678935c9/CONTRIBUTING.md",
+      "accessed": "2026-09-10"
+    },
+    {
+      "id": "openaq-responses",
+      "url": "https://github.com/openaq/openaq-api/blob/87c060c28f5b484e0e9953d247082f5e678935c9/openaq_api/v3/models/responses.py",
+      "accessed": "2026-09-10"
+    },
+    {
+      "id": "openaq-sensor-route",
+      "url": "https://github.com/openaq/openaq-api/blob/87c060c28f5b484e0e9953d247082f5e678935c9/openaq_api/v3/routers/sensors.py",
+      "accessed": "2026-09-10"
+    },
+    {
+      "id": "openaq-sensor-tests",
+      "url": "https://github.com/openaq/openaq-api/blob/87c060c28f5b484e0e9953d247082f5e678935c9/tests/test_sensors.py",
+      "accessed": "2026-09-10"
+    },
+    {
+      "id": "openaq-manifest",
+      "url": "https://github.com/openaq/openaq-api/blob/87c060c28f5b484e0e9953d247082f5e678935c9/pyproject.toml",
+      "accessed": "2026-09-10"
+    },
+    {
+      "id": "openaq-test-workflow",
+      "url": "https://github.com/openaq/openaq-api/blob/87c060c28f5b484e0e9953d247082f5e678935c9/.github/workflows/test.yml",
+      "accessed": "2026-09-10"
+    },
+    {
+      "id": "openaq-screen",
+      "url": "https://github.com/humanifest-bot/humanifest/blob/codex/cht-admin-environment-audit/research/2026-09-10-openaq-air-quality-screen.md",
+      "accessed": "2026-09-10"
+    }
+  ]
+}

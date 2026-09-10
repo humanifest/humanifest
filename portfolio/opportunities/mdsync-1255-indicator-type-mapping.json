@@ -2,7 +2,7 @@
   "id": "mdsync-1255-indicator-type-mapping",
   "project_id": "eyeseetea-metadata-sync",
   "title": "Verify indicator-type mapping through DHIS2 global metadata settings",
-  "pipeline_state": "OPPORTUNITY-RESEARCH",
+  "pipeline_state": "MAINTAINER-CHECK",
   "problem": "Issue #1255 requests remapping indicator types when source and target DHIS2 instances use different definitions. The original Global Mapping UI omits the type in a browser probe; an existing category mapping selects, saves and reloads with synthetic services. Actual destination import semantics remain unverified.",
   "humanitarian_relevance": "MetaData Sync is explicitly recommended in WHO malaria repository guidance. Reliable mapping could reduce integration work, but contribution-specific time savings and deployment are unverified.",
   "evidence": [
@@ -34,10 +34,9 @@
   ],
   "code_surface": "At 78c8b8c22278dcbb7d2d5678eaafaa80b0fd0cf9: InstanceMappingPage global selector omits indicator types; modelFactory registers IndicatorTypeModel; MetadataSyncUseCase invokes MappingMapper before repository save. Thirteen unchanged payload-builder/integration tests and four native workflow probes passed. Original page, picker, mapping use cases and repository also exercised in the in-app browser with synthetic service/storage boundaries.",
   "proposed_change": "If maintainers accept the contribution, add indicator types to the existing global mapping workflow with regression coverage for reference rewriting, mapping persistence and agreed included-type semantics. Agree whether destination types are reused unchanged, excluded from import or updated; do not widen global import defaults.",
-  "research_next_step": "Prepare a concise scope inquiry for human review: confirm that the original missing indicator-type option is still wanted, agree destination-type reuse versus update semantics and AI/bot contribution eligibility. Reference the browser control and native probes; do not change global import defaults or contact maintainers before review.",
   "tests": "13 unchanged upstream tests pass (10 payload-builder, 2 metadata synchronization, 1 local mapping), plus four native probes of original factory, mapper, builder and repository with synthetic metadata/memory storage. Network denial verified by EPERM control. Earlier seven schema-adapter checks also passed. No whole suite, type check or server import. Original browser control verifies the missing selector option and category selection/save/reload/replacement through actual mapping code with synthetic metadata and localStorage; this is manual browser evidence, not an automated UI suite or DHIS2 datastore test.",
   "environment": "Isolated Node 22.22.0 and immutable Yarn 4.12.0 setup; lockfile TypeScript 4.9.5, Vitest 3.2.4, lodash 4.18.1. 1974 packages installed with no inherited credentials. Dependency scripts disabled, but workspace localization ran; missing msgmerge warned and generated en.pot was preserved then restored. All 898 pinned files verified after tests. Future installs use --mode=skip-build; tests run under OS network denial. Synthetic UI bundle built with network denied, then served only on loopback with CSP connect-src none. Initial envDir:false was corrected to the empty probe env directory after inspecting Vite 4 behavior; rebuilt bundle rechecked. Full application build remains unverified.",
-  "maintainer": "Issue #1255 is open and unassigned with zero comments; inspected timeline has project events and no linked PR. No scope or AI/bot confirmation. No outreach sent or follow-up date invented.",
+  "maintainer": "Issue #1255 remains open and unassigned with zero comments in the September 10 check. A concise inquiry links the native and browser evidence and asks about type reuse/update semantics and AI/bot eligibility. Draft prepared for human review; no outreach sent, acceptance or reply date invented.",
   "risks": "Native builder and mapper include source type fields under the mapped destination ID; actual target updates remain untested. Original importer defaults permit updates, but DHIS2 documentation notes MERGE limitations, so reuse/update semantics need confirmation. Indicator-type UI behavior after a future change, actual DHIS2 storage/import, AI/bot eligibility, accepted scope and real benefit remain unresolved.",
   "priority_rationale": "Cause-led selection links WHO malaria integration guidance to a current, narrow public request. Investigate it independently while other organizations review existing inquiries; do not equate issue age or activity with impact.",
   "gates": {
@@ -205,6 +204,11 @@
     {
       "id": "mdsync-global-ui",
       "url": "https://github.com/humanifest-bot/humanifest/blob/codex/cht-admin-environment-audit/research/2026-09-10-mdsync-global-mapping-ui.md",
+      "accessed": "2026-09-10"
+    },
+    {
+      "id": "mdsync-inquiry-draft",
+      "url": "https://github.com/humanifest-bot/humanifest/blob/codex/cht-admin-environment-audit/research/2026-09-10-mdsync-scope-inquiry.md",
       "accessed": "2026-09-10"
     }
   ]
