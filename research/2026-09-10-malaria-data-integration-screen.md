@@ -3,6 +3,8 @@
 Accessed September 10, 2026. Public source review only; no target clone,
 installation, service execution, patient data, outreach or implementation.
 
+Follow-up: [mapping audit and seven isolated original-code checks](2026-09-10-mdsync-mapping-audit.md) refine the source hypothesis and setup limits below. No full app reproduction is claimed.
+
 ## Why this software path
 
 WHO's July 2025 national malaria repository guidance describes DHIS2-based

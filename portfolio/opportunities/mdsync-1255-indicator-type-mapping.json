@@ -15,15 +15,20 @@
       "type": "measured",
       "claim": "At the pinned development revision, InstanceMappingPage global.models lists seven model classes and no indicator-type model. This is a static source observation, not a runtime reproduction or proof of every mapping path.",
       "source_id": "mdsync-mapping-page"
+    },
+    {
+      "type": "measured",
+      "claim": "Seven isolated checks run the unchanged MappingMapper and original metadata helpers with schema-only adapters and published DHIS2 2.40 schemas. Supplied mappings rewrite indicator-type references; included source type objects receive destination IDs while retaining source fields. Inputs and pinned files remain unchanged. No full app, persistence or server-import behavior is established.",
+      "source_id": "mdsync-mapping-audit"
     }
   ],
-  "code_surface": "At 78c8b8c22278dcbb7d2d5678eaafaa80b0fd0cf9: InstanceMappingPage.tsx global.models, src/models/dhis/mapping.ts global classes, mapping dialog and ApplyMappingUseCase located. Metadata export/import transformation path remains to trace.",
-  "proposed_change": "First verify whether the existing mapping model can persist and apply indicator-type mappings to outgoing metadata. Only propose a focused extension after original-code reproduction and maintainer confirmation.",
-  "research_next_step": "Inspect pinned modelFactory and metadata payload transformation for indicatorType references, compare existing mapping PRs #1051/#1251, and audit Vitest setup/hooks before a synthetic original-code reproduction. Do not install or patch until that audit is complete.",
-  "tests": "No target tests run. Vitest uses jsdom, src/tests/setup.ts and environment loading; inspect these before executing. Seek behavior assertions for mapping persistence and outgoing indicator-type references, with existing mapping controls.",
-  "environment": "Read-only pinned files in /tmp/humanifest-malaria-integration-screen. No clone, install, build, DHIS2 connection, global configuration change or operational data access.",
+  "code_surface": "At 78c8b8c22278dcbb7d2d5678eaafaa80b0fd0cf9: global mapping page omits indicator types; modelFactory registers IndicatorTypeModel; MetadataSyncUseCase invokes MappingMapper before repository save. Original mapper and metadata helpers exercised with schema-only boundaries. Existing payload-builder and mapping integration tests located but not run.",
+  "proposed_change": "Verify the missing global option together with reference rewriting, mapping persistence and included-type behavior. Agree whether mapped indicator types should be reused, excluded or updated before implementing a focused change; a picker-only patch is not yet justified.",
+  "research_next_step": "Complete the isolated native test-path audit (shared test/build workflow, dependencies and fixtures), then verify original model/mapping persistence and whether the builder includes mapped indicator types. Check import semantics with synthetic metadata before proposing reuse or update behavior; no operational instances.",
+  "tests": "Seven isolated original-mapper checks pass with original metadata helpers, published DHIS2 2.40 schemas and explicit schema-only API/model adapters. Covers absent/supplied/disabled/unrelated mappings, global flag, included source fields, category-option control and input immutability. No native upstream suite, browser, persistence, expressions or server-import test.",
+  "environment": "Node 22.16.0, TypeScript 5.8.3 transpilation, checksum-verified lodash 4.18.0 and d2-api 1.21.0 static schemas in /tmp/humanifest-malaria-integration-screen. No package install, target clone or lifecycle commands. All 33 retrieved source blobs verified against pinned Git tree. Full app baseline and exact project toolchain remain pending.",
   "maintainer": "Issue #1255 is open and unassigned with zero comments; inspected timeline has project events and no linked PR. No scope or AI/bot confirmation. No outreach sent or follow-up date invented.",
-  "risks": "A visible option alone may not make payload rewriting correct. Existing mapping PRs may overlap. Contributor terms, bot eligibility, test side effects, review capacity and real-world benefit remain unresolved.",
+  "risks": "The mapper changes included source type IDs while retaining source fields such as factor. Destination overwrite is not demonstrated; builder inclusion and server semantics require verification. Existing PR #1051 overlaps the picker but neither #1051 nor #1251 adds this feature. AI/bot eligibility, accepted scope, full environment and benefit remain unresolved.",
   "priority_rationale": "Cause-led selection links WHO malaria integration guidance to a current, narrow public request. Investigate it independently while other organizations review existing inquiries; do not equate issue age or activity with impact.",
   "gates": {
     "humanitarian_relevance_supported": {
@@ -59,15 +64,18 @@
     },
     "behavior_reproducible_or_verifiable": {
       "passed": false,
-      "rationale": "Source omission observed, but no original app or mapping execution has reproduced the complete requested workflow."
+      "rationale": "Original mapper behavior is verified in seven isolated cases with explicit adapters; missing-option UI and complete app workflow remain unreproduced, so the full behavior gate stays false."
     },
     "code_and_tests_located": {
-      "passed": false,
-      "rationale": "Mapping page, models, application use case and Vitest configuration located. Relevant regression coverage and metadata-reference rewrite path remain to inspect."
+      "passed": true,
+      "rationale": "Pinned model registration, global option list, mapper, sync caller and existing payload-builder/integration tests located; reusable original-mapper probe records coverage limits. Full suite remains unrun.",
+      "source_ids": [
+        "mdsync-mapping-audit"
+      ]
     },
     "change_bounded": {
       "passed": false,
-      "rationale": "Issue suggests an existing mapping pattern; downstream payload transformation and persistence scope are still unknown."
+      "rationale": "Existing mapper can rewrite supplied indicator-type references, but included source type fields survive under the destination ID. Agree import/reuse behavior and verify builder/persistence scope before a production change."
     },
     "regression_strategy_credible": {
       "passed": false,
@@ -82,7 +90,7 @@
     },
     "security_and_licensing_risk_acceptable": {
       "passed": false,
-      "rationale": "Target manifest has prepare/postinstall hooks and test configuration loads environment values; complete setup and dependency license audit is pending."
+      "rationale": "Small probe uses verified published packages and pinned original files without installs or network-exposed adapters. Target Yarn disables scripts. Full application dependencies, shared workflows and fixture side effects are not yet fully audited."
     },
     "environment_feasible": {
       "passed": false,
@@ -112,7 +120,7 @@
     "review_burden": 2,
     "deployment_probability": 0
   },
-  "score_basis": "Provisional discovery judgments only. Acceptance and deployment remain zero; no implementation readiness or measured benefit.",
+  "score_basis": "Cause relevance and isolated mapper behavior support continued research. Full environment, accepted scope and deployment remain unverified; implementation score stays zero.",
   "sources": [
     {
       "id": "who-malaria-integration",
@@ -157,6 +165,11 @@
     {
       "id": "mdsync-screen",
       "url": "https://github.com/humanifest-bot/humanifest/blob/codex/cht-admin-environment-audit/research/2026-09-10-malaria-data-integration-screen.md",
+      "accessed": "2026-09-10"
+    },
+    {
+      "id": "mdsync-mapping-audit",
+      "url": "https://github.com/humanifest-bot/humanifest/blob/codex/cht-admin-environment-audit/research/2026-09-10-mdsync-mapping-audit.md",
       "accessed": "2026-09-10"
     }
   ]
