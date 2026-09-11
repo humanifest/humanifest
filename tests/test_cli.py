@@ -72,6 +72,28 @@ class CliTests(unittest.TestCase):
         self.assertEqual((status, err), (0, ""))
         self.assertEqual(json.loads(out)["score"], 2.7)
 
+    def test_operate_renders_read_only_operator_snapshot(self):
+        self.seed_portfolio()
+        from tests.test_compute import resources
+        from tests.test_finance import ledger
+        self.write_record("portfolio/compute-resources.json", resources())
+        self.write_record("portfolio/funding-ledger.json", ledger())
+        status, out, err = self.run_cli("operate", "--root", str(self.root),
+                                        "--as-of", "2026-09-08", "--max-age-days", "30")
+        self.assertEqual((status, err), (0, ""))
+        self.assertIn("# Humanifest Operator Loop", out)
+        self.assertIn("Do not perform external writes", out)
+        self.assertIn("no remote sources fetched", out)
+
+        status, out, err = self.run_cli("operate", "--root", str(self.root),
+                                        "--as-of", "2026-09-08", "--max-age-days", "30",
+                                        "--format", "json")
+        self.assertEqual((status, err), (0, ""))
+        snapshot = json.loads(out)
+        self.assertEqual(snapshot["causes"], 1)
+        self.assertEqual(snapshot["compute_resources"], 1)
+        self.assertEqual(snapshot["finance_steward"], "Avaelus LLC/Inc.")
+
     def test_bad_inputs_have_diagnostics_without_tracebacks(self):
         for content in ["{", "[]", '{"id": "a", "id": "b"}', '{"score": NaN}', '{}']:
             path = self.root / "bad.json"

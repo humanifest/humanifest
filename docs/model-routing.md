@@ -17,6 +17,11 @@ change allowed tasks, alter identity or usage-limit assumptions, or affect
 automation boundaries. Simple registry updates may use faster Codex only when
 they already satisfy `docs/compute-governance.md`.
 
+Operator-loop and bot-setup changes must route through Orca because they affect
+automation boundaries, external-write risk, identity controls, and how donated
+compute is spent. The default loop must remain read-only unless a separate
+authority file grants a narrower write action.
+
 Use faster Codex or Spark for bounded, independently verifiable work:
 
 - test or lint fixes with known failures;

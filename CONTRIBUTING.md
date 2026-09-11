@@ -65,6 +65,18 @@ records with:
 python3 -m humanifest.cli compute --root .
 ```
 
+## Operator automation
+
+Use the read-only operator loop before changing records or spending donated
+compute:
+
+```bash
+python3 -m humanifest.cli operate --root . --as-of 2026-09-11 --max-age-days 30
+```
+
+The operator loop is safe to schedule because it does not perform external
+writes or mutate records. See [Bot Operator Runbook](docs/bot-operator-runbook.md).
+
 ## Development checks
 
 Record validation and generated reports use the Python standard library. The

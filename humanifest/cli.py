@@ -25,6 +25,7 @@ from .models import (
 )
 from .review import render_source_review, source_review
 from .correspondence import load_projection
+from .operate import operator_snapshot, render_operator_snapshot
 from .workflow import HANDOFF_ROUTES
 
 
@@ -56,6 +57,12 @@ def main(argv: list[str] | None = None) -> int:
     report_parser = subparsers.add_parser("report")
     report_parser.add_argument("--root", default=".", help="Repository root")
 
+    operate_parser = subparsers.add_parser("operate", help="Run the read-only Humanifest operator loop")
+    operate_parser.add_argument("--root", default=".", help="Repository root")
+    operate_parser.add_argument("--as-of", required=True, type=_date, help="Review date in YYYY-MM-DD form")
+    operate_parser.add_argument("--max-age-days", required=True, type=_nonnegative_int, help="Inclusive source-age review window")
+    operate_parser.add_argument("--format", choices=["markdown", "json"], default="markdown")
+
     finance_parser = subparsers.add_parser("finance", help="Validate and summarize the public funding ledger")
     finance_parser.add_argument("--root", default=".", help="Repository root")
 
@@ -72,7 +79,12 @@ def main(argv: list[str] | None = None) -> int:
     args = parser.parse_args(argv)
 
     try:
-        if args.command == "compute":
+        if args.command == "operate":
+            snapshot, issues = operator_snapshot(Path(args.root), as_of=args.as_of, max_age_days=args.max_age_days)
+            if _print_issues(issues):
+                return 1
+            print(json.dumps(snapshot, indent=2, allow_nan=False) if args.format == "json" else render_operator_snapshot(snapshot))
+        elif args.command == "compute":
             resources = load_compute_resources(Path(args.root))
             if _print_issues(validate_compute_resources(resources)):
                 return 1

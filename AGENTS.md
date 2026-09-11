@@ -36,5 +36,6 @@ python3 -m unittest
 python3 -m humanifest.cli validate --root .
 python3 -m humanifest.cli finance --root .
 python3 -m humanifest.cli compute --root .
+python3 -m humanifest.cli operate --root . --as-of 2026-09-11 --max-age-days 30
 python3 -m humanifest.cli report --root .
 ```

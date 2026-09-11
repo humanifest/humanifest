@@ -53,6 +53,7 @@ checkout without installing dependencies.
 
 ```bash
 python3 -m humanifest.cli validate --root .
+python3 -m humanifest.cli operate --root . --as-of 2026-09-11 --max-age-days 30
 python3 -m humanifest.cli causes --root .
 python3 -m humanifest.cli report --root .
 python3 -m humanifest.cli score portfolio/opportunities/cht-dhis2-bs-month-export.json
@@ -124,6 +125,23 @@ Omit `--needs-review` to show every source, or add `--format json` for structure
 output. Shared URLs stay separate when cited by different records, preserving
 their individual source IDs and access dates. Review reminders return exit code
 `0`; invalid records return `1` and invalid review arguments return `2`.
+
+## Operator Loop
+
+To clone Humanifest and run a safe bot-style discovery process, start with the
+read-only operator loop:
+
+```bash
+python3 -m humanifest.cli operate --root . --as-of 2026-09-11 --max-age-days 30
+```
+
+The loop validates the portfolio, finance ledger, compute registry, and cause
+records; identifies stale sources and top cause pathways; and reports safe next
+actions. It does not contact maintainers, post comments, open pull requests,
+fetch remote sources, publish packages, or mutate records.
+
+See [Bot Operator Runbook](docs/bot-operator-runbook.md) for clone setup,
+scheduled automation, bot identity, donated compute, and the contribution loop.
 
 ## Repository Map
 
