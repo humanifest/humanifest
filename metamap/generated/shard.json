@@ -2,7 +2,7 @@
   "schemaVersion": "2.0.0",
   "id": "urn:humanifest:portfolio",
   "namespace": "humanifest",
-  "revision": "sha256:369c4ef6885ce99a56d5bee7ae0a7a3b5944bc52050794a68a2f25533e410375",
+  "revision": "sha256:8aa3c441ace388563b45af287b7285d29512c97febe0c1231a1f8b21d3a7b1ec",
   "entities": [
     {
       "id": "urn:humanifest:routing:policy:contribution-protocol",
@@ -5618,7 +5618,7 @@
       "attributes": {
         "recordId": "hot-7227-archived-project-data-access",
         "path": "portfolio/opportunities/hot-7227-archived-project-data-access.json",
-        "digest": "sha256:cb2ff475f4f4b2d912e328f7ecb10fee614d8b1726fea6a714317b8436d3843c",
+        "digest": "sha256:dd367c963dfd024496fe51c0b9316a0fa8c74ee0d7c76925ce29199c10f4d18f",
         "projectId": "hot-tasking-manager"
       },
       "provenance": {
@@ -5632,7 +5632,7 @@
       "label": "portfolio/opportunities/hot-7227-archived-project-data-access.json",
       "attributes": {
         "path": "portfolio/opportunities/hot-7227-archived-project-data-access.json",
-        "digest": "sha256:cb2ff475f4f4b2d912e328f7ecb10fee614d8b1726fea6a714317b8436d3843c"
+        "digest": "sha256:dd367c963dfd024496fe51c0b9316a0fa8c74ee0d7c76925ce29199c10f4d18f"
       },
       "provenance": {
         "status": "generated",
@@ -5852,7 +5852,7 @@
       "kind": "hf:source",
       "label": "urn:humanifest:hf:opportunity:hot-7227-archived-project-data-access:hot-handler-probe",
       "attributes": {
-        "url": "file:///Users/admin/dev/humanifest/research/fixtures/hot-download-reproduction.mjs",
+        "url": "https://github.com/humanifest-bot/humanifest/blob/d8bea91d308883bca2daf38e80afb10154e61968/research/fixtures/hot-download-reproduction.mjs",
         "accessed": "2026-09-08"
       },
       "provenance": {
@@ -6289,7 +6289,7 @@
       "attributes": {
         "recordId": "ifrc-usgs-economic-rounding",
         "path": "portfolio/opportunities/ifrc-usgs-economic-rounding.json",
-        "digest": "sha256:693fc1a5a80f54f8b8c2a038b9354e172fdb89ae05049c36d30401a19f6aa90c",
+        "digest": "sha256:0b0afee0b692216ba07b261f52cca2820333cdda41d3fac3b3a7e8e48512dad8",
         "projectId": "ifrc-pystac-monty"
       },
       "provenance": {
@@ -6303,7 +6303,7 @@
       "label": "portfolio/opportunities/ifrc-usgs-economic-rounding.json",
       "attributes": {
         "path": "portfolio/opportunities/ifrc-usgs-economic-rounding.json",
-        "digest": "sha256:693fc1a5a80f54f8b8c2a038b9354e172fdb89ae05049c36d30401a19f6aa90c"
+        "digest": "sha256:0b0afee0b692216ba07b261f52cca2820333cdda41d3fac3b3a7e8e48512dad8"
       },
       "provenance": {
         "status": "generated",
@@ -6497,7 +6497,7 @@
       "kind": "hf:source",
       "label": "urn:humanifest:hf:opportunity:ifrc-usgs-economic-rounding:monty-rounding-probe",
       "attributes": {
-        "url": "file:///Users/admin/dev/humanifest/research/fixtures/ifrc-usgs-rounding-reproduction.py",
+        "url": "https://github.com/humanifest-bot/humanifest/blob/d8bea91d308883bca2daf38e80afb10154e61968/research/fixtures/ifrc-usgs-rounding-reproduction.py",
         "accessed": "2026-09-08"
       },
       "provenance": {
@@ -6510,7 +6510,7 @@
       "kind": "hf:source",
       "label": "urn:humanifest:hf:opportunity:ifrc-usgs-economic-rounding:monty-runtime-probe",
       "attributes": {
-        "url": "file:///Users/admin/dev/humanifest/research/fixtures/test_ifrc_usgs_item_reproduction.py",
+        "url": "https://github.com/humanifest-bot/humanifest/blob/d8bea91d308883bca2daf38e80afb10154e61968/research/fixtures/test_ifrc_usgs_item_reproduction.py",
         "accessed": "2026-09-08"
       },
       "provenance": {
@@ -6523,7 +6523,7 @@
       "kind": "hf:source",
       "label": "urn:humanifest:hf:opportunity:ifrc-usgs-economic-rounding:monty-runtime-note",
       "attributes": {
-        "url": "file:///Users/admin/dev/humanifest/research/2026-09-08-ifrc-runtime-verification.md",
+        "url": "https://github.com/humanifest-bot/humanifest/blob/d8bea91d308883bca2daf38e80afb10154e61968/research/2026-09-08-ifrc-runtime-verification.md",
         "accessed": "2026-09-08"
       },
       "provenance": {
@@ -7001,7 +7001,7 @@
       "attributes": {
         "recordId": "kobo-7259-incremental-sync-verification",
         "path": "portfolio/opportunities/kobo-7259-incremental-sync-verification.json",
-        "digest": "sha256:17b75e58b90a32cec1349444bb7cc7d637d8817f7d8c9834984af13399c67dcb",
+        "digest": "sha256:04c4e8ff314052f1d1117418f0bd4418fd8cabc7973404c7df78ff1892fbc10b",
         "projectId": "kobotoolbox-kpi"
       },
       "provenance": {
@@ -7015,7 +7015,7 @@
       "label": "portfolio/opportunities/kobo-7259-incremental-sync-verification.json",
       "attributes": {
         "path": "portfolio/opportunities/kobo-7259-incremental-sync-verification.json",
-        "digest": "sha256:17b75e58b90a32cec1349444bb7cc7d637d8817f7d8c9834984af13399c67dcb"
+        "digest": "sha256:04c4e8ff314052f1d1117418f0bd4418fd8cabc7973404c7df78ff1892fbc10b"
       },
       "provenance": {
         "status": "generated",
@@ -7196,7 +7196,7 @@
       "kind": "hf:source",
       "label": "urn:humanifest:hf:opportunity:kobo-7259-incremental-sync-verification:kobo-precision-probe",
       "attributes": {
-        "url": "file:///Users/admin/dev/humanifest/research/fixtures/kobo-date-modified-reproduction.py",
+        "url": "https://github.com/humanifest-bot/humanifest/blob/d8bea91d308883bca2daf38e80afb10154e61968/research/fixtures/kobo-date-modified-reproduction.py",
         "accessed": "2026-09-08"
       },
       "provenance": {

@@ -35,9 +35,9 @@
     "portfolio/opportunities/climada-1312-wildfire-fraction-verification.json": "sha256:0a2919bc958310c875ddb8fc2f85d3e382071558b27c2c667cedfdca65494b32",
     "portfolio/opportunities/crisiscleanup-success-banner-failure.json": "sha256:39df8909e6723057cd5220635f83b07af17064e22830639cfce126f2d143e013",
     "portfolio/opportunities/epanet-883-tank-volume-curve-validation.json": "sha256:ba7eae0bd0bddc284d151900cb6d7b5c06c6e2ac1896f64f54324d9a9bf859e3",
-    "portfolio/opportunities/hot-7227-archived-project-data-access.json": "sha256:cb2ff475f4f4b2d912e328f7ecb10fee614d8b1726fea6a714317b8436d3843c",
-    "portfolio/opportunities/ifrc-usgs-economic-rounding.json": "sha256:693fc1a5a80f54f8b8c2a038b9354e172fdb89ae05049c36d30401a19f6aa90c",
-    "portfolio/opportunities/kobo-7259-incremental-sync-verification.json": "sha256:17b75e58b90a32cec1349444bb7cc7d637d8817f7d8c9834984af13399c67dcb",
+    "portfolio/opportunities/hot-7227-archived-project-data-access.json": "sha256:dd367c963dfd024496fe51c0b9316a0fa8c74ee0d7c76925ce29199c10f4d18f",
+    "portfolio/opportunities/ifrc-usgs-economic-rounding.json": "sha256:0b0afee0b692216ba07b261f52cca2820333cdda41d3fac3b3a7e8e48512dad8",
+    "portfolio/opportunities/kobo-7259-incremental-sync-verification.json": "sha256:04c4e8ff314052f1d1117418f0bd4418fd8cabc7973404c7df78ff1892fbc10b",
     "portfolio/opportunities/mdsync-1255-indicator-type-mapping.json": "sha256:401c5b4006c873770eceb35107aaeab5678cb4f9b11d0cb67c13911ae2d8b3cb",
     "portfolio/opportunities/odk-2169-worker-memory-threshold.json": "sha256:796efd222f1aed1c50b2e0f89bf3359b62dba8f7667dfd9893e934697b7a7901",
     "portfolio/opportunities/off-496-text-search-contract-verification.json": "sha256:3afedfff7975729543c8e3da4e44e93deaf22ef1bcf2820d84e112aa7d46289a",
@@ -58,12 +58,12 @@
     "evaluatedAt": "2026-09-09T00:00:00.000Z",
     "graph": {
       "id": "urn:humanifest:portfolio",
-      "revision": "sha256:369c4ef6885ce99a56d5bee7ae0a7a3b5944bc52050794a68a2f25533e410375",
-      "digest": "sha256:3d7ef0963e122f51848044d4a498219e67e6d8f3963a394a1a6f611d4d2f464b"
+      "revision": "sha256:8aa3c441ace388563b45af287b7285d29512c97febe0c1231a1f8b21d3a7b1ec",
+      "digest": "sha256:af463d86333bf4c976c5ad58ed418809949a434e7ad04838b751f57829376fe8"
     },
     "policy": {
       "id": "urn:humanifest:viability",
-      "digest": "sha256:1e57a31bcfa379ecd1c5a35e27b63d865ee5557cd260559aa13bc05f5a78102e"
+      "digest": "sha256:769fd87e2b0b62397c3d5e692f33f8e40ca3baff8e53ad63b0fb2103d108f536"
     },
     "context": {},
     "activeMappings": [
@@ -2485,19 +2485,19 @@
     "inactiveMappings": [],
     "evidence": [],
     "waiversApplied": [],
-    "id": "urn:metamap:generation:0ba48056fed98eb7356cb0a48373ce7527903dcfcbf00985cb9908cdf745284f",
-    "digest": "sha256:0ba48056fed98eb7356cb0a48373ce7527903dcfcbf00985cb9908cdf745284f"
+    "id": "urn:metamap:generation:3a658fa23d08f83501496ba3e026d7528c9c9226d082ce226cdc20640e3fb22c",
+    "digest": "sha256:3a658fa23d08f83501496ba3e026d7528c9c9226d082ce226cdc20640e3fb22c"
   },
   "projection": {
     "$schema": "https://raw.githubusercontent.com/roryscot/metamap/v0.4.0/schemas/metamap-projection.schema.json",
     "schemaVersion": "1.0.0",
     "generation": {
-      "id": "urn:metamap:generation:0ba48056fed98eb7356cb0a48373ce7527903dcfcbf00985cb9908cdf745284f",
-      "digest": "sha256:0ba48056fed98eb7356cb0a48373ce7527903dcfcbf00985cb9908cdf745284f"
+      "id": "urn:metamap:generation:3a658fa23d08f83501496ba3e026d7528c9c9226d082ce226cdc20640e3fb22c",
+      "digest": "sha256:3a658fa23d08f83501496ba3e026d7528c9c9226d082ce226cdc20640e3fb22c"
     },
     "graph": {
       "id": "urn:humanifest:portfolio",
-      "digest": "sha256:3d7ef0963e122f51848044d4a498219e67e6d8f3963a394a1a6f611d4d2f464b"
+      "digest": "sha256:af463d86333bf4c976c5ad58ed418809949a434e7ad04838b751f57829376fe8"
     },
     "spec": {
       "id": "urn:humanifest:report-projection",
@@ -3640,7 +3640,7 @@
           "attributes": {
             "recordId": "hot-7227-archived-project-data-access",
             "path": "portfolio/opportunities/hot-7227-archived-project-data-access.json",
-            "digest": "sha256:cb2ff475f4f4b2d912e328f7ecb10fee614d8b1726fea6a714317b8436d3843c",
+            "digest": "sha256:dd367c963dfd024496fe51c0b9316a0fa8c74ee0d7c76925ce29199c10f4d18f",
             "projectId": "hot-tasking-manager"
           }
         },
@@ -3679,7 +3679,7 @@
                 "label": "portfolio/opportunities/hot-7227-archived-project-data-access.json",
                 "attributes": {
                   "path": "portfolio/opportunities/hot-7227-archived-project-data-access.json",
-                  "digest": "sha256:cb2ff475f4f4b2d912e328f7ecb10fee614d8b1726fea6a714317b8436d3843c"
+                  "digest": "sha256:dd367c963dfd024496fe51c0b9316a0fa8c74ee0d7c76925ce29199c10f4d18f"
                 }
               }
             ]
@@ -3828,7 +3828,7 @@
           "attributes": {
             "recordId": "ifrc-usgs-economic-rounding",
             "path": "portfolio/opportunities/ifrc-usgs-economic-rounding.json",
-            "digest": "sha256:693fc1a5a80f54f8b8c2a038b9354e172fdb89ae05049c36d30401a19f6aa90c",
+            "digest": "sha256:0b0afee0b692216ba07b261f52cca2820333cdda41d3fac3b3a7e8e48512dad8",
             "projectId": "ifrc-pystac-monty"
           }
         },
@@ -3867,7 +3867,7 @@
                 "label": "portfolio/opportunities/ifrc-usgs-economic-rounding.json",
                 "attributes": {
                   "path": "portfolio/opportunities/ifrc-usgs-economic-rounding.json",
-                  "digest": "sha256:693fc1a5a80f54f8b8c2a038b9354e172fdb89ae05049c36d30401a19f6aa90c"
+                  "digest": "sha256:0b0afee0b692216ba07b261f52cca2820333cdda41d3fac3b3a7e8e48512dad8"
                 }
               }
             ]
@@ -4016,7 +4016,7 @@
           "attributes": {
             "recordId": "kobo-7259-incremental-sync-verification",
             "path": "portfolio/opportunities/kobo-7259-incremental-sync-verification.json",
-            "digest": "sha256:17b75e58b90a32cec1349444bb7cc7d637d8817f7d8c9834984af13399c67dcb",
+            "digest": "sha256:04c4e8ff314052f1d1117418f0bd4418fd8cabc7973404c7df78ff1892fbc10b",
             "projectId": "kobotoolbox-kpi"
           }
         },
@@ -4055,7 +4055,7 @@
                 "label": "portfolio/opportunities/kobo-7259-incremental-sync-verification.json",
                 "attributes": {
                   "path": "portfolio/opportunities/kobo-7259-incremental-sync-verification.json",
-                  "digest": "sha256:17b75e58b90a32cec1349444bb7cc7d637d8817f7d8c9834984af13399c67dcb"
+                  "digest": "sha256:04c4e8ff314052f1d1117418f0bd4418fd8cabc7973404c7df78ff1892fbc10b"
                 }
               }
             ]
@@ -5513,8 +5513,8 @@
         ]
       }
     ],
-    "id": "urn:metamap:projection:c52ba0329ddb899b27a280fc457255fabf729624f0b3dfc8170f5290d39553f8",
-    "digest": "sha256:c52ba0329ddb899b27a280fc457255fabf729624f0b3dfc8170f5290d39553f8"
+    "id": "urn:metamap:projection:ada3bdc00255111cec660a295b113f1aa2e20d45f7ca8f532bccc5e4d12ed73e",
+    "digest": "sha256:ada3bdc00255111cec660a295b113f1aa2e20d45f7ca8f532bccc5e4d12ed73e"
   },
-  "projection_checksum": "sha256:1675c4db36226f59a5c8bec3f75b928f83b9baff11a04ad8aaf64152d1f69d55"
+  "projection_checksum": "sha256:0eb38a5c27815bc3f30796113cde181dcaeed62dc9bebf9a002db2fb3fa5f58f"
 }
