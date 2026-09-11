@@ -13,6 +13,10 @@ Useful work is not limited to code. Good first contributions include:
 - adversarially reviewing a candidate handoff or proposed implementation;
 - preparing bounded implementation work only after every hard gate passes.
 
+New contributors can also start from [Adopt Humanifest](docs/adoption.md), which
+explains the read-only local run, contributor roles, and how to operate a
+Humanifest-style bot safely.
+
 ## Before opening nontrivial work
 
 1. Open or identify an issue.
@@ -76,6 +80,10 @@ python3 -m humanifest.cli operate --root . --as-of 2026-09-11 --max-age-days 30
 
 The operator loop is safe to schedule because it does not perform external
 writes or mutate records. See [Bot Operator Runbook](docs/bot-operator-runbook.md).
+
+Use [Outreach](docs/outreach.md) when describing Humanifest publicly. It contains
+short copy, social posts, maintainer-safe language, and calls to action that do
+not encourage unsolicited upstream writes.
 
 ## Development checks
 

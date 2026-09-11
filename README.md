@@ -142,6 +142,8 @@ fetch remote sources, publish packages, or mutate records.
 
 See [Bot Operator Runbook](docs/bot-operator-runbook.md) for clone setup,
 scheduled automation, bot identity, donated compute, and the contribution loop.
+See [Adopt Humanifest](docs/adoption.md) for the short path to running your own
+Humanifest-style bot.
 
 ## Repository Map
 
@@ -169,6 +171,10 @@ contributions are small and evidence-preserving:
 Do not contact external maintainers, post issue comments, open upstream pull
 requests, or submit AI-generated reviews on behalf of Humanifest unless the
 current protocol and authorization explicitly allow it.
+
+If you want to help spread the project, use [Outreach](docs/outreach.md) for
+maintainer-safe language and [Adopt Humanifest](docs/adoption.md) for the
+clone-and-run path.
 
 ## Donations
 

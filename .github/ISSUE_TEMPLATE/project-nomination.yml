@@ -1,0 +1,43 @@
+name: Project nomination
+description: Nominate an open-source project for governed review.
+title: "Project: "
+labels: ["project-audit"]
+body:
+  - type: input
+    id: repository
+    attributes:
+      label: Repository URL
+      description: Link the public repository or project source.
+      placeholder: "https://github.com/org/repo"
+    validations:
+      required: true
+  - type: textarea
+    id: humanitarian-fit
+    attributes:
+      label: Humanitarian relevance
+      description: Explain the public-good or humanitarian workflow this project supports.
+    validations:
+      required: true
+  - type: textarea
+    id: contribution-policy
+    attributes:
+      label: Contribution and AI policy evidence
+      description: Link contribution guides, issue templates, AI/bot policies, codes of conduct, or related policy pages if known.
+    validations:
+      required: false
+  - type: textarea
+    id: opportunity
+    attributes:
+      label: Possible contribution area
+      description: Describe a bounded issue or subsystem if one is already known.
+    validations:
+      required: false
+  - type: checkboxes
+    id: boundaries
+    attributes:
+      label: Safety boundaries
+      options:
+        - label: I understand nomination does not authorize maintainer contact, implementation, or a pull request.
+          required: true
+        - label: I have not included private operational data or credentials.
+          required: true

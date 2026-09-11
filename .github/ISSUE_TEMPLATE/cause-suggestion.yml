@@ -1,0 +1,41 @@
+name: Cause suggestion
+description: Suggest a humanitarian cause area for Humanifest to evaluate.
+title: "Cause: "
+labels: ["cause-review"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Suggest a cause area, not a guaranteed implementation target. Humanifest needs public evidence and a path to maintainer-respecting open-source work.
+  - type: textarea
+    id: cause
+    attributes:
+      label: Cause area
+      description: What humanitarian or public-interest problem should Humanifest evaluate?
+      placeholder: "Example: continuity of care during noncommunicable disease treatment disruptions"
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Public evidence
+      description: Link public sources that support the cause's scale, neglectedness, urgency, or tractability.
+      placeholder: "URLs with access dates if available."
+    validations:
+      required: true
+  - type: textarea
+    id: oss-path
+    attributes:
+      label: Open-source path
+      description: What projects, standards, datasets, or workflows might connect this cause to maintainable open-source work?
+    validations:
+      required: false
+  - type: checkboxes
+    id: boundaries
+    attributes:
+      label: Safety boundaries
+      options:
+        - label: I am not asking Humanifest to contact maintainers or open pull requests from this issue alone.
+          required: true
+        - label: I have not included private patient, survivor, volunteer, employee, or operational data.
+          required: true

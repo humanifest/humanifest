@@ -1,0 +1,42 @@
+name: Volunteer onboarding
+description: Tell Humanifest how you would like to help.
+title: "Volunteer: "
+labels: ["volunteer"]
+body:
+  - type: checkboxes
+    id: roles
+    attributes:
+      label: Roles
+      description: Pick any roles you are comfortable with.
+      options:
+        - label: Cause scout
+        - label: Project steward
+        - label: Evidence reviewer
+        - label: Compute donor
+        - label: Maintainer liaison
+        - label: Implementation volunteer
+        - label: Adversarial reviewer
+        - label: Documentation or workflow contributor
+  - type: textarea
+    id: background
+    attributes:
+      label: Relevant background
+      description: Share relevant technical, domain, humanitarian, open-source, or review experience.
+    validations:
+      required: false
+  - type: textarea
+    id: availability
+    attributes:
+      label: Availability and constraints
+      description: Note time zone, preferred cadence, access limits, or areas you do not want to work on.
+    validations:
+      required: false
+  - type: checkboxes
+    id: boundaries
+    attributes:
+      label: Safety boundaries
+      options:
+        - label: I understand Humanifest values evidence review and parked work as much as implementation.
+          required: true
+        - label: I will not contact external maintainers on behalf of Humanifest unless the contribution protocol and current authorization allow it.
+          required: true

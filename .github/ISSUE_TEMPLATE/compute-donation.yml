@@ -1,0 +1,43 @@
+name: Compute donation
+description: Offer compute, credits, CI time, or other governed resources.
+title: "Compute: "
+labels: ["compute-governance"]
+body:
+  - type: input
+    id: provider
+    attributes:
+      label: Provider or resource
+      description: Name the provider, platform, or resource type.
+      placeholder: "GitHub Actions, Codex, local workstation, cloud credits"
+    validations:
+      required: true
+  - type: textarea
+    id: terms
+    attributes:
+      label: Terms and constraints
+      description: Summarize usage limits, acceptable-use rules, sponsorship constraints, expiration, and any billing risks.
+    validations:
+      required: true
+  - type: textarea
+    id: allowed-uses
+    attributes:
+      label: Proposed allowed uses
+      description: Examples include source review, test design, reproducible environments, adversarial review, or handoff drafting.
+    validations:
+      required: true
+  - type: textarea
+    id: accounting
+    attributes:
+      label: Accounting notes
+      description: Note whether this is free, donated, sponsored, paid, or self-hosted. Do not include secrets or payment credentials.
+    validations:
+      required: true
+  - type: checkboxes
+    id: boundaries
+    attributes:
+      label: Safety boundaries
+      options:
+        - label: I understand compute cannot be used to evade provider limits, pool personal accounts, or scale unsolicited maintainer outreach.
+          required: true
+        - label: I have not included secrets, tokens, bank details, or payment credentials.
+          required: true
