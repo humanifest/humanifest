@@ -207,7 +207,7 @@
     },
     {
       "id": "kobo-precision-probe",
-      "url": "file:///Users/admin/dev/humanifest/research/fixtures/kobo-date-modified-reproduction.py",
+      "url": "https://github.com/humanifest-bot/humanifest/blob/d8bea91d308883bca2daf38e80afb10154e61968/research/fixtures/kobo-date-modified-reproduction.py",
       "accessed": "2026-09-08"
     },
     {

@@ -234,7 +234,7 @@
     },
     {
       "id": "hot-handler-probe",
-      "url": "file:///Users/admin/dev/humanifest/research/fixtures/hot-download-reproduction.mjs",
+      "url": "https://github.com/humanifest-bot/humanifest/blob/d8bea91d308883bca2daf38e80afb10154e61968/research/fixtures/hot-download-reproduction.mjs",
       "accessed": "2026-09-08"
     },
     {
