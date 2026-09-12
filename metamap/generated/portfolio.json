@@ -3,7 +3,7 @@
   "inputs": {
     "AGENTS.md": "sha256:81b6fac1d99d443fcd9adc33a9f02cab144f533e92f1112b2848658dd17d5707",
     "GOALS.md": "sha256:9273295e3e1d94c6971b3c112152a506314f754846de13de1323179fd0102a1c",
-    "README.md": "sha256:b5ac73dcf29a66116be030bfd2fbc883dca3610621e883d9e97baab8280b910e",
+    "README.md": "sha256:00d2b62bb61eb494e0a07e41b0d5e5ed539be2453c889d7adfcd9a04217e0525",
     "docs/contribution-protocol.md": "sha256:808ae3e0b48a6da2224bcce8a1d5d87163c6554976a4d9ae0bbbce2b83c3b26a",
     "schemas/project.schema.json": "sha256:ff4e4913b2cd9282766d9574a4c86582879b5bf3a01fcbc3a9b6bec4d1b04cce",
     "schemas/opportunity.schema.json": "sha256:0c3f3ec4c00e82fd3f8a7ff70972c55852d3ea9bca7b8ae87fd6e80701ce46ae",
@@ -58,12 +58,12 @@
     "evaluatedAt": "2026-09-09T00:00:00.000Z",
     "graph": {
       "id": "urn:humanifest:portfolio",
-      "revision": "sha256:369c4ef6885ce99a56d5bee7ae0a7a3b5944bc52050794a68a2f25533e410375",
-      "digest": "sha256:3d7ef0963e122f51848044d4a498219e67e6d8f3963a394a1a6f611d4d2f464b"
+      "revision": "sha256:f07693ca5802e38ab170f2084b7ad699980264e2aa06a3a4c8fdb392c8c3d12c",
+      "digest": "sha256:370a2f032297d929e09ab163afa57e760c8e05e07b2d4cf446838121a4e088f0"
     },
     "policy": {
       "id": "urn:humanifest:viability",
-      "digest": "sha256:1e57a31bcfa379ecd1c5a35e27b63d865ee5557cd260559aa13bc05f5a78102e"
+      "digest": "sha256:85566d6572fc8c63e3b0b3b4d79ce2ad26c6b346113606ae33693a5f118c9cae"
     },
     "context": {},
     "activeMappings": [
@@ -2485,19 +2485,19 @@
     "inactiveMappings": [],
     "evidence": [],
     "waiversApplied": [],
-    "id": "urn:metamap:generation:0ba48056fed98eb7356cb0a48373ce7527903dcfcbf00985cb9908cdf745284f",
-    "digest": "sha256:0ba48056fed98eb7356cb0a48373ce7527903dcfcbf00985cb9908cdf745284f"
+    "id": "urn:metamap:generation:e6870e38d4ca71e4652a093bbcc8250a3485e31d4301f5631447b6d1a9498bb8",
+    "digest": "sha256:e6870e38d4ca71e4652a093bbcc8250a3485e31d4301f5631447b6d1a9498bb8"
   },
   "projection": {
     "$schema": "https://raw.githubusercontent.com/roryscot/metamap/v0.4.0/schemas/metamap-projection.schema.json",
     "schemaVersion": "1.0.0",
     "generation": {
-      "id": "urn:metamap:generation:0ba48056fed98eb7356cb0a48373ce7527903dcfcbf00985cb9908cdf745284f",
-      "digest": "sha256:0ba48056fed98eb7356cb0a48373ce7527903dcfcbf00985cb9908cdf745284f"
+      "id": "urn:metamap:generation:e6870e38d4ca71e4652a093bbcc8250a3485e31d4301f5631447b6d1a9498bb8",
+      "digest": "sha256:e6870e38d4ca71e4652a093bbcc8250a3485e31d4301f5631447b6d1a9498bb8"
     },
     "graph": {
       "id": "urn:humanifest:portfolio",
-      "digest": "sha256:3d7ef0963e122f51848044d4a498219e67e6d8f3963a394a1a6f611d4d2f464b"
+      "digest": "sha256:370a2f032297d929e09ab163afa57e760c8e05e07b2d4cf446838121a4e088f0"
     },
     "spec": {
       "id": "urn:humanifest:report-projection",
@@ -5513,8 +5513,8 @@
         ]
       }
     ],
-    "id": "urn:metamap:projection:c52ba0329ddb899b27a280fc457255fabf729624f0b3dfc8170f5290d39553f8",
-    "digest": "sha256:c52ba0329ddb899b27a280fc457255fabf729624f0b3dfc8170f5290d39553f8"
+    "id": "urn:metamap:projection:42d92313bb54062015632ad5b4b2a5e15d7197fe29d9d1778ff2eb7eec062582",
+    "digest": "sha256:42d92313bb54062015632ad5b4b2a5e15d7197fe29d9d1778ff2eb7eec062582"
   },
-  "projection_checksum": "sha256:1675c4db36226f59a5c8bec3f75b928f83b9baff11a04ad8aaf64152d1f69d55"
+  "projection_checksum": "sha256:2ad2f7bdb83453fb9f0513d1c82c449980d37aa5a93d5a1b4178e8dcbcc1bb36"
 }

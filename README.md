@@ -1,5 +1,7 @@
 # Humanifest
 
+[![Sponsor Humanifest](https://img.shields.io/badge/Sponsor-Humanifest-2ea44f?logo=githubsponsors&logoColor=white)](https://github.com/sponsors/humanifest)
+
 Humanifest converts donated AI-assisted engineering capacity into verified, maintainer-approved, low-burden contributions to humanitarian and public-interest open-source software.
 
 It is deliberately a thin coordination layer. Its job is to help decide what not to do, then prepare a small number of excellent upstream contributions only after evidence and maintainer interest support the work.
