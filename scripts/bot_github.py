@@ -12,6 +12,17 @@ import sys
 
 
 BOT_LOGIN = "humanifest-bot"
+KEYCHAIN_SERVICE = "humanifest-github-bot"
+
+
+def keychain_credential(environment: dict[str, str]) -> str:
+    """Read the bot token from a dedicated macOS Keychain item."""
+    result = subprocess.run(
+        ["security", "find-generic-password", "-a", BOT_LOGIN,
+         "-s", KEYCHAIN_SERVICE, "-w"],
+        env=environment, capture_output=True, text=True,
+    )
+    return result.stdout.strip() if result.returncode == 0 else ""
 
 
 def bot_environment() -> dict[str, str]:
@@ -20,13 +31,16 @@ def bot_environment() -> dict[str, str]:
     environment.pop("GH_TOKEN", None)
     environment.pop("GITHUB_TOKEN", None)
     environment["GH_HOST"] = "github.com"
-    credential = subprocess.run(
-        ["gh", "auth", "token", "--hostname", "github.com", "--user", BOT_LOGIN],
-        env=environment.copy(), capture_output=True, text=True,
-    )
-    if credential.returncode or not credential.stdout.strip():
+    token = keychain_credential(environment)
+    if not token:
+        credential = subprocess.run(
+            ["gh", "auth", "token", "--hostname", "github.com"],
+            env=environment.copy(), capture_output=True, text=True,
+        )
+        token = credential.stdout.strip() if credential.returncode == 0 else ""
+    if not token:
         raise RuntimeError("Could not retrieve the Humanifest bot credential.")
-    environment["GH_TOKEN"] = credential.stdout.strip()
+    environment["GH_TOKEN"] = token
     identity = subprocess.run(
         ["gh", "api", "--hostname", "github.com", "user"],
         env=environment, capture_output=True, text=True,
