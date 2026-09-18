@@ -52,6 +52,8 @@ checkout without installing dependencies.
 
 ```bash
 python3 -m humanifest.cli validate --root .
+python3 -m humanifest.cli finance --root .
+python3 -m humanifest.cli compute --root .
 python3 -m humanifest.cli report --root .
 python3 -m humanifest.cli score portfolio/opportunities/cht-dhis2-bs-month-export.json
 python3 -m humanifest.cli brief portfolio/opportunities/cht-dhis2-bs-month-export.json
@@ -115,6 +117,8 @@ their individual source IDs and access dates. Review reminders return exit code
 - `schemas/`: public JSON schema documents.
 - `portfolio/projects/`: audited project records.
 - `portfolio/opportunities/`: issue-level opportunity records.
+- `portfolio/compute-resources.json`: governed donated, free, sponsored, paid, and local compute capacity.
+- `portfolio/funding-ledger.json`: public funding and spending accountability ledger.
 - `portfolio/contributions/`: future contribution records.
 - `docs/`: protocol, methodology, research, and governance.
 - `handoffs/`: bounded prompts for Codex, Spark, Cursor, and reviewers.

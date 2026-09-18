@@ -11,7 +11,7 @@ Scores do not authorize implementation or external writes. Candidates are listed
 - cht-10155-edit-user-load-failure: MAINTAINER-CHECK; score=0.0; failed_gates=2
   Next: Coordinate within standing authorization using the verified Humanifest identity; record current maintainer confirmation.
   - behavior_reproducible_or_verifiable: Source-level behavior is mapped, but UI/Karma reproduction has not been run because dependencies are not installed.
-  - maintainer_interest_confirmed: Replacement inquiry sent as humanifest-bot at 2026-09-08T19:02:19Z. Await maintainer response; the outbound inquiry is not confirmation.
+  - maintainer_interest_confirmed: Replacement inquiry sent as humanifest-bot at 2026-09-08T19:02:19Z. Rechecked 2026-09-12: no subsequent maintainer response was present in the issue comments API; the outbound inquiry is not confirmation.
 - cht-11342-dhis2-bs-month-export: MAINTAINER-CHECK; score=0.0; failed_gates=2
   Next: Coordinate within standing authorization using the verified Humanifest identity; record current maintainer confirmation.
   - maintainer_interest_confirmed: Rechecked 2026-09-08: the issue has no comments or assignees; no issue-level confirmation was found.

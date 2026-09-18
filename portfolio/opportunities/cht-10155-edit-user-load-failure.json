@@ -50,13 +50,18 @@
       "type": "measured",
       "claim": "At the inspected commit, setupPromise catches and logs model-population failure without setting a modal error state. The separate local working tree contains an uncommitted preparation patch.",
       "source_id": "edit-user-pinned-2026-09-08"
+    },
+    {
+      "type": "measured",
+      "claim": "On 2026-09-12, the issue comments API returned seven comments; the latest was the 2026-09-08 Humanifest inquiry, with no subsequent maintainer response.",
+      "source_id": "issue-10155-comments-recheck-2026-09-12"
     }
   ],
   "code_surface": "medic/cht-core: admin/src/js/controllers/edit-user.js, admin modal template for edit user, admin translation files, and associated admin unit tests once located.",
   "proposed_change": "Prepare a replacement PR only after current maintainer confirmation. The local prep branch adds loadingUserDetails and userDetailsLoadFailed controller state, hides the form until data is loaded, disables/guards submit while loading or failed, surfaces admin.user.load.error through the existing modal error path, and adds focused controller tests.",
   "tests": "Focused tests added locally in admin/tests/unit/controllers/edit-user.spec.js for loading state, failed detail load, and submit guards. Not run under Karma because dependencies are not installed; exact target command is npm run unit-admin after approved setup. If work is confirmed, also capture a short synthetic-data video of the loading and error flow requested during prior review; no such video was produced in this recheck.",
   "environment": "Tier 1 now for source/test inspection. Tier 3 devcontainer/Codespaces before implementation because CHT admin tests may require project-controlled npm setup.",
-  "maintainer": "The authorized replacement inquiry was posted as humanifest-bot at 2026-09-08T19:02:19Z and verified through GitHub's API. Await maintainer response; sending the inquiry does not establish maintainer confirmation.",
+  "maintainer": "The authorized replacement inquiry was posted as humanifest-bot at 2026-09-08T19:02:19Z and verified through GitHub's API. Rechecked 2026-09-12: no subsequent maintainer response was present in the issue comments API; sending the inquiry does not establish maintainer confirmation.",
   "risks": "Medium: likely bounded frontend/admin work, but translations, templates, and prior stale PR history can increase maintainer burden if not handled exactly. Current translation documentation permits tool-assisted drafts with fluent-speaker validation before merge; historical English-placeholder preparation alone is not evidence of compliance.",
   "gates": {
     "humanitarian_relevance_supported": { "passed": true, "rationale": "CHT is a deployed community-health platform and admin user setup affects operational access." },
@@ -72,7 +77,7 @@
     "no_private_data_required": { "passed": true, "rationale": "Can use mocked SSO user data and offline/error simulation." },
     "security_and_licensing_risk_acceptable": { "passed": true, "rationale": "No secret, auth-policy, or data-model change required if limited to UI error state." },
     "environment_feasible": { "passed": true, "rationale": "Feasible in a CHT devcontainer/Codespaces after setup inspection." },
-    "maintainer_interest_confirmed": { "passed": false, "rationale": "Replacement inquiry sent as humanifest-bot at 2026-09-08T19:02:19Z. Await maintainer response; the outbound inquiry is not confirmation.", "source_ids": ["humanifest-inquiry-10155"] },
+    "maintainer_interest_confirmed": { "passed": false, "rationale": "Replacement inquiry sent as humanifest-bot at 2026-09-08T19:02:19Z. Rechecked 2026-09-12: no subsequent maintainer response was present in the issue comments API; the outbound inquiry is not confirmation.", "source_ids": ["humanifest-inquiry-10155", "issue-10155-comments-recheck-2026-09-12"] },
     "probable_reviewer_identified": { "passed": true, "rationale": "Prior maintainer comments identify likely reviewers involved in the issue/PR." },
     "benefit_justifies_review_cost": { "passed": true, "rationale": "If current, a small admin UX fix should have low review cost." },
     "user_can_explain_line_by_line": { "passed": true, "rationale": "The likely patch is small enough for line-by-line explanation." }
@@ -144,6 +149,11 @@
       "id": "edit-user-pinned-2026-09-08",
       "url": "https://github.com/medic/cht-core/blob/35b2bb6dac0844bee3228476591d08d56c5dd10d/admin/src/js/controllers/edit-user.js#L178-L187",
       "accessed": "2026-09-08"
+    },
+    {
+      "id": "issue-10155-comments-recheck-2026-09-12",
+      "url": "https://api.github.com/repos/medic/cht-core/issues/10155/comments",
+      "accessed": "2026-09-12"
     }
   ]
 }

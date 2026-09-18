@@ -149,6 +149,65 @@ class CliTests(unittest.TestCase):
         self.assertEqual((status, out), (1, ""))
         self.assertIn("required record directory", err)
 
+    def test_finance_and_compute_commands_validate_governance_ledgers(self):
+        self.write_record("portfolio/funding-ledger.json", {
+            "version": 1,
+            "as_of": "2026-09-10",
+            "currency": "USD",
+            "policy": "docs/finance-governance.md",
+            "entries": [
+                {"id": "pledge", "date": "2026-09-10", "type": "income", "status": "pledged", "amount": 50, "description": "not spendable yet"},
+                {"id": "received", "date": "2026-09-10", "type": "income", "status": "received", "amount": 20, "description": "received funds"},
+                {"id": "refund", "date": "2026-09-10", "type": "refund", "status": "received", "amount": 5, "description": "restored funds"},
+            ],
+        })
+        self.write_record("portfolio/compute-resources.json", {
+            "version": 1,
+            "as_of": "2026-09-10",
+            "policy": "docs/compute-governance.md",
+            "resources": [{
+                "id": "local",
+                "name": "Local workstation",
+                "provider": "Humanifest",
+                "resource_type": "local",
+                "status": "available",
+                "allowed_uses": ["offline validation"],
+                "prohibited_uses": ["external writes"],
+                "requires_user_authorization_for_external_writes": True,
+                "requires_identity_check": False,
+                "notes": "Use for deterministic local checks.",
+            }],
+            "allocations": [],
+        })
+        for command, heading in [("finance", "# Finance Governance"), ("compute", "# Compute Governance")]:
+            status, out, err = self.run_cli(command, "--root", str(self.root))
+            self.assertEqual((status, err), (0, ""))
+            self.assertIn(heading, out)
+        self.assertIn("Recorded available balance: 25.00", self.run_cli("finance", "--root", str(self.root))[1])
+
+    def test_governance_commands_fail_closed_on_bad_ledgers(self):
+        self.write_record("portfolio/funding-ledger.json", {
+            "version": 1,
+            "as_of": "2026-09-10",
+            "currency": "usd",
+            "policy": "docs/finance-governance.md",
+            "entries": [{"id": "x", "date": "2026-09-10", "type": "expense", "status": "spent", "amount": -1, "description": "bad"}],
+        })
+        self.write_record("portfolio/compute-resources.json", {
+            "version": 1,
+            "as_of": "2026-09-10",
+            "policy": "docs/compute-governance.md",
+            "resources": [],
+            "allocations": [{"id": "x", "resource_id": "missing", "purpose": "bad", "authorized_by": "tester", "authorized_on": "2026-09-10"}],
+        })
+        status, out, err = self.run_cli("finance", "--root", str(self.root))
+        self.assertEqual((status, out), (1, ""))
+        self.assertIn("currency must use three uppercase", err)
+        self.assertIn("amount must be a non-negative number", err)
+        status, out, err = self.run_cli("compute", "--root", str(self.root))
+        self.assertEqual((status, out), (1, ""))
+        self.assertIn("references unknown resource", err)
+
     def add_opportunity(self, record_id, state, project_id="sample-project"):
         record = opportunity()
         record.update(id=record_id, pipeline_state=state, project_id=project_id)

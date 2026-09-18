@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "as_of": "2026-09-10",
+  "policy": "docs/compute-governance.md",
+  "resources": [
+    {
+      "id": "github-copilot",
+      "name": "GitHub Copilot",
+      "provider": "GitHub",
+      "resource_type": "sponsored",
+      "status": "unverified",
+      "allowed_uses": [
+        "Only after account, license, disclosure, and target-project policy are verified"
+      ],
+      "prohibited_uses": [
+        "External writes, pull requests, or maintainer-facing comments without contribution-protocol authorization and verified Humanifest identity",
+        "Executing third-party setup code before repository setup and security inspection"
+      ],
+      "requires_user_authorization_for_external_writes": true,
+      "requires_identity_check": true,
+      "notes": "Mentioned as potential governed donated or sponsored capacity. Not available for Humanifest work until verified and allocated."
+    }
+  ],
+  "allocations": []
+}

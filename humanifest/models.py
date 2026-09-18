@@ -94,6 +94,11 @@ REQUIRED_OPPORTUNITY_FIELDS = [
     "sources",
 ]
 
+COMPUTE_RESOURCE_TYPES = {"donated", "free", "sponsored", "paid", "local"}
+COMPUTE_STATUSES = {"available", "unverified", "paused", "exhausted", "retired"}
+FUNDING_ENTRY_TYPES = {"income", "allocation", "expense", "refund", "adjustment"}
+FUNDING_ENTRY_STATUSES = {"pledged", "received", "approved", "spent", "void"}
+
 
 @dataclass(frozen=True)
 class ValidationIssue:
@@ -182,6 +187,122 @@ def validate_opportunity(record: dict[str, Any], record_name: str) -> list[Valid
     issues.extend(_validate_sources(record, record_name))
     issues.extend(_validate_evidence_list(record.get("evidence", []), record_name, "evidence", _source_ids(record)))
     return issues
+
+
+def validate_compute_ledger(record: dict[str, Any], record_name: str) -> list[ValidationIssue]:
+    issues = _require_fields(record, ["version", "as_of", "policy", "resources", "allocations"], record_name)
+    if record.get("version") != 1:
+        issues.append(ValidationIssue(record_name, "version must be 1"))
+    issues.extend(_validate_iso_date_field(record, "as_of", record_name))
+    issues.extend(_validate_text_fields(record, ["policy"], record_name))
+    resources = record.get("resources")
+    if not isinstance(resources, list):
+        issues.append(ValidationIssue(record_name, "resources must be a list"))
+    else:
+        seen = set()
+        for index, resource in enumerate(resources):
+            label = f"{record_name}: resources[{index}]"
+            if not isinstance(resource, dict):
+                issues.append(ValidationIssue(record_name, f"resources[{index}] must be an object"))
+                continue
+            issues.extend(_validate_text_fields(resource, ["id", "name", "provider", "notes"], label))
+            _check_unique_id(resource.get("id"), seen, record_name, "resource", issues)
+            if resource.get("resource_type") not in COMPUTE_RESOURCE_TYPES:
+                issues.append(ValidationIssue(record_name, f"resources[{index}].resource_type must be one of {', '.join(sorted(COMPUTE_RESOURCE_TYPES))}"))
+            if resource.get("status") not in COMPUTE_STATUSES:
+                issues.append(ValidationIssue(record_name, f"resources[{index}].status must be one of {', '.join(sorted(COMPUTE_STATUSES))}"))
+            for field in ["allowed_uses", "prohibited_uses"]:
+                issues.extend(_validate_string_list(resource.get(field), record_name, f"resources[{index}].{field}", min_items=1))
+            for field in ["requires_user_authorization_for_external_writes", "requires_identity_check"]:
+                if not isinstance(resource.get(field), bool):
+                    issues.append(ValidationIssue(record_name, f"resources[{index}].{field} must be a boolean"))
+    allocations = record.get("allocations")
+    if not isinstance(allocations, list):
+        issues.append(ValidationIssue(record_name, "allocations must be a list"))
+    else:
+        resource_records = resources if isinstance(resources, list) else []
+        resource_ids = {item.get("id") for item in resource_records if isinstance(item, dict)}
+        seen_allocations = set()
+        for index, allocation in enumerate(allocations):
+            label = f"{record_name}: allocations[{index}]"
+            if not isinstance(allocation, dict):
+                issues.append(ValidationIssue(record_name, f"allocations[{index}] must be an object"))
+                continue
+            issues.extend(_validate_text_fields(allocation, ["id", "resource_id", "purpose", "authorized_by", "authorized_on"], label))
+            _check_unique_id(allocation.get("id"), seen_allocations, record_name, "allocation", issues)
+            if isinstance(allocation.get("resource_id"), str) and allocation["resource_id"] not in resource_ids:
+                issues.append(ValidationIssue(record_name, f"allocations[{index}].resource_id references unknown resource: {allocation['resource_id']}"))
+            issues.extend(_validate_iso_date_field(allocation, "authorized_on", f"{record_name}: allocations[{index}]"))
+    return issues
+
+
+def validate_funding_ledger(record: dict[str, Any], record_name: str) -> list[ValidationIssue]:
+    issues = _require_fields(record, ["version", "as_of", "currency", "policy", "entries"], record_name)
+    if record.get("version") != 1:
+        issues.append(ValidationIssue(record_name, "version must be 1"))
+    issues.extend(_validate_iso_date_field(record, "as_of", record_name))
+    issues.extend(_validate_text_fields(record, ["currency", "policy"], record_name))
+    currency = record.get("currency")
+    if isinstance(currency, str) and (len(currency) != 3 or not currency.isalpha() or currency != currency.upper()):
+        issues.append(ValidationIssue(record_name, "currency must use three uppercase ISO-style letters"))
+    entries = record.get("entries")
+    if not isinstance(entries, list):
+        issues.append(ValidationIssue(record_name, "entries must be a list"))
+    else:
+        seen = set()
+        for index, entry in enumerate(entries):
+            label = f"{record_name}: entries[{index}]"
+            if not isinstance(entry, dict):
+                issues.append(ValidationIssue(record_name, f"entries[{index}] must be an object"))
+                continue
+            issues.extend(_validate_text_fields(entry, ["id", "date", "type", "status", "description"], label))
+            _check_unique_id(entry.get("id"), seen, record_name, "funding entry", issues)
+            issues.extend(_validate_iso_date_field(entry, "date", f"{record_name}: entries[{index}]"))
+            if entry.get("type") not in FUNDING_ENTRY_TYPES:
+                issues.append(ValidationIssue(record_name, f"entries[{index}].type must be one of {', '.join(sorted(FUNDING_ENTRY_TYPES))}"))
+            if entry.get("status") not in FUNDING_ENTRY_STATUSES:
+                issues.append(ValidationIssue(record_name, f"entries[{index}].status must be one of {', '.join(sorted(FUNDING_ENTRY_STATUSES))}"))
+            amount = entry.get("amount")
+            if isinstance(amount, bool) or not isinstance(amount, (int, float)) or amount < 0:
+                issues.append(ValidationIssue(record_name, f"entries[{index}].amount must be a non-negative number"))
+    return issues
+
+
+def governance_report(kind: str, record: dict[str, Any]) -> str:
+    if kind == "compute":
+        resources = record.get("resources", [])
+        allocations = record.get("allocations", [])
+        rows = [
+            "# Compute Governance",
+            "",
+            f"As of: {record['as_of']}",
+            f"Policy: {record['policy']}",
+            f"Resources: {len(resources)}",
+            f"Allocations: {len(allocations)}",
+            "",
+            "Compute records authorize nothing by themselves; external writes still require the contribution protocol and verified identity.",
+            "",
+        ]
+        if not resources:
+            rows.append("No compute resources are recorded.")
+        for resource in sorted(resources, key=lambda item: item["id"]):
+            rows.append(f"- {resource['id']}: {resource['status']} {resource['resource_type']} resource from {resource['provider']}")
+            rows.append(f"  Use: {resource['notes']}")
+        return "\n".join(rows)
+    entries = record.get("entries", [])
+    available = sum(_signed_funding_amount(entry) for entry in entries)
+    rows = [
+        "# Finance Governance",
+        "",
+        f"As of: {record['as_of']}",
+        f"Policy: {record['policy']}",
+        f"Currency: {record['currency']}",
+        f"Entries: {len(entries)}",
+        f"Recorded available balance: {available:.2f}",
+        "",
+        "Funding records do not buy priority, outreach, rankings, or guaranteed upstream contributions.",
+    ]
+    return "\n".join(rows)
 
 
 def failed_gates(record: dict[str, Any]) -> list[dict[str, str]]:
@@ -366,6 +487,44 @@ def _require_fields(record: dict[str, Any], fields: list[str], record_name: str)
 def _validate_text_fields(record: dict[str, Any], fields: list[str], record_name: str) -> list[ValidationIssue]:
     return [ValidationIssue(record_name, f"{field} must be a non-empty string")
             for field in fields if not isinstance(record.get(field), str) or not record[field].strip()]
+
+
+def _validate_iso_date_field(record: dict[str, Any], field: str, record_name: str) -> list[ValidationIssue]:
+    try:
+        value = record.get(field)
+        if not isinstance(value, str) or date.fromisoformat(value).isoformat() != value:
+            raise ValueError
+    except ValueError:
+        return [ValidationIssue(record_name, f"{field} must be a valid YYYY-MM-DD date")]
+    return []
+
+
+def _validate_string_list(items: Any, record_name: str, field: str, *, min_items: int = 0) -> list[ValidationIssue]:
+    if not isinstance(items, list):
+        return [ValidationIssue(record_name, f"{field} must be a list")]
+    issues = []
+    if len(items) < min_items:
+        issues.append(ValidationIssue(record_name, f"{field} must include at least {min_items} item"))
+    for index, item in enumerate(items):
+        if not isinstance(item, str) or not item.strip():
+            issues.append(ValidationIssue(record_name, f"{field}[{index}] must be a non-empty string"))
+    return issues
+
+
+def _check_unique_id(value: Any, seen: set[str], record_name: str, label: str, issues: list[ValidationIssue]) -> None:
+    if isinstance(value, str):
+        if value in seen:
+            issues.append(ValidationIssue(record_name, f"duplicate {label} id: {value}"))
+        seen.add(value)
+
+
+def _signed_funding_amount(entry: dict[str, Any]) -> float:
+    if entry["status"] in {"pledged", "void"}:
+        return 0.0
+    amount = float(entry["amount"])
+    if entry["type"] in {"allocation", "expense"}:
+        return -amount
+    return amount
 
 
 def _source_ids(record: dict[str, Any]) -> set[str]:

@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Humanifest funding ledger",
+  "type": "object",
+  "required": [
+    "version",
+    "as_of",
+    "currency",
+    "policy",
+    "entries"
+  ],
+  "properties": {
+    "version": {
+      "const": 1
+    },
+    "as_of": {
+      "type": "string",
+      "format": "date",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    },
+    "currency": {
+      "type": "string",
+      "pattern": "^[A-Z]{3}$"
+    },
+    "policy": {
+      "type": "string",
+      "pattern": "\\S"
+    },
+    "entries": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/entry"
+      }
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "entry": {
+      "type": "object",
+      "required": [
+        "id",
+        "date",
+        "type",
+        "status",
+        "amount",
+        "description"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "\\S"
+        },
+        "date": {
+          "type": "string",
+          "format": "date",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "type": {
+          "enum": [
+            "income",
+            "allocation",
+            "expense",
+            "refund",
+            "adjustment"
+          ]
+        },
+        "status": {
+          "enum": [
+            "pledged",
+            "received",
+            "approved",
+            "spent",
+            "void"
+          ]
+        },
+        "amount": {
+          "type": "number",
+          "minimum": 0
+        },
+        "description": {
+          "type": "string",
+          "pattern": "\\S"
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

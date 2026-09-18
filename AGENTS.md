@@ -30,5 +30,7 @@ Run:
 ```bash
 python3 -m unittest
 python3 -m humanifest.cli validate --root .
+python3 -m humanifest.cli finance --root .
+python3 -m humanifest.cli compute --root .
 python3 -m humanifest.cli report --root .
 ```

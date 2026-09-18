@@ -11,10 +11,13 @@ import sys
 from .models import (
     generate_candidate_brief,
     generate_handoff,
+    governance_report,
     load_json,
     load_portfolio,
     portfolio_report,
     score_opportunity,
+    validate_compute_ledger,
+    validate_funding_ledger,
     validate_opportunity,
 )
 from .review import render_source_review, source_review
@@ -40,6 +43,12 @@ def main(argv: list[str] | None = None) -> int:
     report_parser = subparsers.add_parser("report")
     report_parser.add_argument("--root", default=".", help="Repository root")
 
+    finance_parser = subparsers.add_parser("finance", help="Validate and summarize the funding ledger")
+    finance_parser.add_argument("--root", default=".", help="Repository root")
+
+    compute_parser = subparsers.add_parser("compute", help="Validate and summarize the compute resource ledger")
+    compute_parser.add_argument("--root", default=".", help="Repository root")
+
     sources_parser = subparsers.add_parser("sources", help="List source access dates and offline review reminders")
     sources_parser.add_argument("--root", default=".", help="Repository root")
     sources_parser.add_argument("--as-of", required=True, type=_date, help="Review date in YYYY-MM-DD form")
@@ -60,6 +69,18 @@ def main(argv: list[str] | None = None) -> int:
                 print(json.dumps(review, indent=2) if args.format == "json" else render_source_review(review))
             else:
                 print("validation ok" if args.command == "validate" else portfolio_report(projects, opportunities))
+        elif args.command == "finance":
+            path = Path(args.root) / "portfolio" / "funding-ledger.json"
+            record = load_json(path)
+            if _print_issues(validate_funding_ledger(record, str(path))):
+                return 1
+            print(governance_report("finance", record))
+        elif args.command == "compute":
+            path = Path(args.root) / "portfolio" / "compute-resources.json"
+            record = load_json(path)
+            if _print_issues(validate_compute_ledger(record, str(path))):
+                return 1
+            print(governance_report("compute", record))
         else:
             record = load_json(Path(args.path))
             if _print_issues(validate_opportunity(record, args.path)):

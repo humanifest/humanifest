@@ -5,6 +5,8 @@ from pathlib import Path
 import unittest
 
 from humanifest.models import (
+    COMPUTE_RESOURCE_TYPES, COMPUTE_STATUSES, FUNDING_ENTRY_STATUSES,
+    FUNDING_ENTRY_TYPES,
     BUILDING_STATES, HARD_GATES, MAINTAINER_CONFIRMED_STATES, PIPELINE_STATES,
     REQUIRED_OPPORTUNITY_FIELDS, REQUIRED_PROJECT_FIELDS, SCORE_WEIGHTS,
 )
@@ -29,3 +31,14 @@ class SchemaContractTests(unittest.TestCase):
             self.assertEqual(set(required), set(gates))
             for gate in gates:
                 self.assertIs(required[gate]["properties"]["passed"]["const"], True)
+
+    def test_governance_schemas_match_runtime_enums(self):
+        root = Path(__file__).resolve().parents[1] / "schemas"
+        compute = json.loads((root / "compute-resources.schema.json").read_text())
+        funding = json.loads((root / "funding-ledger.schema.json").read_text())
+        resource = compute["$defs"]["resource"]["properties"]
+        self.assertEqual(set(resource["resource_type"]["enum"]), COMPUTE_RESOURCE_TYPES)
+        self.assertEqual(set(resource["status"]["enum"]), COMPUTE_STATUSES)
+        entry = funding["$defs"]["entry"]["properties"]
+        self.assertEqual(set(entry["type"]["enum"]), FUNDING_ENTRY_TYPES)
+        self.assertEqual(set(entry["status"]["enum"]), FUNDING_ENTRY_STATUSES)
