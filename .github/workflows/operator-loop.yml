@@ -2,7 +2,8 @@ name: Operator Loop
 
 on:
   schedule:
-    - cron: '27 13 * * *'
+    # 13:00 UTC is 09:00 America/New_York during daylight time.
+    - cron: '0 13 * * *'
   workflow_dispatch:
 
 permissions:

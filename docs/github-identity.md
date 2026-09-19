@@ -36,9 +36,10 @@ does not grant it write access to `medic/cht-core`.
 Account registration is complete. GitHub's account terms require a human to
 create the account and accept responsibility for its automated actions.
 
-Authenticate `humanifest-bot` through the GitHub CLI's browser login. This host
-uses `GH_CONFIG_DIR=/Users/admin/.config/gh-humanifest` for bot login configuration,
-but configuration separation alone does not isolate Keychain token selection.
+Authenticate `humanifest-bot` through the GitHub CLI's browser login using a
+dedicated, user-owned authentication configuration. Do not copy credentials
+between macOS users or rely on configuration-directory separation alone to
+isolate Keychain token selection.
 Use `python3 -m scripts.bot_github <gh arguments>` for bot operations. The helper
 selects the existing credential with `gh auth token --user humanifest-bot`, then
 verifies GitHub's actual response before executing the requested command. It
