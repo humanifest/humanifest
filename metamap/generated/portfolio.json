@@ -3,14 +3,14 @@
   "inputs": {
     "AGENTS.md": "sha256:81b6fac1d99d443fcd9adc33a9f02cab144f533e92f1112b2848658dd17d5707",
     "GOALS.md": "sha256:9273295e3e1d94c6971b3c112152a506314f754846de13de1323179fd0102a1c",
-    "README.md": "sha256:00d2b62bb61eb494e0a07e41b0d5e5ed539be2453c889d7adfcd9a04217e0525",
+    "README.md": "sha256:91ac6cde49823f95d3487ba567c72fb0c842f8360e4f21482ed1484c5626f974",
     "docs/contribution-protocol.md": "sha256:808ae3e0b48a6da2224bcce8a1d5d87163c6554976a4d9ae0bbbce2b83c3b26a",
     "schemas/project.schema.json": "sha256:ff4e4913b2cd9282766d9574a4c86582879b5bf3a01fcbc3a9b6bec4d1b04cce",
     "schemas/opportunity.schema.json": "sha256:0c3f3ec4c00e82fd3f8a7ff70972c55852d3ea9bca7b8ae87fd6e80701ce46ae",
     "humanifest/models.py": "sha256:1bcf24899df0ac2bea1f0397be82e6a488e0c068576820487d4e38a9b4f33579",
-    "humanifest/workflow.py": "sha256:b31ed1da0fc84c41ccb801fe8182e9b108b28d6fe9281a6f2da3de87d9e806c8",
+    "humanifest/workflow.py": "sha256:c28de863ca2996f72b5ff7ad7d2f1ed246a3c61ab1c028a7e8fdc7e90187d9f6",
     "humanifest/correspondence.py": "sha256:9c94d6c5fc380bdc549e3ec58d96757446891198018392ac16459d8e781764b1",
-    "metamap/exclusions.json": "sha256:e90a561e7cca55e29181ab603a6664a24c127b89e48ef58346629523543f1e7e",
+    "metamap/exclusions.json": "sha256:f088aabfdb5563502b1f36e5992e2aadbdc5ae4cd80c02feaba1d85b94811c82",
     "tools/metamap/compile.mjs": "sha256:d79009985f8f22a84202f4012939e4cb16f6070392360f8d8989d01ed46697a7",
     "tools/metamap/package-lock.json": "sha256:b48021b0e12efe06bbd279e8a01ce3b4b79879eb85d25cd7044d7e165ab18e76",
     "tools/metamap/package.json": "sha256:e8a27e41cab6a921d2c6c6e7c7fc15c4c61da94ad595977d3ceff5c0a94f118d",
@@ -45,11 +45,14 @@
     "portfolio/opportunities/openmrs-3626-muac-reference-verification.json": "sha256:7f771dec047f2190e79d490e143026b3ba596b13512a7e5280f6c6742b90f3cd",
     "portfolio/opportunities/prism-1569-boundary-cache-verification.json": "sha256:204d3ea489494595e5ba2a27e8002a96bbaa09044473a4c2567a6c6cd121c9ab",
     "portfolio/opportunities/pyxform-821-nested-repeat-instances.json": "sha256:eb89cfe8fd4ba13f3739ab791e83ad656bb2c61d8ea30d4e41016fde99fa5751",
+    "handoffs/codex-implementation-cht-10155.md": "sha256:ef86857e585c9d0ae6d20ab965ef0f2e0b5855e1a5f2a79cddc56a3f2bf351c6",
     "handoffs/codex-implementation-cht-11342.md": "sha256:e7dadb4c05a2ab8e7f448008d2c8128dde0656662764ac0ed16b0e51aa2d1864",
     "handoffs/cursor-red-team-cht-11342.md": "sha256:d0bf56a9598ab8cd9d91bd64d4ab3c0008617742b4b169ade63b242a6b8d2664",
     "handoffs/maintainer-inquiry-cht-10155.md": "sha256:b4bc1c2143e3639719930e630db437c955fd8206910322d41d37c4ceb2bb2f5e",
     "handoffs/maintainer-inquiry-cht-11342.md": "sha256:9c0ae6a4573bafdc10cc34dee08f4954270f791e27e5614df7da8a0936c1172b",
+    "handoffs/orca-inbox-reconciliation-2026-10-07.md": "sha256:1624145cc09f8dc02a80da9ed528b4aea880ca30ab9e18d1355999cd5ab1757c",
     "handoffs/orca-open-source-governance.md": "sha256:bbe106b618c234a7b9ba4bfacc17ddd7006602dc70ddc23bd6918b62b0567f18",
+    "handoffs/orca-scheduled-bot-cycle-2026-09-22.md": "sha256:93d3a6e709c42fce436a25c879d1717660006f891771d6d949d1cd702214ac10",
     "handoffs/spark-record-review.md": "sha256:0478acd56543b354b3c7c7b6c913a8b3468b3e9b8ed041f9fd9ed6554632986a"
   },
   "generation": {
@@ -58,12 +61,12 @@
     "evaluatedAt": "2026-09-09T00:00:00.000Z",
     "graph": {
       "id": "urn:humanifest:portfolio",
-      "revision": "sha256:f07693ca5802e38ab170f2084b7ad699980264e2aa06a3a4c8fdb392c8c3d12c",
-      "digest": "sha256:370a2f032297d929e09ab163afa57e760c8e05e07b2d4cf446838121a4e088f0"
+      "revision": "sha256:8275507b792f410c4d54475825b0f134b137a1425d74c0a0a0d734728ac4772a",
+      "digest": "sha256:9a79af7aa410eec151d898ff8306f1f8c41d3628860867846f1240bdec617abf"
     },
     "policy": {
       "id": "urn:humanifest:viability",
-      "digest": "sha256:85566d6572fc8c63e3b0b3b4d79ce2ad26c6b346113606ae33693a5f118c9cae"
+      "digest": "sha256:d336fcd765078da5f6145273d46cc97b1992444f80db60abc9453d7d5bdf13e6"
     },
     "context": {},
     "activeMappings": [
@@ -2485,19 +2488,19 @@
     "inactiveMappings": [],
     "evidence": [],
     "waiversApplied": [],
-    "id": "urn:metamap:generation:e6870e38d4ca71e4652a093bbcc8250a3485e31d4301f5631447b6d1a9498bb8",
-    "digest": "sha256:e6870e38d4ca71e4652a093bbcc8250a3485e31d4301f5631447b6d1a9498bb8"
+    "id": "urn:metamap:generation:7f9d266ad019046df9d7fc01701ff09db74ec905301ea243999cff5957c66a28",
+    "digest": "sha256:7f9d266ad019046df9d7fc01701ff09db74ec905301ea243999cff5957c66a28"
   },
   "projection": {
     "$schema": "https://raw.githubusercontent.com/roryscot/metamap/v0.4.0/schemas/metamap-projection.schema.json",
     "schemaVersion": "1.0.0",
     "generation": {
-      "id": "urn:metamap:generation:e6870e38d4ca71e4652a093bbcc8250a3485e31d4301f5631447b6d1a9498bb8",
-      "digest": "sha256:e6870e38d4ca71e4652a093bbcc8250a3485e31d4301f5631447b6d1a9498bb8"
+      "id": "urn:metamap:generation:7f9d266ad019046df9d7fc01701ff09db74ec905301ea243999cff5957c66a28",
+      "digest": "sha256:7f9d266ad019046df9d7fc01701ff09db74ec905301ea243999cff5957c66a28"
     },
     "graph": {
       "id": "urn:humanifest:portfolio",
-      "digest": "sha256:370a2f032297d929e09ab163afa57e760c8e05e07b2d4cf446838121a4e088f0"
+      "digest": "sha256:9a79af7aa410eec151d898ff8306f1f8c41d3628860867846f1240bdec617abf"
     },
     "spec": {
       "id": "urn:humanifest:report-projection",
@@ -2568,7 +2571,7 @@
               {
                 "id": "urn:humanifest:routing:command:MAINTAINER-CHECK",
                 "kind": "routing:command",
-                "label": "Coordinate within standing authorization using the verified Humanifest identity; record current maintainer confirmation.",
+                "label": "Check for maintainer confirmation; respond only within authorization for this exact opportunity using the verified Humanifest identity.",
                 "attributes": {
                   "state": "MAINTAINER-CHECK",
                   "authorizationGranted": false
@@ -2944,7 +2947,7 @@
               {
                 "id": "urn:humanifest:routing:command:MAINTAINER-CHECK",
                 "kind": "routing:command",
-                "label": "Coordinate within standing authorization using the verified Humanifest identity; record current maintainer confirmation.",
+                "label": "Check for maintainer confirmation; respond only within authorization for this exact opportunity using the verified Humanifest identity.",
                 "attributes": {
                   "state": "MAINTAINER-CHECK",
                   "authorizationGranted": false
@@ -3132,7 +3135,7 @@
               {
                 "id": "urn:humanifest:routing:command:MAINTAINER-CHECK",
                 "kind": "routing:command",
-                "label": "Coordinate within standing authorization using the verified Humanifest identity; record current maintainer confirmation.",
+                "label": "Check for maintainer confirmation; respond only within authorization for this exact opportunity using the verified Humanifest identity.",
                 "attributes": {
                   "state": "MAINTAINER-CHECK",
                   "authorizationGranted": false
@@ -3508,7 +3511,7 @@
               {
                 "id": "urn:humanifest:routing:command:MAINTAINER-CHECK",
                 "kind": "routing:command",
-                "label": "Coordinate within standing authorization using the verified Humanifest identity; record current maintainer confirmation.",
+                "label": "Check for maintainer confirmation; respond only within authorization for this exact opportunity using the verified Humanifest identity.",
                 "attributes": {
                   "state": "MAINTAINER-CHECK",
                   "authorizationGranted": false
@@ -3884,7 +3887,7 @@
               {
                 "id": "urn:humanifest:routing:command:MAINTAINER-CHECK",
                 "kind": "routing:command",
-                "label": "Coordinate within standing authorization using the verified Humanifest identity; record current maintainer confirmation.",
+                "label": "Check for maintainer confirmation; respond only within authorization for this exact opportunity using the verified Humanifest identity.",
                 "attributes": {
                   "state": "MAINTAINER-CHECK",
                   "authorizationGranted": false
@@ -4072,7 +4075,7 @@
               {
                 "id": "urn:humanifest:routing:command:MAINTAINER-CHECK",
                 "kind": "routing:command",
-                "label": "Coordinate within standing authorization using the verified Humanifest identity; record current maintainer confirmation.",
+                "label": "Check for maintainer confirmation; respond only within authorization for this exact opportunity using the verified Humanifest identity.",
                 "attributes": {
                   "state": "MAINTAINER-CHECK",
                   "authorizationGranted": false
@@ -4260,7 +4263,7 @@
               {
                 "id": "urn:humanifest:routing:command:MAINTAINER-CHECK",
                 "kind": "routing:command",
-                "label": "Coordinate within standing authorization using the verified Humanifest identity; record current maintainer confirmation.",
+                "label": "Check for maintainer confirmation; respond only within authorization for this exact opportunity using the verified Humanifest identity.",
                 "attributes": {
                   "state": "MAINTAINER-CHECK",
                   "authorizationGranted": false
@@ -4636,7 +4639,7 @@
               {
                 "id": "urn:humanifest:routing:command:MAINTAINER-CHECK",
                 "kind": "routing:command",
-                "label": "Coordinate within standing authorization using the verified Humanifest identity; record current maintainer confirmation.",
+                "label": "Check for maintainer confirmation; respond only within authorization for this exact opportunity using the verified Humanifest identity.",
                 "attributes": {
                   "state": "MAINTAINER-CHECK",
                   "authorizationGranted": false
@@ -4824,7 +4827,7 @@
               {
                 "id": "urn:humanifest:routing:command:MAINTAINER-CHECK",
                 "kind": "routing:command",
-                "label": "Coordinate within standing authorization using the verified Humanifest identity; record current maintainer confirmation.",
+                "label": "Check for maintainer confirmation; respond only within authorization for this exact opportunity using the verified Humanifest identity.",
                 "attributes": {
                   "state": "MAINTAINER-CHECK",
                   "authorizationGranted": false
@@ -5200,7 +5203,7 @@
               {
                 "id": "urn:humanifest:routing:command:MAINTAINER-CHECK",
                 "kind": "routing:command",
-                "label": "Coordinate within standing authorization using the verified Humanifest identity; record current maintainer confirmation.",
+                "label": "Check for maintainer confirmation; respond only within authorization for this exact opportunity using the verified Humanifest identity.",
                 "attributes": {
                   "state": "MAINTAINER-CHECK",
                   "authorizationGranted": false
@@ -5388,7 +5391,7 @@
               {
                 "id": "urn:humanifest:routing:command:MAINTAINER-CHECK",
                 "kind": "routing:command",
-                "label": "Coordinate within standing authorization using the verified Humanifest identity; record current maintainer confirmation.",
+                "label": "Check for maintainer confirmation; respond only within authorization for this exact opportunity using the verified Humanifest identity.",
                 "attributes": {
                   "state": "MAINTAINER-CHECK",
                   "authorizationGranted": false
@@ -5513,8 +5516,8 @@
         ]
       }
     ],
-    "id": "urn:metamap:projection:42d92313bb54062015632ad5b4b2a5e15d7197fe29d9d1778ff2eb7eec062582",
-    "digest": "sha256:42d92313bb54062015632ad5b4b2a5e15d7197fe29d9d1778ff2eb7eec062582"
+    "id": "urn:metamap:projection:79159424dcb06fdf77093b7b392ed734579c2ea76fadcd404db838aed660f78e",
+    "digest": "sha256:79159424dcb06fdf77093b7b392ed734579c2ea76fadcd404db838aed660f78e"
   },
-  "projection_checksum": "sha256:2ad2f7bdb83453fb9f0513d1c82c449980d37aa5a93d5a1b4178e8dcbcc1bb36"
+  "projection_checksum": "sha256:5b8b8edc63a482a8022f07b8cd985aae2c558b62c387c08bdfa90d636b3fb02d"
 }

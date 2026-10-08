@@ -1,7 +1,8 @@
 # Metamap refresh and main-merge receipt — 2026-10-08
 
-Status: **draft PR; merge blocked by stale generated projection**. This receipt
-records observed execution, not Humanifest or Orca acceptance.
+Status at this revision: **Metamap regenerated and local checks passed; draft
+PR checks and merge pending**. This receipt records observed execution, not
+Humanifest or Orca acceptance.
 
 ## Scope and inputs
 
@@ -24,11 +25,25 @@ records observed execution, not Humanifest or Orca acceptance.
   print(len(s["graph"]["entities"]))'` with umask 077. Result: **861 entities;
   exit 0**. This reads project controls and records; it writes no repository
   files. `git diff --check` passed.
-- The pinned `@roryscot/metamap@0.5.0` package is absent from
-  `tools/metamap/node_modules`. The documented `npm ci --ignore-scripts
-  --no-audit --no-fund --prefix tools/metamap` would write ignored dependencies
-  and npm cache and may access GitHub/npm. Its separate installation approval
-  is pending. No package installation or projection generation was run.
+- After the user approved the blocked Metamap generation and merge, ran
+  `npm ci --ignore-scripts --no-audit --no-fund --prefix tools/metamap --cache
+  /Users/legion/Documents/Codex/Humanifest/npm-cache` with umask 077. Result:
+  **8 pinned packages installed; exit 0**. This wrote ignored
+  `tools/metamap/node_modules` and an external npm cache, accessed the package
+  sources, and skipped lifecycle scripts. No target project setup or service
+  ran.
+- Ran `PYTHONDONTWRITEBYTECODE=1 python3 -m scripts.compile_correspondence`:
+  **exit 0**. It regenerated the five `metamap/generated/` outputs atomically;
+  three differ from the previous checked-in files. Generated
+  `portfolio/status.md` from `humanifest.cli report --root .` after successful
+  CLI execution; the report matches its checked-in bytes.
+- With umask 077, `python3 -m scripts.compile_correspondence --check` passed;
+  `python3 -m unittest` passed **89 tests**; `humanifest.cli validate`,
+  `finance`, `compute`, and `operate` each exited 0. The checked-in report
+  comparison and `git diff --check` passed. The local Python environment lacks
+  `jsonschema`, so `scripts.check_schemas` was not run locally; CI installs its
+  pinned check dependencies and runs it. The local installed-wheel smoke check
+  was also left to CI rather than installing another local package.
 
 ## Remote and scheduler state
 
@@ -36,9 +51,10 @@ records observed execution, not Humanifest or Orca acceptance.
   it non-force to `codex/inbox-contributions-2026-10-07` through the
   identity-guarded `humanifest-bot` connection.
 - Opened [draft PR #5](https://github.com/humanifest/humanifest/pull/5) against
-  `main`; GitHub reported `humanifest-bot` as author and head `40743db` when
-  checked. Both required Python matrix checks failed at
-  `stale generated artifact: portfolio.json`. No merge occurred.
+  `main`; GitHub reported `humanifest-bot` as author. Both required Python
+  matrix checks on the prior head failed at
+  `stale generated artifact: portfolio.json`. The regenerated artifacts have
+  not yet been checked on GitHub at this receipt revision. No merge occurred.
 - Updated the existing ACTIVE, chat-attached daily Humanifest schedule through
   the Codex automation tool. When all 16 portfolio opportunities remain gated,
   it now prioritizes a substantive search across distinct current projects or
@@ -49,10 +65,6 @@ records observed execution, not Humanifest or Orca acceptance.
 
 ## Next checks before merge
 
-1. Once the pinned package installation is approved, regenerate and check all
-   `metamap/generated/` outputs and `portfolio/status.md`.
-2. Run the full test and validation commands in `AGENTS.md` with umask 077 and
-   record actual results. Address any real failures without weakening gates.
-3. Push the generated artifacts using verified `humanifest-bot`, wait for both
+1. Push the generated artifacts using verified `humanifest-bot`, wait for both
    required PR checks to pass, review the final diff, then merge PR #5 as
    requested. Leave Orca/source-of-truth acceptance separate from GitHub merge.
