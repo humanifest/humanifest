@@ -19,6 +19,15 @@
       "owner": "Humanifest repository maintainers"
     },
     {
+      "path": "handoffs/codex-implementation-cht-10155.md",
+      "digest": "sha256:ef86857e585c9d0ae6d20ab965ef0f2e0b5855e1a5f2a79cddc56a3f2bf351c6",
+      "relations": [
+        "hf:current_record"
+      ],
+      "reason": "Authored conditional implementation plan, not a generated current-portfolio handoff. Use the guarded CLI handoff for current record guidance.",
+      "owner": "Humanifest repository maintainers"
+    },
+    {
       "path": "handoffs/maintainer-inquiry-cht-10155.md",
       "digest": "sha256:b4bc1c2143e3639719930e630db437c955fd8206910322d41d37c4ceb2bb2f5e",
       "relations": [
@@ -43,6 +52,24 @@
         "hf:current_record"
       ],
       "reason": "Authored reusable prompt, not a generated current-portfolio handoff. Use the guarded CLI handoff for current record guidance.",
+      "owner": "Humanifest repository maintainers"
+    },
+    {
+      "path": "handoffs/orca-inbox-reconciliation-2026-10-07.md",
+      "digest": "sha256:1624145cc09f8dc02a80da9ed528b4aea880ca30ab9e18d1355999cd5ab1757c",
+      "relations": [
+        "hf:current_record"
+      ],
+      "reason": "Authored Orca review handoff, not a generated current-portfolio handoff. Use the guarded CLI handoff for current record guidance.",
+      "owner": "Humanifest repository maintainers"
+    },
+    {
+      "path": "handoffs/orca-scheduled-bot-cycle-2026-09-22.md",
+      "digest": "sha256:93d3a6e709c42fce436a25c879d1717660006f891771d6d949d1cd702214ac10",
+      "relations": [
+        "hf:current_record"
+      ],
+      "reason": "Authored Orca review handoff, not a generated current-portfolio handoff. Use the guarded CLI handoff for current record guidance.",
       "owner": "Humanifest repository maintainers"
     },
     {
