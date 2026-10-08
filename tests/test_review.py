@@ -52,6 +52,15 @@ class SourceReviewTests(unittest.TestCase):
         self.assertEqual({entry["record_type"] for entry in result["sources"]}, {"project", "opportunity"})
         self.assertEqual((projects, opportunities), before)
 
+    def test_optional_cause_sources_keep_cause_provenance(self):
+        causes = [{"id": "malaria", "sources": [self.source("who", "2026-08-01")]}]
+        review = source_review([], [], as_of=date(2026, 9, 8), max_age_days=30,
+                               needs_review_only=True, causes=causes)
+        self.assertEqual(review["sources_needing_review"], 1)
+        self.assertEqual(review["sources"][0]["record_type"], "cause")
+        self.assertEqual(review["sources"][0]["record_id"], "malaria")
+        self.assertEqual(review["sources"][0]["source_id"], "who")
+
     def test_output_does_not_depend_on_record_or_source_input_order(self):
         sources = [self.source("b", "2026-09-08"), self.source("a", "2026-09-08")]
         self.assertEqual(self.review(sources), self.review(list(reversed(sources))))

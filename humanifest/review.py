@@ -12,12 +12,13 @@ def source_review(
     as_of: date,
     max_age_days: int,
     needs_review_only: bool = False,
+    causes: list[dict[str, Any]] | None = None,
 ) -> dict[str, Any]:
     """Keep each source's record context even when URLs appear in multiple records."""
     if isinstance(max_age_days, bool) or not isinstance(max_age_days, int) or max_age_days < 0:
         raise ValueError("max_age_days must be a non-negative integer")
     entries = []
-    for kind, records in [("project", projects), ("opportunity", opportunities)]:
+    for kind, records in [("cause", causes or []), ("project", projects), ("opportunity", opportunities)]:
         for record in records:
             for source in record["sources"]:
                 age = (as_of - date.fromisoformat(source["accessed"])).days
