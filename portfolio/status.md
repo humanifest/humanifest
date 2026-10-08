@@ -36,15 +36,15 @@ Scores do not authorize implementation or external writes. Candidates are listed
   - benefit_justifies_review_cost: Potential source-fidelity verification could help, but overlap with existing review, remaining defects and clinical relevance are not established.
   - user_can_explain_line_by_line: No proposed production patch or independent human code review exists.
 - cht-10155-edit-user-load-failure: MAINTAINER-CHECK; score=0.0; failed_gates=1
-  Next: Coordinate within standing authorization using the verified Humanifest identity; record current maintainer confirmation.
+  Next: Check for maintainer confirmation; respond only within authorization for this exact opportunity using the verified Humanifest identity.
   - maintainer_interest_confirmed: Replacement inquiry sent as humanifest-bot at 2026-09-08T19:02:19Z. Await maintainer response; the outbound inquiry is not confirmation.
 - cht-11342-dhis2-bs-month-export: MAINTAINER-CHECK; score=0.0; failed_gates=3
-  Next: Coordinate within standing authorization using the verified Humanifest identity; record current maintainer confirmation.
+  Next: Check for maintainer confirmation; respond only within authorization for this exact opportunity using the verified Humanifest identity.
   - change_bounded: Writer and exporter tags differ, but the admin picker retains a day-dependent timestamp and payload period remains Gregorian. Maintainers have not chosen whether lookup, picker, and label changes belong in one bounded fix. A backend-only change cannot yet be assumed to resolve the full report.
   - maintainer_interest_confirmed: September 9 fresh issue/timeline check found no assignment or comments. The prepared scope inquiry was not posted after automatic approval review rejected it. Neither the reproduction nor completed related epic establishes confirmation for this export contribution.
   - probable_reviewer_identified: No reviewer is assigned on the issue.
 - climada-1312-wildfire-fraction-verification: MAINTAINER-CHECK; score=0.0; failed_gates=12
-  Next: Coordinate within standing authorization using the verified Humanifest identity; record current maintainer confirmation.
+  Next: Check for maintainer confirmation; respond only within authorization for this exact opportunity using the verified Humanifest identity.
   - external_contributions_accepted: General guide welcomes external fork contributions. Eligibility of this AI-assisted bot contribution is now explicitly asked in the delivered inquiry and remains unconfirmed.
   - contribution_policy_understood: Fork/develop, tests, Pylint, formatting and attribution requirements inspected. Final scope-specific checklist and bot pathway need agreement before implementation.
   - ai_policy_understood: No explicit AI/bot rule found in bounded repository and linked guide inspection. Delivered inquiry asks whether this bot pathway is welcome; absence of a rule is not acceptance.
@@ -58,7 +58,7 @@ Scores do not authorize implementation or external writes. Candidates are listed
   - benefit_justifies_review_cost: Independent data confirmation was delivered; deployment need, reviewer interest and useful bounded change remain unconfirmed.
   - user_can_explain_line_by_line: Harnesses and exact results are documented; no independent human explanation or review is claimed.
 - epanet-883-tank-volume-curve-validation: MAINTAINER-CHECK; score=0.0; failed_gates=9
-  Next: Coordinate within standing authorization using the verified Humanifest identity; record current maintainer confirmation.
+  Next: Check for maintainer confirmation; respond only within authorization for this exact opportunity using the verified Humanifest identity.
   - external_contributions_accepted: Not established in this bounded source intake; verify before implementation.
   - contribution_policy_understood: Not established in this bounded source intake; verify before implementation.
   - ai_policy_understood: Not established in this bounded source intake; verify before implementation.
@@ -69,7 +69,7 @@ Scores do not authorize implementation or external writes. Candidates are listed
   - benefit_justifies_review_cost: Not established in this bounded source intake; verify before implementation.
   - user_can_explain_line_by_line: Not established in this bounded source intake; verify before implementation.
 - ifrc-usgs-economic-rounding: MAINTAINER-CHECK; score=0.0; failed_gates=7
-  Next: Coordinate within standing authorization using the verified Humanifest identity; record current maintainer confirmation.
+  Next: Check for maintainer confirmation; respond only within authorization for this exact opportunity using the verified Humanifest identity.
   - ai_policy_understood: No explicit AI/bot rule located in the bounded repository/default-policy review. The existing inquiry asks for acceptance; await its answer rather than infer approval from missing documentation.
   - problem_current_and_consequential: The archived public bins also exhibit the arithmetic discrepancy, but the 489394 USD difference is only about 0.000028% of the scale-first midpoint result. Frequency and downstream consequence remain unverified.
   - change_bounded: Candidate scope is economic scaling before integer rounding with fatality behavior preserved. Maintainers must confirm separation from the paused uncertainty/representation redesign.
@@ -78,7 +78,7 @@ Scores do not authorize implementation or external writes. Candidates are listed
   - benefit_justifies_review_cost: No downstream impact established; the archived sample has a very small relative difference. Retain the focused boundary proposal without overstating priority; seek maintainer prioritization.
   - user_can_explain_line_by_line: No target implementation or independent human review has occurred.
 - kobo-7259-incremental-sync-verification: MAINTAINER-CHECK; score=0.0; failed_gates=11
-  Next: Coordinate within standing authorization using the verified Humanifest identity; record current maintainer confirmation.
+  Next: Check for maintainer confirmation; respond only within authorization for this exact opportunity using the verified Humanifest identity.
   - ai_policy_understood: No explicit AI policy found in the inspected contribution/README/template text or policy/agent filenames of the complete pinned tree. This bounded absence is not approval; the existing scope inquiry remains pending.
   - problem_current_and_consequential: Not established in this initial research intake; inspect relevant evidence before advancing.
   - behavior_reproducible_or_verifiable: Original formatter/fallback behavior verified in isolated probes. The proposed same-second sync failure has not been reproduced through the target database/API stack; gate remains false.
@@ -91,7 +91,7 @@ Scores do not authorize implementation or external writes. Candidates are listed
   - benefit_justifies_review_cost: Not established in this initial research intake; inspect relevant evidence before advancing.
   - user_can_explain_line_by_line: No implementation or human line-by-line review has occurred.
 - mdsync-1255-indicator-type-mapping: MAINTAINER-CHECK; score=0.0; failed_gates=10
-  Next: Coordinate within standing authorization using the verified Humanifest identity; record current maintainer confirmation.
+  Next: Check for maintainer confirmation; respond only within authorization for this exact opportunity using the verified Humanifest identity.
   - external_contributions_accepted: No verified acceptance of external Humanifest work; contact guidance is not confirmation.
   - contribution_policy_understood: Contributor agreements, complete project instructions and review process remain to verify.
   - ai_policy_understood: No explicit applicable AI/bot policy established; do not infer eligibility from silence.
@@ -103,7 +103,7 @@ Scores do not authorize implementation or external writes. Candidates are listed
   - benefit_justifies_review_cost: Malaria integration relevance is documented; affected workflow burden and likely patch review cost are unmeasured.
   - user_can_explain_line_by_line: No production patch or independent human code review exists.
 - off-496-text-search-contract-verification: MAINTAINER-CHECK; score=0.0; failed_gates=8
-  Next: Coordinate within standing authorization using the verified Humanifest identity; record current maintainer confirmation.
+  Next: Check for maintainer confirmation; respond only within authorization for this exact opportunity using the verified Humanifest identity.
   - problem_current_and_consequential: The current pinned server source supports the documented mismatch, and the SDK issue reports a failed search example. Deployment state, actual returned products and downstream consequence remain unverified.
   - change_bounded: Not established in this research intake; inspect supporting evidence before advancement.
   - regression_strategy_credible: Not established in this research intake; inspect supporting evidence before advancement.
@@ -113,7 +113,7 @@ Scores do not authorize implementation or external writes. Candidates are listed
   - benefit_justifies_review_cost: Not established in this research intake; inspect supporting evidence before advancement.
   - user_can_explain_line_by_line: Not established in this research intake; inspect supporting evidence before advancement.
 - openaq-404-sensor-coverage-validation: MAINTAINER-CHECK; score=0.0; failed_gates=8
-  Next: Coordinate within standing authorization using the verified Humanifest identity; record current maintainer confirmation.
+  Next: Check for maintainer confirmation; respond only within authorization for this exact opportunity using the verified Humanifest identity.
   - problem_current_and_consequential: The open report and synthetic original-route reproduction establish a plausible failure mechanism. Its deployed prevalence, affected users and practical consequence remain unverified.
   - change_bounded: Current ingestor realtime insert omits dedicated periods, while LCS writes staged intervals. Required database values may need ingestion/backfill changes; desired API versus ingestion scope remains unconfirmed.
   - security_and_licensing_risk_acceptable: Bounded synthetic probes used lockfile-hashed wheels and OS network denial after setup inspection. Full dependency/license/contribution audit for an implementation remains incomplete; no production data or access requested.
@@ -123,7 +123,7 @@ Scores do not authorize implementation or external writes. Candidates are listed
   - benefit_justifies_review_cost: Data-access benefit is plausible, but frequency, affected users and comparative cost of a database versus API change remain unmeasured.
   - user_can_explain_line_by_line: No production patch or independent human code review exists.
 - prism-1569-boundary-cache-verification: MAINTAINER-CHECK; score=0.0; failed_gates=12
-  Next: Coordinate within standing authorization using the verified Humanifest identity; record current maintainer confirmation.
+  Next: Check for maintainer confirmation; respond only within authorization for this exact opportunity using the verified Humanifest identity.
   - external_contributions_accepted: Not yet established by the bounded intake; verify before implementation.
   - contribution_policy_understood: Not yet established by the bounded intake; verify before implementation.
   - ai_policy_understood: Not yet established by the bounded intake; verify before implementation.
@@ -137,7 +137,7 @@ Scores do not authorize implementation or external writes. Candidates are listed
   - benefit_justifies_review_cost: Not yet established by the bounded intake; verify before implementation.
   - user_can_explain_line_by_line: Not yet established by the bounded intake; verify before implementation.
 - pyxform-821-nested-repeat-instances: MAINTAINER-CHECK; score=0.0; failed_gates=10
-  Next: Coordinate within standing authorization using the verified Humanifest identity; record current maintainer confirmation.
+  Next: Check for maintainer confirmation; respond only within authorization for this exact opportunity using the verified Humanifest identity.
   - external_contributions_accepted: README welcomes focused contributions; eligibility of the required humanifest-bot identity is not established.
   - ai_policy_understood: Not yet established for this research candidate; inspect evidence before advancing.
   - problem_current_and_consequential: Open issue and August request support investigating current behavior, but the related client discussion calls it usable and noncritical. Consequential operational impact is not demonstrated.

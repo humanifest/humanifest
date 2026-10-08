@@ -88,6 +88,14 @@ def cause():
         "sources": [{"id": "s1", "url": "https://example.test", "accessed": "2026-09-10"}],
     }
 class ModelTests(unittest.TestCase):
+    def test_external_action_guidance_requires_target_scoped_authorization(self):
+        for state in ["SHORTLISTED", "MAINTAINER-CHECK", "HUMAN-REVIEW", "PR-OPEN"]:
+            with self.subTest(state=state):
+                action = next_action(dict(opportunity(), pipeline_state=state))
+                self.assertIn("this exact", action)
+                self.assertIn("Humanifest", action)
+                self.assertNotIn("within standing authorization", action)
+
     def test_cause_records_score_discovery_attention(self):
         record = cause()
         self.assertEqual(validate_cause(record, "sample"), [])

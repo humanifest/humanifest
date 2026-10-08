@@ -9,8 +9,10 @@ from typing import Any
 
 from .compute import load_compute_resources, validate_compute_resources
 from .finance import load_funding_ledger, validate_funding_ledger
-from .models import load_causes, load_portfolio, score_cause, score_opportunity
+from .models import INACTIVE_STATES, PIPELINE_STATES, load_causes, load_portfolio, next_action, score_cause, score_opportunity
 from .review import source_review
+
+FOLLOW_UP_STATES = {"MAINTAINER-CHECK", "PR-OPEN", "MERGED", "RELEASED"}
 
 
 def operator_snapshot(root: Path, *, as_of: date, max_age_days: int) -> tuple[dict[str, Any], list[Any]]:
@@ -43,9 +45,11 @@ def operator_snapshot(root: Path, *, as_of: date, max_age_days: int) -> tuple[di
     if issues:
         return {}, issues
 
-    review = source_review(projects, opportunities, as_of=as_of, max_age_days=max_age_days, needs_review_only=True)
+    review = source_review(projects, opportunities, as_of=as_of, max_age_days=max_age_days,
+                           needs_review_only=True, causes=causes)
     cause_scores = sorted(
-        [(cause["id"], score_cause(cause)["score"], cause["status"]) for cause in causes],
+        [(cause["id"], score_cause(cause)["score"], cause["status"]) for cause in causes
+         if cause["status"] != "PARKED"],
         key=lambda item: (-item[1], item[0]),
     )
     opportunity_states = Counter(item["pipeline_state"] for item in opportunities)
@@ -53,6 +57,33 @@ def operator_snapshot(root: Path, *, as_of: date, max_age_days: int) -> tuple[di
     ready_for_maintainer_check = [
         item["id"] for item in opportunities
         if item["pipeline_state"] in {"SHORTLISTED", "MAINTAINER-CHECK"}
+    ]
+    source_reviews = [
+        {key: entry[key] for key in ("record_type", "record_id", "source_id", "review_reasons")}
+        for entry in review["sources"]
+    ]
+    stale_causes = {entry["record_id"] for entry in source_reviews if entry["record_type"] == "cause"}
+    cause_reviews = [
+        {"id": cause_id, "status": status, "score": score,
+         "sources_need_review": cause_id in stale_causes}
+        for cause_id, score, status in cause_scores
+    ]
+    active_opportunities = sorted(
+        opportunities, key=lambda item: (PIPELINE_STATES.index(item["pipeline_state"]), item["id"])
+    )
+    opportunity_reviews = [
+        {"id": item["id"], "project_id": item["project_id"], "state": item["pipeline_state"],
+         "failed_gates": [gate["gate"] for gate in score_opportunity(item)["failed_gates"]],
+         "next_action": next_action(item)}
+        for item in active_opportunities
+        if item["pipeline_state"] not in INACTIVE_STATES
+        and item["pipeline_state"] not in FOLLOW_UP_STATES
+    ]
+    follow_up_reviews = [
+        {"id": item["id"], "project_id": item["project_id"], "state": item["pipeline_state"],
+         "failed_gates": [gate["gate"] for gate in score_opportunity(item)["failed_gates"]],
+         "next_action": next_action(item)}
+        for item in active_opportunities if item["pipeline_state"] in FOLLOW_UP_STATES
     ]
 
     actions = []
@@ -82,8 +113,14 @@ def operator_snapshot(root: Path, *, as_of: date, max_age_days: int) -> tuple[di
         "ready_for_maintainer_check": sorted(ready_for_maintainer_check),
         "finance_steward": funding["fiscal_steward"]["name"] if funding else None,
         "compute_resources": len(compute["resources"]) if compute else 0,
+        "work_queue": {
+            "source_reviews": source_reviews,
+            "cause_reviews": cause_reviews,
+            "opportunity_reviews": opportunity_reviews,
+            "follow_up_reviews": follow_up_reviews,
+        },
         "safe_next_actions": actions,
-        "scope": "Read-only operator loop; no remote sources fetched, records changed, maintainers contacted, or external writes performed.",
+        "scope": "Read-only work suggestions from supplied records; scores rank discovery attention only. No remote sources fetched, records changed, maintainers contacted, or external writes performed. Gates, portfolio capacity, current upstream status, and authorization require separate review.",
     }, []
 
 
@@ -105,6 +142,37 @@ def render_operator_snapshot(snapshot: dict[str, Any]) -> str:
     ]
     if snapshot["top_causes"]:
         rows.extend(f"- {item['id']}: score={item['score']}; status={item['status']}" for item in snapshot["top_causes"])
+    else:
+        rows.append("- none")
+    queue = snapshot["work_queue"]
+    rows.extend(["", "## Source Reviews"])
+    if queue["source_reviews"]:
+        rows.extend(
+            f"- {item['record_type']} {item['record_id']} / {item['source_id']}: {', '.join(item['review_reasons'])}"
+            for item in queue["source_reviews"]
+        )
+    else:
+        rows.append("- none")
+    rows.extend(["", "## Cause Reviews"])
+    if queue["cause_reviews"]:
+        rows.extend(
+            f"- {item['id']}: score={item['score']}; status={item['status']}; sources need review={item['sources_need_review']}"
+            for item in queue["cause_reviews"]
+        )
+    else:
+        rows.append("- none")
+    rows.extend(["", "## Opportunity Reviews"])
+    if queue["opportunity_reviews"]:
+        for item in queue["opportunity_reviews"]:
+            rows.append(f"- {item['id']} ({item['project_id']}): {item['state']}; failed gates: {', '.join(item['failed_gates']) or 'none'}")
+            rows.append(f"  Next: {item['next_action']}")
+    else:
+        rows.append("- none")
+    rows.extend(["", "## Follow-up Reviews"])
+    if queue["follow_up_reviews"]:
+        for item in queue["follow_up_reviews"]:
+            rows.append(f"- {item['id']} ({item['project_id']}): {item['state']}; failed gates: {', '.join(item['failed_gates']) or 'none'}")
+            rows.append(f"  Next: {item['next_action']}")
     else:
         rows.append("- none")
     rows.extend(["", "## Opportunity States"])

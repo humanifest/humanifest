@@ -50,6 +50,9 @@ rechecked before outreach or implementation.
 
 ## Use
 
+For a complete local bootstrap and verification path, see
+[Humanifest setup](docs/setup.md).
+
 Python 3.11 or newer is required. The commands below run directly from this
 checkout without installing dependencies.
 

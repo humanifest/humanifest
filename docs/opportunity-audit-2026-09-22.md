@@ -1,0 +1,47 @@
+# Opportunity audit — 2026-09-22
+
+This is a read-only review of all 16 checked-in opportunity records. I checked
+the linked public GitHub issue or PR metadata and available discussion through
+GitHub's unauthenticated API on 2026-09-22. I inspected the current changed-file
+lists for Kobo PR #7260, Open Food Facts PR #504, and OpenMRS PR #3626. I did not
+run target repositories, verify deployments, or treat an open issue as maintainer
+approval. The Humanifest records remain the authority for gates and state; this
+audit does not advance them. "Code case" below means whether more upstream code
+or test work appears justified for consideration, not permission to start it.
+
+| Opportunity | Public status and previous Humanifest work | Code case and next review |
+| --- | --- | --- |
+| [CHT #10155](https://github.com/medic/cht-core/issues/10155) | Open. [Prior PR #10824](https://github.com/medic/cht-core/pull/10824) was closed unmerged. Humanifest's [replacement inquiry](https://github.com/medic/cht-core/issues/10155#issuecomment-5590328371) is the latest issue comment; no reply was visible. | **Likely fix, waiting.** The local preparation described in the record covers loading, failure, submit protection, and tests. Recheck scope, competing work, translations, and maintainer interest before updating target code. |
+| [CHT #11342](https://github.com/medic/cht-core/issues/11342) | Open with no issue comments. The record has a prepared inquiry, not delivered outreach. | **Likely fix, semantics unresolved.** Agree the picker label, interval lookup, and export period together; a backend-only change may be incomplete. Do not promote the prepared inquiry as sent. |
+| [CHT #10241](https://github.com/medic/cht-core/issues/10241) | Open but parked locally. A [maintainer response](https://github.com/medic/cht-core/issues/10241#issuecomment-4204494893) rejected the proposed global queue direction and said the right solution was unclear. | **No patch now.** Concurrency semantics, multi-pod behavior, and a safe bounded design need agreement first. |
+| [CLIMADA #1312](https://github.com/CLIMADA-project/climada_python/issues/1312) | Open; the only issue comment is Humanifest's [verified data finding](https://github.com/CLIMADA-project/climada_python/issues/1312#issuecomment-5599217450). | **Data/diagnostic case first.** Determine canonical fraction and data-generation semantics with maintainers before changing sparse arithmetic or clipping values. |
+| [Crisis Cleanup #1164](https://github.com/CrisisCleanup/crisiscleanup-4-web/issues/1164) | Open since 2024 with no issue comments; parked locally. | **No supported patch yet.** Current inspected code already awaits the request and rethrows failure, so the simple missing-await hypothesis failed. Reproduce a current failure with synthetic data before reconsidering. |
+| [EPANET #883](https://github.com/OpenWaterAnalytics/EPANET/issues/883) | Open with no issue comments. Humanifest has prepared an inquiry, not posted one. | **Potential validation fix.** Confirm current consequences, relevant file/API entry points, error handling, and target contribution policy before code. |
+| [HOT #7227](https://github.com/hotosm/tasking-manager/issues/7227) | Open. Humanifest's [frontend finding and inquiry](https://github.com/hotosm/tasking-manager/issues/7227#issuecomment-5594446967) has no later reply. The local audit records a separate policy exclusion of automated bot/AI accounts. | **No bot-authored patch.** Frontend failure handling could be useful separately, but it does not restore archived downloads. Keep parked until identity and scope are resolved. |
+| [IFRC #199](https://github.com/IFRCGo/pystac-monty/issues/199) | Open. [PR #204](https://github.com/IFRCGo/pystac-monty/pull/204) merged the unit correction; Humanifest then [reported a rounding precision case](https://github.com/IFRCGo/pystac-monty/issues/199#issuecomment-5594287228). No later reply was visible. | **Narrow code candidate.** Scaling before integer rounding may preserve nonzero economic values; keep fatality behavior and the broader paused model redesign separate. Wait for accepted scope. |
+| [Kobo #7259](https://github.com/kobotoolbox/kpi/issues/7259) | Open. Humanifest [identified the same-second cursor boundary](https://github.com/kobotoolbox/kpi/issues/7259#issuecomment-5593643546). The [PR author welcomed a frozen-time test](https://github.com/kobotoolbox/kpi/issues/7259#issuecomment-5600432460), then [deferred documentation](https://github.com/kobotoolbox/kpi/issues/7259#issuecomment-5600507492) pending Kobo team direction. [PR #7260](https://github.com/kobotoolbox/kpi/pull/7260) remains open; its current API tests cover dates and filtering but not two writes in one second. | **Best bounded test candidate, still gated.** Add only the author-requested same-second regression once Kobo maintainers confirm bot participation and scope. Do not change timestamp precision or create a replacement PR. Recheck the PR head before drafting. |
+| [Metadata Sync #1255](https://github.com/EyeSeeTea/metadata-synchronization/issues/1255) | Open with no comments. Inquiry prepared but not posted. | **Potential mapping change.** Agree type reuse/update and DHIS2 import semantics before extending the existing global workflow. |
+| [ODK #2169](https://github.com/getodk/central/issues/2169) | Open. Humanifest's [threshold inquiry](https://github.com/getodk/central/issues/2169#issuecomment-5595510841) has no later response. | **Potential small code fix.** Byte/unit normalization and boundary tests depend on agreed threshold policy; keep broader worker sizing separate. |
+| [Open Food Facts #496](https://github.com/openfoodfacts/openfoodfacts-python/issues/496) | Open. Humanifest's [PR #504 verification](https://github.com/openfoodfacts/openfoodfacts-python/pull/504#issuecomment-5597968719) was [acknowledged by the author](https://github.com/openfoodfacts/openfoodfacts-python/pull/504#issuecomment-5645139073); a [later reviewer](https://github.com/openfoodfacts/openfoodfacts-python/pull/504#issuecomment-5715723460) independently raised the fixed-response test gap. The current [PR #504](https://github.com/openfoodfacts/openfoodfacts-python/pull/504) still changes the endpoint and mocked URLs, without a semantic search test. | **Existing PR needs a contract decision.** Clarify supported v2 full-text/auth behavior and meaningful regression coverage with its author and maintainers. Do not submit a competing SDK patch. |
+| [OpenAQ #404](https://github.com/openaq/openaq-api/issues/404) | Open; the [maintainer diagnostic](https://github.com/openaq/openaq-api/issues/404#issuecomment-4783126755) points to missing sensor coverage values. Humanifest has an unsent inquiry. | **Possible API or ingestion fix.** Choose the layer and backfill/nullability behavior with maintainers before implementation. |
+| [OpenMRS PR #3626](https://github.com/openmrs/openmrs-esm-patient-chart/pull/3626) | Open. A [reviewer identified strict threshold errors](https://github.com/openmrs/openmrs-esm-patient-chart/pull/3626#issuecomment-5659822218); the [author says the current revision fixes them and adds a boundary test](https://github.com/openmrs/openmrs-esm-patient-chart/pull/3626#issuecomment-5660865696). The changed-file list includes that test. No Humanifest outreach is recorded. | **No duplicate code now.** Verify the latest diff against the cited clinical reference and target review, then support the existing author only if a specific remaining gap is found and welcome. |
+| [PRISM #1569](https://github.com/WFP-VAM/prism-app/issues/1569) | Open. Humanifest's [browser measurement](https://github.com/WFP-VAM/prism-app/issues/1569#issuecomment-5600104762) found zero transfer on a repeat visit under the tested conditions; no later reply was visible. | **No cache change now.** Require a measured unmet transfer or latency scenario and update/rollback semantics before extending freshness. |
+| [pyxform #821](https://github.com/XLSForm/pyxform/issues/821) | Open. Humanifest's [XML matrix](https://github.com/XLSForm/pyxform/issues/821#issuecomment-5598015763) is the latest issue comment; no maintainer scope acceptance was visible. | **Potential converter change, broad risk.** Agree template and concrete-instance semantics, defaults, arbitrary nesting, and client compatibility before code. Keep repeat-count policy separate. |
+
+## Decision
+
+The strongest next **test** prospect is Kobo #7259, because the existing PR author
+requested a narrow same-second case and the current PR lacks it. This is author
+interest, not the required Kobo maintainer confirmation. Open Food Facts and
+OpenMRS are better served by reviewing and improving their existing authors'
+patches than by competing PRs. IFRC has a small possible code correction but no
+confirmed scope. The remaining opportunities need evidence, policy, reproduction,
+or maintainer decisions first. No checked-in opportunity currently passes all
+building gates.
+
+Improving previous Humanifest work means checking whether a finding changed the
+upstream decision, whether the cited issue or PR has a newer head, whether a
+maintainer wants another bounded contribution, and later whether a merged fix was
+released and retained. A posted comment is evidence of delivery, not acceptance
+or humanitarian impact. The operator loop now keeps waiting and post-PR records
+in a separate follow-up review lane; its output remains offline and read-only.

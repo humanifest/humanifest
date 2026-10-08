@@ -83,7 +83,7 @@ class CliTests(unittest.TestCase):
         self.assertEqual((status, err), (0, ""))
         self.assertIn("# Humanifest Operator Loop", out)
         self.assertIn("Do not perform external writes", out)
-        self.assertIn("no remote sources fetched", out)
+        self.assertIn("No remote sources fetched", out)
 
         status, out, err = self.run_cli("operate", "--root", str(self.root),
                                         "--as-of", "2026-09-08", "--max-age-days", "30",
@@ -93,6 +93,60 @@ class CliTests(unittest.TestCase):
         self.assertEqual(snapshot["causes"], 1)
         self.assertEqual(snapshot["compute_resources"], 1)
         self.assertEqual(snapshot["finance_steward"], "Avaelus LLC/Inc.")
+        queue = snapshot["work_queue"]
+        self.assertEqual(queue["source_reviews"], [{
+            "record_type": "cause", "record_id": "sample-cause", "source_id": "s1",
+            "review_reasons": ["future-date"],
+        }])
+        self.assertEqual(queue["cause_reviews"], [{
+            "id": "sample-cause", "status": "PROJECT-SEEDING", "score": 3.7,
+            "sources_need_review": True,
+        }])
+        self.assertEqual(queue["opportunity_reviews"][0]["id"], "sample")
+        self.assertEqual(queue["opportunity_reviews"][0]["failed_gates"], [])
+
+    def test_operate_excludes_parked_work_from_review_queue(self):
+        self.seed_portfolio()
+        from tests.test_compute import resources
+        from tests.test_finance import ledger
+        self.write_record("portfolio/compute-resources.json", resources())
+        self.write_record("portfolio/funding-ledger.json", ledger())
+        parked_cause = cause()
+        parked_cause["status"] = "PARKED"
+        self.write_record("portfolio/causes/sample.json", parked_cause)
+        parked_opportunity = opportunity()
+        parked_opportunity["pipeline_state"] = "PARKED"
+        self.write_record("portfolio/opportunities/sample.json", parked_opportunity)
+        status, out, err = self.run_cli("operate", "--root", str(self.root),
+                                        "--as-of", "2026-09-11", "--max-age-days", "30",
+                                        "--format", "json")
+        self.assertEqual((status, err), (0, ""))
+        queue = json.loads(out)["work_queue"]
+        self.assertEqual(queue["cause_reviews"], [])
+        self.assertEqual(queue["opportunity_reviews"], [])
+        self.assertEqual(queue["follow_up_reviews"], [])
+        self.assertEqual(queue["source_reviews"], [])
+
+    def test_operate_keeps_waiting_and_completed_work_visible_for_follow_up(self):
+        self.seed_portfolio()
+        self.set_project_repository("https://github.com/example/sample")
+        from tests.test_compute import resources
+        from tests.test_finance import ledger
+        self.write_record("portfolio/compute-resources.json", resources())
+        self.write_record("portfolio/funding-ledger.json", ledger())
+        for state in ["MAINTAINER-CHECK", "PR-OPEN", "MERGED", "RELEASED"]:
+            record = opportunity()
+            record.update(id=state.lower(), pipeline_state=state)
+            self.write_record(f"portfolio/opportunities/{state.lower()}.json", record)
+        status, out, err = self.run_cli("operate", "--root", str(self.root),
+                                        "--as-of", "2026-09-11", "--max-age-days", "30",
+                                        "--format", "json")
+        self.assertEqual((status, err), (0, ""))
+        queue = json.loads(out)["work_queue"]
+        self.assertEqual([item["state"] for item in queue["follow_up_reviews"]],
+                         ["MAINTAINER-CHECK", "PR-OPEN", "MERGED", "RELEASED"])
+        self.assertEqual([item["id"] for item in queue["opportunity_reviews"]], ["sample"])
+        self.assertIn("Verify release", queue["follow_up_reviews"][2]["next_action"])
 
     def test_bad_inputs_have_diagnostics_without_tracebacks(self):
         for content in ["{", "[]", '{"id": "a", "id": "b"}', '{"score": NaN}', '{}']:

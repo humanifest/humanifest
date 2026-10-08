@@ -2,7 +2,7 @@
   "schemaVersion": "2.0.0",
   "id": "urn:humanifest:portfolio",
   "namespace": "humanifest",
-  "revision": "sha256:f07693ca5802e38ab170f2084b7ad699980264e2aa06a3a4c8fdb392c8c3d12c",
+  "revision": "sha256:8275507b792f410c4d54475825b0f134b137a1425d74c0a0a0d734728ac4772a",
   "entities": [
     {
       "id": "urn:humanifest:routing:policy:contribution-protocol",
@@ -98,7 +98,7 @@
     {
       "id": "urn:humanifest:routing:command:SHORTLISTED",
       "kind": "routing:command",
-      "label": "Prepare a maintainer inquiry; check standing authorization and verify the Humanifest posting identity before sending.",
+      "label": "Prepare a maintainer inquiry; confirm authorization for this exact issue and verify the Humanifest posting identity before sending.",
       "attributes": {
         "state": "SHORTLISTED",
         "authorizationGranted": false
@@ -111,7 +111,7 @@
     {
       "id": "urn:humanifest:routing:command:MAINTAINER-CHECK",
       "kind": "routing:command",
-      "label": "Coordinate within standing authorization using the verified Humanifest identity; record current maintainer confirmation.",
+      "label": "Check for maintainer confirmation; respond only within authorization for this exact opportunity using the verified Humanifest identity.",
       "attributes": {
         "state": "MAINTAINER-CHECK",
         "authorizationGranted": false
@@ -176,7 +176,7 @@
     {
       "id": "urn:humanifest:routing:command:HUMAN-REVIEW",
       "kind": "routing:command",
-      "label": "Review the change line by line and check PR capacity, standing authorization, and the Humanifest posting identity before opening a PR.",
+      "label": "Review the change line by line and check PR capacity, authorization for this exact PR, and the Humanifest posting identity before opening it.",
       "attributes": {
         "state": "HUMAN-REVIEW",
         "authorizationGranted": false
@@ -189,7 +189,7 @@
     {
       "id": "urn:humanifest:routing:command:PR-OPEN",
       "kind": "routing:command",
-      "label": "Review upstream feedback; respond and update within standing authorization using the verified Humanifest identity.",
+      "label": "Review upstream feedback; respond and update only within authorization for this exact PR using the verified Humanifest identity.",
       "attributes": {
         "state": "PR-OPEN",
         "authorizationGranted": false
@@ -11261,6 +11261,23 @@
       }
     },
     {
+      "id": "urn:humanifest:hf:authored-handoff:handoffs%2Fcodex-implementation-cht-10155.md",
+      "kind": "hf:authored-handoff",
+      "label": "handoffs/codex-implementation-cht-10155.md",
+      "attributes": {
+        "topologyDisposition": "excluded",
+        "exclusionRelations": [
+          "hf:current_record"
+        ],
+        "exclusionReason": "Authored conditional implementation plan, not a generated current-portfolio handoff. Use the guarded CLI handoff for current record guidance.",
+        "exclusionOwner": "Humanifest repository maintainers"
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
       "id": "urn:humanifest:hf:authored-handoff:handoffs%2Fcodex-implementation-cht-11342.md",
       "kind": "hf:authored-handoff",
       "label": "handoffs/codex-implementation-cht-11342.md",
@@ -11329,6 +11346,23 @@
       }
     },
     {
+      "id": "urn:humanifest:hf:authored-handoff:handoffs%2Forca-inbox-reconciliation-2026-10-07.md",
+      "kind": "hf:authored-handoff",
+      "label": "handoffs/orca-inbox-reconciliation-2026-10-07.md",
+      "attributes": {
+        "topologyDisposition": "excluded",
+        "exclusionRelations": [
+          "hf:current_record"
+        ],
+        "exclusionReason": "Authored Orca review handoff, not a generated current-portfolio handoff. Use the guarded CLI handoff for current record guidance.",
+        "exclusionOwner": "Humanifest repository maintainers"
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
       "id": "urn:humanifest:hf:authored-handoff:handoffs%2Forca-open-source-governance.md",
       "kind": "hf:authored-handoff",
       "label": "handoffs/orca-open-source-governance.md",
@@ -11338,6 +11372,23 @@
           "hf:current_record"
         ],
         "exclusionReason": "Authored reusable prompt, not a generated current-portfolio handoff. Use the guarded CLI handoff for current record guidance.",
+        "exclusionOwner": "Humanifest repository maintainers"
+      },
+      "provenance": {
+        "status": "generated",
+        "assertedBy": "humanifest-python-shard@1"
+      }
+    },
+    {
+      "id": "urn:humanifest:hf:authored-handoff:handoffs%2Forca-scheduled-bot-cycle-2026-09-22.md",
+      "kind": "hf:authored-handoff",
+      "label": "handoffs/orca-scheduled-bot-cycle-2026-09-22.md",
+      "attributes": {
+        "topologyDisposition": "excluded",
+        "exclusionRelations": [
+          "hf:current_record"
+        ],
+        "exclusionReason": "Authored Orca review handoff, not a generated current-portfolio handoff. Use the guarded CLI handoff for current record guidance.",
         "exclusionOwner": "Humanifest repository maintainers"
       },
       "provenance": {

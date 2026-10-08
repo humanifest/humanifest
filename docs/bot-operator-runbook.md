@@ -53,11 +53,24 @@ The command reports:
 
 - top cause pathways to review;
 - opportunity state counts;
-- source-review needs;
+- source-review needs across cause, project, and opportunity records;
 - finance steward status;
 - compute-resource registry status;
 - whether any opportunity passes every building gate;
-- safe next actions.
+- a record-linked work queue and safe next actions.
+
+The work queue is a way to donate bounded review effort. Start with listed
+source IDs, then examine active cause pathways and opportunity records. Cause
+scores order discovery attention only. The queue excludes parked and completed
+records from active cause and opportunity review, while retaining their stale
+sources as review reminders. A separate follow-up lane keeps `MAINTAINER-CHECK`,
+`PR-OPEN`, `MERGED`, and `RELEASED` opportunities visible for response, review,
+release, and outcome checks. It does not assume a prior Humanifest contribution
+or a new maintainer reply. Each opportunity shows its failed gate names and
+state-specific next action; neither a score nor an empty failed-gate list grants
+permission to implement or contact a maintainer. Check the cited source itself,
+current upstream state, portfolio capacity, and applicable authorization before
+changing a record or acting outside this repository.
 
 ## GitHub Actions automation
 
